@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>ログイン - 事務局管理</title>
+
+<link rel="stylesheet" href="../common/css/login/login.css"/>
+</head>
+<body>
+
+
+<div class="contentWrap">
+	<div class="logoCell">
+		<div class="logoArea">
+			<img src="../imageFile/logo.svg" alt="">
+			<p class="attribute">事務局管理</p>
+		</div>
+	</div>
+	<div class="loginCell">
+		<form method="post" action="https://staging.iroots.jp/admin_site/" class="loginForm" accept-charset="utf-8">
+			<input type="email" pattern=".+@.+\..+" id="admin_email" style="ime-mode:disabled" placeholder="メールアドレス" class="form--line" maxlength="255" name="admin_email" value="" />
+			<input id="admin_password" style="ime-mode:disabled" placeholder="パスワード" class="form--line" maxlength="16" name="admin_password" value="" type="password" />
+			<!-- <input class="loginBtn" name="button" value="ログイン" type="submit" id="form_button" /> -->
+		</form>
+		<a href="" class="md_btn md_btn--disable">ログイン</a>
+	</div>
+</div>
+<!--footer-->   
+<div class="searchFooter">
+	<footer>
+		<p class="copyright">Copyright &copy; 2024 en Japan Inc. All Rights Reserved.</p>
+	</footer>
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+</body>
+</html>

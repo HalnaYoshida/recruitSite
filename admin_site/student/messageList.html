@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>メッセージ - 学生管理</title>
+
+<link rel="stylesheet" href="../common/css/student/list_student.css"/>
+</head>
+<body>
+
+<!-- Modal -->
+<div class="md_modal modal09" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="Content">
+			<div class="textArea">
+				<div class="catch">メッセージ確認</div>
+				<p class="copy">
+					メッセージを送信します。よろしいですか？
+				</p>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--medium md_btn--second md_btn--cancel multiple js_modalX">キャンセル</button>
+				<button class="md_btn md_btn--medium md_btn--second multiple insertLink">予約送信</button>
+				<button class="md_btn md_btn--medium multiple js_modalX" onclick="location.href='?snackBar04'">今すぐ送信</button>
+			</div>
+		</div>
+	</div>
+	<div class="modalSet modalSet--reserve">
+		<div class="Content Content--form">
+			<div class="titleArea">
+				<div class="catch">送信日時指定</div>
+			</div>
+			<div class="formArea">
+				<div class="md_table">
+					<table>
+						<tr>
+							<th>予約日時</th>
+							<td>
+								<input type="date" placeholder="日付を選択" value="2024-05-19" class="form--line" style="min-width: 110px;">
+								<span class="md_select form--w10" style="">
+									<select name="" id="" class="form--line" style="min-width: 110px;">
+										<option value="" class="">14:00</option>
+									</select>
+								</span>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--second multiple js_modalX">キャンセル</button>
+				<button class="md_btn multiple js_modalX js_snackBar" data-target="Bar03">予約送信</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Modal -->
+
+<!-- Modal -->
+<div class="md_modal modal01" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="Content">
+			<div class="textArea">
+				<div class="catch">パスワードリセット</div>
+				<p class="copy">
+					パスワードをリセットします。よろしいですか？
+				</p>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--medium md_btn--second multiple js_modalX">キャンセル</button>
+				<button class="md_btn md_btn--medium multiple js_modalX js_snackBar" data-target="Bar02">リセット</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Modal -->
+
+<!-- Modal10 学生詳細 -->
+<div class="md_modal modal-solo-001" style="display: none;"></div>
+<!-- /Modal10 -->
+
+<!-- Modal10 学生詳細 -->
+<div class="md_modal modal-solo-002" style="display: none;"></div>
+<!-- /Modal10 -->
+
+<!-- Modal10 学生詳細 -->
+<div class="md_modal modal-solo-003" style="display: none;"></div>
+<!-- /Modal10 -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar01">
+	<div class="base">
+		<div class="text">設定を更新しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar02">
+	<div class="base">
+		<div class="text">パスワードをリセットしました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar03">
+	<div class="base">
+		<div class="text">メッセージの予約投稿をしました</div>
+		<button class="check" onclick="location.href='messageReserve.html'">確認画面へ</button>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar04">
+	<div class="base">
+		<div class="text">メッセージを送信しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- drawer -->
+<div class="md_drawer drawer-solo-001"></div>
+<!-- /drawer -->
+
+<!-- drawer -->
+<div class="md_drawer drawer-solo-002"></div>
+<!-- /drawer -->
+
+<!-- drawer -->
+<div class="md_drawer drawer-solo-003"></div>
+<!-- /drawer -->
+
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+	<div class="contentWrap">
+
+		<!-- titleArea -->
+		<div class="titleArea">
+			<h2 class="mainTitle">メッセージ</h2>
+		</div>
+		<!-- /titleArea -->
+
+		<!-- md_table -->
+		<div class="listArea">
+			<div class="md_card md_card--studentInfo">
+				<div class="infoArea js_drawerOpen" data-drawer="drawer-solo-001">
+					<div class="imgCell">
+						<img class="dummyImg" src="../imageFile/noImg.jpg" alt="">
+					</div>
+					<div class="textCell">
+						<div class="stuName">
+							<div class="kanji">山本 翔太</div>
+							<div class="kana">ヤマモト　ショウタ</div>
+							<div class="id">/ ID :</div>
+							<div class="num">74210</div>
+						</div>
+						<div class="stuContent js-textTrim">ご連絡ありがとうございます。京都大学 篠田テストアンドロイドと申します。<br>～～～～という点に疑問がございます。ぜひ詳細をお送りいただけますでしょうか？篠田テストアンドロイドと申します。～～～～という点に疑問がございます。ぜひ詳細をお送りいただけますでしょうか？</div>
+					</div>
+				</div>
+				<div class="btnArea">
+					<div class="date">14:00</div>
+					<button class="md_btn md_btn--medium status-new js_drawerOpen" data-drawer="drawer-solo-001">メッセージ</button>
+				</div>
+			</div>
+			<div class="md_card md_card--studentInfo status-read">
+				<div class="infoArea js_drawerOpen" data-drawer="drawer-solo-002">
+					<div class="imgCell">
+						<img class="dummyImg" src="../imageFile/accountImg02.png" alt="">
+					</div>
+					<div class="textCell">
+						<div class="stuName">
+							<div class="kanji">中村 結衣</div>
+							<div class="kana">ナカムラ　ユイ</div>
+							<div class="id">/ ID :</div>
+							<div class="num">329377</div>
+						</div>
+						<div class="stuContent js-textTrim">ご連絡ありがとうございます。京都大学 篠田テストアンドロイドと申します。<br>～～～～という点に疑問がございます。ぜひ詳細をお送りいただけますでしょうか？篠田テストアンドロイドと申します。～～～～という点に疑問がございます。ぜひ詳細をお送りいただけますでしょうか？</div>
+					</div>
+				</div>
+				<div class="btnArea">
+					<div class="date">14:00</div>
+					<div class="alert">
+						<svg id="exMark-mail" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.33 28.33">
+							<path d="M14.17,5.67c.78,0,1.42.63,1.42,1.42v9.92c0,.78-.63,1.42-1.42,1.42s-1.42-.63-1.42-1.42V7.08c0-.78.63-1.42,1.42-1.42Z" style="fill:#f04438; stroke-width:0px;" />
+							<path d="M15.58,21.25c0,.78-.63,1.42-1.42,1.42s-1.42-.63-1.42-1.42.63-1.42,1.42-1.42,1.42.63,1.42,1.42Z" style="fill:#f04438; stroke-width:0px;" />
+							<path d="M28.33,14.17c0,7.82-6.34,14.17-14.17,14.17S0,21.99,0,14.17,6.34,0,14.17,0s14.17,6.34,14.17,14.17ZM25.5,14.17c0,6.26-5.07,11.33-11.33,11.33S2.83,20.43,2.83,14.17,7.91,2.83,14.17,2.83s11.33,5.07,11.33,11.33Z" style="fill:#f04438; fill-rule:evenodd; stroke-width:0px;" />
+						</svg>未返信あり
+					</div>
+					<button class="md_btn md_btn--medium js_drawerOpen" data-drawer="drawer-solo-002">メッセージ</button>
+				</div>
+			</div>
+			<div class="md_card md_card--studentInfo status-read">
+				<div class="infoArea js_drawerOpen" data-drawer="drawer-solo-003">
+					<div class="imgCell">
+						<img class="dummyImg" src="../imageFile/noImg.jpg" alt="">
+					</div>
+					<div class="textCell">
+						<div class="stuName">
+							<div class="kanji">佐藤 大輝</div>
+							<div class="kana">サトウ　ダイキ</div>
+							<div class="id">/ ID :</div>
+							<div class="num">135849</div>
+						</div>
+						<div class="stuContent js-textTrim">ご連絡ありがとうございます。京都大学 篠田テストアンドロイドと申します。<br>～～～～という点に疑問がございます。ぜひ詳細をお送りいただけますでしょうか？篠田テストアンドロイドと申します。～～～～という点に疑問がございます。ぜひ詳細をお送りいただけますでしょうか？</div>
+					</div>
+				</div>
+				<div class="btnArea">
+					<div class="date">7/25</div>
+					<button class="md_btn md_btn--medium js_drawerOpen" data-drawer="drawer-solo-003">メッセージ</button>
+				</div>
+			</div>
+		</div>
+		<!-- /md_table -->
+	</div>
+<!-- Container End --></div><!-- /Container End -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+<script type="text/javascript" src="../common/js/chart.umd.js"></script>
+<script>
+	$(document).ready(function() {
+	
+		// 入力フィールドの内容によってエラートリガーのクラスを制御
+		$('#messageForm').on('input', function() {
+			var messageFormText = $(this).val().trim();
+			if (messageFormText) {
+				$('.errorTrigger').removeClass('js_error').addClass('js_modalOpen');
+			} else {
+				$('.errorTrigger').removeClass('js_modalOpen').addClass('js_error');
+			}
+		});
+	
+		// js_errorをクリックしたときの処理
+		$(document).on('click', '.js_error', function() {
+			$('#messageForm').addClass('md_error');
+			$('.errorMessage').show(); // errorMessageを表示
+		});
+	
+		// js_modalOpenをクリックしたときの処理
+		$(document).on('click', '.js_modalOpen', function(event) {
+			event.preventDefault(); // フォーム送信を防ぐ
+			var modalClass = $(this).attr('data-modal');
+			$('.md_modal').hide(); // すべてのモーダルを隠す
+			$('.md_modal.' + modalClass).show(); // 対象のモーダルを表示
+		});
+	});
+</script>
+
+</body>
+</html>

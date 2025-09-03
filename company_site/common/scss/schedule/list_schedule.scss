@@ -1,0 +1,133 @@
+@charset "utf-8";
+
+/* --------------------------------------------------
+ Import 
+-------------------------------------------------- */
+
+@import "../_default";
+
+
+/* ------------ Size ------------ */
+
+/* Width */
+$w_wrap: 1200px; 
+$w_drawer: 300px; 
+$w_sideMenu: 200px; 
+$w_centeringElement: 700px; 
+$w_btn_big: 150px;
+
+
+/* ------------ Typography ------------ */
+
+/* Font Size */
+$fs_biggest:  32px; 
+$fs_bigger:   24px;  
+$fs_big:      18px;
+$fs_title:    17px;
+$fs_medium:   16px;  
+$fs_small:    14px;  
+$fs_main:     13px;
+$fs_smaller:  11px;  
+$fs_smallest: 10px; 
+
+.tabArea { display: inline-block; margin-bottom: 20px;
+    ul { display: flex; align-items: center; border-radius: 40px; background-color: #ddd; }
+    li a { display: inline-block; border-radius: 40px; background-color: #ddd; padding: 10px 40px; font-size: $fs_main; line-height: 1.35; font-weight: 400;
+        &.is-active { background-color: $col_main; color: #fff; font-weight: 700; }
+    }
+}
+
+.countArea { border: 1px solid #ddd; border-radius: 10px; background-color: #fff; padding: 15px; margin-bottom: 20px; 
+	.sortBtnArea { display: flex; display: flex; align-items: center;
+		.sortBtnCell { position: relative; font-size: $fs_main; line-height: 1.35;
+			.sortBtn { background:#eee; border-radius: 15px; cursor: pointer;
+                &--schedule { min-width: 400px; display: flex; justify-content: space-between; align-items: center; padding-right: 10px; }
+                .default { padding: 5px 15px; font-size: $fs_main; line-height: 1.35; color: #6C6C6C; }
+			}
+			@keyframes showMask {
+				0% { transform: translateY(-10%); opacity: 0; }
+				100% { transform: translateY(0%); opacity: 1; }
+			}
+			@keyframes hideMask {
+				0% { transform: translateY(0%); opacity: 1; }
+				100% {transform: translateY(-10%); opacity: 0; }
+			}
+			.sortInner { position: absolute; top: 30px; right: 0; opacity: 0; border: 1px solid #ddd; background-color: #fff; border-radius: 8px; padding: 0; z-index: 10; 
+				// Innerの幅はJSでsortBtnの幅を取得して合わせています　sortPullDown参照
+				&.show { animation: showMask 0.5s forwards; }
+				&.hide { animation: hideMask 0.5s forwards; }
+				.sortInner--link { display: block; padding: 10px; font-size: $fs_main; line-height: 1.35;cursor: default;
+                    &:hover { background-color: #eee;}
+                }
+			}
+		}
+		
+	}
+}
+
+.titleArea {
+    .subArea { text-align: right; 
+        .btnArea { display: flex; align-items: center;
+            .md_btn--duplication { width: 130px; }
+        }
+        .subTitle { margin-top: 10px; }
+    }
+    &--count { align-items: end; justify-content: left; 
+        .titleSmall { margin-left: 5px; font-size: 13px; color: #667085; }
+        .subText { font-size: 12px; font-weight: 400; color: #667085; }
+    }
+}
+
+.md_table--schedule { overflow: visible;
+    + .md_table { margin-top: 15px;}
+    thead {
+        .head th { border-radius: 0;}
+        .flexArea { display: flex; justify-content: space-between; }
+        .title { font-size: 15px; line-height: 1.35; font-weight: 600; color: $col_black;}
+        .minidata { display: flex; margin-top: 5px; 
+            li { margin-right: 15px; font-size: $fs_main; line-height: 1.35; 
+                a { text-decoration: underline; }
+            }
+        }
+    }
+    tbody {
+        .capacity + .capacity { margin-top: 10px;}
+        tr { 
+            &:last-child {
+                .data { border-bottom: 1px solid #ddd; }
+            }
+        }
+        .openArea { background: #fff; text-align: center; border-bottom: none; border-radius: 0 0 8px 8px; cursor: pointer; 
+            .addText { display: inline-block; position: relative; width: 126px; text-align: center; font-size: 14px; font-weight: bold; color: #767676; 
+                &:after { content: url(/company_site/imageFile/icon_arrow_down.svg); display: inline-block; position: absolute; right: calc(50% - 90px); top: -3px; }
+            }
+            &:hover { filter: brightness(97%); }
+            &.clicked { 
+                .addText { 
+                    &:after { content: url(/company_site/imageFile/icon_arrow_up.svg); }
+                }
+            }
+        }
+        }
+    .scheduleInner {   display: none; }
+    .btnSet { display: flex; align-items: center; justify-content: space-between;
+        .md_btn { width: 90px;}
+        .cmdArea { position: relative;
+            .cmdLink { display: inline-block; padding: 0 10px 0 20px; cursor: pointer;
+                &:hover {opacity: 0.8; }
+                svg { width: 4px; height: 16px; }
+            }
+            .cmdActArea { position: absolute; bottom: 0; left: 28px; border: 1px solid #ddd; border-radius: 8px; background-color: #fff;
+                &.show { display: block; }
+                &.hide { display: none; }
+                .menu { display: inline-block;font-size:$fs_smaller; line-height: 1.75; padding: 5px 10px; white-space: nowrap; cursor: pointer;
+                    + .menu { border-top: 1px solid #ddd;}
+                }
+            }
+        }
+    }
+}
+
+.md_table--dummy { display: none; 
+    &.open { display: block; }
+}

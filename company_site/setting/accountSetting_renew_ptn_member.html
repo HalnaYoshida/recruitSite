@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>担当者情報</title>
+
+<link rel="stylesheet" href="../common/css/setting/form.css"/>
+</head>
+<body>
+
+<!-- Modal01 -->
+<div class="md_modal md_modal--preview modal01" style="display: none;">
+    <button class="bgLayer js_modalX"></button>
+    <div class="modalSet">
+        <div class="headArea">
+            <div class="title">プレビュー</div>
+            <div class="closeBtn">
+                <button class="js_modalX">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.1725 10.186C11.498 10.5114 11.498 11.0391 11.1725 11.3645C10.8471 11.6899 10.3194 11.6899 9.994 11.3645L5.99995 7.3705L2.00601 11.3645C1.68058 11.6899 1.15294 11.69 0.8275 11.3645C0.502061 11.0391 0.502056 10.5114 0.82749 10.186L4.82143 6.192L0.827331 2.19797C0.501891 1.87253 0.501893 1.3449 0.827332 1.01947C1.15277 0.694033 1.68041 0.694031 2.00585 1.01947L5.99993 5.01348L9.99386 1.01948C10.3193 0.694041 10.8469 0.694038 11.1724 1.01947C11.4978 1.34491 11.4978 1.87254 11.1724 2.19798L7.17845 6.19198L11.1725 10.186Z" fill="#858D9D" />
+                </svg>
+                </button>
+            </div>
+        </div>
+        <div class="contentArea">
+            <div class="previewArea">
+              <div class="flame"></div>
+							<iframe src=””></iframe>
+            </div>
+            <div class="help">学生側への表示イメージです。<br>※スマートフォン内をクリックすると自由にスクロールできます。</div>
+        </div>
+        <div class="actionArea">
+            <div class="btnSet">
+                <button class="md_btn md_btn--second js_modalX">閉じる</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal01 -->
+
+<!-- Modal02 -->
+<div class="md_modal md_modal--rich modal02 md_modal--tag" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="title">
+			自動登録タグ追加
+		</div>
+		<div class="contentArea">
+			<ul class="radioArea">
+				<li class="li">
+					<div class="md_toggle">
+						<input type="checkbox" name="" id="check_006">
+						<label for="check_006">大島面談</label>
+					</div>
+				</li>
+				<li class="li">
+					<div class="md_toggle">
+						<input type="checkbox" name="" id="check_007">
+						<label for="check_007">前原面談</label>
+					</div>
+				</li>
+				<li class="li">
+					<div class="md_toggle">
+						<input type="checkbox" name="" id="check_008">
+						<label for="check_008">小笠原面談</label>
+					</div>
+				</li>
+				<li class="li">
+					<div class="md_toggle">
+						<input type="checkbox" name="" id="check_009" checked="">
+						<label for="check_009">エンゲージ</label>
+					</div>
+				</li>
+				<li class="li">
+					<div class="md_toggle">
+						<input type="checkbox" name="" id="check_010">
+						<label for="check_010">遅くまでサンクス！</label>
+					</div>
+				</li>
+				<li class="li">
+					<div class="md_toggle">
+						<input type="checkbox" name="" id="check_011">
+						<label for="check_011">エンジニア志望</label>
+					</div>
+				</li>
+				<li class="li">
+					<div class="md_toggle">
+						<input type="checkbox" name="" id="check_012">
+						<label for="check_012">優秀学生</label>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="actionArea">
+			<button class="md_btn md_btn--second js_modalX">キャンセル</button>
+			<button class="md_btn js_modalX addContent">追加</button>
+		</div>
+	</div>
+</div>
+<!-- /Modal02 -->
+
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+	<div class="contentWrap">
+
+	<!-- titleArea -->
+	<div class="titleArea">
+		<h2 class="mainTitle">担当者情報編集</h2>
+        <div class="subTitle">
+			<span class="must">*</span>
+			の項目は必須です
+		</div>
+	</div>
+	<!-- /titleArea -->
+	
+	<!-- md_table -->
+	<form id="" name="" method="" action="" >
+		<div class="contents">
+			<table class="md_table">
+				<tbody>
+					<tr class="tr tr--main">
+						<th class="th">担当者名<span class="must">*</span></th>
+						<td colspan="3">
+							<input type="text" placeholder="担当者名を入力してください" value="鈴木 健一" class="form--line form--w60">
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th>担当者画像<span class="must">*</span></th>
+						<td colspan="3">
+							<div class="uploadArea">
+								<img src="../imageFile/accountImg01.jpeg" class="img--account" alt="">
+								<button class="md_btn md_btn--second md_btn--sub">ファイルを選択</button>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">メールアドレス<span class="must">*</span></th>
+						<td colspan="3">
+							<input type="text" placeholder="担当者名を入力してください" value="Kenpi_suzuki@en-japan.com" class="form--line form--w60">
+                            <div class="attentionMessage">メールアドレスを変更する場合は、変更後にご送付する確認メールをご確認ください。</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">権限<span class="must">*</span></th>
+						<td style="width: 40%;">
+							<div class="toggleSet">
+								<div class="md_toggle">
+									<input type="radio" name="radio" id="radio_001">
+									<label for="radio_001">管理者</label>
+								</div>
+								<div class="md_toggle">
+									<input type="radio" name="radio" id="radio_002" checked="">
+									<label for="radio_002">メンバー</label>
+								</div>
+							</div>
+						</td>
+						<th class="th">自動登録タグ<br>※３つまで</th>
+						<td>
+							<div class="tagArea">
+								<div class="hideContent">
+									<div class="autoTag">
+										<div class="tagTitle">
+											エンゲージ
+										</div>
+										<button class="deleteArea">
+											<span class="iconImgPart">
+												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+													<path class="st0" d="M939.5,1027.5L512,600L84.5,1027.5l-88-88L424,512L-3.5,84.5l88-88L512,424L939.5-3.5l88,88L600,512  l427.5,427.5L939.5,1027.5z" style="fill:#c2c6ce;"></path>
+												</svg>
+											</span>
+										</button>
+									</div>
+									<div class="autoTag">
+										<div class="tagTitle">
+											エンジニア志望
+										</div>
+										<button class="deleteArea">
+											<span class="iconImgPart">
+												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+													<path class="st0" d="M939.5,1027.5L512,600L84.5,1027.5l-88-88L424,512L-3.5,84.5l88-88L512,424L939.5-3.5l88,88L600,512  l427.5,427.5L939.5,1027.5z" style="fill:#c2c6ce;"></path>
+												</svg>
+											</span>
+										</button>
+									</div>
+								</div>
+								<a class="md_btn md_btn--second md_btn--sub js_modalOpen" data-modal="modal02">タグを選択</a>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th th--big">通知設定</th>
+						<td colspan="3">
+							<ul>
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="check_007">
+										<label for="check_007">自分宛ての新着メッセージの通知をメールで受け取る</label>
+									</div>
+								</li>
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="check_008">
+										<label for="check_008">スカウトリクエストの通知をメールに受け取る</label>
+									</div>
+								</li>
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="check_009">
+										<label for="check_009">未対応メッセージ通知をメールで受け取る</label>
+									</div>
+								</li>
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="check_010">
+										<label for="check_010">新着学生通知をメールで受け取る</label>
+									</div>
+								</li>
+							</ul>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th th--big">私のルーツ<span class="must">*</span></th>
+						<td colspan="3">
+							<textarea name="" id="" rows="4" class="form--line form--w100" placeholder="" maxlength="300" data-count="md_counter--sample1" data-limit="300"></textarea>
+							<div class="md_counter md_counter--sample1"><em class="num">0</em><span class="holder">300文字</span></div>
+							<div class="uploadArea">
+								<img src="../imageFile/noImg.jpg" class="img" alt="" width="190" height="107">
+								<div class="actionCell">
+									<button class="md_btn md_btn--second md_btn--sub">ファイルを選択</button>
+									<span class="uploadAttention">形式はpng jpg　横幅が800ピクセル以上が推奨</span>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th th--big">キャリア<span class="must">*</span></th>
+						<td colspan="3">
+							<textarea name="" id="" rows="4" class="form--line form--w100" placeholder="" maxlength="300" data-count="md_counter--sample2" data-limit="300"></textarea>
+							<div class="md_counter md_counter--sample2"><em class="num">0</em><span class="holder">300文字</span></div>
+							<div class="uploadArea">
+								<img src="../imageFile/noImg.jpg" class="img" alt="" width="190" height="107">
+								<div class="actionCell">
+									<button class="md_btn md_btn--second md_btn--sub">ファイルを選択</button>
+									<span class="uploadAttention">形式はpng jpg　横幅が800ピクセル以上が推奨</span>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th th--big">将来像<span class="must">*</span></th>
+						<td colspan="3">
+							<textarea name="" id="" rows="4" class="form--line form--w100" placeholder="" maxlength="300" data-count="md_counter--sample3" data-limit="300"></textarea>
+							<div class="md_counter md_counter--sample3"><em class="num">0</em><span class="holder">300文字</span></div>
+							<div class="uploadArea">
+								<img src="../imageFile/noImg.jpg" class="img" alt="" width="190" height="107">
+								<div class="actionCell">
+									<button class="md_btn md_btn--second md_btn--sub">ファイルを選択</button>
+									<span class="uploadAttention">形式はpng jpg　横幅が800ピクセル以上が推奨</span>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</form>
+	</div>
+
+	<!-- md_fixBar -->
+	<div class="md_fixBar js_fixBarHide">
+		<a href="accountSetting.html?snackBar01" class="md_btn">保存</a>
+	</div>
+	<!-- /md_fixBar -->
+<!-- Container End --></div><!-- /Container End -->
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+	<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.js_switchChange').change(function(){
+      var isChecked = $(this).is(':checked');
+      var label = $('label[for="' + $(this).attr('id') + '"]');
+      var text = isChecked ? label.data('on') : label.data('off');
+      label.text(text);
+    });
+
+    // 初期状態を設定
+    $('.js_switchChange').each(function(){
+      var initialChecked = $(this).is(':checked');
+      var label = $('label[for="' + $(this).attr('id') + '"]');
+      var initialText = initialChecked ? label.data('on') : label.data('off');
+      label.text(initialText);
+    });
+  });
+</script>
+<script>
+	$('.addContent').click(function() {
+        // .hideContent に show クラスを追加
+        $('.hideContent').addClass('show');
+    });
+</script>
+</body>
+</html>

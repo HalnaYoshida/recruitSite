@@ -1,0 +1,528 @@
+@charset "utf-8";
+
+/* --------------------------------------------------
+ Import 
+-------------------------------------------------- */
+
+@import "../_default";  
+
+body {background-color: $col_bg_buleGray; }
+.container { padding-bottom: 100px;}
+
+
+.contentArea {  
+}
+
+
+
+// スカウト詳細
+.scoutDesc { background-color: #fff;
+    .titleContent { position: relative; padding: 16px;
+        .dateSet {  display: flex; justify-content: space-between;
+            .deadline { font-size: 10px; color: $col_txt_blueGray;
+                .num { margin: 0 2px; font-size: 14px; font-weight: bold; color: $col_red; }
+            }
+            .date { font-size: 10px; color: $col_txt_blueGray;} 
+            + .detailSet{ margin-top: 8px;}
+         }
+         .detailSet {  position: relative;
+            .catch { font-size: 14px; font-weight: bold; line-height: $lh_medium }
+            .md_benefitsLabel { margin-top: 8px;}
+            .recruiter { display: flex; align-items: center; gap: 8px; margin-top: 12px;
+                .img {
+                     width: 28px; height: 28px; border-radius: 50%; overflow: hidden;
+                }
+                .name { font-size: 10px; text-decoration: underline; color: $col_txt_blueGray; }
+            }
+        }
+        .openLink { position: absolute; right: 8px; bottom: 8px; padding: 8px;
+            .md_textLink { display: flex; gap: 3px;;
+                .iconImgPart { top: -1px; width: 12px; height: 5px;
+                    svg {
+                        path { fill: $col_sub;}
+                    }
+                 }
+
+            }
+        }
+    }
+    .bodyContent { padding: 16px 0 ; margin: 0 16px; border-top: 1px solid $col_bg_blue;
+        .bodyArea {
+            .body { font-size: 14px;  line-height: $lh_big;}
+        }
+        .scheduleArea { padding-top: 16px;
+        .descSet {
+            .item { font-size: 16px; font-weight: bold;  }
+            .data { margin-top: 10px; font-size: 13px; line-height: $lh_medium;
+                //開催日程
+                .scheduleList {
+                    .schedule { padding: 12px; border-bottom: 1px solid $col_border;
+                        .date { font-size: 14px; font-weight: bold;}
+                        .sub { margin-top: 8px;
+                            .info { display: flex; font-size: 11px; color: $col_sub;
+                                .label,.detail { line-height: $lh_small;}
+                                .label { white-space: nowrap;
+                                    &::after { content: "：";}
+                                }
+                                + .info { margin-top: 2px;}
+                                .md_textLink { font-size: 11px;
+                                    .iconImgPart { height: 10px; width: 11px; margin-left: 4px;}
+                                }
+                            }
+                        }
+                        &:first-child { border-top: 1px solid $col_border;}
+                    }
+                }
+                
+            }
+        }
+        }
+        .recruitmentArea { margin-top: 12px;
+            .recruitmentSet {
+                .recruitment { display: flex; align-items: center; gap: 8px; padding: 12px; border: 1px solid $col_border_dark; border-radius: 3px;
+                    .textArea { text-align: left; 
+                        .title { font-size: 12px; font-weight: bold; line-height: $lh_small; @include lineClamp(3)}
+                    }
+                    .linkArea {}
+                    + .recruitment { margin-top: 8px;}
+                }
+            }
+         }
+        .btnArea { margin-top: 24px; text-align: center;
+            .btnSet { 
+                .md_btn {
+                    + .md_btn { margin-top: 12px;} 
+                }
+                .text {  position: relative; margin-top: 4px; padding-left: 1em; font-size: 10px; text-align: left; color: $col_sub; line-height: $lh_small;
+                    &::before { content: "※"; position: absolute; left: 0;}
+                }
+                // + .deadlineSet { margin-top: 8px;}
+            }
+            .deadlineSet { margin-bottom: 4px;
+                .deadline { font-size: 11px; color: $col_txt_blueGray;
+                    .num { margin: 0 2px; font-size: 14px; font-weight: bold; color: $col_red; }
+                }
+                // + .btnSet { margin-top: 4px;}
+            }
+        }
+    }
+    &--end { background-color: $col_bg_gray ;}
+
+    + .scoutDesc  { margin-top: 8px;}
+
+    // For PC
+	@media only screen and (min-width: $w_break_tablet) { 
+        .titleContent { padding: 24px;
+            .dateSet { 
+                .deadline { font-size: 12px;
+                    .num { margin: 0 2px; font-size: 16px;}
+                }
+                .date { font-size: 12px;} 
+                + .detailSet{ margin-top: 8px;}
+             }
+             .detailSet { 
+                .catch { font-size: 18px;}
+                .md_benefitsLabel { margin-top: 8px;}
+                .recruiter { gap: 12px; margin-top: 12px;
+                    .img {
+                         width: 36px; height: 36px;
+                    }
+                    .name { font-size: 14px; }
+                }
+            }
+            .openLink {padding: 16px;
+                .md_textLink { gap: 5px;;
+                    .iconImgPart { top: -1px; width: 12px; height: 6px;
+                        svg {
+                            path { fill: $col_sub;}
+                        }
+                     }
+    
+                }
+            }
+        }
+        .bodyContent { padding: 24px 0 ; margin: 0 24px;
+            .bodyArea {
+                .body { font-size: 16px; }
+            }
+            .scheduleArea { padding-top: 24px;
+            .descSet {
+                .item { font-size: 16px; font-weight: bold;  }
+                .data { margin-top: 10px; font-size: 13px; 
+                    //開催日程
+                    .scheduleList {
+                        .schedule { padding: 16px; 
+                            .date { font-size: 16px;}
+                            .sub { margin-top: 10px;
+                                .info { font-size: 13px; 
+                                    + .info { margin-top: 6px;}
+                                    .md_textLink { font-size: 13px;
+                                        .iconImgPart { height: 12px; width: 14px; margin-left: 4px;}
+                                    }
+                                }
+                            }
+                        }
+    
+                    }
+                    
+                }
+            }
+            }
+            .recruitmentArea { margin-top: 12px;
+                .recruitmentSet {
+                    .recruitment { display: flex; align-items: center; gap: 8px; padding: 12px; border: 1px solid $col_border_dark; border-radius: 3px;
+                        .textArea { text-align: left;
+                            .title { font-size: 14px; font-weight: bold; line-height: $lh_small; @include lineClamp(3)}
+                        }
+                        .linkArea { }
+                        + .recruitment { margin-top: 10px;}
+                    }
+                }
+             }
+             .btnArea { margin-top: 32px; text-align: center;
+                .btnSet { 
+                    .md_btn {
+                        + .md_btn { margin-top: 12px;} 
+                    }
+                    .text { margin-top: 4px; padding-left: 1em; font-size: 12px;
+                        &::before { content: "※"; position: absolute; left: 0;}
+                    }
+                    // + .deadlineSet { margin-top: 8px;}
+                }
+                .deadlineSet { margin-bottom: 8px;
+                    .deadline { font-size: 13px;
+                        .num { margin: 0 4px; font-size: 16px;}
+                    }
+                    // + .btnSet { margin-top: 4px;}
+                }
+            }
+        }
+        + .scoutDesc  { margin-top: 16px;}
+	}
+}
+
+
+//フロートボタン
+.md_float.md_float--keep {
+    .action { 
+        input[type="checkbox"] {display: none; 
+        + label { display: grid; place-content: center; height: 100%; cursor: pointer;}
+        }
+    }
+}
+
+//保存済みボタンの切り替え
+.js_toggleBtn {
+    input[type="checkbox"] {display: none; 
+        + label {
+         .on { display: none;}
+         .off { display: block;}
+         }
+     }
+     input:checked + label {
+        .on { display: block !important;}
+        .off { display: none !important;} 
+    }   
+}
+
+
+//募集詳細
+#jobDesc { padding: 16px 16px 96px;
+    &.jobDesc { 
+        .titleArea { margin-bottom: 16px;
+            .label { display: inline-block; padding: 4px 8px; font-size: 10px; font-weight: bold; color: $col_main; background-color: rgba($col_main, .13); border-radius: 20px;
+                + .title { margin-top: 8px;}
+            }
+            .title { font-size: 16px; font-weight: bold; line-height: $lh_medium;}
+        }
+        .descArea { padding-top: 16px; border-top: 1px solid $col_border;
+            .descSet { 
+                .item { font-size: 16px; font-weight: bold; line-height: $lh_small; }
+                .data { margin-top: 8px; font-size: 14px; line-height: $lh_medium;
+                    //開催日程
+                    .scheduleList {
+                        .schedule { padding: 12px; border-bottom: 1px solid $col_border;
+                            .date { font-size: 14px; font-weight: bold;}
+                            .sub { margin-top: 8px;
+                                .info { display: flex; font-size: 11px; color: $col_sub;
+                                    .label,.detail { line-height: $lh_small;}
+                                    .label { white-space: nowrap;
+                                        &::after { content: "：";}
+                                    }
+                                    + .info { margin-top: 2px;}
+                                    .md_textLink { font-size: 11px;
+                                        .iconImgPart { height: 10px; width: 11px; margin-left: 4px;}
+                                    }
+                                }
+                            }
+                            &:first-child { border-top: 1px solid $col_border;}
+                        }
+                    }
+                }
+                + .descSet { margin-top: 24px;}
+            }
+        }
+        .btnArea { margin-top: 24px; text-align: center;
+            .btnSet { 
+                + .deadlineSet { margin-top: 8px;}
+            }
+            .deadlineSet {
+                .deadline { font-size: 11px; color: $col_txt_blueGray;
+                    .num { margin: 0 2px; font-size: 14px; font-weight: bold; color: $col_red; }
+                }
+            }
+        }
+    }
+    @media only screen and (min-width: $w_break_tablet) { padding: 32px 32px 114px;
+        &.jobDesc { 
+            .titleArea { margin-bottom: 20px;
+                .label { padding: 6px 10px; font-size: 12px; border-radius: 20px;
+                    + .title { margin-top: 12px;}
+                }
+                .title { font-size: 18px; }
+            }
+            .descArea { padding-top: 20px; 
+                .descSet { 
+                    .item { font-size: 18px; }
+                    .data { margin-top: 12px; font-size: 16px; 
+                        //開催日程
+                        .scheduleList {
+                            .schedule { padding: 16px; 
+                                .date { font-size: 16px;}
+                                .sub { margin-top: 10px;
+                                    .info { font-size: 13px; 
+                                        + .info { margin-top: 6px;}
+                                        .md_textLink { font-size: 13px;
+                                            .iconImgPart { height: 12px; width: 14px; margin-left: 4px;}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    + .descSet { margin-top: 28px;}
+                }
+            }
+            .btnArea { margin-top: 24px; text-align: center;
+                .btnSet { 
+                    + .deadlineSet { margin-top: 10px;}
+                }
+                .deadlineSet {
+                    .deadline { font-size: 13px; 
+                        .num { margin: 0 2px; font-size: 16px; }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//モーダル内日程選択フォーム
+.formSchedule {
+    .dataArea{
+        .item { position: relative; padding-left: 8px; font-size: 12px; font-weight: bold;
+            &::before { content: ""; position: absolute; left: 0; display: inline-block; width: 3px; height: 10px; background-color: $col_main;}
+        }
+        .data { margin-top: 4px; font-size: 11px; line-height: $lh_small; @include lineClamp(2)}
+        + .formList { margin-top: 16px;}
+    }
+    .formList {
+        .form { display: flex; flex-direction: column;  border: 1px solid $col_border_form; border-radius: 3px;
+            
+            + .form { margin-top: 8px;}
+        }
+        &--schedule {
+            .form  {
+                .topArea {  width: 100%; padding-left: 12px;
+                    input[type=radio] + label { width: 100%; height: 48px; line-height: 48px; font-size: 14px; font-weight: bold;}
+                }
+                .bottomArea { display: flex; justify-content: space-between; align-items: center; gap: 8px; width: 100%; padding: 8px; background-color: $col_bg_gray;
+                    .place { font-size: 11px; color: $col_sub; @include lineClamp(1) }
+                    .md_textLink { font-size: 11px; white-space: nowrap;
+                       .iconImgPart { height: 10px; margin-left: 4px;}
+                    }
+                }
+            }
+
+        }
+        &--recruitment {
+            .form {
+                .recruitment {  padding-left: 12px;
+                    input[type=radio] + label { width: 100%; height: 100%; padding: 16px 16px 16px 28px;     font-size: 14px; font-weight: bold; line-height: $lh_small;
+                        .sub { display: block; margin-top: 4px; font-size: 11px; line-height: $lh_small; color: $col_sub; @include lineClamp(3)}
+                    }
+                   
+                    
+    
+                }
+            }
+                
+
+        }
+    }
+    @media only screen and (min-width: $w_break_tablet) { 
+        .dataArea{
+            .item { padding-left: 10px; font-size: 14px;
+                &::before { width: 3px; height: 10px; }
+            }
+            .data { margin-top: 6px; font-size: 13px; }
+            + .formList { margin-top: 16px;}
+        }
+        .formList {
+            .form {               
+                + .form { margin-top: 8px;}
+            }
+            &--schedule {
+                .form  {
+                    .topArea { padding-left: 12px;
+                        input[type=radio] + label { height: 48px; font-size: 16px; }
+                    }
+                    .bottomArea { padding: 12px; 
+                        .place { font-size: 13px;}
+                        .md_textLink { font-size: 13px;
+                           .iconImgPart { height: 12px; margin-left: 6px;}
+                        }
+                    }
+                }
+    
+            }
+            &--recruitment {
+                .form {
+                    .recruitment {  padding-left: 12px;
+                        input[type=radio] + label { width: 100%; height: 100%; padding: 16px 16px 16px 28px;     font-size: 14px; font-weight: bold; line-height: $lh_small;
+                            .sub { display: block; margin-top: 4px; font-size: 11px; line-height: $lh_small; color: $col_sub; @include lineClamp(3)}
+                        }
+                       
+                        
+        
+                    }
+                }
+                    
+    
+            }
+        } 
+    }
+}
+
+//企業情報・担当情報
+.md_companyInformation { 
+    .mainContent {padding: 16px;
+        .infoSet {
+            .title { font-size: 16px; font-weight: bold;
+                + .image { margin-top: 8px;}
+                + .info { margin-top: 8px;}
+            }
+            .image {
+                + .info { margin-top: 8px;}
+            }
+            .info { font-size: 14px; line-height: $lh_medium; 
+                + .info { margin-top: 24px;}
+                
+            }
+            + .infoSet { margin-top: 32px;}
+        }
+    }
+    .reviewsContent { margin-top: 16px; padding: 32px 0 32px; border-top: 1px solid $col_border; 
+        .titleArea { padding:0 16px;
+            .title { font-size: 16px; font-weight: bold;}
+        }
+        .reviewsList { margin-top: 24px; padding: 0 16px ;
+            .reviews {
+                .item {
+                    .label { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: bold;
+                        .iconImgPart {top: 1px; height: 16px;}
+                    }
+                    .sub { display: inline-block; margin-top: 4px; font-size: 11px; color: $col_sub; line-height: $lh_small;}
+                }
+                .data { margin-top: 8px; font-size: 14px; line-height: $lh_medium;}
+                +  .reviews { margin-top: 24px;}
+            }
+        }
+        .companyComment { margin: 24px 16px 0; padding: 16px; border: 1px solid $col_border; border-radius: 3px;
+            .item { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: bold;
+                .iconImgPart { height: 15px;}
+             }
+            .data {  margin-top: 8px; font-size: 14px; line-height: $lh_medium;}
+        }
+    }
+    
+    //担当者情報
+    &--recruiter { border-bottom: 1px solid $col_border;
+        .recruiter { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 12px 16px;
+            .nameSet { display: flex;align-items: center; 
+                .imageCell {  display: grid;  place-content: center;width: 40px; height: 40px; background-color: #fff; border: 2px solid $col_bg_blue; border-radius: 50%;overflow: hidden; 
+                }
+                .name { margin-left: 12px; font-size: 13px; font-weight: bold;}
+            }
+            .arrow { @include transition; 
+                &.open { transform: rotate(180deg);}
+            }
+        }
+    }
+    // For PC
+	@media only screen and (min-width: $w_break_tablet) { 
+        .mainContent {padding: 32px;
+            .infoSet {
+                .title { font-size: 18px; 
+                    + .image { margin-top: 12px;}
+                    + .info { margin-top: 12px;}
+                }
+                .image {
+                    + .info { margin-top: 12px;}
+                }
+                .info { font-size: 16px; 
+                    + .info { margin-top: 32px;}
+                    
+                }
+                + .infoSet { margin-top: 32px;}
+            }
+        }
+        .reviewsContent {
+            .titleArea { padding:0 24px;
+                .title { font-size: 18px;}
+            }
+            .reviewsList { margin-top: 32px; padding: 0 24px ;
+                .reviews {
+                    .item {
+                        .label { gap: 8px; font-size: 16px;
+                            .iconImgPart { height: 18px;}
+                        }
+                        .sub { margin-top: 8px; font-size: 13px; }
+                    }
+                    .data { margin-top: 12px; font-size: 16px; }
+                    +  .reviews { margin-top: 40px;}
+                }
+            } 
+            .companyComment { margin: 32px 24px 0; padding: 24px; 
+                .item {gap: 8px; font-size: 16px; 
+                    .iconImgPart { height: 18px;}
+                 }
+                .data {  margin-top: 12px; font-size: 16px; }
+            }
+        } 
+        //担当者情報
+        &--recruiter {
+            .recruiter { width: 100%; padding: 12px 16px;
+                .nameSet { 
+                    .imageCell { width: 45px; height: 45px; 
+                    }
+                    .name { margin-left: 16px; font-size: 16px; }
+                }
+                .arrow { @include transition; 
+                    &.open { transform: rotate(180deg);}
+                }
+            }
+        }
+    }
+}
+
+.md_fixBar.decline {padding: 20px 16px; background-color: $col_bg_gray;
+    .textSet {
+        .text { font-size: 14px;}
+    }
+    @media only screen and (min-width: $w_break_tablet) { padding: 24px 20px;
+        .textSet {
+            .text { font-size: 16px;}
+        }
+    }
+}

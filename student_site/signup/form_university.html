@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>新規会員登録 | iroots</title>
+<link rel="stylesheet" href="../common/css/signup/form.css"/>
+</head>
+<body>
+
+
+<!-- header -->   	
+<header class="md_header md_header--signup">
+	<div class="logo"> <a href="#"> <img src="../imageFile/logo_white.svg" alt=""> </a> </div>
+</header>
+<!-- /header -->
+
+
+<div class="container container--signup">
+	<div class="navWrap">
+		<div class="navArea">
+			<ul class="stepBar stepBar--3step">
+				<li class="step active">基本情報</li>
+				<li class="step active">大学情報</li>
+				<li class="step">登録完了</li>
+			</ul>
+		</div>
+	</div>
+	<div class="contentWrap">
+		<div class="formArea">
+			<div class="formSet">
+				<div class="title">学校名<div class="md_label md_label--must">必須</div></div>
+				<div class="form">
+					<input type="text" placeholder="学校名を入力" class="form--line form--w100 js_suggestOpen js_dataInput">
+					<ul class="md_list md_list--suggest" style="display: none;">
+						<li class="row">
+							<button class="list js_suggestInput js_suggestX">
+								<div class="txtCell">
+									<div class="txtSet">
+										<div class="main">青山学院大学</div>
+									</div>
+								</div>
+							</button>
+						</li>
+						<li class="row">
+							<button class="list js_suggestInput js_suggestX">
+								<div class="txtCell">
+									<div class="txtSet">
+										<div class="main">有明教育芸術短期大</div>
+									</div>
+								</div>
+							</button>
+						</li>
+						<li class="row">
+							<button class="list js_suggestInput js_suggestX">
+								<div class="txtCell">
+									<div class="txtSet">
+										<div class="main">青山学院女子短期大</div>
+									</div>
+								</div>
+							</button>
+						</li>
+						<li class="row">
+							<button class="list js_suggestInput js_suggestX">
+								<div class="txtCell">
+									<div class="txtSet">
+										<div class="main">亜細亜大学/亜細亜大学短期大学</div>
+									</div>
+								</div>
+							</button>
+						</li>
+						<li class="row">
+							<button class="list js_suggestInput js_suggestX">
+								<div class="txtCell">
+									<div class="txtSet">
+										<div class="main">愛国学園大</div>
+									</div>
+								</div>
+							</button>
+						</li>
+						<li class="row">
+							<button class="list js_suggestInput js_suggestX">
+								<div class="txtCell">
+									<div class="txtSet">
+										<div class="main">秋草学園短期大</div>
+									</div>
+								</div>
+							</button>
+						</li>
+					</ul>
+					<div class="md_toggle abroadCheck">
+						<input type="checkbox" name="" value="" id="abroad">
+						<label for="abroad">海外大学</label>
+					</div>
+					<p class="errorMessage" style="display: none;"><span class="iconImgPart">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 150 1100 1100"><path d="m993.554 865.69-.267-.267-364.968-609.718c0-.267-.267-.267-.267-.544-23.986-38.818-65.23-61.994-110.515-61.994s-86.524 23.182-110.246 61.727c-.267.267-.544.544-.544 1.078L41.509 865.69s0 .267-.267.267c-11.321 19.409-17.52 42.051-17.52 64.96 0 70.622 57.416 128.574 127.767 129.382h731.833c70.622-.811 128.036-58.76 128.036-129.382 0-22.909-6.199-45.551-17.787-65.23zM882.5 974.05H152.564c-23.453-.267-42.318-19.676-42.318-43.129 0-7.544 1.889-14.821 5.66-21.298l364.968-609.448.267-.267c8.088-12.665 21.564-20.22 36.661-20.22s28.841 7.821 36.929 20.753L919.159 909.35c3.777 6.466 5.66 14.021 5.66 21.564.267 23.453-18.865 42.86-42.318 43.129zM517.53 456.516c-23.72 0-43.129 19.409-43.129 43.129v172.51c0 23.72 19.409 43.129 43.129 43.129s43.129-19.409 43.129-43.129v-172.51c0-23.72-19.409-43.129-43.129-43.129zm0 345.023c-11.321 0-22.375 4.577-30.461 12.665s-12.665 19.142-12.665 30.461 4.577 22.375 12.665 30.461c8.088 8.088 19.142 12.665 30.461 12.665s22.375-4.577 30.461-12.665c8.088-8.088 12.665-19.142 12.665-30.461s-4.577-22.375-12.665-30.461c-8.088-8.088-19.142-12.665-30.461-12.665z" fill="#f04438"></path></svg>
+					</span>学校名を入力してください</p>
+				</div>
+			</div>
+			<div class="formSet">
+				<div class="title">学部/研究科<div class="md_label md_label--must">必須</div></div>
+				<div class="form">
+					<input type="text" placeholder="例 ）経済学部、理工学研究科" class="form--line form--w100 js_suggestOpen js_dataInput">
+					<ul class="md_list md_list--suggest" style="display: none;">
+						<li class="row">
+							<button class="list js_suggestInput js_suggestX">
+								<div class="txtCell">
+									<div class="txtSet">
+										<div class="main">コミュニティ人間科学部</div>
+									</div>
+								</div>
+							</button>
+						</li>
+						<li class="row">
+							<button class="list js_suggestInput js_suggestX">
+								<div class="txtCell">
+									<div class="txtSet">
+										<div class="main">国際政治経済学部</div>
+									</div>
+								</div>
+							</button>
+						</li>
+						<li class="row">
+							<button class="list js_suggestInput js_suggestX">
+								<div class="txtCell">
+									<div class="txtSet">
+										<div class="main">地球社会共生学部</div>
+									</div>
+								</div>
+							</button>
+						</li>
+						<li class="row">
+							<button class="list js_suggestInput js_suggestX">
+								<div class="txtCell">
+									<div class="txtSet">
+										<div class="main">教育人間科学部</div>
+									</div>
+								</div>
+							</button>
+						</li>
+						<li class="row">
+							<button class="list js_suggestInput js_suggestX">
+								<div class="txtCell">
+									<div class="txtSet">
+										<div class="main">文学部</div>
+									</div>
+								</div>
+							</button>
+						</li>
+						<li class="row">
+							<button class="list js_suggestInput js_suggestX">
+								<div class="txtCell">
+									<div class="txtSet">
+										<div class="main">法学部</div>
+									</div>
+								</div>
+							</button>
+						</li>
+						<li class="row">
+							<button class="list js_suggestInput js_suggestX">
+								<div class="txtCell">
+									<div class="txtSet">
+										<div class="main">理工学部</div>
+									</div>
+								</div>
+							</button>
+						</li>
+						<li class="row">
+							<button class="list js_suggestInput js_suggestX">
+								<div class="txtCell">
+									<div class="txtSet">
+										<div class="main">社会情報学部</div>
+									</div>
+								</div>
+							</button>
+						</li>
+					</ul>
+					<p class="errorMessage" style="display: none;"><span class="iconImgPart">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 150 1100 1100"><path d="m993.554 865.69-.267-.267-364.968-609.718c0-.267-.267-.267-.267-.544-23.986-38.818-65.23-61.994-110.515-61.994s-86.524 23.182-110.246 61.727c-.267.267-.544.544-.544 1.078L41.509 865.69s0 .267-.267.267c-11.321 19.409-17.52 42.051-17.52 64.96 0 70.622 57.416 128.574 127.767 129.382h731.833c70.622-.811 128.036-58.76 128.036-129.382 0-22.909-6.199-45.551-17.787-65.23zM882.5 974.05H152.564c-23.453-.267-42.318-19.676-42.318-43.129 0-7.544 1.889-14.821 5.66-21.298l364.968-609.448.267-.267c8.088-12.665 21.564-20.22 36.661-20.22s28.841 7.821 36.929 20.753L919.159 909.35c3.777 6.466 5.66 14.021 5.66 21.564.267 23.453-18.865 42.86-42.318 43.129zM517.53 456.516c-23.72 0-43.129 19.409-43.129 43.129v172.51c0 23.72 19.409 43.129 43.129 43.129s43.129-19.409 43.129-43.129v-172.51c0-23.72-19.409-43.129-43.129-43.129zm0 345.023c-11.321 0-22.375 4.577-30.461 12.665s-12.665 19.142-12.665 30.461 4.577 22.375 12.665 30.461c8.088 8.088 19.142 12.665 30.461 12.665s22.375-4.577 30.461-12.665c8.088-8.088 12.665-19.142 12.665-30.461s-4.577-22.375-12.665-30.461c-8.088-8.088-19.142-12.665-30.461-12.665z" fill="#f04438"></path></svg>
+					</span>学部/研究科を入力してください</p>
+				</div>		
+				<div class="form">
+					<span class="md_select form--w100">
+						<select name="" id="" class="form--line">
+							<option value="">文理区分を選択してください</option>
+							<option value="">文系</option>
+							<option value="">理系</option>
+						</select>
+					</span>	
+					<p class="errorMessage" style="display: none;"><span class="iconImgPart">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 150 1100 1100"><path d="m993.554 865.69-.267-.267-364.968-609.718c0-.267-.267-.267-.267-.544-23.986-38.818-65.23-61.994-110.515-61.994s-86.524 23.182-110.246 61.727c-.267.267-.544.544-.544 1.078L41.509 865.69s0 .267-.267.267c-11.321 19.409-17.52 42.051-17.52 64.96 0 70.622 57.416 128.574 127.767 129.382h731.833c70.622-.811 128.036-58.76 128.036-129.382 0-22.909-6.199-45.551-17.787-65.23zM882.5 974.05H152.564c-23.453-.267-42.318-19.676-42.318-43.129 0-7.544 1.889-14.821 5.66-21.298l364.968-609.448.267-.267c8.088-12.665 21.564-20.22 36.661-20.22s28.841 7.821 36.929 20.753L919.159 909.35c3.777 6.466 5.66 14.021 5.66 21.564.267 23.453-18.865 42.86-42.318 43.129zM517.53 456.516c-23.72 0-43.129 19.409-43.129 43.129v172.51c0 23.72 19.409 43.129 43.129 43.129s43.129-19.409 43.129-43.129v-172.51c0-23.72-19.409-43.129-43.129-43.129zm0 345.023c-11.321 0-22.375 4.577-30.461 12.665s-12.665 19.142-12.665 30.461 4.577 22.375 12.665 30.461c8.088 8.088 19.142 12.665 30.461 12.665s22.375-4.577 30.461-12.665c8.088-8.088 12.665-19.142 12.665-30.461s-4.577-22.375-12.665-30.461c-8.088-8.088-19.142-12.665-30.461-12.665z" fill="#f04438"></path></svg>
+					</span>文理区分を選択してください</p>
+				</div>
+				<div class="form">
+					<span class="md_select form--w100">
+						<select name="" id="" class="form--line">
+							<option value="">学科系統を選択してください</option>
+							<option value="">法学・政策系</option>
+							<option value="">経済・経営・商学系</option>
+							<option value="">社会・環境情報系</option>
+							<option value="">外国語・国際文化系</option>
+							<option value="">人文系</option>
+							<option value="">教育系</option>
+							<option value="">生活科学系</option>
+							<option value="">宗教・神学系</option>
+							<option value="">医療・保健系</option>
+							<option value="">芸術・音楽系</option>
+							<option value="">体育・スポーツ系</option>
+							<option value="">機械系</option>
+							<option value="">数学系</option>
+							<option value="">電気・電子系</option>
+							<option value="">情報工学系</option>
+							<option value="">建築・土木系</option>
+							<option value="">生物・生命科学系</option>
+							<option value="">化学・物質工学系</option>
+							<option value="">資源・地球環境系</option>
+							<option value="">農業・農学系</option>
+							<option value="">水産系</option>
+							<option value="">畜産・酪農系</option>
+							<option value="">薬学系</option>
+							<option value="">商船系</option>
+							<option value="">医学・歯学系</option>
+							<option value="">獣医系</option>
+							<option value="">衛生医療・介護系</option>
+							<option value="">科学・物質工学系</option>
+							<option value="">その他文系</option>
+							<option value="">その他理系</option>
+						</select>
+					</span>	
+					<p class="errorMessage" style="display: none;"><span class="iconImgPart">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 150 1100 1100"><path d="m993.554 865.69-.267-.267-364.968-609.718c0-.267-.267-.267-.267-.544-23.986-38.818-65.23-61.994-110.515-61.994s-86.524 23.182-110.246 61.727c-.267.267-.544.544-.544 1.078L41.509 865.69s0 .267-.267.267c-11.321 19.409-17.52 42.051-17.52 64.96 0 70.622 57.416 128.574 127.767 129.382h731.833c70.622-.811 128.036-58.76 128.036-129.382 0-22.909-6.199-45.551-17.787-65.23zM882.5 974.05H152.564c-23.453-.267-42.318-19.676-42.318-43.129 0-7.544 1.889-14.821 5.66-21.298l364.968-609.448.267-.267c8.088-12.665 21.564-20.22 36.661-20.22s28.841 7.821 36.929 20.753L919.159 909.35c3.777 6.466 5.66 14.021 5.66 21.564.267 23.453-18.865 42.86-42.318 43.129zM517.53 456.516c-23.72 0-43.129 19.409-43.129 43.129v172.51c0 23.72 19.409 43.129 43.129 43.129s43.129-19.409 43.129-43.129v-172.51c0-23.72-19.409-43.129-43.129-43.129zm0 345.023c-11.321 0-22.375 4.577-30.461 12.665s-12.665 19.142-12.665 30.461 4.577 22.375 12.665 30.461c8.088 8.088 19.142 12.665 30.461 12.665s22.375-4.577 30.461-12.665c8.088-8.088 12.665-19.142 12.665-30.461s-4.577-22.375-12.665-30.461c-8.088-8.088-19.142-12.665-30.461-12.665z" fill="#f04438"></path></svg>
+					</span>学科系統を選択してください</p>
+				</div>
+			</div>
+			<div class="formSet formSet--graduation">
+				<div class="title">卒業年<div class="md_label md_label--must">必須</div></div>
+				<div class="form column">
+					<div class="columnWrap">
+						<span class="md_select form--w100">
+							<select name="" id="" class="form--line">
+								<option value="">卒年</option>
+								<option value="">2024</option>
+								<option value="">2025</option>
+								<option value="">2026</option>
+								<option value="">2027</option>
+								<option value="">2028</option>
+								<option value="">2029</option>
+								<option value="">2030</option>
+								<option value="">2031</option>
+							</select>
+						</span>	
+						<p class="errorMessage" style="display: none;"><span class="iconImgPart">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 150 1100 1100"><path d="m993.554 865.69-.267-.267-364.968-609.718c0-.267-.267-.267-.267-.544-23.986-38.818-65.23-61.994-110.515-61.994s-86.524 23.182-110.246 61.727c-.267.267-.544.544-.544 1.078L41.509 865.69s0 .267-.267.267c-11.321 19.409-17.52 42.051-17.52 64.96 0 70.622 57.416 128.574 127.767 129.382h731.833c70.622-.811 128.036-58.76 128.036-129.382 0-22.909-6.199-45.551-17.787-65.23zM882.5 974.05H152.564c-23.453-.267-42.318-19.676-42.318-43.129 0-7.544 1.889-14.821 5.66-21.298l364.968-609.448.267-.267c8.088-12.665 21.564-20.22 36.661-20.22s28.841 7.821 36.929 20.753L919.159 909.35c3.777 6.466 5.66 14.021 5.66 21.564.267 23.453-18.865 42.86-42.318 43.129zM517.53 456.516c-23.72 0-43.129 19.409-43.129 43.129v172.51c0 23.72 19.409 43.129 43.129 43.129s43.129-19.409 43.129-43.129v-172.51c0-23.72-19.409-43.129-43.129-43.129zm0 345.023c-11.321 0-22.375 4.577-30.461 12.665s-12.665 19.142-12.665 30.461 4.577 22.375 12.665 30.461c8.088 8.088 19.142 12.665 30.461 12.665s22.375-4.577 30.461-12.665c8.088-8.088 12.665-19.142 12.665-30.461s-4.577-22.375-12.665-30.461c-8.088-8.088-19.142-12.665-30.461-12.665z" fill="#f04438"></path></svg>
+						</span>卒業年を選択してください</p>
+					</div>
+					<span class="md_select form--w30">
+						<select name="" id="" class="form--line">
+							<option value="">1月</option>
+							<option value="">2月</option>
+							<option value="" selected>3月</option>
+							<option value="">4月</option>
+							<option value="">5月</option>
+							<option value="">6月</option>
+							<option value="">7月</option>
+							<option value="">8月</option>
+							<option value="">9月</option>
+							<option value="">10月</option>
+							<option value="">11月</option>
+							<option value="">12月</option>
+						</select>
+					</span>	
+				</div>
+			</div>	
+		</div>
+		<div class="btnArea">
+			<div class="toggleSet">
+				<div class="md_toggle">
+					<input type="checkbox" name="" value="" id="policy">
+					<label for="policy"><a href="../about/agreement.html" class="md_textLink" target="_blank">iroots利用規約</a>と<a href="../about/privacyPolicy.html" class="md_textLink" target="_blank">プライバシーポリシー</a>に同意する</label>
+				</div>
+			</div>
+			<div class="btnSet">
+				<a href="form_verify.html" class="md_btn md_btn--submit md_btn--disable">同意して登録</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script>
+$(function() {
+	// 変数制御
+	var URL = location.href;
+	var URLSet = URL.split('?');
+	if(URLSet[1] == 'error'){ 
+		$('.errorMessage').show();
+		$('.errorMessage').prevAll('input').addClass('md_error');
+		$('.errorMessage').prev().children('select').addClass('md_error');
+	}
+});
+
+$(function() {
+	$('#policy').on('click', function() {
+		$(".md_btn--submit").toggleClass('md_btn--disable'); 
+	});
+});
+
+</script>
+</body>
+</html>

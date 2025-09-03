@@ -1,0 +1,165 @@
+@charset "utf-8";
+
+/* --------------------------------------------------
+ Import 
+-------------------------------------------------- */
+
+@import "../_default";
+
+
+/* ------------ Size ------------ */
+
+/* Width */
+$w_wrap: 1200px; 
+$w_drawer: 300px; 
+$w_sideMenu: 200px; 
+$w_centeringElement: 700px; 
+$w_btn_big: 150px;
+
+
+/* ------------ Typography ------------ */
+
+/* Font Size */
+$fs_biggest:  32px; 
+$fs_bigger:   24px;  
+$fs_big:      18px; 
+$fs_medium:   16px;  
+$fs_small:    14px;  
+$fs_main:     13px;
+$fs_smaller:  12px;  
+$fs_smallest: 10px;  
+
+
+.container { margin-left: 242px; 
+    .contentWrap { position: relative; -webkit-box-flex: inherit; overflow-y: inherit; margin: 0 auto; padding: 50px 0; width: 95%;
+        .contents { background: #fff; border: 1px solid #c2c6ce; border-radius: 8px; 
+            .md_table { box-shadow: none; border: none; border-radius: 8px 8px 0 0; 
+                &--user {
+                    tbody {
+                        .tr {
+                            td { /* border-bottom: 1px solid #ddd; */
+                                .toggleSet { display: flex; 
+                                    &--blank { margin-bottom: 15px; }
+                                }
+                                .md_select {
+                                    .form--line { padding-right: 40px; }
+                                    & + .text { margin-left: 10px; }
+                                }
+                                ul { display: flex; align-items: center; 
+                                    /* .md_toggle { margin-top: 0px; } */
+                                }
+                                .uploadArea { display: flex; align-items: center; 
+                                    img { margin-right: 30px; border-radius: 100%; width: 150px; height: 150px; }
+                                }
+                                .longText { line-height: 1.3; }
+                                .salarySet { }
+                                .padCell { padding: 0 15px; }
+                                .timeSelectArea { margin-bottom: 15px; }
+                                .columnCell { display: flex; flex-flow: column; width: 100%; 
+                                    .addressSet { display: flex; align-items: center; margin-bottom: 15px; 
+                                        span { padding: 0 10px; 
+                                            &:first-child { padding: 0 10px 0 0; }
+                                        }
+                                    }
+                                    .form--blank { margin-bottom: 15px; }
+                                }
+                                .md_select--blank { margin-bottom: 15px; }
+                                .errorMessage { margin-top: 8px; color: #f04438; }
+                                .helpCell { display: flex; flex-flow: column; margin-top: 10px; padding: 15px; width: 100%; background: #f9f9fc; border-radius: 6px; 
+                                    .helpTitle { margin-bottom: 8px; text-align: left; font-size: 15px; color: #667085; font-weight: bold; }
+                                    .help { text-align: left; line-height: 1.6; font-size: $fs_main; color: #667085; 
+                                        .helpSub { display: inline-block; width: 86px; }
+                                    }
+                                }
+                            }
+                            .terms { display: none; align-items: stretch; justify-content: space-between; height: auto; margin-bottom: 15px; background: #f9f9fc; border-radius: 6px;
+                                .dayContent { width: 100%; padding: 15px; 
+                                    .groupTitle { padding-bottom: 15px; border-bottom: 1px solid #ddd; }
+                                    .daySelect { padding: 15px 0; border-bottom: 1px solid #ddd;
+                                        .flexArea { display: flex; justify-content: space-between; margin-bottom: 12px; width: 480px; 
+                                            .itemTitle { display: inline-block; width: 30%; }
+                                            .itemContent { display: inline-block; width: 50%; }
+                                            &:last-child { margin-bottom: 0; }
+                                        }
+                                        &:last-child { padding: 15px 0 0; border-bottom: none; }
+                                    }
+                                }
+                                .deleteArea { display: block; position: relative; flex: 0 1 auto; text-align: center; width: 30px; cursor: pointer; background: #f9f9fc; border-radius: 0 6px 6px 0;
+                                    .iconImgPart { width: 10px; height: 10px; }
+                                    &:before { content: ""; display: inline-block; position: absolute; margin: 10px 0; width: 1px; height: calc(100% - 20px); background-color: #ddd; left: 0; top: 0; }
+                                    &:hover { filter: brightness(97%); }
+                                }
+                                &.show { display: flex; }
+                                &--result { margin-bottom: 0; }
+                            }
+                        }
+                        .md_errorBar { 
+                            &--check { margin-bottom: 10px; }
+                        }
+                    }
+                }
+            }
+            .btnArea { display: flex; justify-content: center; padding: 15px 0;
+            }
+        }
+    }
+}
+
+.md_modal {
+    &--add {
+        .modalSet { width: 700px; background-color: #fff; border-radius: 8px; 
+            .modalHeadedArea {
+                .title { top: 0; text-align: center; width: 100%; margin-bottom: 0; padding: 15px 0; font-size: 17px; color: #1b1b1b; border-bottom: 1px solid #e0e2e7; }
+                .btnArea { text-align: right; padding: 15px 20px; }
+            }
+            .contentArea { padding: 0 20px 20px; 
+                .scrollArea { height: 400px; overflow-y: scroll;  border: 1px solid #c2c6ce; border-radius: 8px;
+                    .md_table { border: none; border-radius: 0;
+                        thead {
+                            .item { border-radius: 0; 
+                                .flexArea { display: flex; align-items: center; 
+                                    .md_toggle { margin-right: 10px; 
+                                        label { padding-left: 18px; 
+                                            &:before { top: calc(50% - 8px); }
+                                            &:after { top: calc(50% - 8px); }
+                                        }
+                                    }
+                                    .groupTitle { color: $col_txt; }
+                                }
+                            }
+                        }
+                        tbody {
+                            .data {
+                                .capacity { margin-bottom: 8px; 
+                                    .count { color: $col-txt; }
+                                    &:last-child { margin-bottom: 0; }
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+            }
+            .actionArea { position: sticky; bottom: 0; display: block; text-align: center; padding: 15px; width: 100%; background-color: #fff; border-top: 1px solid #ddd; border-radius: 0 0 8px 8px; box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.08); z-index: 9997; 
+				&--noFloat { border-top: 1px solid #ddd; box-shadow: none; }
+			}
+        }
+    }
+}
+
+.md_errorBar { 
+    &--check { width: 100%; max-width: none; 
+        .base { display: flex; flex-flow: column; align-items: flex-start; padding: 15px; width: 100%; 
+            .mainText {  display: flex; align-items: flex-start; margin-bottom: 15px; font-size: 15px; font-weight: bold; color: #f04438;
+                .iconImgPart { width: 16px; height: 16px; }
+            }
+            .subArea { padding-left: 15px;
+                .subText { display: flex; margin-bottom: 8px; font-size: $fs_main; color: #f04438;
+                    a { color: #667085; }
+                    &:last-child { margin-bottom: 0; }
+                }
+            }
+            .errorMessage { display: flex; align-items: flex-start; margin-top: 0; color: #f04438; }
+        }
+    }
+}

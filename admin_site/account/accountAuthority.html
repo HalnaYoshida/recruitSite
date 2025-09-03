@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>アカウント権限設定 - アカウント管理</title>
+
+<link rel="stylesheet" href="../common/css/account/setting.css"/>
+</head>
+<body>
+
+<!-- snackBar -->
+<div class="md_snackBar md_snackBar--up Bar01">
+	<div class="base">
+		<div class="text">アカウントの権限を更新しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+	<div class="contentWrap">
+
+		<!-- titleArea -->
+		<div class="titleArea">
+			<h2 class="mainTitle">アカウント権限設定</h2>
+		</div>
+		<!-- /titleArea -->
+
+		<!-- md_table -->
+		<form id="" name="" method="" action="" >
+			<table class="md_table md_table--setting">
+				<thead>
+					<tr>
+						<th class="itemName" scope="col">設定項目</th>
+						<th scope="col" style="width: 90px;">管理者</th>
+						<!-- <th scope="col" style="width: 90px;">編集者</th> -->
+						<th scope="col" style="width: 90px;">営業担当</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="itemName">メッセージ送信</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="admin_001" checked="" disabled="">
+								<label for="admin_001"></label>
+							</div>
+						</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="sales_001">
+								<label for="sales_001"></label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="itemName">学生検索(個人情報以外)</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="admin_002" checked="" disabled="">
+								<label for="admin_002"></label>
+							</div>
+						</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="sales_002" checked="">
+								<label for="sales_002"></label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="itemName">学生検索(個人情報マスキングなし)</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="admin_003" checked="" disabled="">
+								<label for="admin_003"></label>
+							</div>
+						</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="sales_003">
+								<label for="sales_003"></label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="itemName">学生情報閲覧(個人情報マスキングなし)</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="admin_004" checked="" disabled="">
+								<label for="admin_004"></label>
+							</div>
+						</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="sales_004">
+								<label for="sales_004"></label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="itemName">学生情報の編集</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="admin_005" checked="" disabled="">
+								<label for="admin_005"></label>
+							</div>
+						</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="sales_005">
+								<label for="sales_005"></label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="itemName">学生情報の削除</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="admin_006" checked="" disabled="">
+								<label for="admin_006"></label>
+							</div>
+						</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="sales_006">
+								<label for="sales_006"></label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="itemName">管理者メモの保存</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="admin_007" checked="" disabled="">
+								<label for="admin_007"></label>
+							</div>
+						</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="sales_007">
+								<label for="sales_007"></label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="itemName">パスワードリセット</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="admin_008" checked="" disabled="">
+								<label for="admin_008"></label>
+							</div>
+						</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="sales_008">
+								<label for="sales_008"></label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="itemName">お知らせ一括送付</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="admin_009" checked="" disabled="">
+								<label for="admin_009"></label>
+							</div>
+						</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="sales_009">
+								<label for="sales_009"></label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="itemName">DM一括送付</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="admin_010" checked="" disabled="">
+								<label for="admin_010"></label>
+							</div>
+						</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="sales_010">
+								<label for="sales_010"></label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="itemName">会員ステータス変更</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="admin_011" checked="" disabled="">
+								<label for="admin_011"></label>
+							</div>
+						</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="sales_011">
+								<label for="sales_011"></label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="itemName">メッセージテンプレートの保存</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="admin_012" checked="" disabled="">
+								<label for="admin_012"></label>
+							</div>
+						</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="sales_012">
+								<label for="sales_012"></label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="itemName">企業新規登録</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="check_055" checked="" disabled="">
+								<label for="check_055"></label>
+							</div>
+						</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="check_057">
+								<label for="check_057"></label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="itemName">企業情報の編集</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="check_058" checked="" disabled="">
+								<label for="check_058"></label>
+							</div>
+						</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="check_060">
+								<label for="check_060"></label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="itemName">企業情報の削除</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="check_061" checked="" disabled="">
+								<label for="check_061"></label>
+							</div>
+						</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="check_063">
+								<label for="check_063"></label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="itemName">企業情報のインポート</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="check_064" checked="" disabled="">
+								<label for="check_064"></label>
+							</div>
+						</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="check_066">
+								<label for="check_066"></label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="itemName">ユーザー情報の編集(自分)</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="check_067" checked="" disabled="">
+								<label for="check_067"></label>
+							</div>
+						</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="check_069">
+								<label for="check_069"></label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="itemName">ユーザー情報の編集(他アカウント)</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="check_070" checked="" disabled="">
+								<label for="check_070"></label>
+							</div>
+						</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="check_072">
+								<label for="check_072"></label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="itemName">ユーザー情報の新規登録</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="check_073" checked="" disabled="">
+								<label for="check_073"></label>
+							</div>
+						</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="check_075">
+								<label for="check_075"></label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="itemName">募集審査</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="check_076" checked="" disabled="">
+								<label for="check_076"></label>
+							</div>
+						</td>
+						<td>
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="check_078">
+								<label for="check_078"></label>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+		<!-- /md_table -->
+	</div>
+	<!-- <floatBtn> -->
+	<div class="md_fixBar js_fixBarHide">
+		<a class="md_btn js_snackBar" data-target="Bar01">更新</a>
+	</div>
+	<!-- </floatBtn> -->
+<!-- Container End --></div><!-- /Container End -->
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+
+</body>
+</html>

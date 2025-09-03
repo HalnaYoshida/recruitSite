@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>ログイン - 企業管理</title>
+
+<link rel="stylesheet" href="../common/css/login/login.css"/>
+</head>
+<body>
+
+
+<div class="contentWrap">
+	<div class="logoCell">
+		<div class="logoArea">
+			<img src="../imageFile/logo_white.svg" alt="">
+			<p class="attribute">企業様向け画面</p>
+		</div>
+	</div>
+	<div class="loginCell">
+		<div class="md_errorBar">
+			<div class="base">
+				<span class="iconImgPart">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 150 1100 1100" class="errorIcon"><path d="m993.554 865.69-.267-.267-364.968-609.718c0-.267-.267-.267-.267-.544-23.986-38.818-65.23-61.994-110.515-61.994s-86.524 23.182-110.246 61.727c-.267.267-.544.544-.544 1.078L41.509 865.69s0 .267-.267.267c-11.321 19.409-17.52 42.051-17.52 64.96 0 70.622 57.416 128.574 127.767 129.382h731.833c70.622-.811 128.036-58.76 128.036-129.382 0-22.909-6.199-45.551-17.787-65.23zM882.5 974.05H152.564c-23.453-.267-42.318-19.676-42.318-43.129 0-7.544 1.889-14.821 5.66-21.298l364.968-609.448.267-.267c8.088-12.665 21.564-20.22 36.661-20.22s28.841 7.821 36.929 20.753L919.159 909.35c3.777 6.466 5.66 14.021 5.66 21.564.267 23.453-18.865 42.86-42.318 43.129zM517.53 456.516c-23.72 0-43.129 19.409-43.129 43.129v172.51c0 23.72 19.409 43.129 43.129 43.129s43.129-19.409 43.129-43.129v-172.51c0-23.72-19.409-43.129-43.129-43.129zm0 345.023c-11.321 0-22.375 4.577-30.461 12.665s-12.665 19.142-12.665 30.461 4.577 22.375 12.665 30.461c8.088 8.088 19.142 12.665 30.461 12.665s22.375-4.577 30.461-12.665c8.088-8.088 12.665-19.142 12.665-30.461s-4.577-22.375-12.665-30.461c-8.088-8.088-19.142-12.665-30.461-12.665z" fill="#f04438"></path></svg>
+				</span>
+				<div class="text">別タブでログイン中です<br>一度ログアウトしてブラウザを閉じてから再試行してください</div>
+			</div>
+		</div>
+		<form method="post" action="https://staging.iroots.jp/company/" class="loginForm" accept-charset="utf-8">
+			<input type="email" pattern=".+@.+\..+" id="company_email" style="ime-mode:disabled" placeholder="メールアドレス" class="form--line" maxlength="255" name="company_email" value="yukiko_taniguchi+1@en-japan.com" />
+			<input type="password" id="company_password" style="ime-mode:disabled" placeholder="パスワード" class="form--line" maxlength="16" name="company_password" value="aaa" />
+		</form>
+		<a href="/company_site/index.html" class="md_btn">ログイン</a>
+		<a href="password_reset.html" class="md_textLink">パスワードを忘れた方</a>
+	</div>
+</div>
+
+<!--informationArea-->   
+<div class="informationArea">
+	<div class="annotation">※本ページをお気に入り登録いただくと便利です</div>
+	<div class="content">
+		<div class="title"><span class="iconImgPart">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -2 18 18"><path fill="#fff" d="M8 3.5a.75.75 0 0 1 .75.75V9.5a.75.75 0 0 1-1.5 0V4.25A.75.75 0 0 1 8 3.5ZM8.75 11.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"/><path fill="#fff" fill-rule="evenodd" d="M15.5 8a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0ZM14 8A6 6 0 1 1 2 8a6 6 0 0 1 12 0Z" clip-rule="evenodd"/></svg>
+		</span>information</div>
+		<div class="informationSet">
+			<div class="information">
+				<div class="date">2024年05月16日</div>
+				<div class="text">2024年05月23日(木)22:00～23:00にシステムメンテナンスを予定しています</div>
+			</div>
+			<div class="information">
+				<div class="date">2023年05月24日</div>
+				<div class="text">2023年06月01日にエン・ジャパン求人Webサイトサービス利用規約（約款）を変更します（詳細はこちら）</div>
+			</div>
+			<div class="inquiry">ご不明点等ございましたら窓口までお問い合わせください。iroots窓口：<a href="mailto:iroots@en-japan.com" class="mailLink">iroots@en-japan.com</a></div>
+		</div>
+	</div>
+	<!-- <footer>
+		<p class="copyright">Copyright &copy; 2024 en Japan Inc. All Rights Reserved.</p>
+	</footer> -->
+</div>
+<!--/informationArea--> 
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+<script>
+	$(document).ready(function() {
+			var $inputs = $('input[type="text"], input[type="email"], input[type="password"]'); // 全ての入力フィールド
+			var $button = $('a.md_btn'); // ボタン
+	
+			function checkInputs() {
+					var allFilled = true;
+	
+					$inputs.each(function() {
+							if ($(this).val().trim() === '') {
+									allFilled = false; // 一つでも空のフィールドがあればfalseに
+									return false; // ループを終了
+							}
+					});
+	
+					if (allFilled) {
+							$button.removeClass('md_btn--disable'); // 全て入力されていればクラスを削除
+					} else {
+							$button.addClass('md_btn--disable'); // 入力されていなければクラスを追加
+					}
+			}
+	
+			// テキスト入力フィールドに変更があったらチェックを実行
+			$inputs.on('input', function() {
+					checkInputs();
+			});
+	
+			// 初期チェック（ロード時に入力されているかどうかも確認）
+			checkInputs();
+	});
+	</script>
+</body>
+</html>

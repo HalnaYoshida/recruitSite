@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+/* --------------------------------------------------
+ Import 
+-------------------------------------------------- */
+
+@import "../_default";
+
+
+/* ------------ Size ------------ */
+
+/* Width */
+$w_wrap: 1200px; 
+$w_drawer: 300px; 
+$w_sideMenu: 200px; 
+$w_centeringElement: 700px; 
+$w_btn_big: 150px;
+
+
+/* ------------ Typography ------------ */
+
+/* Font Size */
+$fs_biggest:  32px; 
+$fs_bigger:   24px;  
+$fs_big:      18px; 
+$fs_medium:   16px;  
+$fs_small:    14px;  
+$fs_main:     13px;
+$fs_smaller:  12px;  
+$fs_smallest: 10px;  
+
+
+.contentArea { display: flex; 
+    .phaseContent, .tagContent {flex: 1;}
+    .phaseContent { margin-right: 48px;}
+    .phaseContent, .tagContent {
+        .title { margin-bottom: 15px;}
+        .termSet {
+            border: 1px solid #C2C6CE; border-radius: 8px; margin-bottom: 10px;
+            .termArea:first-child { border-top-left-radius: 8px;border-top-right-radius: 8px;}
+            .termArea:last-child { border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;}
+            
+            .termArea { display: flex; align-items: stretch; justify-content: space-between; height: auto; background: #fff;
+                + .termArea { border-top: 1px solid #ddd;}
+                .deleteArea { display: block; position: relative; flex: 0 1 auto; text-align: center; width: 30px; cursor: pointer; background: #fff; border-radius: 0 6px 6px 0;
+                    .iconImgPart { width: 10px; height: 10px; }
+                    &:before { content: ""; display: inline-block; position: absolute; margin: 10px 0; width: 1px; height: calc(100% - 20px); background-color: #ddd; left: 0; top: 0; }
+                    &:hover { filter: brightness(97%); }
+                    &:empty { visibility: hidden; &:hover{ filter: none;}}
+                }
+                .contentSet { display: flex; width: calc( ((100vw - 242px) *0.95)/2 - 56px );}
+                .grabArea { display: flex; align-items: center; justify-content: center; width: 50px; text-align: center; cursor: grab;
+                    &:active { cursor: grabbing; }
+                    .iconImgPart { width: 29px;
+                        svg {width: auto; height: 100%; max-width: inherit; }
+                    }
+                }
+                .phaseSet { flex: 1; padding: 15px 0; cursor: pointer; 
+                    .data {font-size: $fs_main; line-height: 1.35;}
+                }
+                .numSet { display: flex; align-items: center; justify-content: center; padding: 15px 0; width: 120px; font-size: $fs_main;
+                    .num { line-height: 1.35;}
+                }
+            }
+            &--gray { margin-bottom: 20px;
+                .termArea { background: #F0F1F3;
+                    .phaseSet {padding-left: 50px; cursor: default; }
+                    .deleteArea { background: #F0F1F3; }
+                }
+            } 
+            &--input {
+                .termArea { 
+                    .contentSet { 
+                        .phaseSet { padding: 6px 0; }
+                        .numSet { padding: 6px 0; }
+                    }
+                }
+            }
+        }
+        .addArea { margin-bottom: 20px; }
+        
+    }
+}

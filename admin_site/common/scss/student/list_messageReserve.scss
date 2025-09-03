@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+/* --------------------------------------------------
+ Import 
+-------------------------------------------------- */
+
+@import "../_default";
+
+
+/* ------------ Size ------------ */
+
+/* Width */
+$w_wrap: 1200px; 
+$w_drawer: 300px; 
+$w_sideMenu: 200px; 
+$w_centeringElement: 700px; 
+$w_btn_big: 150px;
+
+
+/* ------------ Typography ------------ */
+
+/* Font Size */
+$fs_biggest:  32px; 
+$fs_bigger:   24px;  
+$fs_big:      18px;
+$fs_title:    17px;
+$fs_medium:   16px;  
+$fs_small:    14px;  
+$fs_main:     13px;
+$fs_smaller:  11px;  
+$fs_smallest: 10px; 
+
+/* ユーザー情報登録用テーブル */
+.contentWrap {
+    .titleArea { justify-content: left;
+        .mainTitle { margin-right: 5px; }
+        .subText { font-size: 12px; font-weight: 400; color: #667085; }
+        &.count { margin-top: 30px; align-items: end; }
+    }
+}
+.md_table {
+    tbody {
+        tr {
+            .messageArea {
+                .messageTitle { font-size: $fs_main; color: #1b1b1b; line-height: 1.5; margin-bottom: 3px; }
+                .messageText { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; font-size: $fs_smaller; color: #1b1b1b; line-height: 1.5; }
+            }
+            .data { 
+                .md_chip { width: auto; white-space: nowrap; }
+                .reserveCount { display: inline-block; margin-top: 5px; width: 100%; font-size: $fs_smaller; text-decoration: underline; }
+            }
+        }
+    }
+    
+}

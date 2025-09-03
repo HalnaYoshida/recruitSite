@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>ログイン - 企業管理</title>
+
+<link rel="stylesheet" href="../common/css/login/login.css"/>
+</head>
+<body>
+
+<!--modal01-->  
+<div class="md_modal modal01" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="Content">
+			<div class="textArea">
+				<div class="catch">パスワード再発行手続き完了</div>
+				<p class="copy">
+					ご登録いただいているメールアドレスへパスワードリセット手順を送信しました。
+				</p>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--medium md_btn--second js_modalX">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/modal01-->
+
+<!--modal02-->  
+<div class="md_modal modal02" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="Content">
+			<div class="textArea">
+				<div class="catch">パスワード設定完了</div>
+				<p class="copy">
+					パスワードの設定が完了しました。設定したパスワードでログインしてください。
+				</p>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--medium md_btn--second js_modalX">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/modal02-->
+
+<!--modal03-->  
+<div class="md_modal modal03" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="Content">
+			<div class="textArea">
+				<div class="catch">パスワード再設定完了</div>
+				<p class="copy">
+					パスワードの再設定が完了しました。再設定したパスワードでログインしてください。
+				</p>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--medium md_btn--second js_modalX">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/modal03-->
+
+
+<div class="contentWrap">
+	<div class="logoCell">
+		<div class="logoArea">
+			<img src="../imageFile/logo_white.svg" alt="">
+			<p class="attribute">企業様向け画面</p>
+		</div>
+	</div>
+	<div class="loginCell">
+		<form method="post" action="https://staging.iroots.jp/company/" class="loginForm" accept-charset="utf-8">
+			<input type="email" pattern=".+@.+\..+" id="company_email" style="ime-mode:disabled" placeholder="メールアドレス" class="form--line" maxlength="255" name="company_email" value="" />
+			<input id="company_password" style="ime-mode:disabled" placeholder="パスワード" class="form--line" maxlength="16" name="company_password" value="" type="password" />
+			<!-- <input class="loginBtn" name="button" value="ログイン" type="submit" id="form_button" /> -->
+		</form>
+		<a href="../index.html" class="md_btn md_btn--disable">ログイン</a>
+		<a href="password_reset.html" class="md_textLink">パスワードを忘れた方</a>
+	</div>
+</div>
+
+<!--informationArea-->   
+<div class="informationArea">
+	<div class="annotation">※本ページをお気に入り登録いただくと便利です</div>
+	<div class="content">
+		<div class="title"><span class="iconImgPart">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -2 18 18"><path fill="#fff" d="M8 3.5a.75.75 0 0 1 .75.75V9.5a.75.75 0 0 1-1.5 0V4.25A.75.75 0 0 1 8 3.5ZM8.75 11.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"/><path fill="#fff" fill-rule="evenodd" d="M15.5 8a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0ZM14 8A6 6 0 1 1 2 8a6 6 0 0 1 12 0Z" clip-rule="evenodd"/></svg>
+		</span>information</div>
+		<div class="informationSet">
+			<div class="information">
+				<div class="date">2024年05月16日</div>
+				<div class="text">2024年05月23日(木)22:00～23:00にシステムメンテナンスを予定しています</div>
+			</div>
+			<div class="information">
+				<div class="date">2023年05月24日</div>
+				<div class="text">2023年06月01日にエン・ジャパン求人Webサイトサービス利用規約（約款）を変更します（詳細はこちら）</div>
+			</div>
+			<div class="inquiry">ご不明点等ございましたら窓口までお問い合わせください。iroots窓口：<a href="mailto:iroots@en-japan.com" class="mailLink">iroots@en-japan.com</a></div>
+		</div>
+	</div>
+	<!-- <footer>
+		<p class="copyright">Copyright &copy; 2024 en Japan Inc. All Rights Reserved.</p>
+	</footer> -->
+</div>
+<!--/informationArea--> 
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+<script>
+	$(document).ready(function() {
+			var URL = location.href;
+			var URLSet = URL.split('?');
+
+			if (URLSet.length > 1 && URLSet[1] === 'modal01') {
+					$('.md_modal.modal01').show();
+			} else if (URLSet.length > 1 && URLSet[1] === 'modal02') {
+					$('.md_modal.modal02').show();
+			} else if (URLSet.length > 1 && URLSet[1] === 'modal03') {
+					$('.md_modal.modal03').show();
+			}
+	});
+</script>
+<script>
+$(document).ready(function() {
+    var $inputs = $('input[type="text"], input[type="email"], input[type="password"]'); // 全ての入力フィールド
+    var $button = $('a.md_btn'); // ボタン
+
+    function checkInputs() {
+        var allFilled = true;
+
+        $inputs.each(function() {
+            if ($(this).val().trim() === '') {
+                allFilled = false; // 一つでも空のフィールドがあればfalseに
+                return false; // ループを終了
+            }
+        });
+
+        if (allFilled) {
+            $button.removeClass('md_btn--disable'); // 全て入力されていればクラスを削除
+        } else {
+            $button.addClass('md_btn--disable'); // 入力されていなければクラスを追加
+        }
+    }
+
+    // テキスト入力フィールドに変更があったらチェックを実行
+    $inputs.on('input', function() {
+        checkInputs();
+    });
+
+    // 初期チェック（ロード時に入力されているかどうかも確認）
+    checkInputs();
+});
+</script>
+</body>
+</html>

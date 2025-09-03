@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+/* --------------------------------------------------
+ Import 
+-------------------------------------------------- */
+
+@import "../_default";
+
+
+/* ------------ Size ------------ */
+
+/* Width */
+$w_wrap: 1200px; 
+$w_drawer: 300px; 
+$w_sideMenu: 200px; 
+$w_centeringElement: 700px; 
+$w_btn_big: 150px;
+
+
+/* ------------ Typography ------------ */
+
+/* Font Size */
+$fs_biggest:  32px; 
+$fs_bigger:   24px;  
+$fs_big:      18px;
+$fs_title:    17px;
+$fs_medium:   16px;  
+$fs_small:    14px;  
+$fs_main:     13px;
+$fs_smaller:  11px;  
+$fs_smallest: 10px; 
+
+/* ユーザー情報登録用テーブル */
+.contentWrap {
+    .titleArea { justify-content: space-between;
+        .subArea { text-align: right; 
+            .md_btn { width: auto; padding-left: 20px; padding-right: 20px; 
+                .iconImgPart { }
+                &--disabled { background: #c6c2ce; color: #fff; border: none; -webkit-box-shadow: none; box-shadow: none; cursor: default; pointer-events: none;}
+            }
+            .errorTxt { display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; margin-top: 5px; font-size: $fs_main; color: #f04438;
+                .iconImgPart { margin-right: 5px; width: 15px; height: 15px; }
+            }
+        }
+    }
+    .md_table { overflow: visible;
+        tbody {
+            tr {
+                .data { 
+                    .btnSet { display: flex; align-items: center;
+                        .cmdArea { position: relative;
+                            .cmdLink { display: inline-block; padding: 0 10px; cursor: pointer;
+                                &:hover {opacity: 0.8; }
+                                svg { width: 4px; height: 16px; }
+                            }
+                            .hideAction { display: none; position: absolute; bottom: 0; left: 15px; border: 1px solid #ddd; border-radius: 8px; background-color: #fff;
+                                &:hover { opacity: 1.0; }
+                                .menu { display: inline-block; font-size:$fs_smaller; line-height: 1.75; padding: 5px 10px; white-space: nowrap; cursor: pointer;
+                                    + .menu { border-top: 1px solid #ddd;}
+                                }
+                                &.show { display: block; }
+                                a {
+                                    &:hover { opacity: 0.8; }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+    }
+    
+}
+

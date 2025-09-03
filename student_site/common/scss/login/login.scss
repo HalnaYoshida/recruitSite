@@ -1,0 +1,154 @@
+@charset "utf-8";
+
+/* --------------------------------------------------
+ Import 
+-------------------------------------------------- */
+
+@import "../_default";  
+
+
+.container { position: relative; text-align: center;}
+
+
+
+
+//フォームエリア
+.contentWrap { 
+    .copyArea { margin-top: 32px; 
+        .copySet {
+            .copy { font-size: 12px; text-align: left; line-height: $lh_medium; }
+        }   
+    }
+    .formArea { margin-top: 24px; text-align: left;
+        .md_errorCopy { 
+            + .formSet { margin-top: 24px; }
+        }
+        .md_informationCopy { 
+            + .formSet { margin-top: 24px; }
+        }
+        .md_informationCopy { padding: 16px; background-color: #F4F7FE; border-radius: 3px;
+            .catchSet {
+                .catch { font-size: 13px; font-weight: bold; }
+                + .copySet { margin-top: 8px;}
+            }
+            .copySet {
+                .copy { font-size: 11px; color: $col_sub;line-height: $lh_small; }
+            }
+            // For PC
+             @media only screen and (min-width: $w_break_tablet) { padding: 20px;
+                .catchSet {
+                    .catch { font-size: 15px; }
+                    + .copySet { margin-top: 8px;}
+                }
+                .copySet {
+                    .copy { font-size: 13px; }
+                }
+             }
+        }
+        .formSet {  
+            .title { position: relative; font-size: 13px; font-weight: bold;
+                + .form { margin-top: 8px; }
+             }
+            .form { position: relative; }
+            
+            + .formSet { margin-top: 24px; }
+        }
+        + .btnArea{ margin-top: 32px; }
+    } 
+    .btnArea{ 
+        .btnSet { 
+            + .linkSet { margin-top: 24px;}
+        }
+        .linkSet { display: inline-flex;  flex-direction: column; align-items: center; gap: 12px;  }
+    }
+    .snsFormArea { margin-top: 32px;
+        li {
+            .loginBtn { position: relative; display: flex; justify-content: center; align-items: center; width: 100%; height: 40px; border-radius: 3px;
+                .logo { position: absolute; left: 12px; display: inline-block; width: 24px; height: 24px;}
+                .label { font-size: 14px; font-weight: bold; color: #fff; }
+                &.facebook { background-color: #1877F2; 
+                    .logo { width: 21px; height: 21px}
+                }
+                &.apple { background-color: #000; }
+                &.line { background-color: #06C755; 
+                    .logo { width: 26px; height: 26px}
+                }
+            }
+            + li { margin-top: 12px;}
+        }
+    }
+    .signupArea { margin-top: 40px;
+        .copy { font-size: 12px; line-height: $lh_medium; }
+    }
+    // For PC
+    @media only screen and (min-width: $w_break_tablet) {
+        .copyArea { margin-top: 40px; 
+            .copySet {
+                .copy { font-size: 14px; }
+            }   
+        }
+        .formArea { margin-top: 40px;
+            .md_errorCopy { 
+                + .formSet { margin-top: 32px; }
+            }
+            .formSet {  
+                .title {  margin-bottom: 8px; font-size: 15px; }     
+                + .formSet { margin-top: 32px; }
+            }
+            + .btnArea{  margin-top: 40px;}
+        }
+        .btnArea{ 
+            .btnSet { 
+                + .linkSet { margin-top: 32px;}
+            }
+            .linkSet { flex-direction: row; gap: 24px;} 
+        }
+        .snsFormArea {  margin-top: 40px;
+            li {
+                .loginBtn { width: 360px; margin: 0 auto; height: 48px; line-height: 48px; 
+                    .label { font-size: 16px;}
+                }
+                + li { margin-top: 16px;}
+            }
+        }
+        .signupArea {
+            .copy { font-size: 14px;  }
+        }
+    }
+}
+
+//または
+.orLead { position: relative; margin-top: 32px; height: 20px;
+    &::before { position: absolute; content: ""; height: 1px; left: 0; right: 0; top: 10px; background: $col_border; z-index: 0;}
+    &::after { position: absolute; content: "または"; display: inline-block; left: 50%; height: 20px; transform: translateX(-50%);line-height: 20px; padding: 0 10px; font-size: 13px; background: #fff; color: $col_sub; z-index: 999;}
+    // For PC
+    @media only screen and (min-width: $w_break_tablet) { margin-top: 40px; 
+        &::after { font-size: 16px; }
+    }
+}
+
+//パスワード設定表現
+.md_pwRule { margin-top: 8px; padding: 0 2px;
+	.rule { display: flex; align-items: center; height: 12px;
+		.icon { margin-right: 2px; 
+			.iconImgPart { display: grid; place-content: center;  width: 11px; height: 11px; 
+				svg { width: 11px; }
+			}
+		}
+		.text { font-size: 10px; color: $col_sub;}
+		&.error { 
+			.text { color: $col_status_error;}
+		}
+		&.check { 
+			.text { color: $col_status_error;}
+		}
+		+ .rule { margin-top: 4px;} 
+	}
+     // For PC
+     @media only screen and (min-width: $w_break_tablet) { 
+        .rule { 
+            .text { font-size: 12px; }
+            + .rule { margin-top: 8px;} 
+        }
+    }
+}

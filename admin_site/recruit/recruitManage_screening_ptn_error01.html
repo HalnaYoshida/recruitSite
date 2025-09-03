@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>募集情報 - 募集情報審査</title>
+
+<link rel="stylesheet" href="../common/css/recruit/screening.css"/>
+</head>
+<body>
+
+<!-- snackBar -->
+<div class="md_snackBar Bar01">
+	<div class="base">
+		<div class="text">掲載NGを企業にお送りしました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar02">
+	<div class="base">
+		<div class="text">審査内容を一時保存しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar03">
+	<div class="base">
+		<div class="text">審査を保留しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar04">
+	<div class="base">
+		<div class="text">掲載OKを企業にお送りしました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+	<div class="contentWrap">
+
+		<!-- titleArea -->
+		<div class="titleArea">
+			<h2 class="mainTitle">募集情報審査</h2>
+		</div>
+		<!-- /titleArea -->
+
+		<!-- md_card -->
+		<div class="md_card md_card--screeningInfo">
+			<div class=" infoArea">
+				<div class="imgCell">
+					<img class="dummyImg" src="../imageFile/logo_dummy04.jpeg" alt="">
+				</div>
+				<div class="textCell">
+					<div class="compInformation">
+						<div class="compName">株式会社Advanced Technologies Fine Tech Bros</div>
+						<div class="compdata">
+							<span class="data">企業ID : 1995</span>
+							<span class="data">業種 : IT・通信・インターネットインターネット・WEB・スマートフォンアプリ</span>
+							<span class="data">最終ログイン日 : 2024年05月07日</span>
+						</div>
+						<div class="compdata">
+							<span class="data">所在地 : 〒 東京都渋谷区神宮前 5-47-12</span>
+							<span class="data">HP : http://mountain_mountain.co.jp</span>
+							<span class="data">登録日 : 2024/5/11</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="chipCell">
+				<span class="md_chip md_chip--blue"><span class="chipTxt">再審査</span></span>
+			</div>
+		</div>
+		<!-- /md_card -->
+
+		<!-- errorBar -->
+		<div class="md_errorBar">
+			<div class="base">
+				<span class="iconImgPart">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 150 1100 1100" class="errorIcon"><path d="m993.554 865.69-.267-.267-364.968-609.718c0-.267-.267-.267-.267-.544-23.986-38.818-65.23-61.994-110.515-61.994s-86.524 23.182-110.246 61.727c-.267.267-.544.544-.544 1.078L41.509 865.69s0 .267-.267.267c-11.321 19.409-17.52 42.051-17.52 64.96 0 70.622 57.416 128.574 127.767 129.382h731.833c70.622-.811 128.036-58.76 128.036-129.382 0-22.909-6.199-45.551-17.787-65.23zM882.5 974.05H152.564c-23.453-.267-42.318-19.676-42.318-43.129 0-7.544 1.889-14.821 5.66-21.298l364.968-609.448.267-.267c8.088-12.665 21.564-20.22 36.661-20.22s28.841 7.821 36.929 20.753L919.159 909.35c3.777 6.466 5.66 14.021 5.66 21.564.267 23.453-18.865 42.86-42.318 43.129zM517.53 456.516c-23.72 0-43.129 19.409-43.129 43.129v172.51c0 23.72 19.409 43.129 43.129 43.129s43.129-19.409 43.129-43.129v-172.51c0-23.72-19.409-43.129-43.129-43.129zm0 345.023c-11.321 0-22.375 4.577-30.461 12.665s-12.665 19.142-12.665 30.461 4.577 22.375 12.665 30.461c8.088 8.088 19.142 12.665 30.461 12.665s22.375-4.577 30.461-12.665c8.088-8.088 12.665-19.142 12.665-30.461s-4.577-22.375-12.665-30.461c-8.088-8.088-19.142-12.665-30.461-12.665z" fill="#f04438"></path></svg>
+				</span>
+				<div class="text">「不備あり」を選択した箇所に修正内容を記載してください</div>
+			</div>
+		</div>
+		<!-- /errorBar -->
+
+		<!-- md_table -->
+		<form id="" name="" method="" action="" >
+			<div class="contents contents--screening">
+				<table class="md_table">
+					<tbody>
+						<tr class="tr">
+							<th>募集形態</th>
+							<td class="resultCell">本選考</td>
+							<td class="screeningCell">
+								<span class="md_select form--w50">
+									<select name="" id="result_001" class="form--line">
+										<option value="1">不備なし</option>
+										<option value="2">不備あり</option>
+									</select>
+								</span>
+								<textarea name="" id="" rows="4" class="form--line form--w100 screeningText" placeholder="修正内容を入力してください"></textarea>
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>タイトル</th>
+							<td class="resultCell">早期選考直結！【26卒技術職＿プラントエンジ業界】2STEP制の1day業務体験プログラム！業界理解・企業理解・仕事理解を深めて頂けます！</td>
+							<td class="screeningCell">
+								<span class="md_select form--w50">
+									<select name="" id="result_001" class="form--line">
+										<option value="1">不備なし</option>
+										<option value="2" selected="">不備あり</option>
+									</select>
+								</span>
+								<textarea name="" id="" rows="4" class="form--line form--w100 screeningText md_error" placeholder="修正内容を入力してください"></textarea>
+								<p class="errorMessage">修正内容を入力してください</p>
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>概要</th>
+							<td class="resultCell">★「業界・企業研究」「業務体験」「社員座談会」「プラント見学」で分かるプラントエンジニアリング業界の仕事★
+								<br><br>
+								【本イベントにご参加頂いた方には、早期選考のご案内を優先的にいたします！】
+								<br><br>
+								irootsは「Better Engineering for Well-being」をテーマに、
+								プラントエンジニアリングを通じてものづくりの根幹を支え、社会に貢献する事を企業理念としています。
+								1day業務体験では、プラントエンジニアリング業務の一端を体験いただけるプログラムをご用意しています！
+								「大きなものづくりに携わりたい」「現場に近いところで仕事がしたい」そんな想いを持っている方にはぴったりの内容です。
+								男性限定の募集になります。
+								</td>
+							<td class="screeningCell">
+								<span class="md_select form--w50">
+									<select name="" id="result_002" class="form--line">
+										<option value="1">不備なし</option>
+										<option value="2" selected="">不備あり</option>
+									</select>
+								</span>
+								<textarea name="" id="" rows="4" class="form--line form--w100 screeningText md_error" placeholder="修正内容を入力してください"></textarea>
+								<p class="errorMessage">修正内容を入力してください</p>
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>参加フロー</th>
+							<td class="resultCell">書類選考→適正テスト→面接</td>
+							<td class="screeningCell">
+								<span class="md_select form--w50">
+									<select name="" id="result_003" class="form--line">
+										<option value="1">不備なし</option>
+										<option value="2">不備あり</option>
+									</select>
+								</span>
+								<textarea name="" id="" rows="4" class="form--line form--w100 screeningText" placeholder="修正内容を入力してください"></textarea>
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>応募締め切り</th>
+							<td class="resultCell">2024/10/05</td>
+							<td class="screeningCell">
+								<span class="md_select form--w50">
+									<select name="" id="result_004" class="form--line">
+										<option value="1">不備なし</option>
+										<option value="2">不備あり</option>
+									</select>
+								</span>
+								<textarea name="" id="" rows="4" class="form--line form--w100 screeningText" placeholder="修正内容を入力してください"></textarea>
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>参加特典内容<br>（任意）</th>
+							<td class="resultCell"></td>
+							<td class="screeningCell">
+								<span class="md_select form--w50">
+									<select name="" id="result_005" class="form--line">
+										<option value="1">不備なし</option>
+										<option value="2">不備あり</option>
+									</select>
+								</span>
+								<textarea name="" id="" rows="4" class="form--line form--w100 screeningText" placeholder="修正内容を入力してください"></textarea>
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>雇用形態</th>
+							<td class="resultCell">正社員</td>
+							<td class="screeningCell">
+								<span class="md_select form--w50">
+									<select name="" id="result_015" class="form--line">
+										<option value="1">不備なし</option>
+										<option value="2">不備あり</option>
+									</select>
+								</span>
+								<textarea name="" id="" rows="4" class="form--line form--w100 screeningText" placeholder="修正内容を入力してください"></textarea>
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>選考フロー</th>
+							<td class="resultCell">書類選考→適正テスト→1次面接→2次面接→内定</td>
+							<td class="screeningCell">
+								<span class="md_select form--w50">
+									<select name="" id="result_007" class="form--line">
+										<option value="1">不備なし</option>
+										<option value="2">不備あり</option>
+									</select>
+								</span>
+								<textarea name="" id="" rows="4" class="form--line form--w100 screeningText" placeholder="修正内容を入力してください"></textarea>
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>賃金</th>
+							<td class="resultCell">月給25万円~<br><br>固定残業代80,000円（45時間分）</td>
+							<td class="screeningCell">
+								<span class="md_select form--w50">
+									<select name="" id="result_008" class="form--line">
+										<option value="1">不備なし</option>
+										<option value="2">不備あり</option>
+									</select>
+								</span>
+								<textarea name="" id="" rows="4" class="form--line form--w100 screeningText" placeholder="修正内容を入力してください"></textarea>
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>勤務時間</th>
+							<td class="resultCell">フレックスタイム制<br><br>標準労働時間:８時間<br><br>コアタイム:10:00~16:00</td>
+							<td class="screeningCell">
+								<span class="md_select form--w50">
+									<select name="" id="result_009" class="form--line">
+										<option value="1">不備なし</option>
+										<option value="2">不備あり</option>
+									</select>
+								</span>
+								<textarea name="" id="" rows="4" class="form--line form--w100 screeningText" placeholder="修正内容を入力してください"></textarea>
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>勤務地</th>
+							<td class="resultCell">アサイン先のプロジェクトにより全国転勤あり</td>
+							<td class="screeningCell">
+								<span class="md_select form--w50">
+									<select name="" id="result_010" class="form--line">
+										<option value="1">不備なし</option>
+										<option value="2">不備あり</option>
+									</select>
+								</span>
+								<textarea name="" id="" rows="4" class="form--line form--w100 screeningText" placeholder="修正内容を入力してください"></textarea>
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>諸手当</th>
+							<td class="resultCell">交通費全額支給</td>
+							<td class="screeningCell">
+								<span class="md_select form--w50">
+									<select name="" id="result_011" class="form--line">
+										<option value="1">不備なし</option>
+										<option value="2">不備あり</option>
+									</select>
+								</span>
+								<textarea name="" id="" rows="4" class="form--line form--w100 screeningText" placeholder="修正内容を入力してください"></textarea>
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>昇給</th>
+							<td class="resultCell">年二回</td>
+							<td class="screeningCell">
+								<span class="md_select form--w50">
+									<select name="" id="result_012" class="form--line">
+										<option value="1">不備なし</option>
+										<option value="2">不備あり</option>
+									</select>
+								</span>
+								<textarea name="" id="" rows="4" class="form--line form--w100 screeningText" placeholder="修正内容を入力してください"></textarea>
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>賞与</th>
+							<td class="resultCell">年二回（業績連動）</td>
+							<td class="screeningCell">
+								<span class="md_select form--w50">
+									<select name="" id="result_013" class="form--line">
+										<option value="1">不備なし</option>
+										<option value="2">不備あり</option>
+									</select>
+								</span>
+								<textarea name="" id="" rows="4" class="form--line form--w100 screeningText" placeholder="修正内容を入力してください"></textarea>
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>休日</th>
+							<td class="resultCell">完全週休二日制（土日）</td>
+							<td class="screeningCell">
+								<span class="md_select form--w50">
+									<select name="" id="result_014" class="form--line">
+										<option value="1">不備なし</option>
+										<option value="2">不備あり</option>
+									</select>
+								</span>
+								<textarea name="" id="" rows="4" class="form--line form--w100 screeningText" placeholder="修正内容を入力してください"></textarea>
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>福利厚生</th>
+							<td class="resultCell">社会保険完備</td>
+							<td class="screeningCell">
+								<span class="md_select form--w50">
+									<select name="" id="result_016" class="form--line">
+										<option value="1">不備なし</option>
+										<option value="2">不備あり</option>
+									</select>
+								</span>
+								<textarea name="" id="" rows="4" class="form--line form--w100 screeningText" placeholder="修正内容を入力してください"></textarea>
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>日程</th>
+							<td class="resultCell">
+								<div class="terms">
+									<div class="dayContent">
+										<div class="groupTitle">企画職コースインターンシップ</div>
+										<div class="daySelect">
+											<div class="flexArea">
+												<span class="itemTitle">実施日時</span>
+												<span class="itemContent">2024年07月17日（水）10:00～11:00</span>
+											</div>
+											<div class="flexArea">
+												<span class="itemTitle">スカウト定員</span>
+												<span class="itemContent">200名</span>
+											</div>
+											<div class="flexArea">
+												<span class="itemTitle">自主応募定員</span>
+												<span class="itemContent">300名</span>
+											</div>
+											<div class="flexArea">
+												<span class="itemTitle">開催場所</span>
+												<span class="itemContent">オンライン</span>
+											</div>
+											<div class="flexArea">
+												<span class="itemTitle">マップURL</span>
+												<span class="itemContent"></span>
+											</div>
+										</div>
+										<div class="daySelect">
+											<div class="flexArea">
+												<span class="itemTitle">実施日時</span>
+												<span class="itemContent">2024年07月17日（水）10:00～11:00</span>
+											</div>
+											<div class="flexArea">
+												<span class="itemTitle">スカウト定員</span>
+												<span class="itemContent">200名</span>
+											</div>
+											<div class="flexArea">
+												<span class="itemTitle">自主応募定員</span>
+												<span class="itemContent">300名</span>
+											</div>
+											<div class="flexArea">
+												<span class="itemTitle">開催場所</span>
+												<span class="itemContent">オンライン</span>
+											</div>
+											<div class="flexArea">
+												<span class="itemTitle">マップURL</span>
+												<span class="itemContent"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+							<td class="screeningCell">
+								<span class="md_select form--w50">
+									<select name="" id="result_006" class="form--line">
+										<option value="1">不備なし</option>
+										<option value="2">不備あり</option>
+									</select>
+								</span>
+								<textarea name="" id="" rows="4" class="form--line form--w100 screeningText" placeholder="修正内容を入力してください"></textarea>
+							</td>
+						</tr>
+						<tr class="tr tr--title">
+							<td class="titleCell" colspan="3">
+								<span class="screeningTitle">審査結果</span>
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>審査結果</th>
+							<td class="actionCell" colspan="2">
+								<div class="md_toggle">
+									<input type="radio" name="radio" id="radioScreening_001" checked="">
+									<label for="radioScreening_001">掲載NG</label>
+								</div>
+								<div class="md_toggle">
+									<input type="radio" name="radio" id="radioScreening_002">
+									<label for="radioScreening_002">掲載OK</label>
+								</div>
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>申し送り事項</th>
+							<td colspan="2">
+								<textarea name="" id="" rows="4" class="form--line form--w100" placeholder="次担当者への申し送り事項があれば入力してください"></textarea>
+							</td>
+						</tr>
+						<tr class="tr">
+							<td class="btnCell" colspan="3">
+								<div class="btnSet">
+									<a href="../recruit/recruitManage_ptn_empty.html?snackBar02" class="md_btn md_btn--second">一時保存</a>
+									<a href="../recruit/recruitManage_ptn_empty.html?snackBar04" class="md_btn">確定</a>
+									<a href="../recruit/recruitManage_ptn_empty.html?snackBar03" class="skipAction">
+										<span class="skipText">
+											保留
+										</span>
+										<span class="iconImgPart">
+											<svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" fill="none" class="skipIcon"><path fill="#667085" fill-rule="evenodd" d="m18.918 8.252-7.685 7.853a.265.265 0 0 1-.453-.188V12.01c-2.904-.131-7.598-.305-9.998 7.044-.162.497-.22.993-.541.942-.32-.05-.227-.54-.232-1.065-.051-5.255.882-8.675 2.755-10.928C4.588 5.81 7.27 4.751 10.779 4.21V.268c0-.239.286-.358.453-.189l7.593 7.703c.103.104.28.28.093.47Z" clip-rule="evenodd"/></svg>
+										</span>
+									</a>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</form>
+		<!-- /md_table -->
+	</div>
+
+<!-- Container End --></div><!-- /Container End -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+
+<script>
+	// 複数の#result_要素を一括で取得
+document.querySelectorAll('#result_001, #result_002, #result_003, #result_004, #result_005, #result_006, #result_007, #result_008, #result_009, #result_010, #result_011, #result_012, #result_013, #result_014, #result_015, #result_016').forEach(function(selectElement) {
+    var screeningText = selectElement.closest('td').querySelector('.screeningText');
+
+    // 初期状態のoptionの値をチェックしてdisabledの状態を設定
+    if (selectElement.value === "1") {
+        screeningText.disabled = true;
+    } else {
+        screeningText.disabled = false;
+    }
+
+    // selectの値が変更されたときの処理
+    selectElement.addEventListener('change', function() {
+        // valueが"2"の場合、textareaにdisabledを追加
+        if (this.value === "1") {
+            screeningText.disabled = true;
+        } else {
+            // valueが"1"または他の値の場合、disabledを解除
+            screeningText.disabled = false;
+        }
+    });
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>担当者情報</title>
+
+<link rel="stylesheet" href="../common/css/setting/list.css"/>
+</head>
+<body>
+
+<!-- snackBar -->
+<div class="md_snackBar Bar01">
+	<div class="base">
+		<div class="text">担当者情報を保存しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar02">
+	<div class="base">
+		<div class="text">担当者を追加しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+ <!-- snackBar -->
+<div class="md_snackBar Bar03">
+	<div class="base">
+		<div class="text">担当者を削除しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- Modal01 -->
+<div class="md_modal modal01" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="Content">
+			<div class="textArea">
+				<div class="catch">削除エラー</div>
+				<p class="copy">
+					企業の担当者になっているため削除できません。
+					<br>
+					企業の担当者を変更してから削除してください。
+				</p>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--medium md_btn--second js_modalX">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Modal01 -->
+
+<!-- Modal02 -->
+<div class="md_modal modal02" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="Content">
+			<div class="textArea">
+				<div class="catch">削除確認</div>
+				<p class="copy">
+					担当者を削除します。よろしいですか？
+				</p>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--medium js_modalX multiple js_snackBar" data-target="Bar03">削除</button><button class="md_btn md_btn--medium md_btn--second js_modalX multiple">キャンセル</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Modal02 -->
+
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+	<div class="contentWrap">
+		<!-- titleArea -->
+		<div class="titleArea">
+			<h2 class="mainTitle">担当者情報</h2>
+			<div class="subArea">
+				<a href="accountSetting_regist.html" class="md_btn md_btn--medium md_btn--second md_btn--icon md_btn--disabled"><span class="iconImgPart">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -2 15 15"><path fill="#fff" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"/></svg>
+				</span>担当者を追加</a>
+				<div class="errorTxt">
+					<span class="iconImgPart">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 150 1100 1100" class="errorIcon"><path d="m993.554 865.69-.267-.267-364.968-609.718c0-.267-.267-.267-.267-.544-23.986-38.818-65.23-61.994-110.515-61.994s-86.524 23.182-110.246 61.727c-.267.267-.544.544-.544 1.078L41.509 865.69s0 .267-.267.267c-11.321 19.409-17.52 42.051-17.52 64.96 0 70.622 57.416 128.574 127.767 129.382h731.833c70.622-.811 128.036-58.76 128.036-129.382 0-22.909-6.199-45.551-17.787-65.23zM882.5 974.05H152.564c-23.453-.267-42.318-19.676-42.318-43.129 0-7.544 1.889-14.821 5.66-21.298l364.968-609.448.267-.267c8.088-12.665 21.564-20.22 36.661-20.22s28.841 7.821 36.929 20.753L919.159 909.35c3.777 6.466 5.66 14.021 5.66 21.564.267 23.453-18.865 42.86-42.318 43.129zM517.53 456.516c-23.72 0-43.129 19.409-43.129 43.129v172.51c0 23.72 19.409 43.129 43.129 43.129s43.129-19.409 43.129-43.129v-172.51c0-23.72-19.409-43.129-43.129-43.129zm0 345.023c-11.321 0-22.375 4.577-30.461 12.665s-12.665 19.142-12.665 30.461 4.577 22.375 12.665 30.461c8.088 8.088 19.142 12.665 30.461 12.665s22.375-4.577 30.461-12.665c8.088-8.088 12.665-19.142 12.665-30.461s-4.577-22.375-12.665-30.461c-8.088-8.088-19.142-12.665-30.461-12.665z" fill="#f04438"></path></svg>
+						</span>
+					担当者数が上限に達しています
+				</div>
+			</div>
+		</div>
+		<!-- /titleArea -->
+
+		<!-- md_table -->
+		<table class="md_table">
+			<thead>
+				<tr>
+					<th class="item item--w20">担当者<span class="count">（10 / 10名）</span></th>
+					<th class="item item--w10">権限</th>
+					<th class="item item--w20">メールアドレス</th>
+					<th class="item">自動登録タグ</th>
+					<th class="item item--w10"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="data">
+						<div class="accountSet">
+							<div class="imgCell"><img src="../imageFile/accountImg02.png"></div>
+							<div class="main">大島 由美</div>
+						</div>
+					</td>
+					<td class="data">
+						<span class="md_chip md_chip--blue"><span class="chipTxt">管理者</span></span>
+					</td>
+					<td class="data"><span class="holder">yumi_ohishima@en-japan.com</span></td>
+					<td class="data">
+						<span class="tagTxt">エンゲージ</span>
+						<span class="tagTxt">エンジニア志望</span>
+					</td>
+					<td class="data data--btn">
+						<div class="btnSet">
+							<div class="btnCell">
+								<a href="accountSetting_renew.html" class="md_btn md_btn--medium">編集</a>
+							</div>
+							<div class="btnCell">
+								<button class="md_btn md_btn--medium md_btn--disabled">削除</button>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="data">
+						<div class="accountSet">
+							<div class="imgCell"><img src="../imageFile/accountImg01.jpeg"></div>
+							<div class="main">鈴木 健一</div>
+						</div>
+					</td>
+					<td class="data">
+						<span class="md_chip md_chip--orange"><span class="chipTxt">メンバー</span></span>
+					</td>
+					<td class="data"><span class="holder">Kenpi_suzuki@en-japan.com</span></td>
+					<td class="data">
+						<span class="tagTxt">優秀学生</span>
+						<span class="tagTxt">企画職志望</span>
+					</td>
+					<td class="data data--btn">
+						<div class="btnSet">
+							<div class="btnCell">
+								<a href="accountSetting_renew_ptn_member.html" class="md_btn md_btn--medium">編集</a>
+							</div>
+							<div class="btnCell">
+								<button class="md_btn md_btn--medium md_btn--second js_modalOpen" data-modal="modal02">削除</button>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="data">
+						<div class="accountSet">
+							<div class="imgCell"><img src="../imageFile/accountImg03.png"></div>
+							<div class="main">一二三 四五六七郎</div>
+						</div>
+					</td>
+					<td class="data">
+						<span class="md_chip md_chip--orange"><span class="chipTxt">メンバー</span></span>
+					</td>
+					<td class="data"><span class="holder">ware_bushinhoukennari@en-japan.com</span></td>
+					<td class="data">
+						<span class="tagTxt">面接良さそう</span>
+						<span class="tagTxt">理系専攻</span>
+					</td>
+					<td class="data data--btn">
+						<div class="btnSet">
+							<div class="btnCell">
+								<a href="accountSetting_renew_ptn_member.html" class="md_btn md_btn--medium">編集</a>
+							</div>
+							<div class="btnCell">
+								<button class="md_btn md_btn--medium md_btn--second js_modalOpen" data-modal="modal01">削除</button>
+							</div>
+						</div>
+					</td>
+				<tr>
+					<td class="data">
+						<div class="accountSet">
+							<div class="imgCell"><img src="../imageFile/accountImg04.png"></div>
+							<div class="main">山田 太郎</div>
+						</div>
+					</td>
+					<td class="data">
+						<span class="md_chip md_chip--orange"><span class="chipTxt">メンバー</span></span>
+					</td>
+					<td class="data"><span class="holder">taro_yamada@en-japan.com</span></td>
+					<td class="data">
+						<span class="tagTxt">カジュアル面談</span>
+						<span class="tagTxt">優秀学生</span>
+						<span class="tagTxt">エンジニア志望</span>
+					</td>
+					<td class="data data--btn">
+						<div class="btnSet">
+							<div class="btnCell">
+								<a href="accountSetting_renew_ptn_member.html" class="md_btn md_btn--medium">編集</a>
+							</div>
+							<div class="btnCell">
+								<button class="md_btn md_btn--medium md_btn--second js_modalOpen" data-modal="modal01">削除</button>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="data">
+						<div class="accountSet">
+							<div class="imgCell"><img src="../imageFile/accountImg05.png"></div>
+							<div class="main">佐藤 花子</div>
+						</div>
+					</td>
+					<td class="data">
+						<span class="md_chip md_chip--orange"><span class="chipTxt">メンバー</span></span>
+					</td>
+					<td class="data"><span class="holder">hanako_sato@en-japan.com</span></td>
+					<td class="data">
+						<span class="tagTxt">人事面接スキップ</span>
+						<span class="tagTxt">本社採用候補</span>
+					</td>
+					<td class="data data--btn">
+						<div class="btnSet">
+							<div class="btnCell">
+								<a href="accountSetting_renew_ptn_member.html" class="md_btn md_btn--medium">編集</a>
+							</div>
+							<div class="btnCell">
+								<button class="md_btn md_btn--medium md_btn--second js_modalOpen" data-modal="modal01">削除</button>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="data">
+						<div class="accountSet">
+							<div class="imgCell"><img src="../imageFile/accountImg06.png"></div>
+							<div class="main">高橋 美咲</div>
+						</div>
+					</td>
+					<td class="data">
+						<span class="md_chip md_chip--orange"><span class="chipTxt">メンバー</span></span>
+					</td>
+					<td class="data"><span class="holder">misaki_takahashi@en-japan.com</span></td>
+					<td class="data">
+						<span class="tagTxt">一次面接</span>
+					</td>
+					<td class="data data--btn">
+						<div class="btnSet">
+							<div class="btnCell">
+								<a href="accountSetting_renew_ptn_member.html" class="md_btn md_btn--medium">編集</a>
+							</div>
+							<div class="btnCell">
+								<button class="md_btn md_btn--medium md_btn--second js_modalOpen" data-modal="modal01">削除</button>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="data">
+						<div class="accountSet">
+							<div class="imgCell"><img src="../imageFile/accountImg07.png"></div>
+							<div class="main">田中 翔太</div>
+						</div>
+					</td>
+					<td class="data">
+						<span class="md_chip md_chip--orange"><span class="chipTxt">メンバー</span></span>
+					</td>
+					<td class="data"><span class="holder">shota_tanaka@en-japan.com</span></td>
+					<td class="data">
+						<span class="tagTxt">インターン学生</span>
+						<span class="tagTxt">エンジニア志望</span>
+						<span class="tagTxt">オンライン面談</span>
+					</td>
+					<td class="data data--btn">
+						<div class="btnSet">
+							<div class="btnCell">
+								<a href="accountSetting_renew_ptn_member.html" class="md_btn md_btn--medium">編集</a>
+							</div>
+							<div class="btnCell">
+								<button class="md_btn md_btn--medium md_btn--second js_modalOpen" data-modal="modal01">削除</button>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="data">
+						<div class="accountSet">
+							<div class="imgCell"><img src="../imageFile/accountImg08.png"></div>
+							<div class="main">伊藤 真由美</div>
+						</div>
+					</td>
+					<td class="data">
+						<span class="md_chip md_chip--orange"><span class="chipTxt">メンバー</span></span>
+					</td>
+					<td class="data"><span class="holder">mayumi_ito@en-japan.com</span></td>
+					<td class="data">
+						<span class="tagTxt">技術コース</span>
+						<span class="tagTxt">スペシャリスト採用</span>
+					</td>
+					<td class="data data--btn">
+						<div class="btnSet">
+							<div class="btnCell">
+								<a href="accountSetting_renew_ptn_member.html" class="md_btn md_btn--medium">編集</a>
+							</div>
+							<div class="btnCell">
+								<button class="md_btn md_btn--medium md_btn--second js_modalOpen" data-modal="modal01">削除</button>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="data">
+						<div class="accountSet">
+							<div class="imgCell"><img src="../imageFile/accountImg08.png"></div>
+							<div class="main">唐沢 みどり</div>
+						</div>
+					</td>
+					<td class="data">
+						<span class="md_chip md_chip--orange"><span class="chipTxt">メンバー</span></span>
+					</td>
+					<td class="data"><span class="holder">mayumi_ito@en-japan.com</span></td>
+					<td class="data">
+						<span class="tagTxt">技術コース</span>
+						<span class="tagTxt">スペシャリスト採用</span>
+					</td>
+					<td class="data data--btn">
+						<div class="btnSet">
+							<div class="btnCell">
+								<a href="accountSetting_renew_ptn_member.html" class="md_btn md_btn--medium">編集</a>
+							</div>
+							<div class="btnCell">
+								<button class="md_btn md_btn--medium md_btn--second js_modalOpen" data-modal="modal01">削除</button>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- /md_table -->
+	</div>
+<!-- Container End --></div><!-- /Container End -->
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+
+</body>
+</html>

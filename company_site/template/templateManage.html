@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="/favicon.ico" />
+<title>テンプレ管理</title>
+<link rel="stylesheet" href="../common/css/template/templateManage_list.css"/>
+</head>
+<body>
+
+<!-- Modal09 -->
+<div class="md_modal modal09" style="display: none;">
+    <button class="bgLayer js_modalX"></button>
+    <div class="modalSet">
+        <div class="Content">
+            <div class="textArea">
+                <div class="catch">削除確認</div>
+                <p class="copy">
+                    検索条件を削除します。よろしいですか？
+                </p>
+            </div>
+            <div class="actionArea">
+                <button class="md_btn md_btn--medium multiple js_modalX js_snackBar js_listDelete" data-target="Bar01">削除</button>
+                <button class="md_btn md_btn--medium md_btn--second multiple js_modalX">キャンセル</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal09 -->
+
+<!-- Modal02 -->
+<div class="md_modal md_modal--rich modal02" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="title">
+			テンプレート追加
+		</div>
+		<div class="contentArea">
+			<table class="md_table">
+				<tbody>
+					<tr class="tr">
+						<th>テンプレート名</th>
+						<td><input type="text" placeholder="テンプレート名を入力してください" value="" class="form--line form--w100"></td>
+					</tr>
+					<tr class="tr">
+						<th>本文</th>
+						<td>
+                            <input type="text" placeholder="件名を入力してください" value="" class="form--line form--w100">
+                            <textarea name="" id="" rows="12" class="form--line form--w100" placeholder="本文を入力してください" data-limit=""></textarea>
+                            <div class="tagBtn">
+                                <ul>
+                                    <li><button>name</button></li>
+                                    <li><button>企業情報</button></li>
+                                    <li><button>担当情報</button></li>
+                                </ul>
+                            </div>
+                        </td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="actionArea actionArea--noFloat">
+			<button class="md_btn md_btn--second js_modalX">キャンセル</button>
+			<button class="md_btn js_snackBar js_modalX" data-target="Bar02">保存</button>
+		</div>
+	</div>
+</div>
+<!-- /Modal02 -->
+
+<!-- Modal05 -->
+<div class="md_modal md_modal--rich modal05" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="title">
+			テンプレート編集
+		</div>
+		<div class="contentArea">
+			<table class="md_table">
+				<tbody>
+					<tr class="tr">
+						<th>テンプレート名</th>
+						<td><input type="text" placeholder="テンプレート名を入力してください" value="経歴リクエスト用" class="form--line form--w100"></td>
+					</tr>
+					<tr class="tr">
+						<th>本文</th>
+						<td>
+                            <input type="text" placeholder="件名を入力してください" value="職務経歴書ご提出のお願い" class="form--line form--w100">
+                            <textarea name="" id="" rows="12" class="form--line form--w100" placeholder="本文を入力してください" data-limit="">
+nameさん
+
+こんにちは。irotosの大島です。
+
+ご返信ありがとうございます！
+それでは、以下の内容でご予約をお取りしますので、
+スケジュールの確保をお願いいたします。
+
+------------------------
+■日時
+◯◯月◯◯日
+
+■場所
+東京都渋谷区神南1丁目12-16 アジアビル9階
+http://i-tank.jp/about/access
+
+※現在、iroots運営事務局が、アイタンクジャパン（エン・ジャパン100％出資）
+　のオフィスにあるため、そちらにお越しくださいませ。
+　内線番号が書いてありますので、小笠原（おがさわら）を呼び出してください。
+
+■持ち物など
+私服OK／筆記用具のみ持参ください
+
+------------------------
+
+以上、何か不明点がありましたら、いつでもご連絡くださいね。
+引き続き、どうぞよろしくお願いいたします。
+
+━━━━━━━━━━━━━━━━━━━━━━
+iroots運営事務局
+大島 由美　 Yumi Ohshima
+isupport@iroots.jp
+━━━━━━━━━━━━━━━━━━━━━━
+                            </textarea>
+                            <div class="tagBtn">
+                                <ul>
+                                    <li><button>name</button></li>
+                                    <li><button>企業情報</button></li>
+                                    <li><button>担当情報</button></li>
+                                </ul>
+                            </div>
+                        </td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="actionArea actionArea--noFloat">
+			<button class="md_btn md_btn--second js_modalX">キャンセル</button>
+			<button class="md_btn js_snackBar js_modalX" data-target="Bar03">保存</button>
+		</div>
+	</div>
+</div>
+<!-- /Modal05 -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar01">
+    <div class="base">
+        <div class="text">検索条件を削除しました</div>
+        <button class="close js_snackBarX">✕</button>
+    </div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar02">
+    <div class="base">
+        <div class="text">テンプレートを追加しました</div>
+        <button class="close js_snackBarX">✕</button>
+    </div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar03">
+    <div class="base">
+        <div class="text">テンプレートを保存しました</div>
+        <button class="close js_snackBarX">✕</button>
+    </div>
+</div>
+<!-- /snackBar -->
+    
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+<div class="contentWrap contentWrap--flex">
+
+<!-- 左側の一覧部分 -->
+<div class="listWrap">
+
+<!-- titleArea -->
+<div class="titleArea">
+    <h2 class="mainTitle">テンプレ管理</h2>
+    <div class="btnArea">
+        <button class="md_btn md_btn--medium md_btn--second md_btn--icon js_modalOpen" data-modal="modal02">
+            <span class="iconImgPart">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -2 15 15">
+                    <path fill="#767676" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"></path>
+                </svg>
+            </span>
+            新規テンプレート追加
+        </button>
+    </div>
+</div>
+<!-- /titleArea -->
+
+<!-- md_table -->
+<form id="" name="" method="" action="">
+    <div class="contents">
+        <table class="md_table">
+            <thead>
+                <tr>
+                    <th class="item item--min">
+                        並び替え
+                    </th>
+                    <th class="item">
+                        テンプレート名
+                    </th>
+                    <th class="item item--w20">
+                        最終更新日
+                    </th>
+                    <th class="item item--w10">
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="selected">
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_saveDataSwitch" data-save="saveData001">
+                        <span class="">経歴リクエスト用</span>
+                    </td>
+                    <td class="data">
+                        <span class="">2023/10/23</span>
+                    </td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a class="md_btn md_btn--medium js_modalOpen" data-modal="modal05">編集</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_copyContent">複製</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_saveDataSwitch" data-save="saveData002">
+                        <span class="">面談スカウト（iroots小笠原）</span>
+                    </td>
+                    <td class="data">
+                        <span class="">2023/10/23</span>
+                    </td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a class="md_btn md_btn--medium js_modalOpen" data-modal="modal05">編集</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_copyContent">複製</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_saveDataSwitch" data-save="saveData003">
+                        <span class="">ランチ会お誘い（返信）</span>
+                    </td>
+                    <td class="data">
+                        <span class="">2023/10/23</span>
+                    </td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a class="md_btn md_btn--medium js_modalOpen" data-modal="modal05">編集</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_copyContent">複製</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form>
+<!-- /md_table -->
+
+</div>
+<!-- /左側の一覧部分 -->
+
+<!-- 右側のデータ部分1-->
+<div class="dataWrap saveData001 show">
+    <div class="saveDataArea">
+        <div class="title">経歴リクエスト用</div>
+    </div>
+    <div class="textArea textArea--data">
+        <div class="richTxt">職務経歴書ご提出のお願い</div>
+        <div class="plainTxt">
+            nameさん<br>
+            <br>
+            こんにちは。irotosの大島です。<br>
+            <br>
+            ご返信ありがとうございます！<br>
+            それでは、以下の内容でご予約をお取りしますので、<br>
+            スケジュールの確保をお願いいたします。<br>
+            <br>
+            ------------------------<br>
+            ■日時<br>
+            ◯◯月◯◯日<br>
+            <br>
+            ■場所<br>
+            東京都渋谷区神南1丁目12-16 アジアビル9階<br>
+            http://i-tank.jp/about/access<br>
+            <br>
+            ※現在、iroots運営事務局が、アイタンクジャパン（エン・ジャパン100％出資）<br>
+            　のオフィスにあるため、そちらにお越しくださいませ。<br>
+            　内線番号が書いてありますので、小笠原（おがさわら）を呼び出してください。<br>
+            <br>
+            ■持ち物など<br>
+            私服OK／筆記用具のみ持参ください<br>
+            <br>
+            ------------------------<br>
+            <br>
+            以上、何か不明点がありましたら、いつでもご連絡くださいね。<br>
+            引き続き、どうぞよろしくお願いいたします。<br>
+            <br>
+            ━━━━━━━━━━━━━━━━━━━━━━<br>
+            iroots運営事務局<br>
+            大島 由美　 Yumi Ohshima<br>
+            isupport@iroots.jp<br>
+            ━━━━━━━━━━━━━━━━━━━━━━<br>
+        </div>
+    </div>
+    <div class="btnArea">
+        <div class="btnSet">
+            <button class="md_btn  js_drawerX js_modalOpen" data-modal="modal05">編集</button>
+        </div>
+    </div>
+</div>
+<!-- /右側のデータ部分1-->
+
+<!-- 右側のデータ部分2-->
+<div class="dataWrap saveData002">
+    <div class="saveDataArea">
+        <div class="title">面談スカウト（iroots小笠原）</div>
+    </div>
+    <div class="textArea textArea--data">
+        <div class="richTxt">キャリア面談のお誘い</div>
+        <div class="plainTxt">
+            nameさん<br>
+            <br>
+            こんにちは。irotosの大島です。<br>
+            <br>
+            ご返信ありがとうございます！<br>
+            それでは、以下の内容でご予約をお取りしますので、<br>
+            スケジュールの確保をお願いいたします。<br>
+            <br>
+            ------------------------<br>
+            ■日時<br>
+            ◯◯月◯◯日<br>
+            <br>
+            ■場所<br>
+            東京都渋谷区神南1丁目12-16 アジアビル9階<br>
+            http://i-tank.jp/about/access<br>
+            <br>
+            ※現在、iroots運営事務局が、アイタンクジャパン（エン・ジャパン100％出資）<br>
+            　のオフィスにあるため、そちらにお越しくださいませ。<br>
+            　内線番号が書いてありますので、小笠原（おがさわら）を呼び出してください。<br>
+            <br>
+            ■持ち物など<br>
+            私服OK／筆記用具のみ持参ください<br>
+            <br>
+            ------------------------<br>
+            <br>
+            以上、何か不明点がありましたら、いつでもご連絡くださいね。<br>
+            引き続き、どうぞよろしくお願いいたします。<br>
+            <br>
+            ━━━━━━━━━━━━━━━━━━━━━━<br>
+            iroots運営事務局<br>
+            大島 由美　 Yumi Ohshima<br>
+            isupport@iroots.jp<br>
+            ━━━━━━━━━━━━━━━━━━━━━━<br>
+        </div>
+    </div>
+    <div class="btnArea">
+        <div class="btnSet">
+            <button class="md_btn  js_drawerX js_modalOpen" data-modal="modal05">編集</button>
+        </div>
+    </div>
+</div>
+<!-- /右側のデータ部分2-->
+
+<!-- 右側のデータ部分3-->
+<div class="dataWrap saveData003">
+    <div class="saveDataArea">
+        <div class="title">ランチ会お誘い（返信）</div>
+    </div>
+    <div class="textArea textArea--data">
+        <div class="richTxt">ランチ会のお誘い</div>
+        <div class="plainTxt">
+            nameさん<br>
+            <br>
+            こんにちは。irotosの大島です。<br>
+            <br>
+            ご返信ありがとうございます！<br>
+            それでは、以下の内容でご予約をお取りしますので、<br>
+            スケジュールの確保をお願いいたします。<br>
+            <br>
+            ------------------------<br>
+            ■日時<br>
+            ◯◯月◯◯日<br>
+            <br>
+            ■場所<br>
+            東京都渋谷区神南1丁目12-16 アジアビル9階<br>
+            http://i-tank.jp/about/access<br>
+            <br>
+            ※現在、iroots運営事務局が、アイタンクジャパン（エン・ジャパン100％出資）<br>
+            　のオフィスにあるため、そちらにお越しくださいませ。<br>
+            　内線番号が書いてありますので、小笠原（おがさわら）を呼び出してください。<br>
+            <br>
+            ■持ち物など<br>
+            私服OK／筆記用具のみ持参ください<br>
+            <br>
+            ------------------------<br>
+            <br>
+            以上、何か不明点がありましたら、いつでもご連絡くださいね。<br>
+            引き続き、どうぞよろしくお願いいたします。<br>
+            <br>
+            ━━━━━━━━━━━━━━━━━━━━━━<br>
+            iroots運営事務局<br>
+            大島 由美　 Yumi Ohshima<br>
+            isupport@iroots.jp<br>
+            ━━━━━━━━━━━━━━━━━━━━━━<br>
+        </div>
+    </div>
+    <div class="btnArea">
+        <div class="btnSet">
+            <button class="md_btn  js_drawerX js_modalOpen" data-modal="modal05">編集</button>
+        </div>
+    </div>
+</div>
+<!-- /右側のデータ部分3-->
+
+</div>
+<!-- Container End --></div><!-- /Container End -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="/company_site/common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+<script>
+    $(function () {
+        $(document).on('click', '.cmdArea', threeDots);
+        $(document).on('click', '.js_saveDataSwitch', saveDataSwitch);
+        $('.js_modalOpen').on('click', function () {
+            const titledata = $('.md_modal.modal03').find('.modalHeadedArea').find('.title');
+            if ($(this).text().trim().includes('編集')) {
+                titledata.text('保存済み検索条件編集');
+                $('.md_modal.modal03').find('.actionArea--edit').addClass('show');
+                $('.md_modal.modal03').find('.actionArea--add').removeClass('show');
+            } else {
+                titledata.text('保存済み検索条件追加');
+                $('.md_modal.modal03').find('.actionArea--edit').removeClass('show');
+                $('.md_modal.modal03').find('.actionArea--add').addClass('show');
+            }
+        });
+        $(document).on('click', '.js_trAdd', trAdd);
+        $(document).on('click', '.js_trSaveAs', trSaveAs);
+        $(document).on('click', '.js_trSave', trSave);
+        $(document).on('click', '.js_modalOpenDelete', modalOpenDelete);
+        $(document).on('click', '.js_copyContent', copyContent);
+        $(document).on('mouseenter', '.grabArea', function () {
+            $(this).closest('tr').addClass('hoverColor');
+        });
+        $(document).on('mouseleave', '.grabArea', function () {
+            $(this).closest('tr').removeClass('hoverColor');
+        });
+        tableStyles();
+    });
+    
+    function tableStyles() {
+        $('.md_table tbody tr td').css('border-radius', '0');
+        $('.md_table tbody tr:first td:first').css('border-top-left-radius', '8px');
+        $('.md_table tbody tr:first td:last').css('border-top-right-radius', '8px');
+        $('.md_table tbody tr:last td:first').css('border-bottom-left-radius', '8px');
+        $('.md_table tbody tr:last td:last').css('border-bottom-right-radius', '8px');
+    }
+    
+    function threeDots() {
+        $(this).find('.hideAction').toggleClass('show');
+    }
+    
+    function trAdd() {
+        var lastRow = $('.md_table tbody tr:last');
+        var newRow = lastRow.clone();
+        var inputValue = $('#saveSearchNameval').val();
+        newRow.find('.title').each(function () {
+            $(this).text(inputValue);
+        });
+        $('.md_table tbody').append(newRow);
+        tableStyles();
+    }
+    function trSaveAs() {
+        var lastRow = $('.md_table tbody tr:last');
+        var newRow = lastRow.clone();
+        var inputValue = $('#saveSearchNameval').val();
+        newRow.find('.title').each(function () {
+            $(this).text(inputValue);
+        });
+        $('.md_table tbody').append(newRow);
+        tableStyles();
+    }
+    function trSave() {
+        var firstRow = $('.md_table tbody tr:first');
+        var inputValue = $('#saveSearchNameval').val();
+        firstRow.find('.title').each(function () {
+            $(this).text(inputValue);
+        });
+        tableStyles();
+    }
+    
+    function modalOpenDelete() {
+        var deleteTR = $(this).parents('tr');
+        $(document).on('click', '.js_listDelete', function () {
+            deleteTR.addClass('remove');
+            setTimeout(function () {
+                deleteTR.remove();
+                tableStyles();
+            }, 500); 
+        });
+        
+    }
+    
+    function copyContent() {
+        // 現在の行を取得
+        var thisRow = $(this).parents('tr');
+        
+        // 現在の行を複製
+        var newRow = thisRow.clone();
+        
+        // 1. 複製した行から `selected` クラスを削除
+        $(newRow).removeClass('selected');
+        
+        // 2. 複製した行内の `hideAction` に `show` クラスがついている場合、削除
+        $(newRow).find('.hideAction').removeClass('show');
+        
+        // 複製した行を現在の行の直後に挿入
+        $(newRow).insertAfter(thisRow);
+        
+        // 必要なテーブルスタイルの処理を実行
+        tableStyles();
+    }
+    
+    var saveDataSwitch = function () {
+        //e.preventDefault(); // フォーム送信を防ぐ
+        const saveClass = $(this).attr('data-save');
+        $(this).parents('tr').siblings('tr').removeClass();
+        $(this).parents('tr').addClass('selected');
+        $('.dataWrap.' + saveClass).addClass('show');
+        $('.dataWrap').not('.' + saveClass).removeClass('show');
+    }
+</script>
+</body>
+</html>

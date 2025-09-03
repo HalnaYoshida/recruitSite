@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>新規会員登録 | iroots</title>
+<link rel="stylesheet" href="../common/css/signup/form.css"/>
+</head>
+<body>
+
+
+<!-- header -->   	
+<header class="md_header md_header--signup">
+	<div class="logo"> <a href="#"> <img src="../imageFile/logo_white.svg" alt=""> </a> </div>
+</header>
+<!-- /header -->
+
+
+<div class="container container--signup">
+	<div class="navWrap">
+		<div class="navArea">
+			<div class="titleSet">
+				<div class="title">志望条件</div>
+			</div>
+			<ul class="stepBar">
+				<li class="step active"></li>
+				<li class="step "></li>
+				<li class="step"></li>
+				<li class="step"></li>
+				<li class="step"></li>
+				<li class="step"></li>
+				<li class="step"></li>
+				<li class="step"></li>
+				<li class="step"></li>
+				<li class="step"></li>
+			</ul>
+		</div>
+	</div>
+	<div class="contentWrap">
+		<div class="formArea">
+			<div class="formSet">
+				<div class="title">希望勤務地<span class="change js_modalSlideUp" data-modal="modal_area" style="display: none;">変更</span></div>
+				<div class="form">
+					<button  class="selectForm form--line form--w100 js_modalSlideUp" data-modal="modal_area">まだ決まっていない
+						<span class="iconImgPart"><svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M0.646447 11.3536C0.451184 11.1583 0.451184 10.8417 0.646447 10.6464L5.29289 6L0.646446 1.35355C0.451184 1.15829 0.451184 0.841709 0.646446 0.646447C0.841708 0.451184 1.15829 0.451184 1.35355 0.646447L6.35355 5.64645C6.54882 5.84171 6.54882 6.15829 6.35355 6.35355L1.35355 11.3536C1.15829 11.5488 0.841709 11.5488 0.646447 11.3536Z" fill="black"/>
+							</svg></span>
+					</button>
+					<div class="md_tagSet js_selected" style="display: none;">
+						<span class="md_tag md_tag--min md_tag--delete">関東<button class="delete js_delete"><span class="iconImgPart">
+							<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.646447 0.646447C0.841709 0.451184 1.15829 0.451184 1.35355 0.646447L4 3.29289L6.64645 0.646447C6.84171 0.451184 7.15829 0.451184 7.35355 0.646447C7.54882 0.841709 7.54882 1.15829 7.35355 1.35355L4.70711 4L7.35355 6.64645C7.54882 6.84171 7.54882 7.15829 7.35355 7.35355C7.15829 7.54882 6.84171 7.54882 6.64645 7.35355L4 4.70711L1.35355 7.35355C1.15829 7.54882 0.841709 7.54882 0.646447 7.35355C0.451184 7.15829 0.451184 6.84171 0.646447 6.64645L3.29289 4L0.646447 1.35355C0.451184 1.15829 0.451184 0.841709 0.646447 0.646447Z" fill="#747C92"/>
+								</svg>								
+							</span>
+						</button></span>
+						<span class="md_tag md_tag--min md_tag--delete">オンライン<button class="delete js_delete"><span class="iconImgPart">
+							<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.646447 0.646447C0.841709 0.451184 1.15829 0.451184 1.35355 0.646447L4 3.29289L6.64645 0.646447C6.84171 0.451184 7.15829 0.451184 7.35355 0.646447C7.54882 0.841709 7.54882 1.15829 7.35355 1.35355L4.70711 4L7.35355 6.64645C7.54882 6.84171 7.54882 7.15829 7.35355 7.35355C7.15829 7.54882 6.84171 7.54882 6.64645 7.35355L4 4.70711L1.35355 7.35355C1.15829 7.54882 0.841709 7.54882 0.646447 7.35355C0.451184 7.15829 0.451184 6.84171 0.646447 6.64645L3.29289 4L0.646447 1.35355C0.451184 1.15829 0.451184 0.841709 0.646447 0.646447Z" fill="#747C92"/>
+								</svg>								
+							</span>
+						</button></span>
+					</div>
+				</div>
+			</div>
+			<div class="formSet formSet--industry">
+				<div class="title">志望業界<span class="change js_modalSlideUp" data-modal="modal_industry" style="display: none;">変更</span></div>
+				<div class="form">
+					<button  class="selectForm form--line form--w100 js_modalSlideUp" data-modal="modal_industry">まだ決まっていない
+						<span class="iconImgPart"><svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M0.646447 11.3536C0.451184 11.1583 0.451184 10.8417 0.646447 10.6464L5.29289 6L0.646446 1.35355C0.451184 1.15829 0.451184 0.841709 0.646446 0.646447C0.841708 0.451184 1.15829 0.451184 1.35355 0.646447L6.35355 5.64645C6.54882 5.84171 6.54882 6.15829 6.35355 6.35355L1.35355 11.3536C1.15829 11.5488 0.841709 11.5488 0.646447 11.3536Z" fill="black"/>
+							</svg></span>
+					</button>
+					<div class="md_tagSet js_selected" style="display: none;">
+						<span class="md_tag md_tag--min md_tag--delete active">メーカー（日用品）<button class="delete js_delete"><span class="iconImgPart">
+							<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.646447 0.646447C0.841709 0.451184 1.15829 0.451184 1.35355 0.646447L4 3.29289L6.64645 0.646447C6.84171 0.451184 7.15829 0.451184 7.35355 0.646447C7.54882 0.841709 7.54882 1.15829 7.35355 1.35355L4.70711 4L7.35355 6.64645C7.54882 6.84171 7.54882 7.15829 7.35355 7.35355C7.15829 7.54882 6.84171 7.54882 6.64645 7.35355L4 4.70711L1.35355 7.35355C1.15829 7.54882 0.841709 7.54882 0.646447 7.35355C0.451184 7.15829 0.451184 6.84171 0.646447 6.64645L3.29289 4L0.646447 1.35355C0.451184 1.15829 0.451184 0.841709 0.646447 0.646447Z" fill="#747C92"/>
+								</svg>								
+							</span>
+						</button></span>
+						<span class="md_tag md_tag--min md_tag--delete active">サービス（教育）<button class="delete js_delete"><span class="iconImgPart">
+							<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.646447 0.646447C0.841709 0.451184 1.15829 0.451184 1.35355 0.646447L4 3.29289L6.64645 0.646447C6.84171 0.451184 7.15829 0.451184 7.35355 0.646447C7.54882 0.841709 7.54882 1.15829 7.35355 1.35355L4.70711 4L7.35355 6.64645C7.54882 6.84171 7.54882 7.15829 7.35355 7.35355C7.15829 7.54882 6.84171 7.54882 6.64645 7.35355L4 4.70711L1.35355 7.35355C1.15829 7.54882 0.841709 7.54882 0.646447 7.35355C0.451184 7.15829 0.451184 6.84171 0.646447 6.64645L3.29289 4L0.646447 1.35355C0.451184 1.15829 0.451184 0.841709 0.646447 0.646447Z" fill="#747C92"/>
+								</svg>								
+							</span>
+						</button></span>
+						<span class="md_tag md_tag--min md_tag--delete">ソフトウェア（通信）<button class="delete js_delete"><span class="iconImgPart">
+							<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.646447 0.646447C0.841709 0.451184 1.15829 0.451184 1.35355 0.646447L4 3.29289L6.64645 0.646447C6.84171 0.451184 7.15829 0.451184 7.35355 0.646447C7.54882 0.841709 7.54882 1.15829 7.35355 1.35355L4.70711 4L7.35355 6.64645C7.54882 6.84171 7.54882 7.15829 7.35355 7.35355C7.15829 7.54882 6.84171 7.54882 6.64645 7.35355L4 4.70711L1.35355 7.35355C1.15829 7.54882 0.841709 7.54882 0.646447 7.35355C0.451184 7.15829 0.451184 6.84171 0.646447 6.64645L3.29289 4L0.646447 1.35355C0.451184 1.15829 0.451184 0.841709 0.646447 0.646447Z" fill="#747C92"/>
+								</svg>								
+							</span>
+						</button></span>
+					</div>
+				</div>
+			</div>
+			<div class="formSet">
+				<div class="title">志望職種<span class="change js_modalSlideUp" data-modal="modal_occupation" style="display: none;">変更</span></div>
+				<div class="form">
+					<button  class="selectForm form--line form--w100 js_modalSlideUp" data-modal="modal_occupation" >まだ決まっていない
+						<span class="iconImgPart"><svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M0.646447 11.3536C0.451184 11.1583 0.451184 10.8417 0.646447 10.6464L5.29289 6L0.646446 1.35355C0.451184 1.15829 0.451184 0.841709 0.646446 0.646447C0.841708 0.451184 1.15829 0.451184 1.35355 0.646447L6.35355 5.64645C6.54882 5.84171 6.54882 6.15829 6.35355 6.35355L1.35355 11.3536C1.15829 11.5488 0.841709 11.5488 0.646447 11.3536Z" fill="black"/>
+							</svg></span>
+					</button>
+					<div class="md_tagSet js_selected" style="display: none;">
+						<span class="md_tag md_tag--min md_tag--delete active">クリエイティブ（ライター・デザイナーなど）<button class="delete js_delete"><span class="iconImgPart">
+							<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.646447 0.646447C0.841709 0.451184 1.15829 0.451184 1.35355 0.646447L4 3.29289L6.64645 0.646447C6.84171 0.451184 7.15829 0.451184 7.35355 0.646447C7.54882 0.841709 7.54882 1.15829 7.35355 1.35355L4.70711 4L7.35355 6.64645C7.54882 6.84171 7.54882 7.15829 7.35355 7.35355C7.15829 7.54882 6.84171 7.54882 6.64645 7.35355L4 4.70711L1.35355 7.35355C1.15829 7.54882 0.841709 7.54882 0.646447 7.35355C0.451184 7.15829 0.451184 6.84171 0.646447 6.64645L3.29289 4L0.646447 1.35355C0.451184 1.15829 0.451184 0.841709 0.646447 0.646447Z" fill="#747C92"/>
+								</svg>								
+							</span>
+						</button></span>
+						<span class="md_tag md_tag--min md_tag--delete">WEBディレクター・プロダクトマネージャー<button class="delete js_delete"><span class="iconImgPart">
+							<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.646447 0.646447C0.841709 0.451184 1.15829 0.451184 1.35355 0.646447L4 3.29289L6.64645 0.646447C6.84171 0.451184 7.15829 0.451184 7.35355 0.646447C7.54882 0.841709 7.54882 1.15829 7.35355 1.35355L4.70711 4L7.35355 6.64645C7.54882 6.84171 7.54882 7.15829 7.35355 7.35355C7.15829 7.54882 6.84171 7.54882 6.64645 7.35355L4 4.70711L1.35355 7.35355C1.15829 7.54882 0.841709 7.54882 0.646447 7.35355C0.451184 7.15829 0.451184 6.84171 0.646447 6.64645L3.29289 4L0.646447 1.35355C0.451184 1.15829 0.451184 0.841709 0.646447 0.646447Z" fill="#747C92"/>
+								</svg>								
+							</span>
+						</button></span>
+						<span class="md_tag md_tag--min md_tag--delete">ITエンジニア・プログラマー<button class="delete js_delete"><span class="iconImgPart">
+							<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.646447 0.646447C0.841709 0.451184 1.15829 0.451184 1.35355 0.646447L4 3.29289L6.64645 0.646447C6.84171 0.451184 7.15829 0.451184 7.35355 0.646447C7.54882 0.841709 7.54882 1.15829 7.35355 1.35355L4.70711 4L7.35355 6.64645C7.54882 6.84171 7.54882 7.15829 7.35355 7.35355C7.15829 7.54882 6.84171 7.54882 6.64645 7.35355L4 4.70711L1.35355 7.35355C1.15829 7.54882 0.841709 7.54882 0.646447 7.35355C0.451184 7.15829 0.451184 6.84171 0.646447 6.64645L3.29289 4L0.646447 1.35355C0.451184 1.15829 0.451184 0.841709 0.646447 0.646447Z" fill="#747C92"/>
+								</svg>								
+							</span>
+						</button></span>
+						<span class="md_tag md_tag--min md_tag--delete">WEB・UI/UXデザイナー<button class="delete js_delete"><span class="iconImgPart">
+							<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.646447 0.646447C0.841709 0.451184 1.15829 0.451184 1.35355 0.646447L4 3.29289L6.64645 0.646447C6.84171 0.451184 7.15829 0.451184 7.35355 0.646447C7.54882 0.841709 7.54882 1.15829 7.35355 1.35355L4.70711 4L7.35355 6.64645C7.54882 6.84171 7.54882 7.15829 7.35355 7.35355C7.15829 7.54882 6.84171 7.54882 6.64645 7.35355L4 4.70711L1.35355 7.35355C1.15829 7.54882 0.841709 7.54882 0.646447 7.35355C0.451184 7.15829 0.451184 6.84171 0.646447 6.64645L3.29289 4L0.646447 1.35355C0.451184 1.15829 0.451184 0.841709 0.646447 0.646447Z" fill="#747C92"/>
+								</svg>								
+							</span>
+						</button></span>
+					</div>
+				</div>
+			</div>
+			<div class="formSet">
+				<div class="title">企業タイプ<span class="change js_modalSlideUp" data-modal="modal_type" style="display: none;">変更</span></div>
+				<div class="form">
+					<button  class="selectForm form--line form--w100 js_modalSlideUp" data-modal="modal_type">まだ決まっていない
+						<span class="iconImgPart"><svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M0.646447 11.3536C0.451184 11.1583 0.451184 10.8417 0.646447 10.6464L5.29289 6L0.646446 1.35355C0.451184 1.15829 0.451184 0.841709 0.646446 0.646447C0.841708 0.451184 1.15829 0.451184 1.35355 0.646447L6.35355 5.64645C6.54882 5.84171 6.54882 6.15829 6.35355 6.35355L1.35355 11.3536C1.15829 11.5488 0.841709 11.5488 0.646447 11.3536Z" fill="black"/>
+							</svg></span>
+					</button>
+					<div class="md_tagSet js_selected" style="display: none;">
+						<span class="md_tag md_tag--min md_tag--delete">大手企業<button class="delete js_delete"><span class="iconImgPart">
+							<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.646447 0.646447C0.841709 0.451184 1.15829 0.451184 1.35355 0.646447L4 3.29289L6.64645 0.646447C6.84171 0.451184 7.15829 0.451184 7.35355 0.646447C7.54882 0.841709 7.54882 1.15829 7.35355 1.35355L4.70711 4L7.35355 6.64645C7.54882 6.84171 7.54882 7.15829 7.35355 7.35355C7.15829 7.54882 6.84171 7.54882 6.64645 7.35355L4 4.70711L1.35355 7.35355C1.15829 7.54882 0.841709 7.54882 0.646447 7.35355C0.451184 7.15829 0.451184 6.84171 0.646447 6.64645L3.29289 4L0.646447 1.35355C0.451184 1.15829 0.451184 0.841709 0.646447 0.646447Z" fill="#747C92"/>
+								</svg>								
+							</span>
+						</button></span>
+						<span class="md_tag md_tag--min md_tag--delete">メガベンチャー<button class="delete js_delete"><span class="iconImgPart">
+							<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.646447 0.646447C0.841709 0.451184 1.15829 0.451184 1.35355 0.646447L4 3.29289L6.64645 0.646447C6.84171 0.451184 7.15829 0.451184 7.35355 0.646447C7.54882 0.841709 7.54882 1.15829 7.35355 1.35355L4.70711 4L7.35355 6.64645C7.54882 6.84171 7.54882 7.15829 7.35355 7.35355C7.15829 7.54882 6.84171 7.54882 6.64645 7.35355L4 4.70711L1.35355 7.35355C1.15829 7.54882 0.841709 7.54882 0.646447 7.35355C0.451184 7.15829 0.451184 6.84171 0.646447 6.64645L3.29289 4L0.646447 1.35355C0.451184 1.15829 0.451184 0.841709 0.646447 0.646447Z" fill="#747C92"/>
+								</svg>								
+							</span>
+						</button></span>
+					</div>
+				</div>
+			</div>	
+			<div class="formSet">
+				<div class="title">企業の特徴<span class="change js_modalSlideUp" data-modal="modal_features" style="display: none;">変更</span></div>
+				<div class="form">
+					<button  class="selectForm form--line form--w100 js_modalSlideUp" data-modal="modal_features">まだ決まっていない
+						<span class="iconImgPart"><svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M0.646447 11.3536C0.451184 11.1583 0.451184 10.8417 0.646447 10.6464L5.29289 6L0.646446 1.35355C0.451184 1.15829 0.451184 0.841709 0.646446 0.646447C0.841708 0.451184 1.15829 0.451184 1.35355 0.646447L6.35355 5.64645C6.54882 5.84171 6.54882 6.15829 6.35355 6.35355L1.35355 11.3536C1.15829 11.5488 0.841709 11.5488 0.646447 11.3536Z" fill="black"/>
+							</svg></span>
+					</button>
+					<div class="md_tagSet js_selected" style="display: none;">
+						<span class="md_tag md_tag--min md_tag--delete">ソーシャルビジネスで社会問題を解決<button class="delete js_delete"><span class="iconImgPart">
+							<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.646447 0.646447C0.841709 0.451184 1.15829 0.451184 1.35355 0.646447L4 3.29289L6.64645 0.646447C6.84171 0.451184 7.15829 0.451184 7.35355 0.646447C7.54882 0.841709 7.54882 1.15829 7.35355 1.35355L4.70711 4L7.35355 6.64645C7.54882 6.84171 7.54882 7.15829 7.35355 7.35355C7.15829 7.54882 6.84171 7.54882 6.64645 7.35355L4 4.70711L1.35355 7.35355C1.15829 7.54882 0.841709 7.54882 0.646447 7.35355C0.451184 7.15829 0.451184 6.84171 0.646447 6.64645L3.29289 4L0.646447 1.35355C0.451184 1.15829 0.451184 0.841709 0.646447 0.646447Z" fill="#747C92"/>
+								</svg>								
+							</span>
+						</button></span>
+						<span class="md_tag md_tag--min md_tag--delete">新しいビジネスモデルを創造<button class="delete js_delete"><span class="iconImgPart">
+							<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.646447 0.646447C0.841709 0.451184 1.15829 0.451184 1.35355 0.646447L4 3.29289L6.64645 0.646447C6.84171 0.451184 7.15829 0.451184 7.35355 0.646447C7.54882 0.841709 7.54882 1.15829 7.35355 1.35355L4.70711 4L7.35355 6.64645C7.54882 6.84171 7.54882 7.15829 7.35355 7.35355C7.15829 7.54882 6.84171 7.54882 6.64645 7.35355L4 4.70711L1.35355 7.35355C1.15829 7.54882 0.841709 7.54882 0.646447 7.35355C0.451184 7.15829 0.451184 6.84171 0.646447 6.64645L3.29289 4L0.646447 1.35355C0.451184 1.15829 0.451184 0.841709 0.646447 0.646447Z" fill="#747C92"/>
+								</svg>								
+							</span>
+						</button></span>
+						<span class="md_tag md_tag--min md_tag--delete">幅広い職種にチャレンジができる<button class="delete js_delete"><span class="iconImgPart">
+							<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.646447 0.646447C0.841709 0.451184 1.15829 0.451184 1.35355 0.646447L4 3.29289L6.64645 0.646447C6.84171 0.451184 7.15829 0.451184 7.35355 0.646447C7.54882 0.841709 7.54882 1.15829 7.35355 1.35355L4.70711 4L7.35355 6.64645C7.54882 6.84171 7.54882 7.15829 7.35355 7.35355C7.15829 7.54882 6.84171 7.54882 6.64645 7.35355L4 4.70711L1.35355 7.35355C1.15829 7.54882 0.841709 7.54882 0.646447 7.35355C0.451184 7.15829 0.451184 6.84171 0.646447 6.64645L3.29289 4L0.646447 1.35355C0.451184 1.15829 0.451184 0.841709 0.646447 0.646447Z" fill="#747C92"/>
+								</svg>								
+							</span>
+						</button></span>
+						<span class="md_tag md_tag--min md_tag--delete">実⼒主義・フラットな雰囲気<button class="delete js_delete"><span class="iconImgPart">
+							<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.646447 0.646447C0.841709 0.451184 1.15829 0.451184 1.35355 0.646447L4 3.29289L6.64645 0.646447C6.84171 0.451184 7.15829 0.451184 7.35355 0.646447C7.54882 0.841709 7.54882 1.15829 7.35355 1.35355L4.70711 4L7.35355 6.64645C7.54882 6.84171 7.54882 7.15829 7.35355 7.35355C7.15829 7.54882 6.84171 7.54882 6.64645 7.35355L4 4.70711L1.35355 7.35355C1.15829 7.54882 0.841709 7.54882 0.646447 7.35355C0.451184 7.15829 0.451184 6.84171 0.646447 6.64645L3.29289 4L0.646447 1.35355C0.451184 1.15829 0.451184 0.841709 0.646447 0.646447Z" fill="#747C92"/>
+								</svg>								
+							</span>
+						</button></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="btnArea">
+			<div class="btnSet column">
+				<a href="form_skill.html" class="md_btn md_btn--medium md_btn--second">スキップ</a>
+				<a href="form_skill.html" class="md_btn md_btn--submit">次へ進む</a>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+<!-- md_modal--half -->
+<div class="md_modal md_modal--half modal_area">
+	<button class="bgLayer js_modalSlideDown" style="display: none;"></button>
+	<div class="modalSet">
+		<div class="Content">
+			<div class="titleArea">
+				<div class="title">希望勤務地<span class="closeLink js_modalSlideDown"></span></div>
+				<div class="copy">希望する勤務地を選択してください。（複数選択可）</div>
+			</div>
+			<div class="contentArea">
+				<div class="form form--tag">
+					<div class="md_tagSet area">
+						<span class="md_tag">北海道</span>
+						<span class="md_tag">東北</span>
+						<span class="md_tag">関東</span>
+						<span class="md_tag">中部</span>
+						<span class="md_tag">関西</span>
+						<span class="md_tag">中国</span>
+						<span class="md_tag">四国</span>
+						<span class="md_tag">九州</span>
+						<span class="md_tag">オンライン</span>
+					</div>
+				</div>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--submit js_modalSlideDown js_submit--area">決定</button>
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- /md_modal--half -->
+
+
+<!-- md_modal--half -->
+<div class="md_modal md_modal--half modal_industry">
+	<button class="bgLayer js_modalSlideDown" style="display: none;"></button>
+	<div class="modalSet">
+		<div class="Content js_modal--01">
+			<div class="titleArea">
+				<div class="title">志望業界<span class="closeLink js_modalSlideDown"></span></div>
+				<div class="copy">志望する業界を選択してください。（複数選択可）</div>
+			</div>
+			<div class="contentArea">
+				<div class="form form--tag">
+					<div class="label">インターネット・WEB・アプリ</div>
+					<div class="md_tagSet">
+						<span class="md_tag">インターネット・WEB・アプリ</span>
+					</div>
+				</div>
+				<div class="form form--tag">
+					<div class="label">通信・システム・ソフトウェア</div>
+					<div class="md_tagSet">
+						<span class="md_tag">通信</span>
+						<span class="md_tag">システム・ソフトウェア</span>
+					</div>
+				</div>
+				<div class="form form--tag">
+					<div class="label">広告・メディア・マーケティング</div>
+					<div class="md_tagSet">
+						<span class="md_tag">広告・出版</span>
+						<span class="md_tag">放送・新聞</span>
+					</div>
+				</div>
+				<div class="form form--tag">
+					<div class="label">メーカー</div>
+					<div class="md_tagSet">
+						<span class="md_tag">農林・水産</span>
+						<span class="md_tag">食品・飲料</span>
+						<span class="md_tag">医薬品・化粧品・日用品</span>
+						<span class="md_tag">化学・石油</span>
+						<span class="md_tag">アパレル・服飾関連</span>
+						<span class="md_tag">印刷・事務機器</span>
+						<span class="md_tag">自動車・輸送機器</span>
+						<span class="md_tag">輸送機器</span>
+						<span class="md_tag">機械</span>
+						<span class="md_tag">繊維・紙・パルプ</span>
+						<span class="md_tag">ゴム・ガラス・セラミックス</span>
+						<span class="md_tag">鉄鋼・金属・工業</span>
+						<span class="md_tag">プラント・エンジニアリング・環境</span>
+						<span class="md_tag">電子・電気・OA機器</span>
+						<span class="md_tag">精密・医療機器</span>
+						<span class="md_tag">スポーツ・玩具・ゲーム製品</span>
+						<span class="md_tag">その他メーカー</span>
+					</div>
+				</div>
+				<div class="form form--tag">
+					<div class="label">総合商社・専門商社</div>
+					<div class="md_tagSet">
+						<span class="md_tag">総合商社</span>
+						<span class="md_tag">専門商社</span>
+					</div>
+				</div>
+				<div class="form form--tag">
+					<div class="label">金融</div>
+					<div class="md_tagSet">
+						<span class="md_tag">銀行</span>
+						<span class="md_tag">証券</span>
+						<span class="md_tag">信金・労金・信組</span>
+						<span class="md_tag">クレジット・信販・リース・レンタル</span>
+						<span class="md_tag">生命保険・損害保険</span>
+						<span class="md_tag">その他金融</span>
+					</div>
+				</div>
+				<div class="form form--tag">
+					<div class="label">不動産・建設・ディベロッパー</div>
+					<div class="md_tagSet">
+						<span class="md_tag">総合不動産・ディベロッパー</span>
+						<span class="md_tag">建設</span>
+						<span class="md_tag">住宅・インテリア</span>
+					</div>
+				</div>
+				<div class="form form--tag">
+					<div class="label">インフラ・交通・物流</div>
+					<div class="md_tagSet">
+						<span class="md_tag">電力・ガス・水道・エネルギー</span>
+						<span class="md_tag">航空</span>
+						<span class="md_tag">鉄道</span>
+						<span class="md_tag">陸運・海運・物流</span>
+						<span class="md_tag">タクシー・バス</span>
+					</div>
+				</div>
+				<div class="form form--tag">
+					<div class="label">人材・教育</div>
+					<div class="md_tagSet">
+						<span class="md_tag">人材派遣・人材紹介</span>
+						<span class="md_tag">教育</span>
+					</div>
+				</div>
+				<div class="form form--tag">
+					<div class="label">コンサル・シンクタンク</div>
+					<div class="md_tagSet">
+						<span class="md_tag">戦略コンサル</span>
+						<span class="md_tag">総合コンサル</span>
+						<span class="md_tag">ITコンサル</span>
+						<span class="md_tag">シンクタンク</span>
+						<span class="md_tag">その他コンサル</span>
+					</div>
+				</div>
+				<div class="form form--tag">
+					<div class="label">サービス・観光</div>
+					<div class="md_tagSet">
+						<span class="md_tag">飲食</span>
+						<span class="md_tag">エステ・美容・理容</span>
+						<span class="md_tag">冠婚葬祭</span>
+						<span class="md_tag">警備・清掃</span>
+						<span class="md_tag">旅行</span>
+						<span class="md_tag">ホテル</span>
+						<span class="md_tag">アミューズメント・レジャー</span>
+						<span class="md_tag">その他サービス・観光</span>
+					</div>
+				</div>
+				<div class="form form--tag">
+					<div class="label">⼩売・流通</div>
+					<div class="md_tagSet">
+						<span class="md_tag">百貨店・スーパー・コンビニ</span>
+						<span class="md_tag">専門店</span>
+					</div>
+				</div>
+				<div class="form form--tag">
+					<div class="label">医療・福祉</div>
+					<div class="md_tagSet">
+						<span class="md_tag">医療機関・調剤薬局</span>
+						<span class="md_tag">福祉</span>
+					</div>
+				</div>
+				<div class="form form--tag">
+					<div class="label">エンタメ・ゲーム</div>
+					<div class="md_tagSet">
+						<span class="md_tag">芸能・映画・音楽</span>
+						<span class="md_tag">ゲーム</span>
+					</div>
+				</div>
+				<div class="form form--tag">
+					<div class="label">官公庁・公職・団体</div>
+					<div class="md_tagSet">
+						<span class="md_tag">官公庁・公職・団体</span>
+					</div>
+				</div>
+				<div class="form form--tag">
+					<div class="label">未定または業界にこだわらない</div>
+					<div class="md_tagSet">
+						<span class="md_tag">未定または業界にこだわらない</span>
+					</div>
+				</div>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--submit js_nextModal">決定</button>
+			</div>
+		</div>
+		<div class="Content js_modal--02" style="display: none;">
+			<div class="titleArea">
+				<div class="title">特に志望する業界<span class="closeLink js_modalSlideDown"></span></div>
+				<div class="copy">特に希望する業界を最大２つ選択してください</div>
+			</div>
+			<div class="contentArea">
+				<div class="form form--tag">
+					<div class="label">メーカー</div>
+					<div class="md_tagSet">
+						<span class="md_tag">日用品</span>
+					</div>
+				</div>
+				<div class="form form--tag">
+					<div class="label">サービス</div>
+					<div class="md_tagSet">
+						<span class="md_tag">教育</span>
+					</div>
+				</div>
+				<div class="form form--tag">
+					<div class="label">ソフトウェア</div>
+					<div class="md_tagSet">
+						<span class="md_tag">インターネット</span>
+						<span class="md_tag">通信</span>
+					</div>
+				</div>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--submit js_modalSlideDown js_submit--industry">決定</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /md_modal--half -->
+
+<!-- md_modal--half -->
+<div class="md_modal md_modal--half modal_occupation">
+	<button class="bgLayer js_modalSlideDown" style="display: none;"></button>
+	<div class="modalSet">
+		<div class="Content js_modal--01">
+			<div class="titleArea">
+				<div class="title">志望職種<span class="closeLink js_modalSlideDown"></span></div>
+				<div class="copy">志望する職種を選択してください。（複数選択可）</div>
+			</div>
+			<div class="contentArea">
+				<div class="form form--tag">
+					<div class="md_tagSet">
+						<span class="md_tag">営業</span>
+						<span class="md_tag">企画・マーケティング</span>
+						<span class="md_tag">クリエイティブ（ライター・デザイナーなど）</span>
+						<span class="md_tag">WEBディレクター・プロダクトマネージャー</span>
+						<span class="md_tag">ITエンジニア・プログラマー</span>
+						<span class="md_tag">WEB・UI/UXデザイナー</span>
+						<span class="md_tag">研究・技術・開発</span>
+						<span class="md_tag">コーポレート（⼈事・法務・経理など）</span>
+						<span class="md_tag">専⾨・資格職</span>
+						<span class="md_tag">未定または職種にこだわらない</span>						
+					</div>
+				</div>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--submit js_nextModal">決定</button>
+			</div>
+		</div>
+		<div class="Content js_modal--02" style="display: none;">
+			<div class="titleArea">
+				<div class="title">特に志望する職種<span class="closeLink js_modalSlideDown"></span></div>
+				<div class="copy">特に志望する職種を最大２つ選択してください。</div>
+			</div>
+			<div class="contentArea">
+				<div class="form form--tag">
+					<div class="md_tagSet">
+						<span class="md_tag">クリエイティブ（ライター・デザイナーなど）</span>
+						<span class="md_tag">WEBディレクター・プロダクトマネージャー</span>
+						<span class="md_tag">ITエンジニア・プログラマー</span>
+						<span class="md_tag">WEB・UI/UXデザイナー</span>						
+					</div>
+				</div>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--submit js_modalSlideDown js_submit--area">決定</button>
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- /md_modal--half -->
+
+<!-- md_modal--half -->
+<div class="md_modal md_modal--half modal_type">
+	<button class="bgLayer js_modalSlideDown" style="display: none;"></button>
+	<div class="modalSet">
+		<div class="Content">
+			<div class="titleArea">
+				<div class="title">企業タイプ<span class="closeLink js_modalSlideDown"></span></div>
+				<div class="copy">企業のタイプを選択してください。（複数選択可）</div>
+			</div>
+			<div class="contentArea">	
+				<div class="form form--companyType">
+					<div class="axisDescription  topSide">
+						<div class="label">会社規模が大きい</div>
+						<span class="sub">組織や制度が出来上がった環境で働きたい</span>
+					</div>
+					<div class="middleSide">
+						<div class="axisDescription leftBox">
+							<div class="label">安定・着実を好む</div>
+							<span class="sub">着実に成長していきたい</span>
+						</div>
+						<div class="centerBox">
+							<span class="arrow arrow--X"></span>
+							<ul class="md_tagSet">
+								<li class="md_tag companyType">大手企業</li>
+								<li class="md_tag companyType">メガ	<br>ベンチャー</li>
+								<li class="md_tag companyType">中小企業</li>
+								<li class="md_tag companyType">ベンチャー</li>
+							</ul>
+							<span class="arrow arrow--Y"></span>
+						</div>
+						<div class="axisDescription rightBox">
+							<div class="label">挑戦・成長を好む</div>
+							<span class="sub">人より早く成長したい</span>
+						</div>
+					</div>
+					<div class="axisDescription bottomSide">
+						<div class="label">会社規模が小さい</div>
+						<span class="sub">組織や制度を創っていきたい</span>
+					</div>
+				</div>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--submit js_modalSlideDown js_submit--features">決定</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /md_modal--half -->
+
+<!-- md_modal--half -->
+<div class="md_modal md_modal--half modal_features">
+	<button class="bgLayer js_modalSlideDown" style="display: none;"></button>
+	<div class="modalSet">
+		<div class="Content">
+			<div class="titleArea">
+				<div class="title">企業の特徴<span class="closeLink js_modalSlideDown"></span></div>
+				<div class="copy">企業の特徴を選択してください。（複数選択可）</div>
+			</div>
+			<div class="contentArea">
+				<div class="form form--tag">
+					<div class="md_tagSet">
+						<span class="md_tag">ソーシャルビジネスで社会問題を解決</span>
+						<span class="md_tag">起業家を多く輩出</span>
+						<span class="md_tag">研修制度が充実</span>
+						<span class="md_tag">特定領域のパイオニア</span>
+						<span class="md_tag">理念経営</span>
+						<span class="md_tag">投資家が注⽬・資⾦調達済み</span>
+						<span class="md_tag">世界で唯一のチャレンジをしている</span>
+						<span class="md_tag">○○Tech・○aaS・DX推進</span>
+						<span class="md_tag">新しいビジネスモデルを創造</span>
+						<span class="md_tag">⼊社3年以内に億単位プロジェクト参画</span>
+						<span class="md_tag">海外事業に注力</span>
+						<span class="md_tag">ワークライフバランス重視</span>
+						<span class="md_tag">ワークとライフどっちも全⼒</span>
+						<span class="md_tag">多様なライフステージの社員が活躍</span>
+						<span class="md_tag">魅⼒的な経営陣がリード</span>
+						<span class="md_tag">新規事業⽴ち上げ・グロースに従事</span>
+						<span class="md_tag">20代で海外赴任ができる</span>
+						<span class="md_tag">幅広い職種にチャレンジができる</span>
+						<span class="md_tag">専門職でキャリアアップ</span>
+						<span class="md_tag">実⼒主義・フラットな雰囲気</span>
+					</div>
+				</div>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--submit js_modalSlideDown js_submit--features">決定</button>
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- /md_modal--half -->
+
+<!-- md_fixBar -->
+<div class="md_fixBar js_fixBarHide">
+	<div class="btnSet column">
+		<a href="form_skill.html" class="md_btn md_btn--medium md_btn--second">スキップ</a>
+		<a href="form_skill.html" class="md_btn md_btn--submit">次へ進む</a>
+	</div>
+</div>
+<!-- /md_fixBar -->
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script>
+
+$(function() {
+// 変数制御
+var URL = location.href;
+var URLSet = URL.split('?');
+if(URLSet[1] == 'selected'){ 
+		$('.js_selected').show();
+		$('.selectForm').hide();
+		$('.formSet .change').show();
+	}
+});
+//タブ選択時の挙動
+$(".form--tag .md_tag,.md_tag.companyType").click(function () {
+	$(this).toggleClass('active');
+});
+//選択済みのタブの削除
+$(".js_delete").click(function () {
+	$(this).parent().hide();
+});
+//志望業界選択後、特に志望する業界の選択モーダル
+$(".js_nextModal").click(function () {
+	$('.js_modal--01').hide();
+	$('.js_modal--02').show();
+});
+
+//志望業界決定後
+$(".js_submit--industry").click(function () {
+	$('.formSet--industry .form--line').hide();
+	$('.formSet--industry .js_selected').show();
+	$('.formSet--industry .change').show();
+	$('.md_modal').removeClass("md_modal--slideUp");
+	$('.bgLayer').hide();
+	setTimeout(function() {
+		$('.js_modal--02').hide();
+		$('.js_modal--01').show();
+    }, 500);
+
+});
+</script>
+</body>
+</html>

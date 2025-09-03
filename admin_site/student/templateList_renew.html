@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>テンプレート管理 - 学生管理</title>
+
+<link rel="stylesheet" href="../common/css/student/list_templateRegist.css"/>
+</head>
+<body>
+
+<!-- Modal -->
+<div class="md_modal modal01" style="display: none;">
+    <button class="bgLayer js_modalX"></button>
+    <div class="modalSet">
+        <div class="Content">
+            <div class="textArea">
+                <div class="catch">保存確認</div>
+                <p class="copy">
+                    メッセージテンプレートは企業共通です。保存しますか？
+                </p>
+            </div>
+            <div class="actionArea">
+                <button class="md_btn md_btn--medium md_btn--second multiple js_modalX">キャンセル</button>
+                <a href="templateList.html?snackBar02" class="md_btn md_btn--medium js_modalX multiple">保存</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal -->
+
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+    <div class="contentWrap">
+
+        <!-- titleArea -->
+        <div class="titleArea count">
+            <h2 class="mainTitle">テンプレート編集</h2>
+        </div>
+        <!-- titleArea -->
+
+        <!-- md_table -->
+        <form id="" name="" method="" action="">
+            <div class="contents">
+                <table class="md_table md_table--template">
+                    <tbody>
+                        <tr>
+                            <th>テンプレート名</th>
+                            <td>
+                                <input type="text" placeholder="テンプレート名を入力してください" class="form--line form--w60" value="廣田面談スカウト用" style="min-width: 110px;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>テンプレート</th>
+                            <td>
+                                <div class="nameArea">
+                                    <div class="txtCell">&lt;name&gt; コードを入力すれば件名や本文に学生の名字を挿入できます。</div>
+                                    <div class="btnCell"><button class="md_btn md_btn--second md_btn--sub">&lt;name&gt;</button></div>
+                                </div>
+                                <div class="tempArea">
+                                    <table class="md_table">
+                                        <tr>
+                                            <th>件名</th>
+                                            <td>
+                                                <input type="text" placeholder="件名を入力してください" class="form--line form--w60" value="【就活状況教えてください】スカウト希望アンケート">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>本文</th>
+                                            <td>
+                                                <textarea name="" id="" rows="15" class="form--line form--w60" placeholder="本文を入力してください" data-limit="140">2050年3月末卒業見込みの方が対象です。必ず本専用ページからirootsにご登録下さい。(それ以外は無効)期間中にirootsにご登録及びプロフィール54%以上記入でAmazonギフト券1000円贈呈。【性格価値観診断】と【プロフィール診断】受験の2つの条件を満たした方はギフト券を増額し総額3000円分プレゼント！複数登録を避けるため、大学メールアドレスで登録ください。(それ以外は無効)プロフィールに明らかな不備(例文張り付け、同じ文字の羅列等)がある場合は対象外です。10月上旬に発送予定。</textarea>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="btnArea">
+                                    <a href="templateList.html" class="md_btn md_btn--second">キャンセル</a>
+                                    <a href="" class="md_btn js_modalOpen" data-modal="modal01">保存</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+        <!-- /md_table -->
+
+    </div>
+ 
+<!-- Container End --></div><!-- /Container End -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+</body>
+</html>

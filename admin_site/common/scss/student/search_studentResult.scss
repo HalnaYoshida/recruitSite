@@ -1,0 +1,144 @@
+@charset "utf-8";
+
+/* --------------------------------------------------
+ Import 
+-------------------------------------------------- */
+
+@import "../_default";
+
+
+/* ------------ Size ------------ */
+
+/* Width */
+$w_wrap: 1200px; 
+$w_drawer: 300px; 
+$w_sideMenu: 200px; 
+$w_centeringElement: 700px; 
+$w_btn_big: 150px;
+
+
+/* ------------ Typography ------------ */
+
+/* Font Size */
+$fs_biggest:  32px; 
+$fs_bigger:   24px;  
+$fs_big:      18px;
+$fs_title:    17px;
+$fs_medium:   16px;  
+$fs_small:    14px;  
+$fs_main:     13px;
+$fs_smaller:  11px;  
+$fs_smallest: 10px; 
+
+
+/* ユーザー情報登録用テーブル */
+.contentWrap {
+    .titleArea { justify-content: space-between;
+        .mainTitle { margin-right: 5px; }
+        .subText { font-size: 12px; font-weight: 400; color: #667085; }
+        .md_btn { width: auto; padding-left: 20px; padding-right: 20px;}
+    }
+    .md_card { border-width: 0 0 1px 0;
+        &--studentInfo { display: flex; width: 100%; align-items: center; border: none; box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, .02);
+            .checkArea {padding: 0 15px; width: 1%; }
+            .infoArea { flex: 1; display: flex; align-items: center; cursor: pointer;
+                &:hover { opacity: 0.8; }
+                .imgCell { padding-left: 20px;
+                    .dummyImg { object-fit: cover; width: 64px; min-width: 64px; height: 64px; border-radius: 50%; }
+                }
+                .textCell { text-align: left; max-width: 725px; padding: 20px;
+                    .stuName { display: flex; flex-wrap: wrap; align-items: baseline; margin-bottom: 10px; color: #1b1b1b;
+                        .kanji { margin-right: 5px; font-size: $fs_title; line-height: 1.25; }
+                        .kana { margin-right: 5px; font-size: $fs_smaller; line-height: 1.25; }
+                        .id { margin-right: 3px; font-size: 11px; line-height: 1.25; }
+                        .num { font-size: 11px; line-height: 1.25; }
+                    }
+                    .stuContent { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; overflow: hidden;
+                        .item { display: inline; font-size: $fs_main; color: #667085; line-height: 1.25;
+                            + .item::before { content: ' / ';}
+                        }
+                    }
+                    .stuMemo { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; overflow: hidden; margin-top: 5px; font-size: $fs_main; color: #667085; line-height: 1.25; }
+                    .dataArea { margin-top: 5px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; overflow: hidden;
+                        .title, .data { display: inline; font-size: $fs_main; color: #667085;}
+                        .data { margin-right: 15px;}
+                    }
+                }
+            }
+            .btnArea { padding: 20px; display: flex; }
+        }
+    }
+    .md_table {
+        &--template {
+            tbody {
+                td {
+                    .nameArea, .irootsArea { margin-bottom: 10px; padding: 10px 15px; display: flex; align-items: center; background: #f9f9fc; border-radius: 6px;
+                        .txtCell { font-size: $fs_smaller; }
+                        .btnCell { margin-left: 15px; }
+                    }
+                    .tempArea {
+                        .md_table {
+                            border: none;
+                            th { padding: 5px; width: 1%; line-height: 3em; white-space: nowrap; border: none; background: transparent; }
+                            td { padding: 5px; border: none; background: transparent;
+                                textarea { line-height: 1.6;}
+                            } 
+                        }
+                        &--desc {
+                            .md_table {
+                                border: none;
+                                th { padding: 0 20px 0 0; line-height: 1.5; }
+                                td { padding: 0; line-height: 1.5; } 
+                                tr + tr {
+                                    th,td { padding-top: 20px; }
+                                }
+                            }
+                        }
+                    }
+                    input[type=date].form--line { margin-right: 10px; padding: 9px 12px; }
+                    .flexArea { display: flex; align-items: center;
+                        input {margin-right: 10px;}
+                    }
+                }
+            }
+        }
+    }
+    .btnArea { display: flex; align-items: center; justify-content: center; }
+}
+.md_modal {
+    .modalSet {
+        &--reserve { display: none; width: 700px; }
+        .Content {
+            .actionArea {
+                .md_btn--cancel {
+                    border: none; box-shadow: none;
+                    &:hover { background: none; }
+                }
+            }
+            &--form { width: $w_centeringElement;
+                .titleArea { justify-content: center; margin: 0; padding: 13px 0; 
+                    .catch { font-size: $fs_title; line-height: 1.5;}
+                }
+                .formArea { margin: 0;
+                    .md_table { border: none; border-top: 1px solid #ddd; border-radius: 0;
+                        .md_toggle + .md_toggle { margin-top: 10px; }
+                    }
+                }
+                .actionArea { margin-top: 15px; text-align: center; }
+                
+            }
+        }
+        
+    }
+}
+
+.md_snackBar {
+    .base {
+        .check { margin-left: 30px; border-bottom: 1px solid #fff; font-size: $fs_main; color: #fff; cursor: pointer;
+            &:hover { opacity: 0.8; }
+            + .close { margin-left: 10px; }
+        }
+        
+    }
+}
+

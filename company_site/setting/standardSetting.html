@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>基本設定</title>
+
+<link rel="stylesheet" href="../common/css/setting/form.css"/>
+</head>
+<body>
+
+<!-- Modal01 -->
+<div class="md_modal md_modal--scout modal01" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="headArea">
+			<div class="title">スカウト発注依頼</div>
+		</div>
+		<div class="contentArea">
+			<div class="formArea">
+				<textarea name="" id="" rows="4" class="form--line form--w100" placeholder="スカウト発注依頼の内容を入力してください"></textarea>
+			</div>
+		</div>
+		<div class="actionArea">
+			<div class="btnSet">
+				<button class="md_btn md_btn--second js_modalX">キャンセル</button>
+				<button class="md_btn js_modalX js_snackBar" data-target="Bar02">送信</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Modal01 -->
+
+<!-- snackBar01 -->
+<div class="md_snackBar Bar01">
+	<div class="base">
+		<div class="text">基本設定を保存しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar02 -->
+<div class="md_snackBar md_snackBar Bar02">
+	<div class="base">
+		<div class="text">スカウト発注依頼を送信しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+	<div class="contentWrap">
+
+	<!-- titleArea -->
+	<div class="titleArea">
+		<h2 class="mainTitle">基本設定</h2>
+	</div>
+	<!-- /titleArea -->
+	
+	<!-- md_table -->
+	<form id="" name="" method="" action="" >
+		<div class="contents contents--union">
+			<table class="md_table">
+				<tbody>
+					<tr class="tr tr--main">
+						<th class="th th--radius">利用期間</th>
+						<td>
+							<span class="plainTxt">2015年10月1日 ～ 2024年12月31日</span>
+						</td>
+						<th class="th">使用卒年</th>
+						<td>
+							<span class="plainTxt">2015 ～ 2029年卒</span>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">スカウト期間</th>
+						<td colspan="3">
+							<div class="textSet">
+								<span class="plainTxt">2015 ～ 2024 年卒</span>
+								<span class="plainTxt plainTxt--sub">2015年10月01日～2024年12月31日</span>
+							</div>
+							<div class="textSet">
+								<span class="plainTxt">2025 ～ 2029 年卒</span>
+								<span class="plainTxt plainTxt--sub">2023年06月08日～2024年12月31日</span>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">スカウトリクエスト<br>利用卒年</th>
+						<td colspan="3">
+							<div class="yondeSet">
+								<span class="plainTxt">2024 年卒</span>
+								<span class="plainTxt">2025 ～ 2029 年卒</span>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th th--big">スカウト通数</th>
+						<td colspan="3">
+							<div class="termArea termArea--scout">
+								<div class="selectSet">
+									<div class="scoutSelect">
+										<div class="titleSet">
+											<span class="title">個別スカウト数<button class="question-icon js_balloon">
+												<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path
+																d="M13.4166 7.29166C13.4166 5.52007 12.698 3.91475 11.5371 2.7545C10.3763 1.59425 8.77155 0.875 6.99998 0.875C5.2284 0.875 3.62306 1.59366 2.46281 2.7545C1.30256 3.91534 0.583313 5.52009 0.583313 7.29166C0.583313 9.06324 1.30198 10.6686 2.46281 11.8288C3.62365 12.9891 5.2284 13.7083 6.99998 13.7083C8.77155 13.7083 10.3769 12.9897 11.5371 11.8288C12.6974 10.668 13.4166 9.06324 13.4166 7.29166ZM12.25 7.29166C12.25 8.74182 11.6631 10.0532 10.7123 11.004C9.76149 11.9548 8.45015 12.5417 6.99998 12.5417C5.5498 12.5417 4.23848 11.9548 3.28764 11.004C2.3368 10.0532 1.74998 8.74184 1.74998 7.29166C1.74998 5.84149 2.33681 4.53016 3.28764 3.57932C4.23846 2.62849 5.5498 2.04166 6.99998 2.04166C8.45015 2.04166 9.76148 2.6285 10.7123 3.57932C11.6632 4.53015 12.25 5.84149 12.25 7.29166ZM5.85256 5.73532C5.95931 5.43141 6.17865 5.19982 6.44873 5.07032C6.7188 4.94082 7.03614 4.91457 7.34006 5.02191C7.60723 5.11582 7.81781 5.29607 7.95256 5.523C8.05931 5.70209 8.11881 5.91091 8.1194 6.12791C8.1194 6.21832 8.09665 6.30816 8.05115 6.39857C8.00449 6.49191 7.93274 6.58816 7.83649 6.68441C7.4229 7.098 6.7684 7.32141 6.7684 7.32141C6.46274 7.4235 6.29765 7.75366 6.39974 8.05932C6.50183 8.36499 6.83199 8.53007 7.13765 8.42799C7.13765 8.42799 8.03831 8.13282 8.6619 7.50924C8.82465 7.34649 8.97981 7.15107 9.09531 6.92007C9.21198 6.68674 9.28665 6.41957 9.28665 6.12149C9.28431 5.69507 9.16765 5.28324 8.9559 4.92624C8.68581 4.4724 8.26174 4.1084 7.72799 3.92057C7.12015 3.70707 6.48258 3.76016 5.94474 4.01799C5.4069 4.27581 4.9659 4.74015 4.7524 5.34799C4.64506 5.6519 4.8049 5.98499 5.10881 6.09174C5.41272 6.19849 5.74581 6.03865 5.85256 5.73532ZM7.58331 10.2083C7.58331 9.88632 7.32198 9.62499 6.99998 9.62499C6.67798 9.62499 6.41664 9.88632 6.41664 10.2083C6.41664 10.5303 6.67798 10.7917 6.99998 10.7917C7.32198 10.7917 7.58331 10.5303 7.58331 10.2083Z"
+																fill="#A3A3A3" />
+												</svg>
+												<div class="fukidashi">
+														<div class="sub">初回スカウトメッセージのみ1通とカウントされます。<br>(1人対して2通以上のスカウトメッセージを送信しても通数消化されません)</div>
+												</div>
+										</button></span>
+										</div>
+										<div class="dataArea">
+											<div class="dataSet">
+												<span class="plainTxt">2015 ～ 2024 年卒</span> 
+												<span class="plainTxt">6327 / 11000通</span>
+											</div>
+											<div class="dataSet">
+												<span class="plainTxt">2025 ～ 2029 年卒</span>
+												<span class="plainTxt">74 / 100通</span>
+											</div>
+										</div>
+									</div>
+									<div class="scoutSelect">
+										<div class="titleSet">
+											<span class="title">一括スカウト数<button class="question-icon js_balloon">
+												<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path
+																d="M13.4166 7.29166C13.4166 5.52007 12.698 3.91475 11.5371 2.7545C10.3763 1.59425 8.77155 0.875 6.99998 0.875C5.2284 0.875 3.62306 1.59366 2.46281 2.7545C1.30256 3.91534 0.583313 5.52009 0.583313 7.29166C0.583313 9.06324 1.30198 10.6686 2.46281 11.8288C3.62365 12.9891 5.2284 13.7083 6.99998 13.7083C8.77155 13.7083 10.3769 12.9897 11.5371 11.8288C12.6974 10.668 13.4166 9.06324 13.4166 7.29166ZM12.25 7.29166C12.25 8.74182 11.6631 10.0532 10.7123 11.004C9.76149 11.9548 8.45015 12.5417 6.99998 12.5417C5.5498 12.5417 4.23848 11.9548 3.28764 11.004C2.3368 10.0532 1.74998 8.74184 1.74998 7.29166C1.74998 5.84149 2.33681 4.53016 3.28764 3.57932C4.23846 2.62849 5.5498 2.04166 6.99998 2.04166C8.45015 2.04166 9.76148 2.6285 10.7123 3.57932C11.6632 4.53015 12.25 5.84149 12.25 7.29166ZM5.85256 5.73532C5.95931 5.43141 6.17865 5.19982 6.44873 5.07032C6.7188 4.94082 7.03614 4.91457 7.34006 5.02191C7.60723 5.11582 7.81781 5.29607 7.95256 5.523C8.05931 5.70209 8.11881 5.91091 8.1194 6.12791C8.1194 6.21832 8.09665 6.30816 8.05115 6.39857C8.00449 6.49191 7.93274 6.58816 7.83649 6.68441C7.4229 7.098 6.7684 7.32141 6.7684 7.32141C6.46274 7.4235 6.29765 7.75366 6.39974 8.05932C6.50183 8.36499 6.83199 8.53007 7.13765 8.42799C7.13765 8.42799 8.03831 8.13282 8.6619 7.50924C8.82465 7.34649 8.97981 7.15107 9.09531 6.92007C9.21198 6.68674 9.28665 6.41957 9.28665 6.12149C9.28431 5.69507 9.16765 5.28324 8.9559 4.92624C8.68581 4.4724 8.26174 4.1084 7.72799 3.92057C7.12015 3.70707 6.48258 3.76016 5.94474 4.01799C5.4069 4.27581 4.9659 4.74015 4.7524 5.34799C4.64506 5.6519 4.8049 5.98499 5.10881 6.09174C5.41272 6.19849 5.74581 6.03865 5.85256 5.73532ZM7.58331 10.2083C7.58331 9.88632 7.32198 9.62499 6.99998 9.62499C6.67798 9.62499 6.41664 9.88632 6.41664 10.2083C6.41664 10.5303 6.67798 10.7917 6.99998 10.7917C7.32198 10.7917 7.58331 10.5303 7.58331 10.2083Z"
+																fill="#A3A3A3" />
+												</svg>
+												<div class="fukidashi">
+														<div class="sub">スカウトリクエスト一覧画面から一括送信した初回スカウトメッセージのみ1通とカウントされます。<br>(1人対して2通以上のスカウトメッセージを送信しても通数消化されません)</div>
+												</div>
+										</button></span>
+										</div>
+										<div class="dataArea">
+											<div class="dataSet">
+												<span class="plainTxt">2024年卒</span>
+												<span class="plainTxt">5 / 10通</span>
+											</div>
+											<div class="dataSet">
+												<span class="plainTxt">2025 ～ 2029 年卒</span>
+												<span class="plainTxt">0 / 0通</span>
+											</div>
+										</div>
+									</div>
+									<div class="scoutSelect">
+										<div class="titleSet">
+											<span class="title">自動スカウト数</span>
+										</div>
+										<div class="dataArea">
+											<div class="dataSet">
+												<span class="plainTxt">2024年卒</span>
+												<span class="plainTxt">5 / 10通</span>
+											</div>
+											<div class="dataSet">
+												<span class="plainTxt">2025 ～ 2029 年卒</span>
+												<span class="plainTxt">0 / 0通</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<button type="button" class="md_btn md_btn--medium md_btn--second md_btn--icon js_modalOpen" data-modal="modal01">スカウト追加依頼</button>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">卒年表示設定<button class="question-icon js_balloon">
+							<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+											d="M13.4166 7.29166C13.4166 5.52007 12.698 3.91475 11.5371 2.7545C10.3763 1.59425 8.77155 0.875 6.99998 0.875C5.2284 0.875 3.62306 1.59366 2.46281 2.7545C1.30256 3.91534 0.583313 5.52009 0.583313 7.29166C0.583313 9.06324 1.30198 10.6686 2.46281 11.8288C3.62365 12.9891 5.2284 13.7083 6.99998 13.7083C8.77155 13.7083 10.3769 12.9897 11.5371 11.8288C12.6974 10.668 13.4166 9.06324 13.4166 7.29166ZM12.25 7.29166C12.25 8.74182 11.6631 10.0532 10.7123 11.004C9.76149 11.9548 8.45015 12.5417 6.99998 12.5417C5.5498 12.5417 4.23848 11.9548 3.28764 11.004C2.3368 10.0532 1.74998 8.74184 1.74998 7.29166C1.74998 5.84149 2.33681 4.53016 3.28764 3.57932C4.23846 2.62849 5.5498 2.04166 6.99998 2.04166C8.45015 2.04166 9.76148 2.6285 10.7123 3.57932C11.6632 4.53015 12.25 5.84149 12.25 7.29166ZM5.85256 5.73532C5.95931 5.43141 6.17865 5.19982 6.44873 5.07032C6.7188 4.94082 7.03614 4.91457 7.34006 5.02191C7.60723 5.11582 7.81781 5.29607 7.95256 5.523C8.05931 5.70209 8.11881 5.91091 8.1194 6.12791C8.1194 6.21832 8.09665 6.30816 8.05115 6.39857C8.00449 6.49191 7.93274 6.58816 7.83649 6.68441C7.4229 7.098 6.7684 7.32141 6.7684 7.32141C6.46274 7.4235 6.29765 7.75366 6.39974 8.05932C6.50183 8.36499 6.83199 8.53007 7.13765 8.42799C7.13765 8.42799 8.03831 8.13282 8.6619 7.50924C8.82465 7.34649 8.97981 7.15107 9.09531 6.92007C9.21198 6.68674 9.28665 6.41957 9.28665 6.12149C9.28431 5.69507 9.16765 5.28324 8.9559 4.92624C8.68581 4.4724 8.26174 4.1084 7.72799 3.92057C7.12015 3.70707 6.48258 3.76016 5.94474 4.01799C5.4069 4.27581 4.9659 4.74015 4.7524 5.34799C4.64506 5.6519 4.8049 5.98499 5.10881 6.09174C5.41272 6.19849 5.74581 6.03865 5.85256 5.73532ZM7.58331 10.2083C7.58331 9.88632 7.32198 9.62499 6.99998 9.62499C6.67798 9.62499 6.41664 9.88632 6.41664 10.2083C6.41664 10.5303 6.67798 10.7917 6.99998 10.7917C7.32198 10.7917 7.58331 10.5303 7.58331 10.2083Z"
+											fill="#A3A3A3" />
+							</svg>
+							<div class="fukidashi fukidashi--left">
+									<div class="sub">各画面の卒年絞り込み表示を一括で設定できます。採用注力中の卒年を設定すると各画面での設定の手間が省けます。</div>
+							</div>
+					</button></th>
+						<td colspan="3">
+							<div class="multiSelectSet">
+								<a class="multiSelectForm js_selectOpen"><span class="text">2024</span></a>
+								<div class="multiSelect hide">
+									<ul id="multl_checkall_lft" style="display: block;">
+										<li class="checkBox"><div class="md_toggle md_toggle--margin"><input type="checkbox" name="" id="checkbox-251"><label for="checkbox-251">すべて</label></div></li>
+										<li class="checkBox"><div class="md_toggle md_toggle--margin"><input type="checkbox" name="" id="checkbox-252"><label for="checkbox-252">2025</label></div></li>
+										<li class="checkBox"><div class="md_toggle md_toggle--margin"><input type="checkbox" name="" id="checkbox-253"><label for="checkbox-253">2026</label></div></li>
+										<li class="checkBox"><div class="md_toggle md_toggle--margin"><input type="checkbox" name="" id="checkbox-254"><label for="checkbox-254">2027</label></div></li>
+										<li class="checkBox"><div class="md_toggle md_toggle--margin"><input type="checkbox" name="" id="checkbox-255"><label for="checkbox-255">2028</label></div></li>
+									</ul>
+								</div>
+							</div>
+							<span>年卒</span>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">表示順序</th>
+						<td colspan="3">
+							<div class="attentionMessage">学生プロフィール項目の表示順序を変更できます。</div>
+							<div class="sortableSet">
+								<ul class="numList">
+									<li class="num">1</li>
+									<li class="num">2</li>
+									<li class="num">3</li>
+									<li class="num">4</li>
+								</ul>
+								<ul id="list_sortable" class="sortable">
+									<li class="listBox">性別/人柄</li>
+									<li class="listBox">経歴</li>
+									<li class="listBox">学生時代</li>
+									<li class="listBox">将来像</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="actionArea">
+				<buttton class="md_btn js_snackBar" data-target="Bar01">保存</button>
+			</div>
+		</div>
+	</form>
+	<!-- /md_table -->
+
+<!-- Container End --></div><!-- /Container End -->
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+<script src="https://sortablejs.github.io/Sortable/Sortable.js" charset="UTF-8"></script>
+<script>
+  $(document).ready(function(){
+    $('.js_switchChange').change(function(){
+      var isChecked = $(this).is(':checked');
+      var label = $('label[for="' + $(this).attr('id') + '"]');
+      var text = isChecked ? label.data('on') : label.data('off');
+      label.text(text);
+    });
+
+    // 初期状態を設定
+    $('.js_switchChange').each(function(){
+      var initialChecked = $(this).is(':checked');
+      var label = $('label[for="' + $(this).attr('id') + '"]');
+      var initialText = initialChecked ? label.data('on') : label.data('off');
+      label.text(initialText);
+    });
+  });
+</script>
+
+<script>
+// 複数選択のプルダウン
+$(document).ready(function() {
+	$('.js_selectOpen').click(function(event) {
+			$(this).closest('.multiSelect').toggleClass('hide');
+			$('.js_selectOpen').not(this).next('.multiSelect').addClass('hide');
+	});
+
+	// ドキュメントのどこかをクリックしたときに、開いている .multiSelect を閉じる
+	$(document).click(function(event) {
+			if (!$(event.target).closest('.multiSelect, .js_selectOpen').length) {
+					$('.multiSelect').addClass('hide');
+			}
+	});
+});
+</script>
+
+	  
+
+
+	
+</body>
+</html>

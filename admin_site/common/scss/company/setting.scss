@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+/* --------------------------------------------------
+ Import 
+-------------------------------------------------- */
+
+@import "../_default";
+
+
+
+
+
+.container {
+    .contentWrap { /* padding: 50px 0 442px 0; */
+        .titleArea {
+            .md_btn {
+                &--medium { width: auto; }
+            }
+        }
+        .md_table { border-radius: 8px; box-shadow: none;
+            thead {
+                tr {
+                    .item { 
+                        &--center { text-align: center; }
+                    }
+                }
+            }
+            tbody {
+                tr { background: #fff;
+                    .drag_handle { text-align: center; cursor: grab;
+                        &:active { cursor: grabbing; }
+                        .iconImgPart { width: 29px; }
+                    }
+                    .data {
+                        &--center { text-align: center; }
+                        &--btn {
+                            .btnSet { justify-content: flex-end; }
+                        }
+                        .holder { color: #667085; }
+                    }
+                    &.hoverColor { filter: brightness(97%); }
+                }
+            }
+        }
+    }
+}
+
+
+.md_modal {
+    &--add {
+        .modalSet { width: 700px; background-color: #fff; border-radius: 8px; 
+            .modalHeadedArea {
+                .title { top: 0; text-align: center; width: 100%; margin-bottom: 0; padding: 15px 0; font-size: 17px; color: #1b1b1b; border-bottom: 1px solid #e0e2e7; }
+                .searchForm { position: relative; display: inline-block; padding: 20px; width: 100%; 
+                    &:before { content: url(/admin_site/imageFile/icon_search.svg); position: absolute; right: 35px; top: calc(50% - 12.5px); display: block; width: 24px; height: 24px; z-index: 10; }
+                }
+                .tableHead { padding: 0 20px; border-radius: 8px 8px 0 0; border-width: 1px 1px 1px 0;
+                    table { width: 100%; background: #f0f1f3; border-radius: 8px 8px 0 0; border-collapse: separate; border: 1px solid #c2c6ce; border-bottom: none;
+                        tbody {
+                            tr { border-collapse: separate;
+                                .md_toggle { margin: 0; 
+                                    input[type=checkbox]+label { padding-left: 24px; }
+                                } 
+                                .item { padding: 10px 15px; vertical-align: middle; font-size: 13px; font-weight: 400; color: #667085; line-height: 1.25; 
+                                    &--center { text-align: center; }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .contentArea { padding: 0 20px 20px;  
+                .scrollArea { height: 280px; overflow-y: scroll; border: 1px solid #c2c6ce; border-top: none; border-radius: 0 0 8px 8px;
+                    .md_table { border: none;
+                        .data {
+                            .md_toggle { margin: 0; 
+                                input[type=checkbox]+label { padding-left: 24px; }
+                            } 
+                            &--center { text-align: center; }
+                        }
+                    }
+                }
+            }
+            .actionArea { position: sticky; bottom: 0; display: block; text-align: center; padding: 15px; width: 100%; background-color: #fff; border-top: 1px solid #ddd; border-radius: 0 0 8px 8px; box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.08); z-index: 9997; 
+				.termSet { display: flex; justify-content: center; align-items: center; margin-bottom: 20px;
+					.termTitle { margin-right: 10px; font-size: 13px; color: #1b1b1b; }
+				}
+				&--noFloat { border-top: 1px solid #ddd; box-shadow: none; }
+			}
+        }
+    }
+}

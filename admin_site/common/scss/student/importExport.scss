@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+/* --------------------------------------------------
+ Import 
+-------------------------------------------------- */
+
+@import "../_default";
+
+
+/* ------------ Typography ------------ */
+
+/* Font Size */
+$fs_biggest:  32px; 
+$fs_bigger:   24px;  
+$fs_big:      18px; 
+$fs_medium:   16px;  
+$fs_small:    14px;  
+$fs_main:     13px;
+$fs_smaller:  11px;  
+$fs_smallest: 10px; 
+
+
+.container {
+    .contentWrap { /* padding: 50px 0 260px 0; */
+        .contents{ background: #fff; border: 1px solid #c2c6ce; border-radius: 8px; 
+            .md_table { border: none; border-radius: 8px; box-shadow: none;
+                &--import {
+                    tbody {
+                        .tr {
+                            &:first-child {
+                                th { border-top-left-radius: 8px; border-bottom-left-radius: 8px; }
+                                td { border-top-right-radius: 8px;}
+                            }
+                            th { text-align: left; padding: 15px; width: 170px; background: #fff; font-size: $fs_main; border-bottom: none;
+                            }
+                            .importTitle { vertical-align: middle; }
+                            td { border-bottom: none;
+                                .contentArea { display: flex; justify-content: space-between;
+                                    .uploadArea { display: flex; align-items: center; }
+                                } 
+                            }
+                            &--bottom {
+                                td { padding: 0px 20px 20px; }
+                            }
+                        }
+                    }
+                }
+                &--export {
+                    tbody {
+                        .tr {
+                            &:first-child {
+                                th { border-top-left-radius: 8px; }
+                                td { border-top-right-radius: 8px;}
+                            }
+                            th { text-align: left; padding: 15px; width: 170px; background: #fff; font-size: $fs_main; border-bottom: 1px solid #ddd;
+                            }
+                            td { border-bottom: 1px solid #ddd;
+                                .contentArea { display: flex; justify-content: space-between;
+                                    .selectCell { min-width: 400px;
+                                        .md_select { margin-right: 5px; }
+                                    }
+                                } 
+                            }
+                            &--bottom {
+                                td { padding: 0px 20px 20px; }
+                            }
+                            &:last-child {
+                                th { border-bottom: none; border-bottom-left-radius: 8px; }
+                                td { border-bottom: none; }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

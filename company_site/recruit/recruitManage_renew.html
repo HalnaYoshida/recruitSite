@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>募集情報編集</title>
+<link rel="stylesheet" href="../common/css/_default.css"/>
+<link rel="stylesheet" href="../common/css/recruit/form.css"/>
+</head>
+<body>
+
+	<!-- Modal01 -->
+<div class="md_modal md_modal--add modal01" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="modalHeadedArea">
+			<div class="title">日程登録</div>
+			<div class="btnArea">
+				<a href="../recruit/scheduleList_regist.html" target="blank" class="md_btn md_btn--medium md_btn--second md_btn--icon"><span class="iconImgPart">
+					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="13" fill="none"><path fill="#767676" stroke="#767676" stroke-width=".2" d="M10 6.552v4.8H2.138V3.526h4.759V2.274H1V12.5h10.242V6.553H10v-.001ZM13 .5H8.241v1.148l3-.105L4.931 7.7l.827.835 6.207-6.156v3.026H13V.5Z"/></svg>
+				</span>新規作成</a>
+			</div>
+		</div>
+		<div class="contentArea">
+			<div class="scrollArea">
+				<!-- <div class="searchForm">
+				<input type="text" placeholder="企業IDまたは企業名で検索する" class="form--line form--w100" style="height: 45px;">
+				</div> -->
+				<table class="md_table">
+					<thead>
+						<tr>
+							<th class="item" colspan="4">
+								<div class="flexArea">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="add_000">
+										<label for="add_000"></label>
+									</div>
+									<span class="groupTitle">エンジニアコースインターンシップ用説明会</span>
+								</div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="data" style="width: 180px;">
+								<span>2024年07月17日（水）</span>
+							</td>
+							<td class="data" style="width: 120px;">
+								<span>09:00～10:00</span>
+							</td>
+							<td class="data">
+								<span>新宿アイランドタワー35F</span>
+							</td>
+							<td class="data">
+								<div class="capacity">定員：<span class="count">50/200</span></div>
+							</td>
+						</tr>
+						<tr>
+							<td class="data" style="width: 180px;">
+								<span>2024年07月17日（水）</span>
+							</td>
+							<td class="data" style="width: 120px;">
+								<span>09:00～10:00</span>
+							</td>
+							<td class="data">
+								<span>新宿アイランドタワー35F</span>
+							</td>
+							<td class="data">
+								<div class="capacity">定員：<span class="count">50/200</span></div>
+							</td>
+						</tr>
+						<tr>
+							<td class="data" style="width: 180px;">
+								<span>2024年07月17日（水）</span>
+							</td>
+							<td class="data" style="width: 120px;">
+								<span>09:00～10:00</span>
+							</td>
+							<td class="data">
+								<span>新宿アイランドタワー35F</span>
+							</td>
+							<td class="data">
+								<div class="capacity">定員：<span class="count">50/200</span></div>
+							</td>
+						</tr>
+						<tr>
+							<td class="data" style="width: 180px;">
+								<span>2024年07月17日（水）</span>
+							</td>
+							<td class="data" style="width: 120px;">
+								<span>09:00～10:00</span>
+							</td>
+							<td class="data">
+								<span>新宿アイランドタワー35F</span>
+							</td>
+							<td class="data">
+								<div class="capacity">定員：<span class="count">50/200</span></div>
+							</td>
+						</tr>
+					</tbody>
+					<thead>
+						<tr>
+							<th class="item" colspan="4">
+								<div class="flexArea">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="add_001">
+										<label for="add_001"></label>
+									</div>
+									<span class="groupTitle">企画職コース本選考説明会</span>
+								</div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="data" style="width: 180px;">
+								<span>2024年07月17日（水）</span>
+							</td>
+							<td class="data" style="width: 120px;">
+								<span>09:00～10:00</span>
+							</td>
+							<td class="data">
+								<span>新宿アイランドタワー35F</span>
+							</td>
+							<td class="data">
+								<div class="capacity">定員：<span class="count">50/200</span></div>
+							</td>
+						</tr>
+						<tr>
+							<td class="data" style="width: 180px;">
+								<span>2024年07月17日（水）</span>
+							</td>
+							<td class="data" style="width: 120px;">
+								<span>09:00～10:00</span>
+							</td>
+							<td class="data">
+								<span>新宿アイランドタワー35F</span>
+							</td>
+							<td class="data">
+								<div class="capacity">定員：<span class="count">50/200</span></div>
+							</td>
+						</tr>
+						<tr>
+							<td class="data" style="width: 180px;">
+								<span>2024年07月17日（水）</span>
+							</td>
+							<td class="data" style="width: 120px;">
+								<span>09:00～10:00</span>
+							</td>
+							<td class="data">
+								<span>新宿アイランドタワー35F</span>
+							</td>
+							<td class="data">
+								<div class="capacity">定員：<span class="count">50/200</span></div>
+							</td>
+						</tr>
+						<tr>
+							<td class="data" style="width: 180px;">
+								<span>2024年07月17日（水）</span>
+							</td>
+							<td class="data" style="width: 120px;">
+								<span>09:00～10:00</span>
+							</td>
+							<td class="data">
+								<span>新宿アイランドタワー35F</span>
+							</td>
+							<td class="data">
+								<div class="capacity">定員：<span class="count">50/200</span></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="actionArea actionArea--noFloat">
+			<div class="btnSet">
+				<button class="md_btn md_btn--second js_modalX">キャンセル</button>
+				<button class="md_btn js_modalX js_termsAdd" data-terms="terms02">登録</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Modal01 -->
+
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+	<div class="contentWrap">
+		<!-- titleArea -->
+		<div class="titleArea">
+			<h2 class="mainTitle">募集情報編集</h2>
+			<div class="subTitle">
+				<span class="must">*</span>
+				の項目は必須です
+			</div>
+		</div>
+		<!-- /titleArea -->
+
+		<!-- md_table -->
+		<form id="" name="" method="" action="" >
+			<div class="contents">
+				<table class="md_table md_table--user">
+					<tbody>
+						<tr class="tr">
+							<th>卒年<span class="must">*</span></th>
+							<td>
+								<span class="md_select">
+									<select name="" id="" class="form--line">
+										<option value="">卒年を選択してください</option>
+										<option value="">2024</option>
+										<option value="">2025</option>
+										<option value="">2026</option>
+										<option value="">2027</option>
+										<option value="">2028</option>
+									</select>
+								</span>
+								<span class="text">年卒</span>
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>募集形態<span class="must">*</span></th>
+							<td>
+								<ul class="toggleSet">
+									<li class="md_toggle"><input type="radio" name="category" id="radio_001" disabled=""><label for="radio_001">本選考</label></div>
+									<li class="md_toggle"><input type="radio" name="category" id="radio_002" checked="" disabled=""><label for="radio_002">インターン・説明会など</label></div>
+								</ul>
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>事前プロフィール<br>選考</th>
+							<td>
+								<div class="md_toggle" id="profileManage">
+									<input type="checkbox" name="" id="profile">
+									<label for="profile">事前選考あり</label>
+								</div>
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>タイトル<span class="must">*</span></th>
+							<td><input type="text" placeholder="募集タイトルを入力してください" class="form--line form--w50" value="面談スカウト（iroots小笠原）"></td>
+						</tr>
+						<tr class="tr">
+							<th>概要<span class="must">*</span></th>
+							<td>
+								<textarea name="" id="" rows="10" class="form--line form--w100" placeholder="概要を入力してください" maxlength="300" data-count="md_counter--sample2" data-limit="300">
+★「業界・企業研究」「業務体験」「社員座談会」「プラント見学」で分かるプラントエンジニアリング業界の仕事★
+
+【本イベントにご参加頂いた方には、早期選考のご案内を優先的にいたします！】
+
+irootsは「Better Engineering for Well-being」をテーマに、
+プラントエンジニアリングを通じてものづくりの根幹を支え、社会に貢献する事を企業理念としています。
+
+1day業務体験では、プラントエンジニアリング業務の一端を体験いただけるプログラムをご用意しています！
+「大きなものづくりに携わりたい」「現場に近いところで仕事がしたい」そんな想いを持っている方にはぴったりの内容です。
+								</textarea>
+								<div class="helpCell">
+									<div class="helpTitle">注意事項</div>
+									<div class="help">・応募資格を記載する際には、以下の要素に触れる差別表現をしていない<br>　性別、国籍・人種、思想・宗教・信条、性格、身体条件、出身地限定/居住地限定、家族・家庭環境等</div>
+								</div>
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>応募締め切り<span class="must">*</span></th>
+							<td>
+								<input type="date" id="date" placeholder="2024/09/27" value="" class="form--line">
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>参加フロー<span class="must">*</span></th>
+							<td><textarea name="" id="" rows="4" class="form--line form--w100" placeholder="参加フローを入力してください" maxlength="300" data-count="md_counter--sample2" data-limit="300">応募→書類選考→面談→参加決定</textarea></td>
+						</tr>
+						<tr class="tr">
+							<th>参加特典内容</th>
+							<td><textarea name="" id="" rows="4" class="form--line form--w100" placeholder="参加特典内容を入力してください" maxlength="300" data-count="md_counter--sample2" data-limit="300">ES免除</textarea></td>
+						</tr>
+						<tr class="tr">
+							<th id="mustManage">日程<span class="must">*</span></th>
+							<td>
+								<div class="terms terms01 show">
+									<div class="dayContent">
+										<div class="groupTitle">面談スカウト（iroots小笠原）</div>
+										<div class="daySelect">
+											<div class="flexArea">
+												<span class="itemTitle">実施日時</span>
+												<span class="itemContent">2024年07月17日（水）10:00～11:00</span>
+											</div>
+											<div class="flexArea">
+												<span class="itemTitle">定員</span>
+												<span class="itemContent">200名</span>
+											</div>
+											<div class="flexArea">
+												<span class="itemTitle">開催場所</span>
+												<span class="itemContent">オンライン</span>
+											</div>
+											<div class="flexArea">
+												<span class="itemTitle">マップURL</span>
+												<span class="itemContent"></span>
+											</div>
+										</div>
+										<div class="daySelect">
+											<div class="flexArea">
+												<span class="itemTitle">実施日時</span>
+												<span class="itemContent">2024年07月17日（水）10:00～11:00</span>
+											</div>
+											<div class="flexArea">
+												<span class="itemTitle">定員</span>
+												<span class="itemContent">200名</span>
+											</div>
+											<div class="flexArea">
+												<span class="itemTitle">開催場所</span>
+												<span class="itemContent">オンライン</span>
+											</div>
+											<div class="flexArea">
+												<span class="itemTitle">マップURL</span>
+												<span class="itemContent"></span>
+											</div>
+										</div>
+									</div>
+									<button class="deleteArea">
+                                        <span class="iconImgPart">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+                                                <path class="st0" d="M939.5,1027.5L512,600L84.5,1027.5l-88-88L424,512L-3.5,84.5l88-88L512,424L939.5-3.5l88,88L600,512  l427.5,427.5L939.5,1027.5z" style="fill:#c2c6ce;"></path>
+                                            </svg>
+                                        </span>
+                                    </button>
+								</div>
+								<div class="terms terms02">
+									<div class="dayContent">
+										<div class="groupTitle">面談スカウト（iroots小笠原）</div>
+										<div class="daySelect">
+											<div class="flexArea">
+												<span class="itemTitle">実施日時</span>
+												<span class="itemContent">2024年07月17日（水）10:00～11:00</span>
+											</div>
+											<div class="flexArea">
+												<span class="itemTitle">定員</span>
+												<span class="itemContent">200名</span>
+											</div>
+											<div class="flexArea">
+												<span class="itemTitle">開催場所</span>
+												<span class="itemContent">オンライン</span>
+											</div>
+											<div class="flexArea">
+												<span class="itemTitle">マップURL</span>
+												<span class="itemContent"></span>
+											</div>
+										</div>
+										<div class="daySelect">
+											<div class="flexArea">
+												<span class="itemTitle">実施日時</span>
+												<span class="itemContent">2024年07月17日（水）10:00～11:00</span>
+											</div>
+											<div class="flexArea">
+												<span class="itemTitle">定員</span>
+												<span class="itemContent">200名</span>
+											</div>
+											<div class="flexArea">
+												<span class="itemTitle">開催場所</span>
+												<span class="itemContent">オンライン</span>
+											</div>
+											<div class="flexArea">
+												<span class="itemTitle">マップURL</span>
+												<span class="itemContent"></span>
+											</div>
+										</div>
+									</div>
+									<button class="deleteArea">
+                                        <span class="iconImgPart">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+                                                <path class="st0" d="M939.5,1027.5L512,600L84.5,1027.5l-88-88L424,512L-3.5,84.5l88-88L512,424L939.5-3.5l88,88L600,512  l427.5,427.5L939.5,1027.5z" style="fill:#c2c6ce;"></path>
+                                            </svg>
+                                        </span>
+                                    </button>
+								</div>
+								<button type="button" class="md_btn md_btn--medium md_btn--second md_btn--icon js_modalOpen" data-modal="modal01">日程を登録</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="btnArea">
+					<a href="../recruit/recruitManage_renew_confirm.html" class="md_btn btn01">内容を確認</a>
+				</div>
+			</div>
+		</form>
+		<!-- /md_table -->
+	</div>
+<!-- Container End --><div class="container"><!-- /Container End -->
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+<script>
+	$(document).ready(function() {
+    // 項目をクリックした際に特定のtermsを表示する関数
+    var termsAdd = function (e) {
+        e.preventDefault(); // フォーム送信を防ぐ
+
+        // data-terms 属性からクラス名を取得
+        var termsClass = $(this).attr('data-terms');
+
+        // 指定されたクラスを持つ要素に .show クラスを追加
+        $('.terms.' + termsClass).addClass('show');
+    };
+
+    // クリックイベントにバインド
+    $('[data-terms]').on('click', termsAdd);
+
+    // deleteAreaをクリック時に該当のterms要素を物理的に削除する処理
+    $(document).on('click', '.deleteArea', function() {
+        // 親要素の'.terms'クラスを持つ要素をDOMから削除
+        $(this).closest('.terms').remove();
+    });
+});
+
+</script>
+
+<script>
+	// チェックボックスの状態を監視
+	document.getElementById('profile').addEventListener('change', function() {
+	  var mustSpan = document.querySelector('#mustManage span.must');
+	  // チェックされているか確認
+	  if (this.checked) {
+		mustSpan.style.display = 'none'; // 非表示
+	  } else {
+		mustSpan.style.display = 'inline'; // 表示
+	  }
+	});
+</script>
+
+</body>
+</html>

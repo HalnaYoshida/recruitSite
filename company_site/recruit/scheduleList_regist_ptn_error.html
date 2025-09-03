@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>日程調整</title>
+<link rel="stylesheet" href="../common/css/recruit/form_schedule.css"/>
+</head>
+<body>
+
+<!-- Modal -->
+<div class="md_modal md_modal--add modal01" style="display: none;">
+    <button class="bgLayer js_modalX"></button>
+    <div class="modalSet">
+        <div class="modalHeadedArea">
+            <div class="title">グループを複製</div>
+            <div class="closeBtn">
+                <button class="js_modalX">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.1725 10.186C11.498 10.5114 11.498 11.0391 11.1725 11.3645C10.8471 11.6899 10.3194 11.6899 9.994 11.3645L5.99995 7.3705L2.00601 11.3645C1.68058 11.6899 1.15294 11.69 0.8275 11.3645C0.502061 11.0391 0.502056 10.5114 0.82749 10.186L4.82143 6.192L0.827331 2.19797C0.501891 1.87253 0.501893 1.3449 0.827332 1.01947C1.15277 0.694033 1.68041 0.694031 2.00585 1.01947L5.99993 5.01348L9.99386 1.01948C10.3193 0.694041 10.8469 0.694038 11.1724 1.01947C11.4978 1.34491 11.4978 1.87254 11.1724 2.19798L7.17845 6.19198L11.1725 10.186Z" fill="#858D9D"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="textArea">
+            <span class="md_select">
+                <select name="" id="" class="form--line">
+                    <option value="">グループを選択してください</option>
+                    <option value="">エンジニアコースインターンシップ用説明会</option>
+                    <option value="">企画職コース本選考一次面接</option>
+                </select>
+            </span>
+        </div>
+        <div class="actionArea">
+            <button class="md_btn md_btn--second multiple js_modalX">キャンセル</button>
+            <button class="md_btn multiple js_modalX">送信</button>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+
+<!-- Modal -->
+<div class="md_modal md_modal--add modal02" style="display: none;">
+    <button class="bgLayer js_modalX"></button>
+    <div class="modalSet">
+        <div class="modalHeadedArea">
+            <div class="title">日程をまとめて作成</div>
+            <div class="closeBtn">
+                <button class="js_modalX">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.1725 10.186C11.498 10.5114 11.498 11.0391 11.1725 11.3645C10.8471 11.6899 10.3194 11.6899 9.994 11.3645L5.99995 7.3705L2.00601 11.3645C1.68058 11.6899 1.15294 11.69 0.8275 11.3645C0.502061 11.0391 0.502056 10.5114 0.82749 10.186L4.82143 6.192L0.827331 2.19797C0.501891 1.87253 0.501893 1.3449 0.827332 1.01947C1.15277 0.694033 1.68041 0.694031 2.00585 1.01947L5.99993 5.01348L9.99386 1.01948C10.3193 0.694041 10.8469 0.694038 11.1724 1.01947C11.4978 1.34491 11.4978 1.87254 11.1724 2.19798L7.17845 6.19198L11.1725 10.186Z" fill="#858D9D"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="formArea">
+            <div class="md_table">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>調整枠</th>
+                            <td>
+                                <div class="selectSet">
+                                    <input type="date" placeholder="日付を選択" value="2024-05-19" class="form--line">
+                                    <span class="md_select">
+                                        <select name="" id="countSelectorA" class="form--line md_error">
+                                            <option value="4" data-count="4">14:45</option>
+                                            <option value="1" data-count="1">14:00</option>
+                                            <option value="2" data-count="2">14:15</option>
+                                            <option value="3" data-count="3">14:30</option>
+                                        </select>
+                                    </span>
+                                    <span>～</span>
+                                    <span class="md_select">
+                                        <select name="" id="countSelectorB" class="form--line md_error">
+                                            <option value="2" data-count="2">14:15</option>
+                                            <option value="3" data-count="3">14:30</option>
+                                            <option value="4" data-count="4">14:45</option>
+                                            <option value="5" data-count="5">15:00</option>
+                                        </select>
+                                    </span>
+                                </div>
+                                <p class="errorMessage">調整枠の開始時間と終了時間が逆転しています。正しい順序で指定してください。</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>所要時間</th>
+                            <td>
+                                <div class="selectSet">
+                                    <div class="md_select">
+                                        <select name="" id="" class="form--line md_error">
+                                            <option value="">15</option>
+                                            <option value="">30</option>
+                                            <option value="">45</option>
+                                            <option value="">60</option>
+                                        </select>
+                                    </div>
+                                    <span>分</span>
+                                </div>
+                                <p class="errorMessage">調整枠は所要時間よりも長くなるように設定してください。</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="actionArea">
+            <button class="md_btn md_btn--second multiple js_modalX">キャンセル</button>
+            <button class="md_btn multiple js_modalX" id="addButtonB">作成</button>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+
+<!-- header -->
+<div class="header">
+    <div class="imgCell">
+        <img src="../imageFile/logo_white.svg" alt="">
+    </div>
+    <div class="iconCell">
+        <a href="#" onclick="window.close()" class="iconImgPart">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+                <path class="st0" d="M939.5,1027.5L512,600L84.5,1027.5l-88-88L424,512L-3.5,84.5l88-88L512,424L939.5-3.5l88,88L600,512  l427.5,427.5L939.5,1027.5z" style="fill:#fff;"></path>
+            </svg>
+        </a>
+    </div>
+</div>
+<!-- /header -->
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+	<div class="contentWrap">
+
+	<!-- titleArea -->
+	<div class="titleArea">
+		<h2 class="mainTitle">日程 新規作成</h2>
+		<div class="subArea">
+			<div class="subTitle">
+				<span class="must">*</span>
+				の項目は必須です
+			</div>
+		</div>
+	</div>
+	<!-- /titleArea -->
+
+    <!-- errorArea -->
+    <div class="md_errorBar">
+        <div class="base">
+        <div class="iconImgPart">
+            <svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.5 5.125V7.625" stroke="#E04438" stroke-width="1.44231" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6.47656 1.74498L1.41031 10.2037C1.30587 10.3846 1.2506 10.5897 1.25 10.7985C1.24941 11.0074 1.3035 11.2127 1.4069 11.3942C1.5103 11.5757 1.65941 11.7269 1.8394 11.8328C2.01938 11.9388 2.22397 11.9958 2.43281 11.9981H12.5666C12.7753 11.9957 12.9798 11.9387 13.1597 11.8328C13.3396 11.7269 13.4886 11.5757 13.592 11.3944C13.6954 11.213 13.7495 11.0077 13.749 10.799C13.7485 10.5902 13.6933 10.3852 13.5891 10.2044L8.52281 1.74436C8.41622 1.56842 8.26606 1.42295 8.08684 1.32198C7.90762 1.22101 7.70539 1.16797 7.49969 1.16797C7.29398 1.16797 7.09175 1.22101 6.91253 1.32198C6.73331 1.42295 6.58315 1.56842 6.47656 1.74436V1.74498Z" stroke="#E04438" stroke-width="1.44231" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M7.5 9.5H7.50574" stroke="#E04438" stroke-width="1.44231" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </div>
+        <ul class="text">
+            <li>必須項目を入力してください</li>
+        </ul>
+        </div>
+    </div>
+    <!-- /errorArea -->
+
+		<!-- tableArea -->
+        <form id="dataForm" name="" method="" action="scheduleList.html">
+            <div class="contents">
+                <table class="md_table">
+                    <tbody>
+                        <tr>
+                            <th>グループ名<span class="must">*</span></th>
+                            <td>
+                                <input type="text" placeholder="" value="" class="form--line form--w60 md_error">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>所要時間<span class="must">*</span></th>
+                            <td>
+                                <div class="selectSet">
+                                    <input type="number" placeholder="" value="" class="form--line form--w20 md_error">
+                                    <span>分</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>備考（50文字以内）</th>
+                            <td>
+                                <input type="text" placeholder="服装、最寄り駅、集合場所、交通費　など" value="" class="form--line form--w100">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>メモ</th>
+                            <td>
+                                <input type="text" placeholder="学生非公開" value="" class="form--line form--w100">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>日程<span class="must">*</span></th>
+                            <td>
+                                <div class="termArea termAreaA">
+                                    <div class="daySelect">
+                                        <table class="md_table md_table--addSchedule">
+                                            <tr>
+                                                <th>実施日時<span class="must">*</span></th>
+                                                <td>
+                                                    <div class="selectSet">
+                                                        <input type="date" placeholder="日付を選択" value="" class="form--line md_error">
+                                                        <span class="md_select">
+                                                            <select name="" id="" class="form--line timeSelect md_error">
+                                                                <option value="">--:--</option>
+                                                                <option value="14:00">14:00</option>
+                                                                <option value="14:15">14:15</option>
+                                                                <option value="14:30">14:30</option>
+                                                                <option value="14:45">14:45</option>
+                                                            </select>
+                                                        </span>
+                                                        <span>～</span>
+                                                        <span class="hideTime">15:00</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>定員<span class="must">*</span></th>
+                                                <td>
+                                                    <div class="daySelect">
+                                                        <input type="number" placeholder="" value="" class="form--line form--w20 md_error">
+                                                        <span>人</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>開催場所<span class="must">*</span></th>
+                                                <td>
+                                                    <input type="text" placeholder="例）新宿アイランドタワー35階、オンラインにて開催など" value="" class="form--line form--w80 md_error">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>マップURL</th>
+                                                <td>
+                                                    <input type="url" placeholder="例）https://goo.gl/maps/t3E4K13VFgeYWFFVA" value="" class="form--line form--w80">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <button class="deleteArea">
+                                        <span class="iconImgPart">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+                                                <path class="st0" d="M939.5,1027.5L512,600L84.5,1027.5l-88-88L424,512L-3.5,84.5l88-88L512,424L939.5-3.5l88,88L600,512  l427.5,427.5L939.5,1027.5z" style="fill:#c2c6ce;"></path>
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </div>
+                                <button type="button" class="md_btn md_btn--second md_btn--medium md_btn--icon" id="addButtonA"><span class="iconImgPart">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -2 15 15">
+                                        <path fill="#767676" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"></path>
+                                    </svg>
+                                </span>日程を追加</button>
+                                <button type="button" class="md_btn md_btn--second md_btn--medium md_btn--icon js_modalOpen" id="addButtonC" data-modal="modal02">日程をまとめて作成</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="actionArea">
+                    <a href="../recruit/recruitManage_regist.html" class="md_btn md_btn--second">キャンセル</button>
+                    <a href="../recruit/recruitManage_regist.html" class="md_btn">保存</a>
+                </div>
+            </div>
+        </form>
+		<!-- /tableArea -->
+		
+
+	</div>
+
+<!-- Container End --></div><!-- /Container End -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+<script type="text/javascript" src="../common/js/schedule.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>ログイン - 事務局管理</title>
+
+<link rel="stylesheet" href="../common/css/login/login.css"/>
+</head>
+<body>
+	<div class="contentWrap">
+		<div class="logoCell">
+			<div class="logoArea">
+				<img src="../imageFile/logo.svg" alt="">
+				<p class="attribute">事務局管理</p>
+			</div>
+		</div>
+		<div class="loginCell">
+			<form method="post" action="https://staging.iroots.jp/admin_site/" class="loginForm" accept-charset="utf-8">
+				<input type="email" pattern=".+@.+\..+" id="admin_email" style="ime-mode:disabled" placeholder="メールアドレス" class="form--line md_error" maxlength="255" name="admin_email" value="yukiko_taniguchi+1@aaaa" />
+				<p class="errorMessage"><span class="iconImgPart">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 150 1100 1100"><path d="m993.554 865.69-.267-.267-364.968-609.718c0-.267-.267-.267-.267-.544-23.986-38.818-65.23-61.994-110.515-61.994s-86.524 23.182-110.246 61.727c-.267.267-.544.544-.544 1.078L41.509 865.69s0 .267-.267.267c-11.321 19.409-17.52 42.051-17.52 64.96 0 70.622 57.416 128.574 127.767 129.382h731.833c70.622-.811 128.036-58.76 128.036-129.382 0-22.909-6.199-45.551-17.787-65.23zM882.5 974.05H152.564c-23.453-.267-42.318-19.676-42.318-43.129 0-7.544 1.889-14.821 5.66-21.298l364.968-609.448.267-.267c8.088-12.665 21.564-20.22 36.661-20.22s28.841 7.821 36.929 20.753L919.159 909.35c3.777 6.466 5.66 14.021 5.66 21.564.267 23.453-18.865 42.86-42.318 43.129zM517.53 456.516c-23.72 0-43.129 19.409-43.129 43.129v172.51c0 23.72 19.409 43.129 43.129 43.129s43.129-19.409 43.129-43.129v-172.51c0-23.72-19.409-43.129-43.129-43.129zm0 345.023c-11.321 0-22.375 4.577-30.461 12.665s-12.665 19.142-12.665 30.461 4.577 22.375 12.665 30.461c8.088 8.088 19.142 12.665 30.461 12.665s22.375-4.577 30.461-12.665c8.088-8.088 12.665-19.142 12.665-30.461s-4.577-22.375-12.665-30.461c-8.088-8.088-19.142-12.665-30.461-12.665z" fill="#f04438"></path></svg>
+				</span>メールアドレスは正しい形式で入力してください</p>
+				<input type="password" id="admin_password" style="ime-mode:disabled" placeholder="パスワード" class="form--line" maxlength="16" name="admin_password" value="kaitokundesu" />
+			</form>
+			<a href="../student/messageList.html" class="md_btn">ログイン</a>
+		</div>
+	</div>
+<!--footer-->   
+<div class="searchFooter">
+	<footer>
+		<p class="copyright">Copyright &copy; 2024 en Japan Inc. All Rights Reserved.</p>
+	</footer>
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+</body>
+</html>

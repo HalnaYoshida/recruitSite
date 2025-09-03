@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+/* --------------------------------------------------
+ Import 
+-------------------------------------------------- */
+
+@import "../_default";
+
+
+
+
+/* 一旦仮置き */
+.container { margin-left: 264px; 
+    .contentWrap { position: relative; margin: 0 auto; padding: 50px 0; width: 95%; }
+}
+/* ↑なんかデフォルトにインポータントでpadding-top: 0px; かかってるっぽい */

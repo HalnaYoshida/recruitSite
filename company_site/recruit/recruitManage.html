@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>募集情報一覧</title>
+
+<link rel="stylesheet" href="../common/css/recruit/list_recruitManage.css"/>
+</head>
+<body>
+
+<!-- snackBar -->
+<div class="md_snackBar Bar01">
+	<div class="base">
+		<div class="text">募集情報を保存しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+ <!-- snackBar -->
+<div class="md_snackBar Bar02">
+	<div class="base">
+		<div class="text">下書きを保存しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+ <!-- snackBar -->
+<div class="md_snackBar Bar03">
+	<div class="base">
+		<div class="text">募集情報を削除しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- Modal01 -->
+<div class="md_modal modal01" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="Content">
+			<div class="textArea">
+				<div class="catch">削除エラー</div>
+				<p class="copy">
+					応募者がいるため削除できません
+				</p>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--medium md_btn--second js_modalX">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Modal01 -->
+
+<!-- Modal02 -->
+<div class="md_modal modal02" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="Content">
+			<div class="textArea">
+				<div class="catch">削除確認</div>
+				<p class="copy">
+					募集情報を削除します。よろしいですか？
+				</p>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--medium js_modalX multiple js_snackBar js_delete" data-target="Bar03">削除</button><button class="md_btn md_btn--medium md_btn--second js_modalX multiple">キャンセル</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Modal02 -->
+
+<!-- Modal03 -->
+<div class="md_modal md_modal--scout modal03" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="modalHeadedArea">
+			<div class="title">募集選択</div>
+			<div class="closeBtn">
+				<button class="js_modalX">
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M11.1725 10.186C11.498 10.5114 11.498 11.0391 11.1725 11.3645C10.8471 11.6899 10.3194 11.6899 9.994 11.3645L5.99995 7.3705L2.00601 11.3645C1.68058 11.6899 1.15294 11.69 0.8275 11.3645C0.502061 11.0391 0.502056 10.5114 0.82749 10.186L4.82143 6.192L0.827331 2.19797C0.501891 1.87253 0.501893 1.3449 0.827332 1.01947C1.15277 0.694033 1.68041 0.694031 2.00585 1.01947L5.99993 5.01348L9.99386 1.01948C10.3193 0.694041 10.8469 0.694038 11.1724 1.01947C11.4978 1.34491 11.4978 1.87254 11.1724 2.19798L7.17845 6.19198L11.1725 10.186Z" fill="#858D9D"></path>
+					</svg>
+				</button>
+			</div>
+		</div>
+		<div class="tableHead">
+			<table>
+				<tbody>
+					<tr>
+						<th class="item item--center" style="width: 60px; min-width: 60px;"></th>
+						<th class="item item--left">募集名</th>
+						<th class="item" style="width: 180px; min-width: 180px;">募集区分</th>
+						<th class="item item--center" style="width: 120px; min-width: 120px;">応募数</th>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="contentArea">
+			<div class="scrollArea">
+				<div>
+						</div><table class="md_table">
+					<tbody>
+							<tr>
+								<td class="data data--center" style="width: 60px; min-width: 60px;">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="checkbox-16">
+										<label for="checkbox-16"></label>
+									</div>
+								</td>
+								<td class="data">
+									<span class="holder">★2025新卒向け★サマーインターンシップ</span>
+								</td>
+								<td class="data" style="width: 180px; min-width: 180px;">
+									<span>インターンシップ</span>
+								</td>
+								<td class="data data--center" style="width: 120px; min-width: 120px;">
+									<span>1</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="data data--center" style="width: 60px; min-width: 60px;">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="checkbox-17">
+										<label for="checkbox-17"></label>
+									</div>
+								</td>
+								<td class="data">
+									<span class="holder">面談スカウト（iroots小笠原）</span>
+								</td>
+								<td class="data" style="width: 180px; min-width: 180px;">
+									<span>会社説明会</span>
+								</td>
+								<td class="data data--center" style="width: 120px; min-width: 120px;">
+									<span>1</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="data data--center" style="width: 60px; min-width: 60px;">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="checkbox-18">
+										<label for="checkbox-18"></label>
+									</div>
+								</td>
+								<td class="data">
+									<span class="holder">ランチ会お誘い（返信）</span>
+								</td>
+								<td class="data" style="width: 180px; min-width: 180px;">
+									<span>本選考</span>
+								</td>
+								<td class="data data--center" style="width: 120px; min-width: 120px;">
+									<span>1</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="data data--center" style="width: 60px; min-width: 60px;">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="checkbox-19">
+										<label for="checkbox-19"></label>
+									</div>
+								</td>
+								<td class="data">
+									<span class="holder">本選考（エンジニアコース）</span>
+								</td>
+								<td class="data" style="width: 180px; min-width: 180px;">
+									<span>本選考</span>
+								</td>
+								<td class="data data--center" style="width: 120px; min-width: 120px;">
+									<span>1</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="data data--center" style="width: 60px; min-width: 60px;">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="checkbox-20">
+										<label for="checkbox-20"></label>
+									</div>
+								</td>
+								<td class="data">
+									<span class="holder">本選考（総合職コース）</span>
+								</td>
+								<td class="data" style="width: 180px; min-width: 180px;">
+									<span>本選考</span>
+								</td>
+								<td class="data data--center" style="width: 120px; min-width: 120px;">
+									<span>1</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="data data--center" style="width: 60px; min-width: 60px;">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="checkbox-21">
+										<label for="checkbox-21"></label>
+									</div>
+								</td>
+								<td class="data">
+									<span class="holder">本選考（コンサルタントコース）</span>
+								</td>
+								<td class="data" style="width: 180px; min-width: 180px;">
+									<span>本選考</span>
+								</td>
+								<td class="data data--center" style="width: 120px; min-width: 120px;">
+									<span>1</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="data data--center" style="width: 60px; min-width: 60px;">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="checkbox-22">
+										<label for="checkbox-22"></label>
+									</div>
+								</td>
+								<td class="data">
+									<span class="holder">本選考（デザイナーコース）</span>
+								</td>
+								<td class="data" style="width: 180px; min-width: 180px;">
+									<span>本選考</span>
+								</td>
+								<td class="data data--center" style="width: 120px; min-width: 120px;">
+									<span>1</span>
+								</td>
+							</tr>
+
+						</tbody>
+					
+				</table>
+			</div>
+		</div>
+		<div class="actionArea actionArea--noFloat">
+			<div class="btnSet">
+				<button class="md_btn md_btn--second js_modalX">キャンセル</button>
+				<button class="md_btn js_modalX js_fileSet">追加</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Modal03 -->
+
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+	<div class="contentWrap">
+		<!-- titleArea -->
+		<div class="titleArea">
+			<div class="titleArea--inner">
+				<h2 class="mainTitle">募集情報</h2>
+				<span class="md_select">
+					<select name="" id="" class="form--line">
+						<option value="">卒年を選択してください</option>
+						<option value="">2024</option>
+						<option value="">2025</option>
+						<option value="">2026</option>
+						<option value="">2027</option>
+						<option value="">2028</option>
+					</select>
+				</span>
+			</div>
+			<a href="../recruit/recruitManage_regist.html" class="md_btn md_btn--medium md_btn--second md_btn--icon"><span class="iconImgPart">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -2 15 15"><path fill="#767676" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"/></svg>
+			</span>新規募集作成</a>
+		</div>
+		<!-- /titleArea -->
+		
+		<ul class="sortArea">
+			<li class="li">
+				<span class="sortTitle">審査状況：</span>
+				<div class="sortBtnCell">
+					<span class="md_select col-gr">
+						<select name="" id="" class="form--line">
+							<option value="">すべて</option>
+							<option value="">審査完了</option>
+							<option value="">審査中</option>
+							<option value="">審査NG</option>
+						</select>
+					</span>
+				</div>
+			</li>
+			<li class="li">
+				<span class="sortTitle">募集状況：</span>
+				<div class="sortBtnCell">
+					<span class="md_select col-gr">
+						<select name="" id="" class="form--line">
+							<option value="">すべて</option>
+							<option value="">募集中</option>
+							<option value="">企業リスト非公開</option>
+							<option value="">募集終了</option>
+							<option value="">下書き</option>
+						</select>
+					</span>
+				</div>
+			</li>
+			<li>
+				<div class="sortBtnArea">
+					<div class="sortBtnCell">募集情報：</div>
+					<div class="sortBtnCell">
+						<div id="fileSet"></div>
+						<button class="md_btn md_btn--second md_btn--small js_modalOpen" data-modal="modal03">設定</button>
+					</div>
+				</div>
+			</li>
+		</ul>
+
+		<!-- md_table -->
+		<table class="md_table">
+			<thead>
+				<tr>
+					<th class="item">タイトル</th>
+					<th class="item item--w10">募集形態</th>
+					<th class="item item--w10">最終更新日</th>
+					<th class="item item--w10 item--center">審査状況</th>
+					<th class="item item--w10 item--center">応募数</th>
+					<th class="item item--w10">募集状況</th>
+					<th class="item" style="width: 145px;"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="data"><span class="recruitTitle">面談スカウト（iroots小笠原）</span></td>
+					<td class="data"><span class="recruitCat">本選考</span></td>
+					<td class="data"><span class="holder">2023/10/23</span></td>
+					<td class="data data--center"><span class="reviewStatus">審査完了</span></td>
+					<td class="data data--center"><a href="" class="">99</a></td>
+					<td class="data data--status statusSelect">
+						<span class="statusTitle statusTitle--on statusOn">募集中</span>
+						<span class="statusTitle statusTitle--off statusOff" style="display: none;">企業リスト非公開<span class="annotation">※スカウト添付可</span></span>
+						<div class="sortStatusInner" style="display: none;">
+							<ul>
+								<li class="columnSet columnSet--single" data-option="statusOn"><span class="mainOption">募集中</span></li>
+								<li class="columnSet" data-option="statusOff"><span class="mainOption">企業リスト非公開</span><span class="subOption">※スカウト添付可</span></li>
+							</ul>
+						</div>
+					</td>
+					<td class="data data--btn">
+						<div class="btnSet">
+							<div class="btnCell">
+								<a href="../recruit/recruitManage_renew.html" class="md_btn md_btn--medium">編集</a>
+							</div>
+							<div class="cmdArea">
+                                <button class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a href="#" class="menu">複製</a>
+                                        <a class="menu js_modalOpen" data-modal="modal01">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="data"><span class="recruitTitle">面談スカウト（iroots笠松）</span></td>
+					<td class="data"><span class="recruitCat">本選考</span></td>
+					<td class="data"><span class="holder">2023/10/23</span></td>
+					<td class="data data--center"><span class="reviewStatus">審査中</span></td>
+					<td class="data data--center"><a href="" class="">99</a></td>
+					<td class="data data--status statusSelect">
+						<span class="statusTitle statusTitle--on statusOn">募集中</span>
+						<span class="statusTitle statusTitle--off statusOff" style="display: none;">企業リスト非公開<span class="annotation">※スカウト添付可</span></span>
+						<div class="sortStatusInner" style="display: none;">
+							<ul>
+								<li class="columnSet columnSet--single" data-option="statusOn"><span class="mainOption">募集中</span></li>
+								<li class="columnSet" data-option="statusOff"><span class="mainOption">企業リスト非公開</span><span class="subOption">※スカウト添付可</span></li>
+							</ul>
+						</div>
+					</td>
+					<td class="data data--btn">
+						<div class="btnSet">
+							<div class="btnCell">
+								<a href="../recruit/recruitManage_renew.html" class="md_btn md_btn--medium">編集</a>
+							</div>
+							<div class="cmdArea">
+                                <button class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a href="#" class="menu">複製</a>
+                                        <a class="menu js_modalOpen" data-modal="modal01">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+						</div>
+					</td>
+				</tr>
+				<tr class="errorList">
+					<td class="data">
+						<span class="recruitTitle">エンジニアコースインターンシップ</span>
+						<a href="../schedule/scheduleList.html" class="md_chip md_chip--blue"><span class="chipTxt">日程：エンジニアコースインター...</span></a>
+					</td>
+					<td class="data"><span class="recruitCat">インターン・説明会など</span></td>
+					<td class="data"><span class="holder">2023/10/23</span></td>
+					<td class="data data--center">
+						<div class="reviewSet">
+							<span class="reviewStatus">審査NG</span>
+							<span class="reviewComment">募集情報の修正・審査が完了するまで<br>公開できません</span>
+						</div>
+					</td>
+					<td class="data data--center"><a href="" class="">--</a></td>
+					<td class="data data--status statusSelect">
+						<span class="statusTitle statusTitle--on statusOn">募集中</span>
+						<span class="statusTitle statusTitle--off statusOff" style="display: none;">企業リスト非公開<span class="annotation">※スカウト添付可</span></span>
+						<div class="sortStatusInner" style="display: none;">
+							<ul>
+								<li class="columnSet columnSet--single" data-option="statusOn"><span class="mainOption">募集中</span></li>
+								<li class="columnSet" data-option="statusOff"><span class="mainOption">企業リスト非公開</span><span class="subOption">※スカウト添付可</span></li>
+							</ul>
+						</div>
+					</td>
+					<td class="data data--btn">
+						<div class="btnSet">
+							<div class="btnCell">
+								<a href="../recruit/recruitManage_renew_ptn_error.html" class="md_btn md_btn--medium">編集</a>
+							</div>
+							<div class="cmdArea">
+								<button class="cmdLink js_threeDots">
+									<svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+										<path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+										<path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+										<path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+									</svg>
+									<div class="hideAction">
+										<a href="#" class="menu">複製</a>
+										<a class="menu js_modalOpen" data-modal="modal01">削除</a>
+									</div>
+								</button>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="data"><span class="recruitTitle">企画職コース本選考</span></td>
+					<td class="data"><span class="recruitCat">本選考</span></td>
+					<td class="data"><span class="holder">2023/10/23</span></td>
+					<td class="data data--center"><span class="reviewStatus">審査完了</span></td>
+					<td class="data data--center"><a href="" class="">0</a></td>
+					<td class="data data--status statusSelect">
+						<span class="statusTitle statusTitle--on statusOn" style="display: none;">募集中</span>
+						<span class="statusTitle statusTitle--off statusOff">企業リスト非公開<span class="annotation">※スカウト添付可</span></span>
+						<div class="sortStatusInner" style="display: none;">
+							<ul>
+								<li class="columnSet columnSet--single" data-option="statusOn"><span class="mainOption">募集中</span></li>
+								<li class="columnSet" data-option="statusOff"><span class="mainOption">企業リスト非公開</span><span class="subOption">※スカウト添付可</span></li>
+							</ul>
+						</div>
+					</td>
+					<td class="data data--btn">
+						<div class="btnSet">
+							<div class="btnCell">
+								<a href="../recruit/recruitManage_renew.html" class="md_btn md_btn--medium">編集</a>
+							</div>
+							<div class="cmdArea">
+								<button class="cmdLink js_threeDots">
+									<svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+										<path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+										<path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+										<path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+									</svg>
+									<div class="hideAction">
+										<a href="#" class="menu">複製</a>
+										<a class="menu js_modalOpen" data-modal="modal02">削除</a>
+									</div>
+								</button>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr id="delete01">
+					<td class="data"><span class="recruitTitle">本選考へのご案内</span></td>
+					<td class="data"><span class="recruitCat">本選考</span></td>
+					<td class="data"><span class="holder">2023/10/23</span></td>
+					<td class="data data--center"><span class="reviewStatus">審査中</span></td>
+					<td class="data data--center"><a href="" class="">0</a></td>
+					<td class="data data--status statusSelect">
+						<span class="statusTitle statusTitle--on statusOn" style="display: none;">募集中</span>
+						<span class="statusTitle statusTitle--off statusOff">企業リスト非公開<span class="annotation">※スカウト添付可</span></span>
+						<div class="sortStatusInner" style="display: none;">
+							<ul>
+								<li class="columnSet columnSet--single" data-option="statusOn"><span class="mainOption">募集中</span></li>
+								<li class="columnSet" data-option="statusOff"><span class="mainOption">企業リスト非公開</span><span class="subOption">※スカウト添付可</span></li>
+							</ul>
+						</div>
+					</td>
+					<td class="data data--btn">
+						<div class="btnSet">
+							<div class="btnCell">
+								<a href="../recruit/recruitManage_renew.html" class="md_btn md_btn--medium">編集</a>
+							</div>
+							<div class="cmdArea">
+								<button class="cmdLink js_threeDots">
+									<svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+										<path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+										<path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+										<path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+									</svg>
+									<div class="hideAction">
+										<a href="#" class="menu">複製</a>
+										<a class="menu js_modalOpen" data-modal="modal02">削除</a>
+									</div>
+								</button>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr class="errorList">
+					<td class="data">
+						<span class="recruitTitle">エンジニアコース本選考</span>
+					</td>
+					<td class="data"><span class="recruitCat">本選考</span></td>
+					<td class="data"><span class="holder">2023/10/23</span></td>
+					<td class="data data--center">
+						<div class="reviewSet">
+							<span class="reviewStatus">審査NG</span>
+							<span class="reviewComment">募集情報の修正・審査が完了するまで<br>公開できません</span>
+						</div>
+					</td>
+					<td class="data data--center"><a href="" class="">--</a></td>
+					<td class="data data--status statusSelect">
+						<span class="statusTitle statusTitle--on statusOn" style="display: none;">募集中</span>
+						<span class="statusTitle statusTitle--off statusOff">企業リスト非公開<span class="annotation">※スカウト添付可</span></span>
+						<div class="sortStatusInner" style="display: none;">
+							<ul>
+								<li class="columnSet columnSet--single" data-option="statusOn"><span class="mainOption">募集中</span></li>
+								<li class="columnSet" data-option="statusOff"><span class="mainOption">企業リスト非公開</span><span class="subOption">※スカウト添付可</span></li>
+							</ul>
+						</div>
+					</td>
+					<td class="data data--btn">
+						<div class="btnSet">
+							<div class="btnCell">
+								<a href="../recruit/recruitManage_renew_ptn_error.html" class="md_btn md_btn--medium">編集</a>
+							</div>
+							<div class="cmdArea">
+								<button class="cmdLink js_threeDots">
+									<svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+										<path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+										<path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+										<path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+									</svg>
+									<div class="hideAction">
+										<a href="#" class="menu">複製</a>
+										<a class="menu js_modalOpen" data-modal="modal01">削除</a>
+									</div>
+								</button>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="data"><span class="recruitTitle">エンジニアコース説明会</span></td>
+					<td class="data"><span class="recruitCat">インターン・説明会など</span></td>
+					<td class="data"><span class="holder">2023/10/23</span></td>
+					<td class="data data--center"><span class="reviewStatus">審査完了</span></td>
+					<td class="data data--center"><a href="" class="">99</a></td>
+					<td class="data data--status statusSelect statusSelect--disabled">
+						<span class="statusTitle statusTitle--disabled" id="">募集終了</span>
+					</td>
+					<td class="data data--btn">
+						<div class="btnSet">
+							<div class="btnCell">
+								<a href="../recruit/recruitManage_renew.html" class="md_btn md_btn--medium">編集</a>
+							</div>
+							<div class="cmdArea">
+                                <button class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a href="#" class="menu">複製</a>
+                                        <a class="menu js_modalOpen" data-modal="modal01">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="data"><span class="recruitTitle">デザイナーコース説明会</span></td>
+					<td class="data"><span class="recruitCat">インターン・説明会など</span></td>
+					<td class="data"><span class="holder">2023/10/23</span></td>
+					<td class="data data--center"><span class="reviewStatus">審査中</span></td>
+					<td class="data data--center"><a href="" class="">99</a></td>
+					<td class="data data--status statusSelect statusSelect--disabled">
+						<span class="statusTitle statusTitle--disabled" id="">募集終了</span>
+					</td>
+					<td class="data data--btn">
+						<div class="btnSet">
+							<div class="btnCell">
+								<a href="../recruit/recruitManage_renew.html" class="md_btn md_btn--medium">編集</a>
+							</div>
+							<div class="cmdArea">
+                                <button class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a href="#" class="menu">複製</a>
+                                        <a class="menu js_modalOpen" data-modal="modal01">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+						</div>
+					</td>
+				</tr>
+				<tr class="errorList">
+					<td class="data">
+						<span class="recruitTitle">企画職コース説明会</span>
+					</td>
+					<td class="data"><span class="recruitCat">インターン・説明会など</span></td>
+					<td class="data"><span class="holder">2023/10/23</span></td>
+					<td class="data data--center">
+						<div class="reviewSet">
+							<span class="reviewStatus">審査NG</span>
+							<span class="reviewComment">募集情報の修正・審査が完了するまで<br>公開できません</span>
+						</div>
+					</td>
+					<td class="data data--center"><a href="" class="">--</a></td>
+					<td class="data data--status statusSelect statusSelect--disabled">
+						<span class="statusTitle statusTitle--disabled" id="">募集終了</span>
+					</td>
+					<td class="data data--btn">
+						<div class="btnSet">
+							<div class="btnCell">
+								<a href="../recruit/recruitManage_renew_ptn_error.html" class="md_btn md_btn--medium">編集</a>
+							</div>
+							<div class="cmdArea">
+								<button class="cmdLink js_threeDots">
+									<svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+										<path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+										<path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+										<path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+									</svg>
+									<div class="hideAction">
+										<a href="#" class="menu">複製</a>
+										<a class="menu js_modalOpen" data-modal="modal01">削除</a>
+									</div>
+								</button>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="data"><span class="recruitTitle">★2025新卒向け★サマーインターンシップ</span></td>
+					<td class="data"><span class="recruitCat">インターン・説明会など</span></td>
+					<td class="data"><span class="holder">2023/10/23</span></td>
+					<td class="data data--center"><span class="reviewStatus">---</span></td>
+					<td class="data data--center"><a href="" class="">99</a></td>
+					<td class="data data--status statusSelect statusSelect--disabled">
+						<span class="statusTitle statusTitle--disabled" id="">下書き</span>
+					</td>
+					<td class="data data--btn">
+						<div class="btnSet">
+							<div class="btnCell">
+								<a href="../recruit/recruitManage_renew.html" class="md_btn md_btn--medium">編集</a>
+							</div>
+							<div class="cmdArea">
+                                <button class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a href="#" class="menu">複製</a>
+                                        <a class="menu js_modalOpen" data-modal="modal01">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- /md_table -->
+	</div>
+<!-- Container End --></div><!-- /Container End -->
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+<script>
+    function threeDots() { 
+  $(this).find('.hideAction').toggleClass('show'); 
+}
+
+$('.cmdArea').on('click', threeDots);
+</script>
+<script>
+    $(document).ready(function() {
+  // .js_delete 要素にクリックイベントを追加
+  $('.js_delete').click(function() {
+    $('#delete01').fadeOut('');
+  });
+});
+</Script>
+	
+
+	<script>
+		$(document).ready(function() {
+				// statusSelectがクリックされたときの処理
+				$('.statusSelect').on('click', function() {
+						// sortStatusInnerの表示/非表示を切り替える
+						$(this).find('.sortStatusInner').toggle();
+				});
+		
+				// オプションがクリックされたときの処理
+				$(document).on('click', '.sortStatusInner li', function() {
+						var selectedOption = $(this).data('option');
+						var parentStatusSelect = $(this).closest('.statusSelect');
+						
+						// オプションに応じて表示を切り替える
+						if (selectedOption === 'statusOn') {
+								parentStatusSelect.find('.statusOn').show();
+								parentStatusSelect.find('.statusOff').hide();
+						} else if (selectedOption === 'statusOff') {
+								parentStatusSelect.find('.statusOn').hide();
+								parentStatusSelect.find('.statusOff').show();
+						}
+		
+						// オプションリストを非表示にする
+						parentStatusSelect.find('.sortStatusInner').hide();
+				});
+		});
+		</script>
+	
+
+</body>
+</html>

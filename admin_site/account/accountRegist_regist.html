@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>アカウント新規登録 - アカウント管理</title>
+<link rel="stylesheet" href="../common/css/_default.css"/>
+<link rel="stylesheet" href="../common/css/account/form.css"/>
+</head>
+<body>
+
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+	<div class="contentWrap">
+		<!-- titleArea -->
+		<div class="titleArea">
+			<h2 class="mainTitle">アカウント新規登録</h2>
+			<div class="subTitle">
+				<span class="must">*</span>
+				の項目は必須です
+			</div>
+		</div>
+		<!-- /titleArea -->
+
+		<!-- md_table -->
+		<form id="" name="" method="" action="" >
+			<div class="contents">
+				<table class="md_table md_table--user">
+					<tbody>
+						<tr class="tr">
+							<th>Emailアドレス<span class="must">*</span></th>
+							<td><input type="text" placeholder="例）sample@iroot.co.jp" class="form--line form--w50"></td>
+						</tr>
+						<tr class="tr">
+							<th>パスワード<span class="must">*</span></th>
+							<td>
+								<input type="text" placeholder="パスワードを入力" class="form--line form--w50">
+								<ul class="policySet">
+									<li class="policy">・10～20文字で入力</li>
+									<li class="policy">・英小文字、英大文字、数字、記号から3種類以上を組み合わせて使用</li>
+									<li class="policy">・異なる文字4つ以上を組み合わせる</li>
+									<li class="policy">・使用できる記号　@./_-?!#$&amp;*=~</li>
+									<li class="policy">・3文字連続で同じ文字を使用しない</li>
+								</ul>
+							
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>担当者名<span class="must">*</span></th>
+							<td><input type="text" placeholder="例）山田太郎" class="form--line form--w50"></td>
+						</tr>
+						<tr class="tr">
+							<th>担当者権限<span class="must">*</span></th>
+							<td>
+								<div class="toggleSet">
+									<div class="md_toggle">
+										<input type="radio" name="radio" id="radio_001" checked="">
+										<label for="radio_001">管理者</label>
+									</div>
+									<div class="md_toggle">
+										<input type="radio" name="radio" id="radio_003">
+											<label for="radio_003">営業担当者</label>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr class="tr">
+							<th>担当者画像</th>
+							<td>
+								<div class="uploadArea">
+									<img src="../imageFile/accountImg01.jpeg" alt="">
+									<button class="md_btn md_btn--second md_btn--sub">ファイルを選択</button>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="btnArea">
+					<a href="accountList.html?snackBar01" class="md_btn btn01">登録</a>
+					<a href="accountList.html?modal03" class="md_btn btn02" style="display: none; margin-left: 0;">登録</a>
+				</div>
+			</div>
+		</form>
+		<!-- /md_table -->
+	</div>
+<!-- Container End --><div class="container"><!-- /Container End -->
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+<script>
+	$(document).ready(function() {
+			var URL = location.href;
+			var URLSet = URL.split('?');
+
+			if (URLSet.length > 1 && URLSet[1] === 'pattern') {
+					$('.md_btn.btn02').show();
+					$('.md_btn.btn01').hide();
+			} 
+	});
+</script>
+</body>
+</html>

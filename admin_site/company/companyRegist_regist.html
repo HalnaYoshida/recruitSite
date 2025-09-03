@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>企業新規登録 - 企業管理</title>
+<link rel="stylesheet" href="../common/css/company/form.css"/>
+</head>
+<body>
+
+<!-- Modal01 -->
+<div class="md_modal modal01" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="Content">
+			<div class="textArea">
+				<div class="catch">[agexテスト]日野<hino-masato@agex.co.jp>にアカウント更新通知を送りますか？</div>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--second md_btn--medium multiple js_modalX">キャンセル</button><button class="md_btn md_btn--medium multiple">送信</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Modal01 -->
+
+<!-- Modal02 -->
+<div class="md_modal md_modal--rich modal02" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="title">
+			担当者編集
+		</div>
+		<div class="contentArea">
+			<table class="md_table">
+				<tbody>
+					<tr class="tr">
+						<th>Emailアドレス<span class="must">*</span></th>
+						<td><input type="text" placeholder="例）sample@iroot.co.jp" class="form--line form--w70"></td>
+					</tr>
+					<!-- <tr class="tr">
+						<th>パスワード<span class="must">*</span></th>
+						<td><input type="text" placeholder="半角英数8～20字／英小字・英大字・数字を1字以上含む" class="form--line form--w70"></td>
+					</tr> -->
+					<tr class="tr">
+						<th>担当者名<span class="must">*</span></th>
+						<td><input type="text" placeholder="例）山田太郎" class="form--line form--w70"></td>
+					</tr>
+					<tr class="tr">
+						<th>一括送付権限<span class="must">*</span></th>
+						<td>
+							<div class="toggleSet">
+								<div class="md_toggle">
+									<input type="radio" name="radioBulk002" id="radioBulk002_001">
+									<label for="radioBulk002_001">権限あり</label>
+								</div>
+								<div class="md_toggle">
+									<input type="radio" name="radioBulk002" id="radioBulk002_002" checked="">
+										<label for="radioBulk002_002">権限なし</label>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr">
+						<th>管理権限<span class="must">*</span></th>
+						<td>
+							<div class="toggleSet">
+								<div class="md_toggle">
+									<input type="radio" name="radioManage002" id="radioManage002_001" checked="">
+									<label for="radioManage002_001">管理者</label>
+								</div>
+								<div class="md_toggle">
+									<input type="radio" name="radioManage002" id="radioManage002_002">
+									<label for="radioManage002_002">メンバー</label>
+								</div>
+								<div class="md_toggle">
+									<input type="radio" name="radioManage002" id="radioManage02_003">
+									<label for="radioManage002_003">CS担当</label>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr">
+						<th>担当者画像</th>
+						<td>
+							<div class="uploadArea">
+								<img src="../imageFile/accountImg01.jpeg"  class="accountImg" alt="" width="100" height="100">
+								<button class="md_btn md_btn--second md_btn--sub">ファイルを選択</button>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">私のルーツ</th>
+						<td>
+							<textarea name="" id="" rows="4" class="form--line form--w70" placeholder=""></textarea>
+							<div class="uploadArea">
+								<img src="../imageFile/noImg.jpg" alt="">
+								<button class="md_btn md_btn--second md_btn--sub">ファイルを選択</button>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">キャリア</th>
+						<td>
+							<textarea name="" id="" rows="4" class="form--line form--w70" placeholder=""></textarea>
+							<div class="uploadArea">
+								<img src="../imageFile/noImg.jpg" alt="">
+								<button class="md_btn md_btn--second md_btn--sub">ファイルを選択</button>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">将来像</th>
+						<td>
+							<textarea name="" id="" rows="4" class="form--line form--w70" placeholder=""></textarea>
+							<div class="uploadArea">
+								<img src="../imageFile/noImg.jpg" alt="">
+								<button class="md_btn md_btn--second md_btn--sub">ファイルを選択</button>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">通知設定</th>
+						<td>
+							<ul class="radioArea">
+								<!-- <li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="checkPush_007">
+										<label for="checkPush_007">学生のマイページに貴社の閲覧履歴をつける</label>
+									</div>
+								</li> -->
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="checkPush_0008" checked="">
+										<label for="checkPush_0008">自分宛ての新着メッセージの通知をメールで受け取る</label>
+									</div>
+								</li>
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="checkPush_0009">
+										<label for="checkPush_0009">他の担当者宛ての新着メッセージが届いたらメールで受け取る</label>
+									</div>
+								</li>
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="checkPush_0010" checked="">
+										<label for="checkPush_0010">スカウトリクエストの通知をメールに受け取る</label>
+									</div>
+								</li>
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="checkPush_0011" checked="">
+										<label for="checkPush_0011">未対応メッセージ通知をメールで受け取る</label>
+									</div>
+								</li>
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="checkPush_0012" checked="">
+										<label for="checkPush_0012">新着学生通知をメールで受け取る</label>
+									</div>
+								</li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="actionArea">
+			<button class="md_btn md_btn--second js_modalX">キャンセル</button>
+			<button class="md_btn js_modalX">更新</button>
+		</div>
+	</div>
+</div>
+<!-- /Modal02 -->
+
+<!-- Modal03 -->
+<div class="md_modal modal03" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="Content">
+			<div class="textArea">
+				<div class="catch">
+					企業情報登録確認
+					</div>
+				<p class="copy">
+					一括送付が付与されています。
+					<br>
+					企業情報を登録します。よろしいですか？
+				</p>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--second md_btn--medium js_modalX multiple">キャンセル</button><a href="companySearch_search.html?snackBar01" class="md_btn md_btn--medium multiple">登録</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Modal03 -->
+
+<!-- Modal04 -->
+<div class="md_modal md_modal--rich modal04" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="title">
+			担当者追加
+		</div>
+		<div class="contentArea">
+			<table class="md_table">
+				<tbody>
+					<tr class="tr">
+						<th>Emailアドレス<span class="must">*</span></th>
+						<td><input type="text" placeholder="例）sample@iroot.co.jp" class="form--line form--w70"></td>
+					</tr>
+					<!-- <tr class="tr">
+						<th>パスワード<span class="must">*</span></th>
+						<td><input type="text" placeholder="半角英数8～20字／英小字・英大字・数字を1字以上含む" class="form--line form--w70"></td>
+					</tr> -->
+					<tr class="tr">
+						<th>担当者名<span class="must">*</span></th>
+						<td><input type="text" placeholder="例）山田太郎" class="form--line form--w70"></td>
+					</tr>
+					<tr class="tr">
+						<th>一括送付権限<span class="must">*</span></th>
+						<td>
+							<div class="toggleSet">
+								<div class="md_toggle">
+									<input type="radio" name="radioBulk02" id="radioBulk02_001">
+									<label for="radioBulk02_001">権限あり</label>
+								</div>
+								<div class="md_toggle">
+									<input type="radio" name="radioBulk02" id="radioBulk02_002" checked="">
+										<label for="radioBulk02_002">権限なし</label>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr">
+						<th>管理権限<span class="must">*</span></th>
+						<td>
+							<div class="toggleSet">
+								<div class="md_toggle">
+									<input type="radio" name="radioManage02" id="radioManage02_001" checked="">
+									<label for="radioManage02_001">管理者</label>
+								</div>
+								<div class="md_toggle">
+									<input type="radio" name="radioManage02" id="radioManage02_002">
+									<label for="radioManage02_002">メンバー</label>
+								</div>
+								<div class="md_toggle">
+									<input type="radio" name="radioManage02" id="radioManage02_003">
+									<label for="radioManage02_003">CS担当</label>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr">
+						<th>担当者画像</th>
+						<td>
+							<div class="uploadArea">
+								<img src="../imageFile/accountImg01.jpeg"  class="accountImg" alt="" width="100" height="100">
+								<button class="md_btn md_btn--second md_btn--sub">ファイルを選択</button>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">私のルーツ</th>
+						<td>
+							<textarea name="" id="" rows="4" class="form--line form--w70" placeholder=""></textarea>
+							<div class="uploadArea">
+								<img src="../imageFile/noImg.jpg" alt="">
+								<button class="md_btn md_btn--second md_btn--sub">ファイルを選択</button>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">キャリア</th>
+						<td>
+							<textarea name="" id="" rows="4" class="form--line form--w70" placeholder=""></textarea>
+							<div class="uploadArea">
+								<img src="../imageFile/noImg.jpg" alt="">
+								<button class="md_btn md_btn--second md_btn--sub">ファイルを選択</button>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">将来像</th>
+						<td>
+							<textarea name="" id="" rows="4" class="form--line form--w70" placeholder=""></textarea>
+							<div class="uploadArea">
+								<img src="../imageFile/noImg.jpg" alt="">
+								<button class="md_btn md_btn--second md_btn--sub">ファイルを選択</button>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">通知設定</th>
+						<td>
+							<ul class="radioArea">
+								<!-- <li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="checkPush_007">
+										<label for="checkPush_007">学生のマイページに貴社の閲覧履歴をつける</label>
+									</div>
+								</li> -->
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="checkPush_008" checked="">
+										<label for="checkPush_008">自分宛ての新着メッセージの通知をメールで受け取る</label>
+									</div>
+								</li>
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="checkPush_009">
+										<label for="checkPush_009">他の担当者宛ての新着メッセージが届いたらメールで受け取る</label>
+									</div>
+								</li>
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="checkPush_010" checked="">
+										<label for="checkPush_010">スカウトリクエストの通知をメールに受け取る</label>
+									</div>
+								</li>
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="checkPush_011" checked="">
+										<label for="checkPush_011">未対応メッセージ通知をメールで受け取る</label>
+									</div>
+								</li>
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="checkPush_012" checked="">
+										<label for="checkPush_012">新着学生通知をメールで受け取る</label>
+									</div>
+								</li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="actionArea">
+			<button class="md_btn md_btn--second js_modalX">キャンセル</button>
+			<button class="md_btn js_modalX addContent">追加</button>
+		</div>
+	</div>
+</div>
+<!-- /Modal04 -->
+
+<!-- Modal06 -->
+<div class="md_modal md_modal--rich scout modal06" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="title">
+			スカウト通数追加
+		</div>
+		<div class="contentArea">
+			<table class="md_table">
+				<tbody>
+					<tr class="tr">
+						<th>追加通数</th>
+						<td>
+							<div class="daySelect">
+								<input type="text" min="" max="" value="" class="form--line">
+								<span>通</span>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="actionArea actionArea--noFloat">
+			<button class="md_btn md_btn--second js_modalX">キャンセル</button>
+			<button class="md_btn js_modalX">更新</button>
+		</div>
+	</div>
+</div>
+<!-- /Modal06 -->
+
+<!-- .Modal07 -->
+<div class="md_modal md_modal--rich scout modal07" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="title">
+			スカウト通数削減
+		</div>
+		<div class="contentArea">
+			<table class="md_table">
+				<tbody>
+					<tr class="tr">
+						<th>削減通数</th>
+						<td>
+							<div class="daySelect">
+								<input type="text" min="" max="" value="" class="form--line">
+								<span>通</span>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="actionArea actionArea--noFloat">
+			<button class="md_btn md_btn--second js_modalX">キャンセル</button>
+			<button class="md_btn js_modalX">更新</button>
+		</div>
+	</div>
+</div>
+<!-- /Modal07 -->
+
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+	<div class="contentWrap">
+
+	<!-- titleArea -->
+	<div class="titleArea">
+		<h2 class="mainTitle">企業新規登録</h2>
+		<div class="subTitle">
+			<span class="must">*</span>
+			の項目は必須です
+		</div>
+	</div>
+	<!-- /titleArea -->
+	
+	<!-- md_table -->
+	<div class="formTitle">企業管理</div>
+	<form id="" name="" method="" action="" >
+		<div class="contents">
+			<table class="md_table md_table--company">
+				<tbody>
+					<tr class="tr tr--main">
+						<th class="th th--radius">企業ステータス</th>
+						<td colspan="3">
+							<ul class="toggleSet">
+								<li class="md_toggle"><input type="radio" name="radio01" id="radio_001" checked=""><label for="radio_001">有効</label></div>
+								<li class="md_toggle"><input type="radio" name="radio01" id="radio_002"><label for="radio_002">閲覧のみ</label></div>
+								<li class="md_toggle"><input type="radio" name="radio01" id="radio_003"><label for="radio_003">無効</label></div>
+							</ul>		
+						</td>
+						<!-- <th class="th">2卒ステータス</th>
+						<td>
+							<div class="toggleSet">
+								<div class="md_toggle">
+									<input type="radio" name="radio02" id="radio_004" checked=""><label for="radio_004">有効</label>
+								</div>
+								<div class="md_toggle">
+									<input type="radio" name="radio02" id="radio_005"><label for="radio_005">閲覧のみ</label>
+								</div>
+							</div>
+						</td> -->
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">性格・価値観分析<br>閲覧</th>
+						<td>
+							<div class="toggleSet">
+								<div class="md_toggle">
+									<input type="radio" name="radio03" id="radio_006" checked=""><label for="radio_006">可</label>
+								</div>
+								<div class="md_toggle">
+									<input type="radio" name="radio03" id="radio_007"><label for="radio_007">不可</label>
+								</div>
+							</div>
+						</td>
+						<th class="th">スカウト<br>リクエスト機能</th>
+						<td>
+							<div class="toggleSet">
+								<div class="md_toggle">
+									<input type="radio" name="radio04" id="radio_008" checked=""><label for="radio_008">可</label>
+								</div>
+								<div class="md_toggle">
+									<input type="radio" name="radio04" id="radio_009"><label for="radio_009">不可</label>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">学生側スカウト承諾画像表示なしアカウント</th>
+						<td colspan="3">
+							<div class="md_toggle">
+								<input type="checkbox" name="" id="announceControl">
+								<label for="announceControl"></label>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">表示順序</th>
+						<td colspan="3">
+							<div class="sortableSet">
+								<ul class="numList">
+									<li class="num">1</li>
+									<li class="num">2</li>
+									<li class="num">3</li>
+									<li class="num">4</li>
+								</ul>
+								<ul class="sortable">
+									<li class="listBox listBox--grey">性別/人柄</li>
+									<li class="listBox listBox--white">経歴</li>
+									<li class="listBox listBox--grey">学生時代</li>
+									<li class="listBox listBox--white">将来像</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">アカウント<br>利用期間</th>
+						<td colspan="3">
+							<div class="daySelect">
+								<input type="date" placeholder="日付を選択" class="form--line">
+								<span>～</span>
+								<input type="date" placeholder="日付を選択" class="form--line">
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th th--big">使用卒年/期限</th>
+						<td colspan="3">
+							<div class="md_toggle md_toggle--margin">
+								<input type="checkbox" name="" id="checkYearSort">
+								<label for="checkYearSort">卒年によって振り分けない</label>
+							</div>
+							<div id="termArea01">
+								<div class="terms terms--year terms--01">
+									<div class="selectSet">
+										<div class="yearSelect">
+											<span class="md_select">
+												<select name="" id="" class="form--line">
+													<option value="">2024</option>
+													<option value="">選択肢2</option>
+													<option value="">選択肢3</option>
+												</select>
+											</span>					
+											<span>～</span>
+											<span class="md_select">
+												<select name="" id="" class="form--line">
+													<option value="">2024</option>
+													<option value="">選択肢2</option>
+													<option value="">選択肢3</option>
+												</select>
+											</span>
+											<span>年卒</span>
+										</div>
+										<div class="daySelect">
+											<input type="date" placeholder="日付を選択" class="form--line">
+											<span>～</span>
+											<input type="date" placeholder="日付を選択" class="form--line">
+										</div>
+									</div>
+									<button class="deleteArea">
+										<span class="iconImgPart">
+											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+												<path class="st0" d="M939.5,1027.5L512,600L84.5,1027.5l-88-88L424,512L-3.5,84.5l88-88L512,424L939.5-3.5l88,88L600,512  l427.5,427.5L939.5,1027.5z" style="fill:#c2c6ce;"></path>
+											</svg>
+										</span>
+									</button>
+								</div>
+							</div>
+							<button class="md_btn md_btn--second md_btn--medium md_btn--icon" id="termAdd01">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -2 15 15">
+                                    <path fill="#767676" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"></path>
+                                </svg>
+                            </span>
+                            項目を追加
+							</button>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">卒年表示設定</th>
+						<td colspan="3">
+							<div class="multiSelectSet">
+								<a class="multiSelectForm js_selectOpen"><span class="text">設定なし</span></a>
+								<div class="multiSelect hide">
+									<ul id="multl_checkall_lft" style="display: block;">
+										<li class="checkBox"><div class="md_toggle md_toggle--margin"><input type="checkbox" name="" id="check_yesr001" checked=""><label for="check_yesr001">すべて</label></div></li>
+										<li class="checkBox"><div class="md_toggle md_toggle--margin"><input type="checkbox" name="" id="check_yesr002" checked=""><label for="check_yesr002">2025</label></div></li>
+										<li class="checkBox"><div class="md_toggle md_toggle--margin"><input type="checkbox" name="" id="check_yesr003" checked=""><label for="check_yesr003">2026</label></div></li>
+										<li class="checkBox"><div class="md_toggle md_toggle--margin"><input type="checkbox" name="" id="check_yesr004" checked=""><label for="check_yesr004">2027</label></div></li>
+										<li class="checkBox"><div class="md_toggle md_toggle--margin"><input type="checkbox" name="" id="check_yesr005" checked=""><label for="check_yesr005">2028</label></div></li>
+									</ul>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">
+							スカウトリクエスト<br>利用卒年
+						</th>
+						<td colspan="3">
+							<div class="multiSelectSet">
+								<a class="multiSelectForm js_selectOpen"><span class="text">2024</span></a>
+								<div class="multiSelect hide">
+									<ul id="multl_checkall_lft" style="display: block;">
+										<li class="checkBox"><div class="md_toggle md_toggle--margin"><input type="checkbox" name="" id="check_yesr006" checked=""><label for="check_yesr006">すべて</label></div></li>
+										<li class="checkBox"><div class="md_toggle md_toggle--margin"><input type="checkbox" name="" id="check_yesr007" checked=""><label for="check_yesr007">2025</label></div></li>
+										<li class="checkBox"><div class="md_toggle md_toggle--margin"><input type="checkbox" name="" id="check_yesr008" checked=""><label for="check_yesr008">2026</label></div></li>
+										<li class="checkBox"><div class="md_toggle md_toggle--margin"><input type="checkbox" name="" id="check_yesr009" checked=""><label for="check_yesr009">2027</label></div></li>
+										<li class="checkBox"><div class="md_toggle md_toggle--margin"><input type="checkbox" name="" id="check_yesr010" checked=""><label for="check_yesr010">2028</label></div></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th th--big">スカウト通数</th>
+						<td colspan="3">
+							<div class="cellBig">
+								<div class="md_toggle md_toggle--margin">
+									<input type="checkbox" name="" id="check_003" checked="">
+									<label for="check_003">卒年によって振り分けない</label>
+								</div>
+								<div class="terms terms--scout">
+									<div class="selectSet">
+										<div class="yearSelect">
+											<span class="md_select form--w10">
+												<select name="" id="" class="form--line" disabled="">
+													<option value="">2024</option>
+													<option value="">2025</option>
+													<option value="">2026</option>
+												</select>
+											</span>					
+											<span>～</span>
+											<span class="md_select form--w10">
+												<select name="" id="" class="form--line" disabled="">
+													<option value="">2024</option>
+													<option value="">2025</option>
+													<option value="">2026</option>
+												</select>
+											</span>
+											<span>年卒</span>
+										</div>
+										<div class="scoutSelect">
+											<span class="title">個別スカウト</span>
+											<span class="scoutCount">
+												<span>0通</span>
+												/
+												<span>0通</span>
+											</span>
+											<div class="btnSet">
+												<button class="md_btn md_btn--small js_modalOpen" data-modal="modal06"><span class="iconImgPart">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 13 13"><path fill="#fff" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"></path></svg>
+												</span></button><button class="md_btn md_btn--small js_modalOpen md_btn--second" data-modal="modal07"><span class="iconImgPart">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="1 -6 13 13"><path stroke="#767676" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1h12"/></svg>
+												</span></button>
+											</div>
+											<button class="md_textLink">リセット</button>
+										</div>
+										<div class="scoutSelect">
+											<span class="title">スカウトリクエスト一括メッセージ</span>
+											<span class="scoutCount">
+												<span>0通</span>
+												/
+												<span>0通</span>
+											</span>
+											<div class="btnSet">
+												<button class="md_btn md_btn--small js_modalOpen" data-modal="modal06"><span class="iconImgPart">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 13 13"><path fill="#fff" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"></path></svg>
+												</span></button><button class="md_btn md_btn--small js_modalOpen md_btn--second" data-modal="modal07"><span class="iconImgPart">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="1 -6 13 13"><path stroke="#767676" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1h12"/></svg>
+												</span></button>
+											</div>
+											<button class="md_textLink">リセット</button>
+										</div>
+										<div class="scoutSelect">
+											<span class="title">自動スカウト</span>
+											<span class="scoutCount">
+												<span>0通</span>
+												/
+												<span>0通</span>
+											</span>
+											<div class="btnSet">
+												<button class="md_btn md_btn--small js_modalOpen" data-modal="modal06"><span class="iconImgPart">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 13 13"><path fill="#fff" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"></path></svg>
+												</span></button><button class="md_btn md_btn--small js_modalOpen md_btn--second" data-modal="modal07"><span class="iconImgPart">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="1 -6 13 13"><path stroke="#767676" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 1h12"/></svg>
+												</span></button>
+											</div>
+											<button class="md_textLink">リセット</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">通知設定</th>
+						<td colspan="3">
+							<div class="md_toggle">
+								<input type="checkbox" name="" id="check_004" checked="">
+								<label for="check_004">スカウト送付の際、学生にSMS通知を送る</label>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">最大担当者</th>
+						<td colspan="3">
+							<input type="number" min="5" max="300" value="5" class="form--line form--w20">
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">iroots担当者</th>
+						<td colspan="3">
+							<span class="md_select form--w20">
+								<select name="" id="" class="form--line">
+									<option value="">山田 太郎</option>
+									<option value="">大島 由美</option>
+									<option value="">篠田 友美</option>
+								</select>
+							</span>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">コメント
+							<br>
+							<span>最大140字まで</span>
+						</th>
+						<td colspan="3">
+							<textarea name="" id="" rows="4" class="form--line form--w50" placeholder="" data-limit="140"></textarea>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">スカウト制限</th>
+						<td colspan="3">
+							<div class="md_toggle">
+								<input type="checkbox" name="" id="check_005">
+								<label for="check_005">解除する</label>
+							</div>
+						</td>
+					</tr>
+			<tr class="tr tr--main">
+				<th class="th">許可IP</th>
+				<td colspan="3">
+					<div id="termArea03">
+						<div class="terms terms03 terms--ip">
+							<div class="inputCell">
+								<input type="text" placeholder="許可IPを入力してください" class="form--line form--w40">
+							</div>
+							<button class="deleteArea">
+									<span class="iconImgPart">
+										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+											<path class="st0" d="M939.5,1027.5L512,600L84.5,1027.5l-88-88L424,512L-3.5,84.5l88-88L512,424L939.5-3.5l88,88L600,512  l427.5,427.5L939.5,1027.5z" style="fill:#c2c6ce;"></path>
+										</svg>
+									</span>
+							</button>
+						</div>
+					</div>
+					<button class="md_btn md_btn--medium md_btn--second md_btn--icon" id="termAdd03"><span class="iconImgPart">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -2 15 15"><path fill="#767676" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"/></svg>
+					</span>項目を追加</button>
+				</td>
+			</tr>
+				</tbody>
+			</table>
+		</div>
+	</form>
+	<!-- /md_table -->
+	
+	<!-- md_table -->
+	<div class="formTitle formTitle--next">企業情報</div>
+	<form id="" name="" method="" action="" >
+		<div class="contents">
+			<table class="md_table md_table--companyData">
+				<tbody>
+					<tr class="tr tr--main">
+						<th class="th th--big">企業ロゴ</th>
+						<td>
+							<div class="uploadArea">
+								<img src="../imageFile/noImg.jpg" alt="">
+								<button class="md_btn md_btn--second md_btn--sub">ファイルを選択</button>
+							</div>
+              <input type="hidden" id="fileImg_data_image" data-value='' name="fileImg_data_image" value="" style="display: none"/>
+              <input type="hidden" id="fileImg_extension_name" data-value='' name="fileImg_extension_name" value="" style="display: none"/>	
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">企業名<span class="must">*</span></th>
+						<td>
+							<input type="text" placeholder="企業名を入力してください" class="form--line form--w60">
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">URL</th>
+						<td>
+							<input type="text" placeholder="https://" class="form--line form--w60">
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th th--big">業界</th>
+						<td>
+							<div class="attentionMessage">最大3つまで選択できます</div>
+							<ul class="radioArea" id="checkLimit">
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="check_006">
+										<label for="check_006">インターネット・WEB・アプリ</label>
+									</div>
+								</li>
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="check_007">
+										<label for="check_007">メーカー</label>
+									</div>
+								</li>
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="check_008">
+										<label for="check_008">不動産・建設・ディベロッパー</label>
+									</div>
+								</li>
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="check_009">
+										<label for="check_009">コンサル・シンクタンク</label>
+									</div>
+								</li>
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="check_010">
+										<label for="check_010">エンタメ・ゲーム</label>
+									</div>
+								</li>
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="check_011">
+										<label for="check_011">通信・システム・ソフトウェア</label>
+									</div>
+								</li>
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="check_012">
+										<label for="check_012">総合商社・専門商社</label>
+									</div>
+								</li>
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="check_013">
+										<label for="check_013">インフラ・交通・物流</label>
+									</div>
+								</li>
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="check_014">
+										<label for="check_014">サービス・観光</label>
+									</div>
+								</li>
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="check_015">
+										<label for="check_015">官公庁・公職・団体</label>
+									</div>
+								</li>
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="check_016">
+										<label for="check_016">広告・メディア・マーケティング</label>
+									</div>
+								</li>
+								<li class="li">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="check_017">
+										<label for="check_017">金融</label>
+									</div>
+								</li>
+								<li class="li li--none">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="check_018">
+										<label for="check_018">人材・教育</label>
+									</div>
+								</li>
+								<li class="li li--none">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="check_019">
+										<label for="check_019">⼩売・流通</label>
+									</div>
+								</li>
+								<li class="li li--none">
+									<div class="md_toggle">
+										<input type="checkbox" name="" id="check_020">
+										<label for="check_020">医療・福祉</label>
+									</div>
+								</li>
+							</ul>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th th--big">学生へ一言</th>
+						<td>
+							<textarea name="" id="" rows="4" class="form--line form--w50" placeholder=""></textarea>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th th--big">本業主観正義性<br><span class="subText">※商品・サービスに込められた正義</span></th>
+						<td>
+							<textarea name="" id="" rows="4" class="form--line form--w50" placeholder=""></textarea>
+							<div class="uploadArea">
+								<img src="../imageFile/noImg.jpg" alt="">
+								<button class="md_btn md_btn--second md_btn--sub">ファイルを選択</button>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th th--big">成長性・将来性</th>
+						<td>
+							<textarea name="" id="" rows="4" class="form--line form--w50" placeholder=""></textarea>
+							<div class="uploadArea">
+								<img src="../imageFile/noImg.jpg" alt="">
+								<button class="md_btn md_btn--second md_btn--sub">ファイルを選択</button>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th th--big">20代の成長環境</th>
+						<td>
+							<textarea name="" id="" rows="4" class="form--line form--w50" placeholder=""></textarea>
+							<div class="uploadArea">
+								<img src="../imageFile/noImg.jpg" alt="">
+								<button class="md_btn md_btn--second md_btn--sub">ファイルを選択</button>
+							</div>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th th--big">クチコミ情報1<span class="must">*</span></th>
+						<td class="formColumn">
+							<input type="text" placeholder="企業カルチャー・組織体制" class="form--line form--w40">
+							<input type="text" placeholder="例）20代/女性/現社員(非正社員)/企画・事務・管理職" class="form--line form--w40">
+							<textarea name="" id="" rows="4" class="form--line form--w50" placeholder=""></textarea>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th th--big">クチコミ情報2<span class="must">*</span></th>
+						<td class="formColumn">
+							<input type="text" placeholder="企業カルチャー・組織体制" class="form--line form--w40">
+							<input type="text" placeholder="例）20代/女性/現社員(非正社員)/企画・事務・管理職" class="form--line form--w40">
+							<textarea name="" id="" rows="4" class="form--line form--w50" placeholder=""></textarea>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th th--big">クチコミ情報3<span class="must">*</span></th>
+						<td class="formColumn">
+							<input type="text" placeholder="企業カルチャー・組織体制" class="form--line form--w40">
+							<input type="text" placeholder="例）20代/女性/現社員(非正社員)/企画・事務・管理職" class="form--line form--w40">
+							<textarea name="" id="" rows="4" class="form--line form--w50" placeholder=""></textarea>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">クチコミ<br/>企業コメント</th>
+						<td>
+							<textarea name="" id="" rows="4" class="form--line form--w50" placeholder=""></textarea>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th">会社の評判URL</th>
+						<td>
+							<input type="text" placeholder="https://" class="form--line form--w60">
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th th--big">担当者<span class="must">*</span></th>
+						<td>
+							<div id="termArea04">
+								<div class="terms terms04 hideContent">
+									<div class="contentSet">
+										<div class="title">
+											<p>大島由美</p>
+											<span class="md_chip"><span class="chipTxt">一括送付</span></span>
+										</div>
+										<div class="actionArea">
+											<button class="md_btn md_btn--second md_btn--small js_modalOpen" data-modal="modal02">編集</button>
+										</div>
+									</div>
+									<button class="deleteArea">
+										<span class="iconImgPart">
+											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+												<path class="st0" d="M939.5,1027.5L512,600L84.5,1027.5l-88-88L424,512L-3.5,84.5l88-88L512,424L939.5-3.5l88,88L600,512  l427.5,427.5L939.5,1027.5z" style="fill:#c2c6ce;"></path>
+											</svg>
+										</span>
+									</button>
+								</div>
+							</div>
+							<button class="md_btn md_btn--second md_btn--medium md_btn--icon js_modalOpen" data-modal="modal04"><span class="iconImgPart">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -2 15 15"><path fill="#767676" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"/></svg>
+							</span>担当者を追加</button>
+						</td>
+					</tr>
+					<tr class="tr tr--main">
+						<th class="th th--big">性格・価値観分析<br>データ登録</th>
+						<td>
+							<ul>
+								<li></li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</form>
+	</div>
+	<!-- md_fixBar -->
+	<div class="md_fixBar js_fixBarHide">
+		<button class="md_btn js_modalOpen" data-modal="modal03">登録</button>
+	</div>
+	<!-- /md_fixBar -->
+<!-- Container End --></div><!-- /Container End -->
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.js_switchChange').change(function(){
+      var isChecked = $(this).is(':checked');
+      var label = $('label[for="' + $(this).attr('id') + '"]');
+      var text = isChecked ? label.data('on') : label.data('off');
+      label.text(text);
+    });
+
+    // 初期状態を設定
+    $('.js_switchChange').each(function(){
+      var initialChecked = $(this).is(':checked');
+      var label = $('label[for="' + $(this).attr('id') + '"]');
+      var initialText = initialChecked ? label.data('on') : label.data('off');
+      label.text(initialText);
+    });
+  });
+</script>
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+    const checkBox = document.getElementById('checkYearSort');
+
+    // チェックボックスの状態が変わったときに処理を実行
+    checkBox.addEventListener('change', function() {
+        const tdElement = this.closest('td'); // 親の親要素のtdを取得
+        const daySelectElement = tdElement.querySelector('.daySelect'); // 同じtd内の.daySelectを取得
+
+        // チェックボックスの状態に応じて表示・非表示を切り替え
+        toggleDaySelect(this.checked, daySelectElement);
+    });
+
+    // 表示・非表示を切り替える関数
+    function toggleDaySelect(isChecked, daySelectElement) {
+        if (isChecked) {
+            // 非表示にする
+            daySelectElement.style.display = 'none';
+            console.log('Checked: daySelect element hidden');
+        } else {
+            // 表示する
+            daySelectElement.style.display = 'block';
+            console.log('Unchecked: daySelect element shown');
+        }
+    }
+});
+</script>
+<script>
+    // 要素をコピー＆追加する関数
+    function addTerm(termAreaId) {
+        let elements = document.getElementById(termAreaId);
+        
+        // クラス "terms" の最後の要素をクローン
+        let copied = elements.querySelector(".terms").cloneNode(true);
+        
+        // フォームの初期化（クローンした要素の入力値をリセット）
+        let inputs = copied.querySelectorAll('input');
+        inputs.forEach(input => input.value = '');
+        
+        // クローンした要素を追加
+        elements.appendChild(copied);
+
+        // 削除機能の設定
+        setDeleteButton(copied.querySelector('.deleteArea'));
+        
+        // 削除ボタンの表示・非表示を更新
+        updateDeleteButtons(termAreaId);
+    }
+
+    // 削除ボタンの表示・非表示を制御する関数
+    function updateDeleteButtons(termAreaId) {
+        let elements = document.getElementById(termAreaId);
+        let terms = elements.querySelectorAll('.terms');
+        let deleteButtons = elements.querySelectorAll('.deleteArea');
+
+        // termsが1つしかない場合は削除ボタンを非表示、2つ以上ある場合は表示
+        deleteButtons.forEach(button => {
+            button.style.display = terms.length === 1 ? "none" : "inline-block";
+        });
+    }
+
+    // 削除ボタンを設定する関数
+    function setDeleteButton(deleteButton) {
+        deleteButton.addEventListener('click', function() {
+            let termAreaId = this.closest('.terms').parentElement.id;
+            this.closest('.terms').remove(); // 親要素を削除
+            updateDeleteButtons(termAreaId); // 削除後のボタン表示を更新
+        });
+    }
+
+    // 初期設定：ページがロードされた際に削除ボタンの表示を設定し、削除機能を追加
+    window.onload = function() {
+        const termAreas = ['termArea01', 'termArea03', 'termArea04'];
+
+        // 各termAreaごとに削除ボタンの設定と初期化
+        termAreas.forEach(termAreaId => {
+            document.querySelectorAll(`#${termAreaId} .deleteArea`).forEach(setDeleteButton);
+            updateDeleteButtons(termAreaId);
+
+            // 項目追加ボタンにイベントハンドラをセット
+            document.getElementById(`termAdd${termAreaId.slice(-2)}`)
+                .addEventListener("click", (event) => {
+                    event.preventDefault(); // デフォルトの動作をキャンセル
+                    addTerm(termAreaId); // 項目追加関数を呼び出す
+                }, false);
+        });
+    };
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const checkboxes = document.querySelectorAll('#checkLimit input[type="checkbox"]');
+    const maxSelection = 3;
+
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            // 選択されているチェックボックスをカウント
+            const checkedCount = document.querySelectorAll('#checkLimit input[type="checkbox"]:checked').length;
+
+            if (checkedCount > maxSelection) {
+                // 選択上限を超えた場合、チェックを解除
+                this.checked = false;
+                alert('選択できる業界は最大で3つです。');
+            }
+        });
+    });
+});
+</script>
+
+<script>
+	$(document).ready(function() {
+    // 初期状態では .hideContent を隠す
+    $('.hideContent').hide();
+
+    // .addContentをクリック時の処理
+    $('.addContent').click(function() {
+        // .hideContent を表示・非表示を切り替え
+        $('.hideContent').toggle();
+    });
+
+});
+</script>
+
+</body>
+</html>

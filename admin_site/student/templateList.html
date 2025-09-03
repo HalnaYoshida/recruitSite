@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>テンプレート管理 - 学生管理</title>
+
+<link rel="stylesheet" href="../common/css/student/list_template.css"/>
+</head>
+<body>
+
+<!-- Modal -->
+<div class="md_modal modal01" style="display: none;">
+    <button class="bgLayer js_modalX"></button>
+    <div class="modalSet">
+        <div class="Content">
+            <div class="textArea">
+                <div class="catch">削除確認</div>
+                <p class="copy">
+                    テンプレートを削除します。よろしいですか？
+                </p>
+            </div>
+            <div class="actionArea">
+                <button class="md_btn md_btn--medium md_btn--second multiple js_modalX">キャンセル</button>
+                <button class="md_btn md_btn--medium js_modalX multiple js_snackBar js_delete" data-target="Bar03">削除</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar01">
+    <div class="base">
+        <div class="text">メッセージテンプレートを作成しました</div>
+        <button class="close js_snackBarX">✕</button>
+    </div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar02">
+    <div class="base">
+        <div class="text">メッセージテンプレートを保存しました</div>
+        <button class="close js_snackBarX">✕</button>
+    </div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar03">
+    <div class="base">
+        <div class="text">メッセージテンプレートを削除しました</div>
+        <button class="close js_snackBarX">✕</button>
+    </div>
+</div>
+<!-- /snackBar -->
+
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+    <div class="contentWrap">
+
+        <!-- titleArea -->
+        <div class="titleArea count">
+            <h2 class="mainTitle">テンプレート管理</h2>
+            <div class="btnArea">
+                <a href="templateList_regist.html" class="md_btn md_btn--medium md_btn--second md_btn--icon"><span class="iconImgPart">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -2 15 15">
+                            <path fill="#767676" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"></path>
+                        </svg>
+                    </span>新規テンプレート追加</a>
+            </div>
+        </div>
+        <!-- titleArea -->
+
+        <!-- md_table -->
+        <table class="md_table">
+            <thead>
+                <tr>
+                    <th class="item">テンプレート名</th>
+                    <th class="item item--w10"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="delete01">
+                    <td class="data">キャンペーン【条件未達成】</td>
+                    <td class="data data--C data--btn">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="templateList_renew.html" class="md_btn md_btn--medium">編集</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                    </svg>
+                                </button>
+                                <div class="hideAction">
+                                    <a class="menu js_copyContent">複製</a>
+                                    <a class="menu js_modalOpen" data-modal="modal01">削除</a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data">クリーニングメール（卒年変更）</td>
+                    <td class="data data--C data--btn">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="templateList_renew.html" class="md_btn md_btn--medium">編集</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                    </svg>
+                                </button>
+                                <div class="hideAction">
+                                    <a class="menu js_copyContent">複製</a>
+                                    <a class="menu js_modalOpen" data-modal="modal01">削除</a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data">クリーニングメール（スカウト受け取りたい学生）</td>
+                    <td class="data data--C data--btn">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="templateList_renew.html" class="md_btn md_btn--medium">編集</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                    </svg>
+                                </button>
+                                <div class="hideAction">
+                                    <a class="menu js_copyContent">複製</a>
+                                    <a class="menu js_modalOpen" data-modal="modal01">削除</a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr id="copyContent" style="display: none;">
+                    <td class="data">クリーニングメール（スカウト受け取りたい学生）</td>
+                    <td class="data data--C data--btn">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="templateList_renew.html" class="md_btn md_btn--medium">編集</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;" />
+                                    </svg>
+                                </button>
+                                <div class="hideAction">
+                                    <a class="menu js_copyContent">複製</a>
+                                    <a class="menu js_modalOpen" data-modal="modal01">削除</a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- /md_table -->
+
+    </div>
+ 
+<!-- Container End --></div><!-- /Container End -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+<script>
+    $(document).ready(function() {
+  // .js_delete 要素にクリックイベントを追加
+  $('.js_delete').click(function() {
+    $('#delete01').fadeOut('');
+  });
+});
+</Script>
+<script>
+    function threeDots() { 
+  $(this).parent().find('.hideAction').toggleClass('show'); 
+}
+
+$('.cmdArea').on('click', threeDots);
+</script>
+<script>
+    $(document).ready(function() {
+    // .js_copyContent 要素にクリックイベントを追加
+    $('.js_copyContent').click(function() {
+        // #copyContentのdisplayスタイルをnoneからtable-rowに変更
+        $('#copyContent').css('display', 'table-row');
+    });
+});
+</script>
+</body>
+</html>

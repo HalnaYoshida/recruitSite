@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+/* --------------------------------------------------
+ Import 
+-------------------------------------------------- */
+
+@import "../_default";
+
+
+/* ------------ Size ------------ */
+
+/* Width */
+$w_wrap: 1200px; 
+$w_drawer: 300px; 
+$w_sideMenu: 200px; 
+$w_centeringElement: 700px; 
+$w_btn_big: 150px;
+
+
+/* ------------ Typography ------------ */
+
+/* Font Size */
+$fs_biggest:  32px; 
+$fs_bigger:   24px;  
+$fs_big:      18px; 
+$fs_medium:   16px;  
+$fs_small:    14px;  
+$fs_main:     13px;
+$fs_smaller:  12px;  
+$fs_smallest: 10px;  
+
+
+.container {
+    .titleArea {
+        .md_btn { width: auto; }
+    } 
+    .tagTxt { 
+       & + .tagTxt { 
+        &:before { content: "/"; margin: 0 5px 0 2px; }
+       }
+    }
+    .subArea { text-align: right; 
+        .errorTxt { display: flex; align-items: center; justify-content: flex-end; margin-top: 5px; font-size: 13px; color: #f04438; 
+            .iconImgPart { margin-right: 5px; width: 15px; height: 15px; }
+        }
+    }
+}
+

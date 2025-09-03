@@ -1,0 +1,2333 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>学生検索 - 学生管理</title>
+
+<link rel="stylesheet" href="../common/css/student/search_student.css"/>
+</head>
+<body>
+
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+    <div class="contentWrap">
+        
+        <!-- titleArea -->
+        <div class="titleArea">
+            <h2 class="mainTitle">学生検索</h2>
+            
+        </div>
+        <!-- /titleArea -->
+        <div class="titleArea ankerlink">
+            <h2 id="status" class="formTitle">
+                ステータス
+            </h2>
+            <div class="btnArea">
+                <ul>
+                    <li><a href="#status" class="js_scrollTrigger">ステータス</a></li>
+                    <li><a href="#info" class="js_scrollTrigger">基本情報</a></li>
+                    <li><a href="#hope" class="js_scrollTrigger">志望</a></li>
+                    <li><a href="#skill" class="js_scrollTrigger">スキル・経験</a></li>
+                    <li><a href="#check" class="js_scrollTrigger">適性検査</a></li>
+                    <li><a href="#data" class="js_scrollTrigger">個別情報</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- md_table -->
+        <table class="md_table">
+            <tbody>
+                <tr class="first">
+                    <th>メール受信設定</th>
+                    <td>
+                        <div class="flexArea width-wide">
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_001" >
+                                <label for="check_001">メルマガを受け取る</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_002">
+                                <label for="check_002">メルマガを受け取らない</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>会員ステータス</th>
+                    <td>
+                        <div class="flexArea width-wide">
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_003" >
+                                <label for="check_003">スカウトを受け取る</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_004">
+                                <label for="check_004">スカウトを受け取らない(iroots)</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_005">
+                                <label for="check_005">スカウトを受け取らない(その他)</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>選考ステータス</th>
+                    <td>
+                        <div class="flexArea width-wide">
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_007" >
+                                <label for="check_007">スカウト反応待ち</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_008">
+                                <label for="check_008">スカウト期限切れ</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_009">
+                                <label for="check_009">スカウト検討中</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_010">
+                                <label for="check_010">スカウト承諾済み</label>
+                            </div>
+                        </div>
+                        <div class="flexArea width-wide">
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_011" >
+                                <label for="check_011">最終選考中</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_012">
+                                <label for="check_012">内定</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_013">
+                                <label for="check_013">内定辞退</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_014">
+                                <label for="check_014">選考落ち/辞退</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>企業名</th>
+                    <td>
+                        <div class="input"><input type="text" placeholder="" class="form--line form--w60"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>ライトハウス連携</th>
+                    <td>
+                        <div class="flexArea width-nallow">
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_015" >
+                                <label for="check_015">連携</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_016">
+                                <label for="check_016">非連携</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>メール認証</th>
+                    <td>
+                        <div class="flexArea width-nallow">
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_015" >
+                                <label for="check_015">未認証</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_016">
+                                <label for="check_016">認証済</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>登録日</th>
+                    <td>
+                        <div id="termArea01">
+                            <div class=" terms terms--01">
+                                <div class="daySelect">
+                                    <input type="date" placeholder="日付を選択" value="2022-09-04" class="form--line">
+                                    <span>～</span>
+                                    <input type="date" placeholder="日付を選択" value="2023-09-04" class="form--line">
+                                    <span class="md_select">
+                                        <select name="" id="" class="form--line">
+                                            <option value="">含む</option>
+                                            <option value="">含まない</option>
+                                        </select>
+                                    </span>
+                                </div>
+                                <button class="deleteArea">
+                                    <span class="iconImgPart">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+                                            <path class="st0" d="M939.5,1027.5L512,600L84.5,1027.5l-88-88L424,512L-3.5,84.5l88-88L512,424L939.5-3.5l88,88L600,512  l427.5,427.5L939.5,1027.5z" style="fill:#c2c6ce;"></path>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <button class="md_btn md_btn--second md_btn--medium md_btn--icon" id="termAdd01">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -2 15 15">
+                                    <path fill="#767676" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"></path>
+                                </svg>
+                            </span>
+                            項目を追加
+                        </button>
+                    </td>
+                </tr>
+                <tr class="last">
+                    <th>登録経路検索</th>
+                    <td>
+                        <div id="termArea02">
+                            <div class="terms">
+                                <div class="root-search">
+                                    <input type="text" placeholder="" class="form--line">
+                                    <span class="md_select">
+                                        <select name="" id="" class="form--line">
+                                            <option value="">完全一致</option>
+                                            <option value="">部分一致</option>
+                                        </select>
+                                    </span>
+                                    <span class="md_select">
+                                        <select name="" id="" class="form--line">
+                                            <option value="">含む</option>
+                                            <option value="">含まない</option>
+                                        </select>
+                                    </span>
+                                </div>
+                                <button class="deleteArea">
+                                    <span class="iconImgPart">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+                                            <path class="st0" d="M939.5,1027.5L512,600L84.5,1027.5l-88-88L424,512L-3.5,84.5l88-88L512,424L939.5-3.5l88,88L600,512  l427.5,427.5L939.5,1027.5z" style="fill:#c2c6ce;"></path>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <button class="md_btn md_btn--second md_btn--medium md_btn--icon" id="termAdd02">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -2 15 15">
+                                    <path fill="#767676" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"></path>
+                                </svg>
+                            </span>
+                            項目を追加
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- /md_table -->
+        
+        <div class="titleArea ankerlink">
+            <h2 class="formTitle">
+                基本情報
+            </h2>
+            <div id="info" class="btnArea">
+                <ul>
+                    <li><a href="#status" class="js_scrollTrigger">ステータス</a></li>
+                    <li><a href="#info" class="js_scrollTrigger">基本情報</a></li>
+                    <li><a href="#hope" class="js_scrollTrigger">志望</a></li>
+                    <li><a href="#skill" class="js_scrollTrigger">スキル・経験</a></li>
+                    <li><a href="#check" class="js_scrollTrigger">適性検査</a></li>
+                    <li><a href="#data" class="js_scrollTrigger">個別情報</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- md_table -->
+        <table class="md_table">
+            <tbody>
+                <tr class="first">
+                    <th>顔写真</th>
+                    <td>
+                        <div class="flexArea width-wide">
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_017" >
+                                <label for="check_017">写真がある学生のみ</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>最終ログイン日</th>
+                    <td>
+                        <span class="md_select">
+                            <select name="" id="" class="form--line">
+                                <option value="">選択してください</option>
+                                <option value="">1週間以内</option>
+                                <option value="">2週間以内</option>
+                                <option value="">1ヶ月以内</option>
+                                <option value="">2ヶ月以内</option>
+                                <option value="">3ヶ月以内</option>
+                            </select>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>履歴書記入率</th>
+                    <td>
+                        <div class="flexSelect">
+                            <span class="md_select">
+                                <select name="" id="" class="form--line">
+                                    <option value=""></option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="35">35</option>
+                                    <option value="36">36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                    <option value="44">44</option>
+                                    <option value="45">45</option>
+                                    <option value="46">46</option>
+                                    <option value="47">47</option>
+                                    <option value="48">48</option>
+                                    <option value="49">49</option>
+                                    <option value="50">50</option>
+                                    <option value="51">51</option>
+                                    <option value="52">52</option>
+                                    <option value="53">53</option>
+                                    <option value="54">54</option>
+                                    <option value="55">55</option>
+                                    <option value="56">56</option>
+                                    <option value="57">57</option>
+                                    <option value="58">58</option>
+                                    <option value="59">59</option>
+                                    <option value="60">60</option>
+                                    <option value="61">61</option>
+                                    <option value="62">62</option>
+                                    <option value="63">63</option>
+                                    <option value="64">64</option>
+                                    <option value="65">65</option>
+                                    <option value="66">66</option>
+                                    <option value="67">67</option>
+                                    <option value="68">68</option>
+                                    <option value="69">69</option>
+                                    <option value="70">70</option>
+                                    <option value="71">71</option>
+                                    <option value="72">72</option>
+                                    <option value="73">73</option>
+                                    <option value="74">74</option>
+                                    <option value="75">75</option>
+                                    <option value="76">76</option>
+                                    <option value="77">77</option>
+                                    <option value="78">78</option>
+                                    <option value="79">79</option>
+                                    <option value="80">80</option>
+                                    <option value="81">81</option>
+                                    <option value="82">82</option>
+                                    <option value="83">83</option>
+                                    <option value="84">84</option>
+                                    <option value="85">85</option>
+                                    <option value="86">86</option>
+                                    <option value="87">87</option>
+                                    <option value="88">88</option>
+                                    <option value="89">89</option>
+                                    <option value="90">90</option>
+                                    <option value="91">91</option>
+                                    <option value="92">92</option>
+                                    <option value="93">93</option>
+                                    <option value="94">94</option>
+                                    <option value="95">95</option>
+                                    <option value="96">96</option>
+                                    <option value="97">97</option>
+                                    <option value="98">98</option>
+                                    <option value="99">99</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </span>
+                            <span>～</span>
+                            <span class="md_select">
+                                <select name="" id="" class="form--line">
+                                    <option value=""></option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="35">35</option>
+                                    <option value="36">36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                    <option value="44">44</option>
+                                    <option value="45">45</option>
+                                    <option value="46">46</option>
+                                    <option value="47">47</option>
+                                    <option value="48">48</option>
+                                    <option value="49">49</option>
+                                    <option value="50">50</option>
+                                    <option value="51">51</option>
+                                    <option value="52">52</option>
+                                    <option value="53">53</option>
+                                    <option value="54">54</option>
+                                    <option value="55">55</option>
+                                    <option value="56">56</option>
+                                    <option value="57">57</option>
+                                    <option value="58">58</option>
+                                    <option value="59">59</option>
+                                    <option value="60">60</option>
+                                    <option value="61">61</option>
+                                    <option value="62">62</option>
+                                    <option value="63">63</option>
+                                    <option value="64">64</option>
+                                    <option value="65">65</option>
+                                    <option value="66">66</option>
+                                    <option value="67">67</option>
+                                    <option value="68">68</option>
+                                    <option value="69">69</option>
+                                    <option value="70">70</option>
+                                    <option value="71">71</option>
+                                    <option value="72">72</option>
+                                    <option value="73">73</option>
+                                    <option value="74">74</option>
+                                    <option value="75">75</option>
+                                    <option value="76">76</option>
+                                    <option value="77">77</option>
+                                    <option value="78">78</option>
+                                    <option value="79">79</option>
+                                    <option value="80">80</option>
+                                    <option value="81">81</option>
+                                    <option value="82">82</option>
+                                    <option value="83">83</option>
+                                    <option value="84">84</option>
+                                    <option value="85">85</option>
+                                    <option value="86">86</option>
+                                    <option value="87">87</option>
+                                    <option value="88">88</option>
+                                    <option value="89">89</option>
+                                    <option value="90">90</option>
+                                    <option value="91">91</option>
+                                    <option value="92">92</option>
+                                    <option value="93">93</option>
+                                    <option value="94">94</option>
+                                    <option value="95">95</option>
+                                    <option value="96">96</option>
+                                    <option value="97">97</option>
+                                    <option value="98">98</option>
+                                    <option value="99">99</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </span>
+                            <span>%</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>性別</th>
+                    <td>
+                        <div class="flexArea width-nallow">
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_018" >
+                                <label for="check_018">男性</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_019">
+                                <label for="check_019">女性</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_020">
+                                <label for="check_020">回答しない</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>文理区分</th>
+                    <td>
+                        <div class="flexArea width-nallow">
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_021" >
+                                <label for="check_021">文系</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_022">
+                                <label for="check_022">理系</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>卒業年</th>
+                    <td>
+                        <div class="flexSelect">
+                            <span class="md_select">
+                                <select name="" id="" class="form--line">
+                                    <option value="">選択してください</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2027">2027</option>
+                                    <option value="2028">2028</option>
+                                    <option value="2029">2029</option>
+                                    <option value="2030">2030</option>
+                                    <option value="2031">2031</option>
+                                </select>
+                            </span>
+                            <span>年卒</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>大学区分</th>
+                    <td>
+                        <table class="md_table md_table--university">
+                            <tr class="first">
+                                <th>
+                                    <div class="md_toggle">
+                                        <input type="checkbox" name="" id="checksAll01">
+                                        <label for="checksAll01">関東</label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <div class="flexArea width-nallow">
+                                        <div class="md_toggle">
+                                            <input type="checkbox" name="" id="check_024" class="checks01">
+                                            <label for="check_024">東一工</label>
+                                            <button class="question-icon js_balloon">
+                                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M13.4166 7.29166C13.4166 5.52007 12.698 3.91475 11.5371 2.7545C10.3763 1.59425 8.77155 0.875 6.99998 0.875C5.2284 0.875 3.62306 1.59366 2.46281 2.7545C1.30256 3.91534 0.583313 5.52009 0.583313 7.29166C0.583313 9.06324 1.30198 10.6686 2.46281 11.8288C3.62365 12.9891 5.2284 13.7083 6.99998 13.7083C8.77155 13.7083 10.3769 12.9897 11.5371 11.8288C12.6974 10.668 13.4166 9.06324 13.4166 7.29166ZM12.25 7.29166C12.25 8.74182 11.6631 10.0532 10.7123 11.004C9.76149 11.9548 8.45015 12.5417 6.99998 12.5417C5.5498 12.5417 4.23848 11.9548 3.28764 11.004C2.3368 10.0532 1.74998 8.74184 1.74998 7.29166C1.74998 5.84149 2.33681 4.53016 3.28764 3.57932C4.23846 2.62849 5.5498 2.04166 6.99998 2.04166C8.45015 2.04166 9.76148 2.6285 10.7123 3.57932C11.6632 4.53015 12.25 5.84149 12.25 7.29166ZM5.85256 5.73532C5.95931 5.43141 6.17865 5.19982 6.44873 5.07032C6.7188 4.94082 7.03614 4.91457 7.34006 5.02191C7.60723 5.11582 7.81781 5.29607 7.95256 5.523C8.05931 5.70209 8.11881 5.91091 8.1194 6.12791C8.1194 6.21832 8.09665 6.30816 8.05115 6.39857C8.00449 6.49191 7.93274 6.58816 7.83649 6.68441C7.4229 7.098 6.7684 7.32141 6.7684 7.32141C6.46274 7.4235 6.29765 7.75366 6.39974 8.05932C6.50183 8.36499 6.83199 8.53007 7.13765 8.42799C7.13765 8.42799 8.03831 8.13282 8.6619 7.50924C8.82465 7.34649 8.97981 7.15107 9.09531 6.92007C9.21198 6.68674 9.28665 6.41957 9.28665 6.12149C9.28431 5.69507 9.16765 5.28324 8.9559 4.92624C8.68581 4.4724 8.26174 4.1084 7.72799 3.92057C7.12015 3.70707 6.48258 3.76016 5.94474 4.01799C5.4069 4.27581 4.9659 4.74015 4.7524 5.34799C4.64506 5.6519 4.8049 5.98499 5.10881 6.09174C5.41272 6.19849 5.74581 6.03865 5.85256 5.73532ZM7.58331 10.2083C7.58331 9.88632 7.32198 9.62499 6.99998 9.62499C6.67798 9.62499 6.41664 9.88632 6.41664 10.2083C6.41664 10.5303 6.67798 10.7917 6.99998 10.7917C7.32198 10.7917 7.58331 10.5303 7.58331 10.2083Z"
+                                                        fill="#A3A3A3" />
+                                                </svg>
+                                                <div class="fukidashi">
+                                                    <div class="title">東一工</div>
+                                                    <div class="text">東京大学、東京工業大学、一橋大学</div>
+                                                    <div class="sub">※表記を省略していますが、各大学の大学院もふくまれます。</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div class="md_toggle">
+                                            <input type="checkbox" name="" id="check_025" class="checks01">
+                                            <label for="check_025">早慶上智など</label>
+                                            <button class="question-icon js_balloon">
+                                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M13.4166 7.29166C13.4166 5.52007 12.698 3.91475 11.5371 2.7545C10.3763 1.59425 8.77155 0.875 6.99998 0.875C5.2284 0.875 3.62306 1.59366 2.46281 2.7545C1.30256 3.91534 0.583313 5.52009 0.583313 7.29166C0.583313 9.06324 1.30198 10.6686 2.46281 11.8288C3.62365 12.9891 5.2284 13.7083 6.99998 13.7083C8.77155 13.7083 10.3769 12.9897 11.5371 11.8288C12.6974 10.668 13.4166 9.06324 13.4166 7.29166ZM12.25 7.29166C12.25 8.74182 11.6631 10.0532 10.7123 11.004C9.76149 11.9548 8.45015 12.5417 6.99998 12.5417C5.5498 12.5417 4.23848 11.9548 3.28764 11.004C2.3368 10.0532 1.74998 8.74184 1.74998 7.29166C1.74998 5.84149 2.33681 4.53016 3.28764 3.57932C4.23846 2.62849 5.5498 2.04166 6.99998 2.04166C8.45015 2.04166 9.76148 2.6285 10.7123 3.57932C11.6632 4.53015 12.25 5.84149 12.25 7.29166ZM5.85256 5.73532C5.95931 5.43141 6.17865 5.19982 6.44873 5.07032C6.7188 4.94082 7.03614 4.91457 7.34006 5.02191C7.60723 5.11582 7.81781 5.29607 7.95256 5.523C8.05931 5.70209 8.11881 5.91091 8.1194 6.12791C8.1194 6.21832 8.09665 6.30816 8.05115 6.39857C8.00449 6.49191 7.93274 6.58816 7.83649 6.68441C7.4229 7.098 6.7684 7.32141 6.7684 7.32141C6.46274 7.4235 6.29765 7.75366 6.39974 8.05932C6.50183 8.36499 6.83199 8.53007 7.13765 8.42799C7.13765 8.42799 8.03831 8.13282 8.6619 7.50924C8.82465 7.34649 8.97981 7.15107 9.09531 6.92007C9.21198 6.68674 9.28665 6.41957 9.28665 6.12149C9.28431 5.69507 9.16765 5.28324 8.9559 4.92624C8.68581 4.4724 8.26174 4.1084 7.72799 3.92057C7.12015 3.70707 6.48258 3.76016 5.94474 4.01799C5.4069 4.27581 4.9659 4.74015 4.7524 5.34799C4.64506 5.6519 4.8049 5.98499 5.10881 6.09174C5.41272 6.19849 5.74581 6.03865 5.85256 5.73532ZM7.58331 10.2083C7.58331 9.88632 7.32198 9.62499 6.99998 9.62499C6.67798 9.62499 6.41664 9.88632 6.41664 10.2083C6.41664 10.5303 6.67798 10.7917 6.99998 10.7917C7.32198 10.7917 7.58331 10.5303 7.58331 10.2083Z"
+                                                        fill="#A3A3A3" />
+                                                </svg>
+                                                <div class="fukidashi">
+                                                    <div class="title">早慶上智など</div>
+                                                    <div class="text">慶應義塾大学、上智大学、筑波大学、東京理科大学、横浜国立大学、早稲田大学</div>
+                                                    <div class="sub">※表記を省略していますが、各大学の大学院もふくまれます。</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div class="md_toggle">
+                                            <input type="checkbox" name="" id="check_026" class="checks01">
+                                            <label for="check_026">GMARCHなど</label>
+                                            <button class="question-icon js_balloon">
+                                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M13.4166 7.29166C13.4166 5.52007 12.698 3.91475 11.5371 2.7545C10.3763 1.59425 8.77155 0.875 6.99998 0.875C5.2284 0.875 3.62306 1.59366 2.46281 2.7545C1.30256 3.91534 0.583313 5.52009 0.583313 7.29166C0.583313 9.06324 1.30198 10.6686 2.46281 11.8288C3.62365 12.9891 5.2284 13.7083 6.99998 13.7083C8.77155 13.7083 10.3769 12.9897 11.5371 11.8288C12.6974 10.668 13.4166 9.06324 13.4166 7.29166ZM12.25 7.29166C12.25 8.74182 11.6631 10.0532 10.7123 11.004C9.76149 11.9548 8.45015 12.5417 6.99998 12.5417C5.5498 12.5417 4.23848 11.9548 3.28764 11.004C2.3368 10.0532 1.74998 8.74184 1.74998 7.29166C1.74998 5.84149 2.33681 4.53016 3.28764 3.57932C4.23846 2.62849 5.5498 2.04166 6.99998 2.04166C8.45015 2.04166 9.76148 2.6285 10.7123 3.57932C11.6632 4.53015 12.25 5.84149 12.25 7.29166ZM5.85256 5.73532C5.95931 5.43141 6.17865 5.19982 6.44873 5.07032C6.7188 4.94082 7.03614 4.91457 7.34006 5.02191C7.60723 5.11582 7.81781 5.29607 7.95256 5.523C8.05931 5.70209 8.11881 5.91091 8.1194 6.12791C8.1194 6.21832 8.09665 6.30816 8.05115 6.39857C8.00449 6.49191 7.93274 6.58816 7.83649 6.68441C7.4229 7.098 6.7684 7.32141 6.7684 7.32141C6.46274 7.4235 6.29765 7.75366 6.39974 8.05932C6.50183 8.36499 6.83199 8.53007 7.13765 8.42799C7.13765 8.42799 8.03831 8.13282 8.6619 7.50924C8.82465 7.34649 8.97981 7.15107 9.09531 6.92007C9.21198 6.68674 9.28665 6.41957 9.28665 6.12149C9.28431 5.69507 9.16765 5.28324 8.9559 4.92624C8.68581 4.4724 8.26174 4.1084 7.72799 3.92057C7.12015 3.70707 6.48258 3.76016 5.94474 4.01799C5.4069 4.27581 4.9659 4.74015 4.7524 5.34799C4.64506 5.6519 4.8049 5.98499 5.10881 6.09174C5.41272 6.19849 5.74581 6.03865 5.85256 5.73532ZM7.58331 10.2083C7.58331 9.88632 7.32198 9.62499 6.99998 9.62499C6.67798 9.62499 6.41664 9.88632 6.41664 10.2083C6.41664 10.5303 6.67798 10.7917 6.99998 10.7917C7.32198 10.7917 7.58331 10.5303 7.58331 10.2083Z"
+                                                        fill="#A3A3A3" />
+                                                </svg>
+                                                <div class="fukidashi">
+                                                    <div class="title">GMARCHなど</div>
+                                                    <div class="text">青山学院大学、お茶の水女子大学、学習院大学、埼玉大学、首都大学東京、千葉大学、中央大学、津田塾大学、東京医科歯科大学、東京学芸大学、東京農工大学、法政大学、明治大学、横浜市立大学、立教大学</div>
+                                                    <div class="sub">※表記を省略していますが、各大学の大学院もふくまれます。</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="flexArea width-nallow">
+                                        <div class="md_toggle">
+                                            <input type="checkbox" name="" id="check_027" class="checks01">
+                                            <label for="check_027">成成明学など</label>
+                                            <button class="question-icon js_balloon">
+                                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M13.4166 7.29166C13.4166 5.52007 12.698 3.91475 11.5371 2.7545C10.3763 1.59425 8.77155 0.875 6.99998 0.875C5.2284 0.875 3.62306 1.59366 2.46281 2.7545C1.30256 3.91534 0.583313 5.52009 0.583313 7.29166C0.583313 9.06324 1.30198 10.6686 2.46281 11.8288C3.62365 12.9891 5.2284 13.7083 6.99998 13.7083C8.77155 13.7083 10.3769 12.9897 11.5371 11.8288C12.6974 10.668 13.4166 9.06324 13.4166 7.29166ZM12.25 7.29166C12.25 8.74182 11.6631 10.0532 10.7123 11.004C9.76149 11.9548 8.45015 12.5417 6.99998 12.5417C5.5498 12.5417 4.23848 11.9548 3.28764 11.004C2.3368 10.0532 1.74998 8.74184 1.74998 7.29166C1.74998 5.84149 2.33681 4.53016 3.28764 3.57932C4.23846 2.62849 5.5498 2.04166 6.99998 2.04166C8.45015 2.04166 9.76148 2.6285 10.7123 3.57932C11.6632 4.53015 12.25 5.84149 12.25 7.29166ZM5.85256 5.73532C5.95931 5.43141 6.17865 5.19982 6.44873 5.07032C6.7188 4.94082 7.03614 4.91457 7.34006 5.02191C7.60723 5.11582 7.81781 5.29607 7.95256 5.523C8.05931 5.70209 8.11881 5.91091 8.1194 6.12791C8.1194 6.21832 8.09665 6.30816 8.05115 6.39857C8.00449 6.49191 7.93274 6.58816 7.83649 6.68441C7.4229 7.098 6.7684 7.32141 6.7684 7.32141C6.46274 7.4235 6.29765 7.75366 6.39974 8.05932C6.50183 8.36499 6.83199 8.53007 7.13765 8.42799C7.13765 8.42799 8.03831 8.13282 8.6619 7.50924C8.82465 7.34649 8.97981 7.15107 9.09531 6.92007C9.21198 6.68674 9.28665 6.41957 9.28665 6.12149C9.28431 5.69507 9.16765 5.28324 8.9559 4.92624C8.68581 4.4724 8.26174 4.1084 7.72799 3.92057C7.12015 3.70707 6.48258 3.76016 5.94474 4.01799C5.4069 4.27581 4.9659 4.74015 4.7524 5.34799C4.64506 5.6519 4.8049 5.98499 5.10881 6.09174C5.41272 6.19849 5.74581 6.03865 5.85256 5.73532ZM7.58331 10.2083C7.58331 9.88632 7.32198 9.62499 6.99998 9.62499C6.67798 9.62499 6.41664 9.88632 6.41664 10.2083C6.41664 10.5303 6.67798 10.7917 6.99998 10.7917C7.32198 10.7917 7.58331 10.5303 7.58331 10.2083Z"
+                                                        fill="#A3A3A3" />
+                                                </svg>
+                                                <div class="fukidashi">
+                                                    <div class="title">成成明学など</div>
+                                                    <div class="text">学習院女子大学、國學院大學、昭和女子大学、成蹊大学、成城大学、高崎経済大学、東京女子大学、東京農業大学、獨協大学、日本女子大学、武蔵大学、明治学院大学</div>
+                                                    <div class="sub">※表記を省略していますが、各大学の大学院もふくまれます。</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div class="md_toggle">
+                                            <input type="checkbox" name="" id="check_028" class="checks01">
+                                            <label for="check_028">日東駒専</label>
+                                            <button class="question-icon js_balloon">
+                                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M13.4166 7.29166C13.4166 5.52007 12.698 3.91475 11.5371 2.7545C10.3763 1.59425 8.77155 0.875 6.99998 0.875C5.2284 0.875 3.62306 1.59366 2.46281 2.7545C1.30256 3.91534 0.583313 5.52009 0.583313 7.29166C0.583313 9.06324 1.30198 10.6686 2.46281 11.8288C3.62365 12.9891 5.2284 13.7083 6.99998 13.7083C8.77155 13.7083 10.3769 12.9897 11.5371 11.8288C12.6974 10.668 13.4166 9.06324 13.4166 7.29166ZM12.25 7.29166C12.25 8.74182 11.6631 10.0532 10.7123 11.004C9.76149 11.9548 8.45015 12.5417 6.99998 12.5417C5.5498 12.5417 4.23848 11.9548 3.28764 11.004C2.3368 10.0532 1.74998 8.74184 1.74998 7.29166C1.74998 5.84149 2.33681 4.53016 3.28764 3.57932C4.23846 2.62849 5.5498 2.04166 6.99998 2.04166C8.45015 2.04166 9.76148 2.6285 10.7123 3.57932C11.6632 4.53015 12.25 5.84149 12.25 7.29166ZM5.85256 5.73532C5.95931 5.43141 6.17865 5.19982 6.44873 5.07032C6.7188 4.94082 7.03614 4.91457 7.34006 5.02191C7.60723 5.11582 7.81781 5.29607 7.95256 5.523C8.05931 5.70209 8.11881 5.91091 8.1194 6.12791C8.1194 6.21832 8.09665 6.30816 8.05115 6.39857C8.00449 6.49191 7.93274 6.58816 7.83649 6.68441C7.4229 7.098 6.7684 7.32141 6.7684 7.32141C6.46274 7.4235 6.29765 7.75366 6.39974 8.05932C6.50183 8.36499 6.83199 8.53007 7.13765 8.42799C7.13765 8.42799 8.03831 8.13282 8.6619 7.50924C8.82465 7.34649 8.97981 7.15107 9.09531 6.92007C9.21198 6.68674 9.28665 6.41957 9.28665 6.12149C9.28431 5.69507 9.16765 5.28324 8.9559 4.92624C8.68581 4.4724 8.26174 4.1084 7.72799 3.92057C7.12015 3.70707 6.48258 3.76016 5.94474 4.01799C5.4069 4.27581 4.9659 4.74015 4.7524 5.34799C4.64506 5.6519 4.8049 5.98499 5.10881 6.09174C5.41272 6.19849 5.74581 6.03865 5.85256 5.73532ZM7.58331 10.2083C7.58331 9.88632 7.32198 9.62499 6.99998 9.62499C6.67798 9.62499 6.41664 9.88632 6.41664 10.2083C6.41664 10.5303 6.67798 10.7917 6.99998 10.7917C7.32198 10.7917 7.58331 10.5303 7.58331 10.2083Z"
+                                                        fill="#A3A3A3" />
+                                                </svg>
+                                                <div class="fukidashi">
+                                                    <div class="title">日東駒専</div>
+                                                    <div class="text">駒澤大学、専修大学、東洋大学、日本大学、武蔵野大学</div>
+                                                    <div class="sub">※表記を省略していますが、各大学の大学院もふくまれます。</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <div class="md_toggle">
+                                        <input type="checkbox" name="" id="checksAll02">
+                                        <label for="checksAll02">関西</label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <div class="flexArea width-nallow">
+                                        <div class="md_toggle">
+                                            <input type="checkbox" name="" id="check_030" class="checks02">
+                                            <label for="check_030">京阪神大</label>
+                                            <button class="question-icon js_balloon">
+                                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M13.4166 7.29166C13.4166 5.52007 12.698 3.91475 11.5371 2.7545C10.3763 1.59425 8.77155 0.875 6.99998 0.875C5.2284 0.875 3.62306 1.59366 2.46281 2.7545C1.30256 3.91534 0.583313 5.52009 0.583313 7.29166C0.583313 9.06324 1.30198 10.6686 2.46281 11.8288C3.62365 12.9891 5.2284 13.7083 6.99998 13.7083C8.77155 13.7083 10.3769 12.9897 11.5371 11.8288C12.6974 10.668 13.4166 9.06324 13.4166 7.29166ZM12.25 7.29166C12.25 8.74182 11.6631 10.0532 10.7123 11.004C9.76149 11.9548 8.45015 12.5417 6.99998 12.5417C5.5498 12.5417 4.23848 11.9548 3.28764 11.004C2.3368 10.0532 1.74998 8.74184 1.74998 7.29166C1.74998 5.84149 2.33681 4.53016 3.28764 3.57932C4.23846 2.62849 5.5498 2.04166 6.99998 2.04166C8.45015 2.04166 9.76148 2.6285 10.7123 3.57932C11.6632 4.53015 12.25 5.84149 12.25 7.29166ZM5.85256 5.73532C5.95931 5.43141 6.17865 5.19982 6.44873 5.07032C6.7188 4.94082 7.03614 4.91457 7.34006 5.02191C7.60723 5.11582 7.81781 5.29607 7.95256 5.523C8.05931 5.70209 8.11881 5.91091 8.1194 6.12791C8.1194 6.21832 8.09665 6.30816 8.05115 6.39857C8.00449 6.49191 7.93274 6.58816 7.83649 6.68441C7.4229 7.098 6.7684 7.32141 6.7684 7.32141C6.46274 7.4235 6.29765 7.75366 6.39974 8.05932C6.50183 8.36499 6.83199 8.53007 7.13765 8.42799C7.13765 8.42799 8.03831 8.13282 8.6619 7.50924C8.82465 7.34649 8.97981 7.15107 9.09531 6.92007C9.21198 6.68674 9.28665 6.41957 9.28665 6.12149C9.28431 5.69507 9.16765 5.28324 8.9559 4.92624C8.68581 4.4724 8.26174 4.1084 7.72799 3.92057C7.12015 3.70707 6.48258 3.76016 5.94474 4.01799C5.4069 4.27581 4.9659 4.74015 4.7524 5.34799C4.64506 5.6519 4.8049 5.98499 5.10881 6.09174C5.41272 6.19849 5.74581 6.03865 5.85256 5.73532ZM7.58331 10.2083C7.58331 9.88632 7.32198 9.62499 6.99998 9.62499C6.67798 9.62499 6.41664 9.88632 6.41664 10.2083C6.41664 10.5303 6.67798 10.7917 6.99998 10.7917C7.32198 10.7917 7.58331 10.5303 7.58331 10.2083Z"
+                                                        fill="#A3A3A3" />
+                                                </svg>
+                                                <div class="fukidashi">
+                                                    <div class="title">京阪神大</div>
+                                                    <div class="text">大阪大学、京都大学、神戸大学</div>
+                                                    <div class="sub">※表記を省略していますが、各大学の大学院もふくまれます。</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div class="md_toggle">
+                                            <input type="checkbox" name="" id="check_031" class="checks02">
+                                            <label for="check_031">関関同立など</label>
+                                            <button class="question-icon js_balloon">
+                                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M13.4166 7.29166C13.4166 5.52007 12.698 3.91475 11.5371 2.7545C10.3763 1.59425 8.77155 0.875 6.99998 0.875C5.2284 0.875 3.62306 1.59366 2.46281 2.7545C1.30256 3.91534 0.583313 5.52009 0.583313 7.29166C0.583313 9.06324 1.30198 10.6686 2.46281 11.8288C3.62365 12.9891 5.2284 13.7083 6.99998 13.7083C8.77155 13.7083 10.3769 12.9897 11.5371 11.8288C12.6974 10.668 13.4166 9.06324 13.4166 7.29166ZM12.25 7.29166C12.25 8.74182 11.6631 10.0532 10.7123 11.004C9.76149 11.9548 8.45015 12.5417 6.99998 12.5417C5.5498 12.5417 4.23848 11.9548 3.28764 11.004C2.3368 10.0532 1.74998 8.74184 1.74998 7.29166C1.74998 5.84149 2.33681 4.53016 3.28764 3.57932C4.23846 2.62849 5.5498 2.04166 6.99998 2.04166C8.45015 2.04166 9.76148 2.6285 10.7123 3.57932C11.6632 4.53015 12.25 5.84149 12.25 7.29166ZM5.85256 5.73532C5.95931 5.43141 6.17865 5.19982 6.44873 5.07032C6.7188 4.94082 7.03614 4.91457 7.34006 5.02191C7.60723 5.11582 7.81781 5.29607 7.95256 5.523C8.05931 5.70209 8.11881 5.91091 8.1194 6.12791C8.1194 6.21832 8.09665 6.30816 8.05115 6.39857C8.00449 6.49191 7.93274 6.58816 7.83649 6.68441C7.4229 7.098 6.7684 7.32141 6.7684 7.32141C6.46274 7.4235 6.29765 7.75366 6.39974 8.05932C6.50183 8.36499 6.83199 8.53007 7.13765 8.42799C7.13765 8.42799 8.03831 8.13282 8.6619 7.50924C8.82465 7.34649 8.97981 7.15107 9.09531 6.92007C9.21198 6.68674 9.28665 6.41957 9.28665 6.12149C9.28431 5.69507 9.16765 5.28324 8.9559 4.92624C8.68581 4.4724 8.26174 4.1084 7.72799 3.92057C7.12015 3.70707 6.48258 3.76016 5.94474 4.01799C5.4069 4.27581 4.9659 4.74015 4.7524 5.34799C4.64506 5.6519 4.8049 5.98499 5.10881 6.09174C5.41272 6.19849 5.74581 6.03865 5.85256 5.73532ZM7.58331 10.2083C7.58331 9.88632 7.32198 9.62499 6.99998 9.62499C6.67798 9.62499 6.41664 9.88632 6.41664 10.2083C6.41664 10.5303 6.67798 10.7917 6.99998 10.7917C7.32198 10.7917 7.58331 10.5303 7.58331 10.2083Z"
+                                                        fill="#A3A3A3" />
+                                                </svg>
+                                                <div class="fukidashi">
+                                                    <div class="title">関関同立など</div>
+                                                    <div class="text">大阪市立大学、大阪府立大学、関西大学、関西学院大学、京都工芸繊維大学、京都府立大学、神戸市外国語大学、同志社大学、立命館大学</div>
+                                                    <div class="sub">※表記を省略していますが、各大学の大学院もふくまれます。</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div class="md_toggle">
+                                            <input type="checkbox" name="" id="check_032" class="checks02">
+                                            <label for="check_032">産近甲龍</label>
+                                            <button class="question-icon js_balloon">
+                                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M13.4166 7.29166C13.4166 5.52007 12.698 3.91475 11.5371 2.7545C10.3763 1.59425 8.77155 0.875 6.99998 0.875C5.2284 0.875 3.62306 1.59366 2.46281 2.7545C1.30256 3.91534 0.583313 5.52009 0.583313 7.29166C0.583313 9.06324 1.30198 10.6686 2.46281 11.8288C3.62365 12.9891 5.2284 13.7083 6.99998 13.7083C8.77155 13.7083 10.3769 12.9897 11.5371 11.8288C12.6974 10.668 13.4166 9.06324 13.4166 7.29166ZM12.25 7.29166C12.25 8.74182 11.6631 10.0532 10.7123 11.004C9.76149 11.9548 8.45015 12.5417 6.99998 12.5417C5.5498 12.5417 4.23848 11.9548 3.28764 11.004C2.3368 10.0532 1.74998 8.74184 1.74998 7.29166C1.74998 5.84149 2.33681 4.53016 3.28764 3.57932C4.23846 2.62849 5.5498 2.04166 6.99998 2.04166C8.45015 2.04166 9.76148 2.6285 10.7123 3.57932C11.6632 4.53015 12.25 5.84149 12.25 7.29166ZM5.85256 5.73532C5.95931 5.43141 6.17865 5.19982 6.44873 5.07032C6.7188 4.94082 7.03614 4.91457 7.34006 5.02191C7.60723 5.11582 7.81781 5.29607 7.95256 5.523C8.05931 5.70209 8.11881 5.91091 8.1194 6.12791C8.1194 6.21832 8.09665 6.30816 8.05115 6.39857C8.00449 6.49191 7.93274 6.58816 7.83649 6.68441C7.4229 7.098 6.7684 7.32141 6.7684 7.32141C6.46274 7.4235 6.29765 7.75366 6.39974 8.05932C6.50183 8.36499 6.83199 8.53007 7.13765 8.42799C7.13765 8.42799 8.03831 8.13282 8.6619 7.50924C8.82465 7.34649 8.97981 7.15107 9.09531 6.92007C9.21198 6.68674 9.28665 6.41957 9.28665 6.12149C9.28431 5.69507 9.16765 5.28324 8.9559 4.92624C8.68581 4.4724 8.26174 4.1084 7.72799 3.92057C7.12015 3.70707 6.48258 3.76016 5.94474 4.01799C5.4069 4.27581 4.9659 4.74015 4.7524 5.34799C4.64506 5.6519 4.8049 5.98499 5.10881 6.09174C5.41272 6.19849 5.74581 6.03865 5.85256 5.73532ZM7.58331 10.2083C7.58331 9.88632 7.32198 9.62499 6.99998 9.62499C6.67798 9.62499 6.41664 9.88632 6.41664 10.2083C6.41664 10.5303 6.67798 10.7917 6.99998 10.7917C7.32198 10.7917 7.58331 10.5303 7.58331 10.2083Z"
+                                                        fill="#A3A3A3" />
+                                                </svg>
+                                                <div class="fukidashi">
+                                                    <div class="title">産近甲龍</div>
+                                                    <div class="text">京都産業大学、近畿大学、甲南大学、龍谷大学</div>
+                                                    <div class="sub">※表記を省略していますが、各大学の大学院もふくまれます。</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <div class="md_toggle">
+                                        <input type="checkbox" name="" id="checksAll03">
+                                        <label for="checksAll03">その他地域</label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <div class="flexArea width-nallow">
+                                        <div class="md_toggle">
+                                            <input type="checkbox" name="" id="check_034" class="checks03">
+                                            <label for="check_034">地域旧帝大</label>
+                                            <button class="question-icon js_balloon">
+                                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M13.4166 7.29166C13.4166 5.52007 12.698 3.91475 11.5371 2.7545C10.3763 1.59425 8.77155 0.875 6.99998 0.875C5.2284 0.875 3.62306 1.59366 2.46281 2.7545C1.30256 3.91534 0.583313 5.52009 0.583313 7.29166C0.583313 9.06324 1.30198 10.6686 2.46281 11.8288C3.62365 12.9891 5.2284 13.7083 6.99998 13.7083C8.77155 13.7083 10.3769 12.9897 11.5371 11.8288C12.6974 10.668 13.4166 9.06324 13.4166 7.29166ZM12.25 7.29166C12.25 8.74182 11.6631 10.0532 10.7123 11.004C9.76149 11.9548 8.45015 12.5417 6.99998 12.5417C5.5498 12.5417 4.23848 11.9548 3.28764 11.004C2.3368 10.0532 1.74998 8.74184 1.74998 7.29166C1.74998 5.84149 2.33681 4.53016 3.28764 3.57932C4.23846 2.62849 5.5498 2.04166 6.99998 2.04166C8.45015 2.04166 9.76148 2.6285 10.7123 3.57932C11.6632 4.53015 12.25 5.84149 12.25 7.29166ZM5.85256 5.73532C5.95931 5.43141 6.17865 5.19982 6.44873 5.07032C6.7188 4.94082 7.03614 4.91457 7.34006 5.02191C7.60723 5.11582 7.81781 5.29607 7.95256 5.523C8.05931 5.70209 8.11881 5.91091 8.1194 6.12791C8.1194 6.21832 8.09665 6.30816 8.05115 6.39857C8.00449 6.49191 7.93274 6.58816 7.83649 6.68441C7.4229 7.098 6.7684 7.32141 6.7684 7.32141C6.46274 7.4235 6.29765 7.75366 6.39974 8.05932C6.50183 8.36499 6.83199 8.53007 7.13765 8.42799C7.13765 8.42799 8.03831 8.13282 8.6619 7.50924C8.82465 7.34649 8.97981 7.15107 9.09531 6.92007C9.21198 6.68674 9.28665 6.41957 9.28665 6.12149C9.28431 5.69507 9.16765 5.28324 8.9559 4.92624C8.68581 4.4724 8.26174 4.1084 7.72799 3.92057C7.12015 3.70707 6.48258 3.76016 5.94474 4.01799C5.4069 4.27581 4.9659 4.74015 4.7524 5.34799C4.64506 5.6519 4.8049 5.98499 5.10881 6.09174C5.41272 6.19849 5.74581 6.03865 5.85256 5.73532ZM7.58331 10.2083C7.58331 9.88632 7.32198 9.62499 6.99998 9.62499C6.67798 9.62499 6.41664 9.88632 6.41664 10.2083C6.41664 10.5303 6.67798 10.7917 6.99998 10.7917C7.32198 10.7917 7.58331 10.5303 7.58331 10.2083Z"
+                                                        fill="#A3A3A3" />
+                                                </svg>
+                                                <div class="fukidashi">
+                                                    <div class="title">地域旧帝大</div>
+                                                    <div class="text">九州大学、東北大学、名古屋大学、北海道大学</div>
+                                                    <div class="sub">※表記を省略していますが、各大学の大学院もふくまれます。</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div class="md_toggle">
+                                            <input type="checkbox" name="" id="check_035" class="checks03">
+                                            <label for="check_035">地方国公立</label>
+                                            <button class="question-icon js_balloon">
+                                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M13.4166 7.29166C13.4166 5.52007 12.698 3.91475 11.5371 2.7545C10.3763 1.59425 8.77155 0.875 6.99998 0.875C5.2284 0.875 3.62306 1.59366 2.46281 2.7545C1.30256 3.91534 0.583313 5.52009 0.583313 7.29166C0.583313 9.06324 1.30198 10.6686 2.46281 11.8288C3.62365 12.9891 5.2284 13.7083 6.99998 13.7083C8.77155 13.7083 10.3769 12.9897 11.5371 11.8288C12.6974 10.668 13.4166 9.06324 13.4166 7.29166ZM12.25 7.29166C12.25 8.74182 11.6631 10.0532 10.7123 11.004C9.76149 11.9548 8.45015 12.5417 6.99998 12.5417C5.5498 12.5417 4.23848 11.9548 3.28764 11.004C2.3368 10.0532 1.74998 8.74184 1.74998 7.29166C1.74998 5.84149 2.33681 4.53016 3.28764 3.57932C4.23846 2.62849 5.5498 2.04166 6.99998 2.04166C8.45015 2.04166 9.76148 2.6285 10.7123 3.57932C11.6632 4.53015 12.25 5.84149 12.25 7.29166ZM5.85256 5.73532C5.95931 5.43141 6.17865 5.19982 6.44873 5.07032C6.7188 4.94082 7.03614 4.91457 7.34006 5.02191C7.60723 5.11582 7.81781 5.29607 7.95256 5.523C8.05931 5.70209 8.11881 5.91091 8.1194 6.12791C8.1194 6.21832 8.09665 6.30816 8.05115 6.39857C8.00449 6.49191 7.93274 6.58816 7.83649 6.68441C7.4229 7.098 6.7684 7.32141 6.7684 7.32141C6.46274 7.4235 6.29765 7.75366 6.39974 8.05932C6.50183 8.36499 6.83199 8.53007 7.13765 8.42799C7.13765 8.42799 8.03831 8.13282 8.6619 7.50924C8.82465 7.34649 8.97981 7.15107 9.09531 6.92007C9.21198 6.68674 9.28665 6.41957 9.28665 6.12149C9.28431 5.69507 9.16765 5.28324 8.9559 4.92624C8.68581 4.4724 8.26174 4.1084 7.72799 3.92057C7.12015 3.70707 6.48258 3.76016 5.94474 4.01799C5.4069 4.27581 4.9659 4.74015 4.7524 5.34799C4.64506 5.6519 4.8049 5.98499 5.10881 6.09174C5.41272 6.19849 5.74581 6.03865 5.85256 5.73532ZM7.58331 10.2083C7.58331 9.88632 7.32198 9.62499 6.99998 9.62499C6.67798 9.62499 6.41664 9.88632 6.41664 10.2083C6.41664 10.5303 6.67798 10.7917 6.99998 10.7917C7.32198 10.7917 7.58331 10.5303 7.58331 10.2083Z"
+                                                        fill="#A3A3A3" />
+                                                </svg>
+                                                <div class="fukidashi">
+                                                    <div class="title">地方国公立</div>
+                                                    <div class="text">愛知教育大学、愛知県立大学、宇都宮大学、大阪教育大学、岡山大学、香川大学、岐阜大学、熊本大学、埼玉県立大学、滋賀大学、静岡大学、静岡県立大学、島根県立大学、都留文科大学、徳島大学、鳥取大学、富山大学、長崎大学、名古屋市立大学、奈良教育大学、奈良県立大学、新潟県立大学、兵庫県立大学、広島大学、福岡教育大学、福岡県立大学、福岡女子大学、三重大学、山形大学、山口大学、山梨県立大学、和歌山大学</div>
+                                                    <div class="sub">※表記を省略していますが、各大学の大学院もふくまれます。</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <div class="md_toggle">
+                                        <input type="checkbox" name="" id="check_036">
+                                        <label for="check_036">エンジニア強化校</label>
+                                    </div>
+                                </th>
+                                <td>エンジニア強化校
+                                    <button class="question-icon js_balloon">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M13.4166 7.29166C13.4166 5.52007 12.698 3.91475 11.5371 2.7545C10.3763 1.59425 8.77155 0.875 6.99998 0.875C5.2284 0.875 3.62306 1.59366 2.46281 2.7545C1.30256 3.91534 0.583313 5.52009 0.583313 7.29166C0.583313 9.06324 1.30198 10.6686 2.46281 11.8288C3.62365 12.9891 5.2284 13.7083 6.99998 13.7083C8.77155 13.7083 10.3769 12.9897 11.5371 11.8288C12.6974 10.668 13.4166 9.06324 13.4166 7.29166ZM12.25 7.29166C12.25 8.74182 11.6631 10.0532 10.7123 11.004C9.76149 11.9548 8.45015 12.5417 6.99998 12.5417C5.5498 12.5417 4.23848 11.9548 3.28764 11.004C2.3368 10.0532 1.74998 8.74184 1.74998 7.29166C1.74998 5.84149 2.33681 4.53016 3.28764 3.57932C4.23846 2.62849 5.5498 2.04166 6.99998 2.04166C8.45015 2.04166 9.76148 2.6285 10.7123 3.57932C11.6632 4.53015 12.25 5.84149 12.25 7.29166ZM5.85256 5.73532C5.95931 5.43141 6.17865 5.19982 6.44873 5.07032C6.7188 4.94082 7.03614 4.91457 7.34006 5.02191C7.60723 5.11582 7.81781 5.29607 7.95256 5.523C8.05931 5.70209 8.11881 5.91091 8.1194 6.12791C8.1194 6.21832 8.09665 6.30816 8.05115 6.39857C8.00449 6.49191 7.93274 6.58816 7.83649 6.68441C7.4229 7.098 6.7684 7.32141 6.7684 7.32141C6.46274 7.4235 6.29765 7.75366 6.39974 8.05932C6.50183 8.36499 6.83199 8.53007 7.13765 8.42799C7.13765 8.42799 8.03831 8.13282 8.6619 7.50924C8.82465 7.34649 8.97981 7.15107 9.09531 6.92007C9.21198 6.68674 9.28665 6.41957 9.28665 6.12149C9.28431 5.69507 9.16765 5.28324 8.9559 4.92624C8.68581 4.4724 8.26174 4.1084 7.72799 3.92057C7.12015 3.70707 6.48258 3.76016 5.94474 4.01799C5.4069 4.27581 4.9659 4.74015 4.7524 5.34799C4.64506 5.6519 4.8049 5.98499 5.10881 6.09174C5.41272 6.19849 5.74581 6.03865 5.85256 5.73532ZM7.58331 10.2083C7.58331 9.88632 7.32198 9.62499 6.99998 9.62499C6.67798 9.62499 6.41664 9.88632 6.41664 10.2083C6.41664 10.5303 6.67798 10.7917 6.99998 10.7917C7.32198 10.7917 7.58331 10.5303 7.58331 10.2083Z"
+                                            fill="#A3A3A3" />
+                                    </svg>
+                                    <div class="fukidashi">
+                                        <div class="title">エンジニア強化校</div>
+                                        <div class="text">会津大学、秋田県立大学、茨城大学、岩手県立大学、金沢大学、金沢工業大学、北九州市立大学、九州工業大学、工学院大学、高知工科大学、公立はこだて未来大学、芝浦工業大学、島根大学、信州大学、千葉工業大学、電気通信大学、東京電機大学、東京都市大学、豊田工業大学、豊橋技術科学大学、長岡技術科学大学、名古屋工業大学、奈良女子大学、新潟大学、弘前大学、宮城大学、室蘭工業大学、山梨大学、東京都市大学、豊田工業大学、豊橋技術科学大学、長岡技術科学大学、名古屋工業大学、奈良女子大学、新潟大学弘前大学、宮城大学、室蘭工業大学、山梨大学</div>
+                                        <div class="sub">※表記を省略していますが、各大学の大学院もふくまれます。</div>
+                                    </div>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <div class="md_toggle">
+                                        <input type="checkbox" name="" id="check_037">
+                                        <label for="check_037">デザイナー強化校</label>
+                                    </div>
+                                </th>
+                                <td>東京藝術、武蔵野美術、多摩美術他
+                                    <button class="question-icon js_balloon">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M13.4166 7.29166C13.4166 5.52007 12.698 3.91475 11.5371 2.7545C10.3763 1.59425 8.77155 0.875 6.99998 0.875C5.2284 0.875 3.62306 1.59366 2.46281 2.7545C1.30256 3.91534 0.583313 5.52009 0.583313 7.29166C0.583313 9.06324 1.30198 10.6686 2.46281 11.8288C3.62365 12.9891 5.2284 13.7083 6.99998 13.7083C8.77155 13.7083 10.3769 12.9897 11.5371 11.8288C12.6974 10.668 13.4166 9.06324 13.4166 7.29166ZM12.25 7.29166C12.25 8.74182 11.6631 10.0532 10.7123 11.004C9.76149 11.9548 8.45015 12.5417 6.99998 12.5417C5.5498 12.5417 4.23848 11.9548 3.28764 11.004C2.3368 10.0532 1.74998 8.74184 1.74998 7.29166C1.74998 5.84149 2.33681 4.53016 3.28764 3.57932C4.23846 2.62849 5.5498 2.04166 6.99998 2.04166C8.45015 2.04166 9.76148 2.6285 10.7123 3.57932C11.6632 4.53015 12.25 5.84149 12.25 7.29166ZM5.85256 5.73532C5.95931 5.43141 6.17865 5.19982 6.44873 5.07032C6.7188 4.94082 7.03614 4.91457 7.34006 5.02191C7.60723 5.11582 7.81781 5.29607 7.95256 5.523C8.05931 5.70209 8.11881 5.91091 8.1194 6.12791C8.1194 6.21832 8.09665 6.30816 8.05115 6.39857C8.00449 6.49191 7.93274 6.58816 7.83649 6.68441C7.4229 7.098 6.7684 7.32141 6.7684 7.32141C6.46274 7.4235 6.29765 7.75366 6.39974 8.05932C6.50183 8.36499 6.83199 8.53007 7.13765 8.42799C7.13765 8.42799 8.03831 8.13282 8.6619 7.50924C8.82465 7.34649 8.97981 7.15107 9.09531 6.92007C9.21198 6.68674 9.28665 6.41957 9.28665 6.12149C9.28431 5.69507 9.16765 5.28324 8.9559 4.92624C8.68581 4.4724 8.26174 4.1084 7.72799 3.92057C7.12015 3.70707 6.48258 3.76016 5.94474 4.01799C5.4069 4.27581 4.9659 4.74015 4.7524 5.34799C4.64506 5.6519 4.8049 5.98499 5.10881 6.09174C5.41272 6.19849 5.74581 6.03865 5.85256 5.73532ZM7.58331 10.2083C7.58331 9.88632 7.32198 9.62499 6.99998 9.62499C6.67798 9.62499 6.41664 9.88632 6.41664 10.2083C6.41664 10.5303 6.67798 10.7917 6.99998 10.7917C7.32198 10.7917 7.58331 10.5303 7.58331 10.2083Z"
+                                                fill="#A3A3A3" />
+                                        </svg>
+                                        <div class="fukidashi">
+                                            <div class="title">デザイナー強化校</div>
+                                            <div class="text">京都市立芸術大学、京都造形芸術大学、女子美術大学、多摩美術大学、東京芸術大学、東京造形大学、武蔵野美術大学</div>
+                                            <div class="sub">※表記を省略していますが、各大学の大学院もふくまれます。</div>
+                                        </div>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <div class="md_toggle">
+                                        <input type="checkbox" name="" id="check_038">
+                                        <label for="check_038">グローバル強化校</label>
+                                    </div>
+                                </th>
+                                <td>グローバル強化校
+                                    <button class="question-icon js_balloon">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M13.4166 7.29166C13.4166 5.52007 12.698 3.91475 11.5371 2.7545C10.3763 1.59425 8.77155 0.875 6.99998 0.875C5.2284 0.875 3.62306 1.59366 2.46281 2.7545C1.30256 3.91534 0.583313 5.52009 0.583313 7.29166C0.583313 9.06324 1.30198 10.6686 2.46281 11.8288C3.62365 12.9891 5.2284 13.7083 6.99998 13.7083C8.77155 13.7083 10.3769 12.9897 11.5371 11.8288C12.6974 10.668 13.4166 9.06324 13.4166 7.29166ZM12.25 7.29166C12.25 8.74182 11.6631 10.0532 10.7123 11.004C9.76149 11.9548 8.45015 12.5417 6.99998 12.5417C5.5498 12.5417 4.23848 11.9548 3.28764 11.004C2.3368 10.0532 1.74998 8.74184 1.74998 7.29166C1.74998 5.84149 2.33681 4.53016 3.28764 3.57932C4.23846 2.62849 5.5498 2.04166 6.99998 2.04166C8.45015 2.04166 9.76148 2.6285 10.7123 3.57932C11.6632 4.53015 12.25 5.84149 12.25 7.29166ZM5.85256 5.73532C5.95931 5.43141 6.17865 5.19982 6.44873 5.07032C6.7188 4.94082 7.03614 4.91457 7.34006 5.02191C7.60723 5.11582 7.81781 5.29607 7.95256 5.523C8.05931 5.70209 8.11881 5.91091 8.1194 6.12791C8.1194 6.21832 8.09665 6.30816 8.05115 6.39857C8.00449 6.49191 7.93274 6.58816 7.83649 6.68441C7.4229 7.098 6.7684 7.32141 6.7684 7.32141C6.46274 7.4235 6.29765 7.75366 6.39974 8.05932C6.50183 8.36499 6.83199 8.53007 7.13765 8.42799C7.13765 8.42799 8.03831 8.13282 8.6619 7.50924C8.82465 7.34649 8.97981 7.15107 9.09531 6.92007C9.21198 6.68674 9.28665 6.41957 9.28665 6.12149C9.28431 5.69507 9.16765 5.28324 8.9559 4.92624C8.68581 4.4724 8.26174 4.1084 7.72799 3.92057C7.12015 3.70707 6.48258 3.76016 5.94474 4.01799C5.4069 4.27581 4.9659 4.74015 4.7524 5.34799C4.64506 5.6519 4.8049 5.98499 5.10881 6.09174C5.41272 6.19849 5.74581 6.03865 5.85256 5.73532ZM7.58331 10.2083C7.58331 9.88632 7.32198 9.62499 6.99998 9.62499C6.67798 9.62499 6.41664 9.88632 6.41664 10.2083C6.41664 10.5303 6.67798 10.7917 6.99998 10.7917C7.32198 10.7917 7.58331 10.5303 7.58331 10.2083Z"
+                                                fill="#A3A3A3" />
+                                        </svg>
+                                        <div class="fukidashi">
+                                            <div class="title">グローバル強化校</div>
+                                            <div class="text">関西外国語大学、国際教養大学、国際基督教大学、東京外国語大学、東京国際大学、名古屋外国語大学、南山大学、立命館アジア太平洋大学</div>
+                                            <div class="sub">※表記を省略していますが、各大学の大学院もふくまれます。</div>
+                                        </div>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <div class="md_toggle">
+                                        <input type="checkbox" name="" id="check_039">
+                                        <label for="check_039">海外</label>
+                                    </div>
+                                </th>
+                                <td>海外大学</td>
+                            </tr>
+                            <tr class="last">
+                                <th>
+                                    <div class="md_toggle">
+                                        <input type="checkbox" name="" id="check_040">
+                                        <label for="check_040">その他すべて</label>
+                                    </div>
+                                </th>
+                                <td>その他すべて</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <th>大学名</th>
+                    <td>
+                        <div class="input"><input type="text" id="autocomplete" placeholder="" class="form--line form--w60">
+                            <ul id="suggestions"></ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>学部名</th>
+                    <td>
+                        <div class="input"><input type="text" placeholder="" class="form--line form--w60"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>企業名</th>
+                    <td>
+                        <div class="input"><input type="text" placeholder="" class="form--line form--w60"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>学科系統</th>
+                    <td>
+                        <div id="termArea03">
+                            <div class="terms">
+                                <div class="flexSelect">
+                                    <span class="md_select">
+                                        <select name="" id="" class="form--line">
+                                            <option value="">選択してください</option>
+                                            <option value="1">法学・政策系</option>
+                                            <option value="2">経済・経営・商学系</option>
+                                            <option value="3">社会・環境情報系</option>
+                                            <option value="4">外国語・国際文化系</option>
+                                            <option value="5">人文系</option>
+                                            <option value="6">教育系</option>
+                                            <option value="7">生活科学系</option>
+                                            <option value="8">宗教・神学系</option>
+                                            <option value="9">医療・保健系</option>
+                                            <option value="10">芸術・音楽系</option>
+                                            <option value="11">体育・スポーツ系</option>
+                                            <option value="12">機械系</option>
+                                            <option value="13">数学系</option>
+                                            <option value="14">電気・電子系</option>
+                                            <option value="15">情報工学系</option>
+                                            <option value="16">物理・応用物理系</option>
+                                            <option value="17">建築・土木系</option>
+                                            <option value="18">生物・生命科学系</option>
+                                            <option value="19">化学・物質工学系</option>
+                                            <option value="20">資源・地球環境系</option>
+                                            <option value="21">農業・農学系</option>
+                                            <option value="22">水産系</option>
+                                            <option value="23">畜産・酪農系</option>
+                                            <option value="24">薬学系</option>
+                                            <option value="25">商船系</option>
+                                            <option value="26">医学・歯学系</option>
+                                            <option value="27">獣医系</option>
+                                            <option value="28">衛生医療・介護系</option>
+                                            <option value="31">科学・物質工学系</option>
+                                            <option value="29">その他文系</option>
+                                            <option value="30">その他理系</option>
+                                        </select>
+                                    </span>
+                                    <span>の学生を</span>
+                                    <span class="md_select">
+                                        <select name="" id="" class="form--line">
+                                            <option value="">含む</option>
+                                            <option value="">含まない</option>
+                                        </select>
+                                    </span>
+                                </div>
+                                <button class="deleteArea">
+                                    <span class="iconImgPart">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+                                            <path class="st0" d="M939.5,1027.5L512,600L84.5,1027.5l-88-88L424,512L-3.5,84.5l88-88L512,424L939.5-3.5l88,88L600,512  l427.5,427.5L939.5,1027.5z" style="fill:#c2c6ce;"></path>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <button class="md_btn md_btn--second md_btn--medium md_btn--icon" id="termAdd03"><span class="iconImgPart">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -2 15 15">
+                                        <path fill="#767676" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"></path>
+                                    </svg>
+                                </span>項目を追加</button>
+                    </td>
+                </tr>
+                <tr class="last">
+                    <th>スカウト受信数</th>
+                    <td>
+                        <div class="flexSelect">
+                            <span class="md_select">
+                                <select name="" id="" class="form--line">
+                                    <option value="">未選択</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                    <option value="31">all</option>
+                                </select>
+                            </span>
+                            <span>以下の学生</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- /md_table -->
+
+        <div class="titleArea ankerlink">
+            <h2 id="hope" class="formTitle">
+                志望
+            </h2>
+            <div class="btnArea">
+                <ul>
+                    <li><a href="#status" class="js_scrollTrigger">ステータス</a></li>
+                    <li><a href="#info" class="js_scrollTrigger">基本情報</a></li>
+                    <li><a href="#hope" class="js_scrollTrigger">志望</a></li>
+                    <li><a href="#skill" class="js_scrollTrigger">スキル・経験</a></li>
+                    <li><a href="#check" class="js_scrollTrigger">適性検査</a></li>
+                    <li><a href="#data" class="js_scrollTrigger">個別情報</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- md_table -->
+        <table class="md_table">
+            <tbody>
+                <tr class="first">
+                    <th>希望勤務地</th>
+                    <td>
+                        <div class="flexArea width-nallow">
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_049">
+                                <label for="check_049">北海道</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_050">
+                                <label for="check_050">東北</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_051">
+                                <label for="check_051">関東</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_052">
+                                <label for="check_052">中部</label>
+                            </div>
+                        </div>
+                        <div class="flexArea width-nallow">
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_053">
+                                <label for="check_053">関西</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_054">
+                                <label for="check_054">中国</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_055">
+                                <label for="check_055">四国</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_056">
+                                <label for="check_056">九州</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>志望業界</th>
+                    <td>
+                        <div id="termArea04">
+                            <div class="terms">
+                                <div class="flexSelect">
+                                    <span class="md_select">
+                                        <select name="" id="" class="form--line">
+                                            <option value="">選択してください</option>
+                                            <option value="2048">インターネット・WEB・アプリ</option>
+                                            <option value="32">通信・システム・ソフトウェア</option>
+                                            <option value="64">広告・メディア・マーケティング</option>
+                                            <option value="2">メーカー </option>
+                                            <option value="1">総合商社・専門商社</option>
+                                            <option value="16">金融</option>
+                                            <option value="4">不動産・建設・ディベロッパー</option>
+                                            <option value="128">インフラ・交通・物流</option>
+                                            <option value="256">人材・教育</option>
+                                            <option value="8">コンサル・シンクタンク</option>
+                                            <option value="512">サービス・観光</option>
+                                            <option value="1024">⼩売・流通</option>
+                                            <option value="4096">医療・福祉</option>
+                                            <option value="8192">エンタメ・ゲーム</option>
+                                            <option value="16384">官公庁・公職・団体</option>
+                                            <option value="32768">未定または業界にこだわらない</option>
+                                        </select>
+                                    </span>
+                                    <span>を志望している学生を</span>
+                                    <span class="md_select">
+                                        <select name="" id="" class="form--line">
+                                            <option value="">含む</option>
+                                            <option value="">含まない</option>
+                                        </select>
+                                    </span>
+                                </div>
+                                <button class="deleteArea">
+                                    <span class="iconImgPart">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+                                            <path class="st0" d="M939.5,1027.5L512,600L84.5,1027.5l-88-88L424,512L-3.5,84.5l88-88L512,424L939.5-3.5l88,88L600,512  l427.5,427.5L939.5,1027.5z" style="fill:#c2c6ce;"></path>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <button class="md_btn md_btn--second md_btn--medium md_btn--icon" id="termAdd04"><span class="iconImgPart">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -2 15 15">
+                                        <path fill="#767676" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"></path>
+                                    </svg>
+                                </span>項目を追加</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th>特に希望している<br>業界</th>
+                    <td>
+                        <div id="termArea05">
+                            <div class="terms">
+                                <div class="flexSelect">
+                                    <span class="md_select">
+                                        <select name="" id="" class="form--line">
+                                            <option value="">選択してください</option>
+                                            <option value="2048">インターネット・WEB・アプリ</option>
+                                            <option value="32">通信・システム・ソフトウェア</option>
+                                            <option value="64">広告・メディア・マーケティング</option>
+                                            <option value="2">メーカー </option>
+                                            <option value="1">総合商社・専門商社</option>
+                                            <option value="16">金融</option>
+                                            <option value="4">不動産・建設・ディベロッパー</option>
+                                            <option value="128">インフラ・交通・物流</option>
+                                            <option value="256">人材・教育</option>
+                                            <option value="8">コンサル・シンクタンク</option>
+                                            <option value="512">サービス・観光</option>
+                                            <option value="1024">⼩売・流通</option>
+                                            <option value="4096">医療・福祉</option>
+                                            <option value="8192">エンタメ・ゲーム</option>
+                                            <option value="16384">官公庁・公職・団体</option>
+                                            <option value="32768">未定または業界にこだわらない</option>
+                                        </select>
+                                    </span>
+                                    <span>を志望している学生を</span>
+                                    <span class="md_select">
+                                        <select name="" id="" class="form--line">
+                                            <option value="">含む</option>
+                                            <option value="">含まない</option>
+                                        </select>
+                                    </span>
+                                </div>
+                                <button class="deleteArea">
+                                    <span class="iconImgPart">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+                                            <path class="st0" d="M939.5,1027.5L512,600L84.5,1027.5l-88-88L424,512L-3.5,84.5l88-88L512,424L939.5-3.5l88,88L600,512  l427.5,427.5L939.5,1027.5z" style="fill:#c2c6ce;"></path>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <button class="md_btn md_btn--second md_btn--medium md_btn--icon" id="termAdd05"><span class="iconImgPart">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -2 15 15">
+                                        <path fill="#767676" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"></path>
+                                    </svg>
+                                </span>項目を追加</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th>志望職種</th>
+                    <td>
+                        <div id="termArea06">
+                            <div class="terms">
+                                <div class="flexSelect">
+                                    <span class="md_select">
+                                        <select name="" id="" class="form--line">
+                                            <option value="">選択してください</option>
+                                            <option value="1">営業</option>
+                                            <option value="2">企画・マーケティング</option>
+                                            <option value="4">クリエイティブ（ライター・デザイナーなど）</option>
+                                            <option value="8">WEBディレクター・プロダクトマネージャー</option>
+                                            <option value="128">ITエンジニア・プログラマー</option>
+                                            <option value="256">WEB・UI/UXデザイナー</option>
+                                            <option value="16">研究・技術・開発</option>
+                                            <option value="32">コーポレート（⼈事・法務・経理など）</option>
+                                            <option value="64">専⾨・資格職</option>
+                                            <option value="512">未定または職種にこだわらない</option>
+                                        </select>
+                                    </span>
+                                    <span>を志望している学生を</span>
+                                    <span class="md_select">
+                                        <select name="" id="" class="form--line">
+                                            <option value="">含む</option>
+                                            <option value="">含まない</option>
+                                        </select>
+                                    </span>
+                                </div>
+                                <button class="deleteArea">
+                                    <span class="iconImgPart">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+                                            <path class="st0" d="M939.5,1027.5L512,600L84.5,1027.5l-88-88L424,512L-3.5,84.5l88-88L512,424L939.5-3.5l88,88L600,512  l427.5,427.5L939.5,1027.5z" style="fill:#c2c6ce;"></path>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <button class="md_btn md_btn--second md_btn--medium md_btn--icon" id="termAdd06"><span class="iconImgPart">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -2 15 15">
+                                        <path fill="#767676" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"></path>
+                                    </svg>
+                                </span>項目を追加</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th>特に希望している<br>職種</th>
+                    <td>
+                        <div id="termArea07">
+                            <div class="terms">
+                                <div class="flexSelect">
+                                    <span class="md_select">
+                                        <select name="" id="" class="form--line">
+                                            <option value="">選択してください</option>
+                                            <option value="1">営業</option>
+                                            <option value="2">企画・マーケティング</option>
+                                            <option value="4">クリエイティブ（ライター・デザイナーなど）</option>
+                                            <option value="8">WEBディレクター・プロダクトマネージャー</option>
+                                            <option value="128">ITエンジニア・プログラマー</option>
+                                            <option value="256">WEB・UI/UXデザイナー</option>
+                                            <option value="16">研究・技術・開発</option>
+                                            <option value="32">コーポレート（⼈事・法務・経理など）</option>
+                                            <option value="64">専⾨・資格職</option>
+                                            <option value="512">未定または職種にこだわらない</option>
+                                        </select>
+                                    </span>
+                                    <span>を志望している学生を</span>
+                                    <span class="md_select">
+                                        <select name="" id="" class="form--line">
+                                            <option value="">含む</option>
+                                            <option value="">含まない</option>
+                                        </select>
+                                    </span>
+                                </div>
+                                <button class="deleteArea">
+                                    <span class="iconImgPart">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+                                            <path class="st0" d="M939.5,1027.5L512,600L84.5,1027.5l-88-88L424,512L-3.5,84.5l88-88L512,424L939.5-3.5l88,88L600,512  l427.5,427.5L939.5,1027.5z" style="fill:#c2c6ce;"></path>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <button class="md_btn md_btn--second md_btn--medium md_btn--icon" id="termAdd07"><span class="iconImgPart">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -2 15 15">
+                                        <path fill="#767676" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"></path>
+                                    </svg>
+                                </span>項目を追加</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th>企業規模</th>
+                    <td>
+                        <div class="flexArea flexArea--wrap">
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="checkbox-286">
+                                <label for="checkbox-286">大手</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="checkbox-287">
+                                <label for="checkbox-287">メガベンチャー</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="checkbox-288">
+                                <label for="checkbox-288">ベンチャー</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="checkbox-289">
+                                <label for="checkbox-289">中堅</label>
+                            </div>
+                        </div>
+                        <div class="help">※設定範囲内に完全に含まれる学生のみ検索されます</div>
+                    </td>
+                </tr>
+                <tr class="last">
+                    <th>企業の特徴</th>
+                    <td>
+                        <div id="termArea08">
+                            <div class="terms">
+                                <div class="flexSelect">
+                                    <span class="md_select">
+                                        <select name="" id="" class="form--line">
+                                            <option value="">選択してください</option>
+                                            <option value="1">ソーシャルビジネスで社会問題を解決</option>
+                                            <option value="2">起業家を多く輩出</option>
+                                            <option value="4">研修制度が充実</option>
+                                            <option value="8">特定領域のパイオニア</option>
+                                            <option value="16">理念経営</option>
+                                            <option value="32">投資家が注⽬・資⾦調達済み</option>
+                                            <option value="64">世界で唯一のチャレンジをしている</option>
+                                            <option value="128">○○Tech・○aaS・DX推進</option>
+                                            <option value="256">特許技術を持っている</option>
+                                            <option value="512"> 新しいビジネスモデルを創造</option>
+                                            <option value="1024">⼊社3年以内に億単位プロジェクト参画</option>
+                                            <option value="2048">海外事業に注力</option>
+                                            <option value="4096">ワークライフバランス重視</option>
+                                            <option value="65536">ワークとライフどっちも全⼒</option>
+                                            <option value="131072">多様なライフステージの社員が活躍</option>
+                                            <option value="262144">魅⼒的な経営陣がリード</option>
+                                            <option value="16384">新規事業⽴ち上げ・グロースに従事</option>
+                                            <option value="8192">20代で海外赴任ができる</option>
+                                            <option value="524288">幅広い職種にチャレンジができる</option>
+                                            <option value="32768">専門職でキャリアアップ</option>
+                                            <option value="1048576">実⼒主義・フラットな雰囲気</option>
+                                        </select>
+                                    </span>
+                                    <span>を志望している学生を</span>
+                                    <span class="md_select">
+                                        <select name="" id="" class="form--line">
+                                            <option value="">含む</option>
+                                            <option value="">含まない</option>
+                                        </select>
+                                    </span>
+                                </div>
+                                <button class="deleteArea">
+                                    <span class="iconImgPart">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+                                            <path class="st0" d="M939.5,1027.5L512,600L84.5,1027.5l-88-88L424,512L-3.5,84.5l88-88L512,424L939.5-3.5l88,88L600,512  l427.5,427.5L939.5,1027.5z" style="fill:#c2c6ce;"></path>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <button class="md_btn md_btn--second md_btn--medium md_btn--icon" id="termAdd08"><span class="iconImgPart">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -2 15 15">
+                                        <path fill="#767676" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"></path>
+                                    </svg>
+                                </span>項目を追加</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- /md_table -->
+        
+        <div class="titleArea ankerlink">
+            <h2 id="skill" class="formTitle">
+                スキル・経験
+            </h2>
+            <div class="btnArea">
+                <ul>
+                    <li><a href="#status" class="js_scrollTrigger">ステータス</a></li>
+                    <li><a href="#info" class="js_scrollTrigger">基本情報</a></li>
+                    <li><a href="#hope" class="js_scrollTrigger">志望</a></li>
+                    <li><a href="#skill" class="js_scrollTrigger">スキル・経験</a></li>
+                    <li><a href="#check" class="js_scrollTrigger">適性検査</a></li>
+                    <li><a href="#data" class="js_scrollTrigger">個別情報</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- md_table -->
+        <table class="md_table">
+            <tbody>
+                <tr class="first">
+                    <th>人物像検索</th>
+                    <td>
+                        <div class="help">※人物像を連想させるキーワードを入れてください。（キーワード検索の為、短めのセンテンスで入力ください）</div>
+                        <div class="flexSelect">
+                            <span class="md_select">
+                                <select name="" id="" class="form--line">
+                                    <option value="">いずれか含む</option>
+                                    <option value="">複数含む</option>
+                                    <option value="">全て含む</option>
+                                </select>
+                            </span>
+                            <input type="text" placeholder="経営　ビジコン　全国一位　行動力　バックパック" class="form--line form--w60">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>経歴タグ</th>
+                    <td>
+                        <div id="termArea09">
+                            <div class="terms">
+                                <div class="flexSelect">
+                                    <span class="md_select">
+                                        <select name="" id="" class="form--line">
+                                            <option value="">選択してください</option>
+                                            <option value="2">ひとつのことに熱中した経験</option>
+                                            <option value="3">まわりに流されず⾃分で決断</option>
+                                            <option value="6">挫折を乗り越えた経験</option>
+                                            <option value="8">情報収集・インプット⼤好き</option>
+                                            <option value="10">バックパッカー</option>
+                                            <option value="19">なんか海外すごい好き</option>
+                                            <option value="12">アルバイトをめっちゃやってきた</option>
+                                            <option value="14">ぶっちゃけ苦労人</option>
+                                            <option value="13">自他ともに認める遊び人</option>
+                                            <option value="20">あまのじゃく・ちょっと変わり者</option>
+                                            <option value="15">いろんなコミュニティに知り合いがいる</option>
+                                            <option value="16">オタク気質・サブカル好き</option>
+                                            <option value="4">1位になった経験</option>
+                                            <option value="9">学内成績優秀者</option>
+                                            <option value="7">⻑期インターン経験</option>
+                                            <option value="17">10名以上のチームでリーダーシップ発揮</option>
+                                            <option value="18">⾃分でイベント・コンテンツを企画</option>
+                                            <option value="1">⾃分のビジネスで収益化（起業含む）</option>
+                                            <option value="11">海外で2ヵ⽉以上のプロジェクト参加</option>
+                                            <option value="5">組織を新規⽴ち上げ</option>
+                                            <option value="21">体育会所属</option>
+                                            <option value="22">学⽣団体所属</option>
+                                            <option value="23">ビジコン参加経験</option>
+                                        </select>
+                                    </span>
+                                    <span>のタグを選択している学生を</span>
+                                    <span class="md_select">
+                                        <select name="" id="" class="form--line">
+                                            <option value="">含む</option>
+                                            <option value="">含まない</option>
+                                        </select>
+                                    </span>
+                                </div>
+                                <button class="deleteArea">
+                                    <span class="iconImgPart">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+                                            <path class="st0" d="M939.5,1027.5L512,600L84.5,1027.5l-88-88L424,512L-3.5,84.5l88-88L512,424L939.5-3.5l88,88L600,512  l427.5,427.5L939.5,1027.5z" style="fill:#c2c6ce;"></path>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <button class="md_btn md_btn--second md_btn--medium md_btn--icon" id="termAdd09"><span class="iconImgPart">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -2 15 15">
+                                        <path fill="#767676" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"></path>
+                                    </svg>
+                                </span>項目を追加</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th>英語レベル</th>
+                    <td>
+                        <span class="md_select">
+                            <select name="" id="" class="form--line">
+                                <option value="">選択してください</option>
+                                <option value="1">未受験／500点未満</option>
+                                <option value="2">500点以上</option>
+                                <option value="3">600点以上</option>
+                                <option value="4">700点以上</option>
+                                <option value="5">800点以上</option>
+                                <option value="6">900点以上</option>
+                            </select>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>TOEFLスコア</th>
+                    <td>
+                        <div class="flexArea">
+                            <input type="text" placeholder="点数を入力してください" class="form--line form--w20">
+                            <span>以上</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>中国語</th>
+                    <td>
+                        <span class="md_select">
+                            <select name="" id="" class="form--line">
+                                <option value="">選択してください</option>
+                                <option value="3">ネイティブ</option>
+                                <option value="2">ビジネス</option>
+                                <option value="1">日常会話</option>
+                            </select>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>スペイン語</th>
+                    <td>
+                        <span class="md_select">
+                            <select name="" id="" class="form--line">
+                                <option value="">選択してください</option>
+                                <option value="3">ネイティブ</option>
+                                <option value="2">ビジネス</option>
+                                <option value="1">日常会話</option>
+                            </select>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>フランス語</th>
+                    <td>
+                        <span class="md_select">
+                            <select name="" id="" class="form--line">
+                                <option value="">選択してください</option>
+                                <option value="3">ネイティブ</option>
+                                <option value="2">ビジネス</option>
+                                <option value="1">日常会話</option>
+                            </select>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>ドイツ語</th>
+                    <td>
+                        <span class="md_select">
+                            <select name="" id="" class="form--line">
+                                <option value="">選択してください</option>
+                                <option value="3">ネイティブ</option>
+                                <option value="2">ビジネス</option>
+                                <option value="1">日常会話</option>
+                            </select>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>ヒンディー語</th>
+                    <td>
+                        <span class="md_select">
+                            <select name="" id="" class="form--line">
+                                <option value="">選択してください</option>
+                                <option value="3">ネイティブ</option>
+                                <option value="2">ビジネス</option>
+                                <option value="1">日常会話</option>
+                            </select>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>アラビア語</th>
+                    <td>
+                        <span class="md_select">
+                            <select name="" id="" class="form--line">
+                                <option value="">選択してください</option>
+                                <option value="3">ネイティブ</option>
+                                <option value="2">ビジネス</option>
+                                <option value="1">日常会話</option>
+                            </select>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>韓国語</th>
+                    <td>
+                        <span class="md_select">
+                            <select name="" id="" class="form--line">
+                                <option value="">選択してください</option>
+                                <option value="3">ネイティブ</option>
+                                <option value="2">ビジネス</option>
+                                <option value="1">日常会話</option>
+                            </select>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>留学経験</th>
+                    <td>
+                        <span class="md_select">
+                            <select name="" id="" class="form--line">
+                                <option value="">選択してください</option>
+                                <option value="0">未経験</option>
+                                <option value="1">1ヶ月未満</option>
+                                <option value="2">1ヶ月以上</option>
+                                <option value="3">3ヶ月以上</option>
+                                <option value="4">6ヶ月以上</option>
+                                <option value="5">1年以上</option>
+                            </select>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>開発言語</th>
+                    <td>
+                        <div class="md_toggle">
+                            <input type="checkbox" name="" id="check_057">
+                            <label for="check_057">組み込み系言語（C++、C#、Python など）</label>
+                            <button class="question-icon js_balloon">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.4166 7.29166C13.4166 5.52007 12.698 3.91475 11.5371 2.7545C10.3763 1.59425 8.77155 0.875 6.99998 0.875C5.2284 0.875 3.62306 1.59366 2.46281 2.7545C1.30256 3.91534 0.583313 5.52009 0.583313 7.29166C0.583313 9.06324 1.30198 10.6686 2.46281 11.8288C3.62365 12.9891 5.2284 13.7083 6.99998 13.7083C8.77155 13.7083 10.3769 12.9897 11.5371 11.8288C12.6974 10.668 13.4166 9.06324 13.4166 7.29166ZM12.25 7.29166C12.25 8.74182 11.6631 10.0532 10.7123 11.004C9.76149 11.9548 8.45015 12.5417 6.99998 12.5417C5.5498 12.5417 4.23848 11.9548 3.28764 11.004C2.3368 10.0532 1.74998 8.74184 1.74998 7.29166C1.74998 5.84149 2.33681 4.53016 3.28764 3.57932C4.23846 2.62849 5.5498 2.04166 6.99998 2.04166C8.45015 2.04166 9.76148 2.6285 10.7123 3.57932C11.6632 4.53015 12.25 5.84149 12.25 7.29166ZM5.85256 5.73532C5.95931 5.43141 6.17865 5.19982 6.44873 5.07032C6.7188 4.94082 7.03614 4.91457 7.34006 5.02191C7.60723 5.11582 7.81781 5.29607 7.95256 5.523C8.05931 5.70209 8.11881 5.91091 8.1194 6.12791C8.1194 6.21832 8.09665 6.30816 8.05115 6.39857C8.00449 6.49191 7.93274 6.58816 7.83649 6.68441C7.4229 7.098 6.7684 7.32141 6.7684 7.32141C6.46274 7.4235 6.29765 7.75366 6.39974 8.05932C6.50183 8.36499 6.83199 8.53007 7.13765 8.42799C7.13765 8.42799 8.03831 8.13282 8.6619 7.50924C8.82465 7.34649 8.97981 7.15107 9.09531 6.92007C9.21198 6.68674 9.28665 6.41957 9.28665 6.12149C9.28431 5.69507 9.16765 5.28324 8.9559 4.92624C8.68581 4.4724 8.26174 4.1084 7.72799 3.92057C7.12015 3.70707 6.48258 3.76016 5.94474 4.01799C5.4069 4.27581 4.9659 4.74015 4.7524 5.34799C4.64506 5.6519 4.8049 5.98499 5.10881 6.09174C5.41272 6.19849 5.74581 6.03865 5.85256 5.73532ZM7.58331 10.2083C7.58331 9.88632 7.32198 9.62499 6.99998 9.62499C6.67798 9.62499 6.41664 9.88632 6.41664 10.2083C6.41664 10.5303 6.67798 10.7917 6.99998 10.7917C7.32198 10.7917 7.58331 10.5303 7.58331 10.2083Z"
+                                        fill="#A3A3A3" />
+                                </svg>
+                                <div class="fukidashi">
+                                    <div class="text">Arduino, Assembly, C, C#, C++, Django, Erlang, Python, Rust</div>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="md_toggle">
+                            <input type="checkbox" name="" id="check_058">
+                            <label for="check_058">Web系言語（HTML、JavaScript、PHPなど）</label>
+                            <button class="question-icon js_balloon">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.4166 7.29166C13.4166 5.52007 12.698 3.91475 11.5371 2.7545C10.3763 1.59425 8.77155 0.875 6.99998 0.875C5.2284 0.875 3.62306 1.59366 2.46281 2.7545C1.30256 3.91534 0.583313 5.52009 0.583313 7.29166C0.583313 9.06324 1.30198 10.6686 2.46281 11.8288C3.62365 12.9891 5.2284 13.7083 6.99998 13.7083C8.77155 13.7083 10.3769 12.9897 11.5371 11.8288C12.6974 10.668 13.4166 9.06324 13.4166 7.29166ZM12.25 7.29166C12.25 8.74182 11.6631 10.0532 10.7123 11.004C9.76149 11.9548 8.45015 12.5417 6.99998 12.5417C5.5498 12.5417 4.23848 11.9548 3.28764 11.004C2.3368 10.0532 1.74998 8.74184 1.74998 7.29166C1.74998 5.84149 2.33681 4.53016 3.28764 3.57932C4.23846 2.62849 5.5498 2.04166 6.99998 2.04166C8.45015 2.04166 9.76148 2.6285 10.7123 3.57932C11.6632 4.53015 12.25 5.84149 12.25 7.29166ZM5.85256 5.73532C5.95931 5.43141 6.17865 5.19982 6.44873 5.07032C6.7188 4.94082 7.03614 4.91457 7.34006 5.02191C7.60723 5.11582 7.81781 5.29607 7.95256 5.523C8.05931 5.70209 8.11881 5.91091 8.1194 6.12791C8.1194 6.21832 8.09665 6.30816 8.05115 6.39857C8.00449 6.49191 7.93274 6.58816 7.83649 6.68441C7.4229 7.098 6.7684 7.32141 6.7684 7.32141C6.46274 7.4235 6.29765 7.75366 6.39974 8.05932C6.50183 8.36499 6.83199 8.53007 7.13765 8.42799C7.13765 8.42799 8.03831 8.13282 8.6619 7.50924C8.82465 7.34649 8.97981 7.15107 9.09531 6.92007C9.21198 6.68674 9.28665 6.41957 9.28665 6.12149C9.28431 5.69507 9.16765 5.28324 8.9559 4.92624C8.68581 4.4724 8.26174 4.1084 7.72799 3.92057C7.12015 3.70707 6.48258 3.76016 5.94474 4.01799C5.4069 4.27581 4.9659 4.74015 4.7524 5.34799C4.64506 5.6519 4.8049 5.98499 5.10881 6.09174C5.41272 6.19849 5.74581 6.03865 5.85256 5.73532ZM7.58331 10.2083C7.58331 9.88632 7.32198 9.62499 6.99998 9.62499C6.67798 9.62499 6.41664 9.88632 6.41664 10.2083C6.41664 10.5303 6.67798 10.7917 6.99998 10.7917C7.32198 10.7917 7.58331 10.5303 7.58331 10.2083Z"
+                                        fill="#A3A3A3" />
+                                </svg>
+                                <div class="fukidashi">
+                                    <div class="text">AngularJS, ASP.NET, C#, Dart, Django, Go, Hadoop, Haskell, HTML+CSS, Java,
+                                    JavaScript, jQuery, Kotlin, Laravel, Lua, Node.js, Perl, PHP, Processing, Python,
+                                    React, Ruby, Rust, Scala, TypeScript, Vue.js</div>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="md_toggle">
+                            <input type="checkbox" name="" id="check_059">
+                            <label for="check_059">業務アプリ系言語（Java、C#など）</label>
+                            <button class="question-icon js_balloon">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.4166 7.29166C13.4166 5.52007 12.698 3.91475 11.5371 2.7545C10.3763 1.59425 8.77155 0.875 6.99998 0.875C5.2284 0.875 3.62306 1.59366 2.46281 2.7545C1.30256 3.91534 0.583313 5.52009 0.583313 7.29166C0.583313 9.06324 1.30198 10.6686 2.46281 11.8288C3.62365 12.9891 5.2284 13.7083 6.99998 13.7083C8.77155 13.7083 10.3769 12.9897 11.5371 11.8288C12.6974 10.668 13.4166 9.06324 13.4166 7.29166ZM12.25 7.29166C12.25 8.74182 11.6631 10.0532 10.7123 11.004C9.76149 11.9548 8.45015 12.5417 6.99998 12.5417C5.5498 12.5417 4.23848 11.9548 3.28764 11.004C2.3368 10.0532 1.74998 8.74184 1.74998 7.29166C1.74998 5.84149 2.33681 4.53016 3.28764 3.57932C4.23846 2.62849 5.5498 2.04166 6.99998 2.04166C8.45015 2.04166 9.76148 2.6285 10.7123 3.57932C11.6632 4.53015 12.25 5.84149 12.25 7.29166ZM5.85256 5.73532C5.95931 5.43141 6.17865 5.19982 6.44873 5.07032C6.7188 4.94082 7.03614 4.91457 7.34006 5.02191C7.60723 5.11582 7.81781 5.29607 7.95256 5.523C8.05931 5.70209 8.11881 5.91091 8.1194 6.12791C8.1194 6.21832 8.09665 6.30816 8.05115 6.39857C8.00449 6.49191 7.93274 6.58816 7.83649 6.68441C7.4229 7.098 6.7684 7.32141 6.7684 7.32141C6.46274 7.4235 6.29765 7.75366 6.39974 8.05932C6.50183 8.36499 6.83199 8.53007 7.13765 8.42799C7.13765 8.42799 8.03831 8.13282 8.6619 7.50924C8.82465 7.34649 8.97981 7.15107 9.09531 6.92007C9.21198 6.68674 9.28665 6.41957 9.28665 6.12149C9.28431 5.69507 9.16765 5.28324 8.9559 4.92624C8.68581 4.4724 8.26174 4.1084 7.72799 3.92057C7.12015 3.70707 6.48258 3.76016 5.94474 4.01799C5.4069 4.27581 4.9659 4.74015 4.7524 5.34799C4.64506 5.6519 4.8049 5.98499 5.10881 6.09174C5.41272 6.19849 5.74581 6.03865 5.85256 5.73532ZM7.58331 10.2083C7.58331 9.88632 7.32198 9.62499 6.99998 9.62499C6.67798 9.62499 6.41664 9.88632 6.41664 10.2083C6.41664 10.5303 6.67798 10.7917 6.99998 10.7917C7.32198 10.7917 7.58331 10.5303 7.58331 10.2083Z"
+                                        fill="#A3A3A3" />
+                                </svg>
+                                <div class="fukidashi">
+                                    <div class="text">C, C#, C++, COBOL, Django, Erlang, Go, Hadoop, Haskell, Java, Julia, Lisp, Lua,
+                                    MATLAB, Perl, Processing, Python, R, Ruby, Rust, SAS, Scala, Shell, Swift,
+                                    VisualBasic</div>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="md_toggle">
+                            <input type="checkbox" name="" id="check_060">
+                            <label for="check_060">スマホアプリ系言語（Objective-c、Swift、Javaなど）</label>
+                            <button class="question-icon js_balloon">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.4166 7.29166C13.4166 5.52007 12.698 3.91475 11.5371 2.7545C10.3763 1.59425 8.77155 0.875 6.99998 0.875C5.2284 0.875 3.62306 1.59366 2.46281 2.7545C1.30256 3.91534 0.583313 5.52009 0.583313 7.29166C0.583313 9.06324 1.30198 10.6686 2.46281 11.8288C3.62365 12.9891 5.2284 13.7083 6.99998 13.7083C8.77155 13.7083 10.3769 12.9897 11.5371 11.8288C12.6974 10.668 13.4166 9.06324 13.4166 7.29166ZM12.25 7.29166C12.25 8.74182 11.6631 10.0532 10.7123 11.004C9.76149 11.9548 8.45015 12.5417 6.99998 12.5417C5.5498 12.5417 4.23848 11.9548 3.28764 11.004C2.3368 10.0532 1.74998 8.74184 1.74998 7.29166C1.74998 5.84149 2.33681 4.53016 3.28764 3.57932C4.23846 2.62849 5.5498 2.04166 6.99998 2.04166C8.45015 2.04166 9.76148 2.6285 10.7123 3.57932C11.6632 4.53015 12.25 5.84149 12.25 7.29166ZM5.85256 5.73532C5.95931 5.43141 6.17865 5.19982 6.44873 5.07032C6.7188 4.94082 7.03614 4.91457 7.34006 5.02191C7.60723 5.11582 7.81781 5.29607 7.95256 5.523C8.05931 5.70209 8.11881 5.91091 8.1194 6.12791C8.1194 6.21832 8.09665 6.30816 8.05115 6.39857C8.00449 6.49191 7.93274 6.58816 7.83649 6.68441C7.4229 7.098 6.7684 7.32141 6.7684 7.32141C6.46274 7.4235 6.29765 7.75366 6.39974 8.05932C6.50183 8.36499 6.83199 8.53007 7.13765 8.42799C7.13765 8.42799 8.03831 8.13282 8.6619 7.50924C8.82465 7.34649 8.97981 7.15107 9.09531 6.92007C9.21198 6.68674 9.28665 6.41957 9.28665 6.12149C9.28431 5.69507 9.16765 5.28324 8.9559 4.92624C8.68581 4.4724 8.26174 4.1084 7.72799 3.92057C7.12015 3.70707 6.48258 3.76016 5.94474 4.01799C5.4069 4.27581 4.9659 4.74015 4.7524 5.34799C4.64506 5.6519 4.8049 5.98499 5.10881 6.09174C5.41272 6.19849 5.74581 6.03865 5.85256 5.73532ZM7.58331 10.2083C7.58331 9.88632 7.32198 9.62499 6.99998 9.62499C6.67798 9.62499 6.41664 9.88632 6.41664 10.2083C6.41664 10.5303 6.67798 10.7917 6.99998 10.7917C7.32198 10.7917 7.58331 10.5303 7.58331 10.2083Z"
+                                        fill="#A3A3A3" />
+                                </svg>
+                                <div class="fukidashi">
+                                    <div class="text">C, C#, C++, Dart, Flutter, Hadoop, Java, Kotlin, Objective-C, Scala, Swift</div>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="md_toggle">
+                            <input type="checkbox" name="" id="check_061">
+                            <label for="check_061">その他技術（AWS、Git、Oracleなど）</label>
+                            <button class="question-icon js_balloon">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.4166 7.29166C13.4166 5.52007 12.698 3.91475 11.5371 2.7545C10.3763 1.59425 8.77155 0.875 6.99998 0.875C5.2284 0.875 3.62306 1.59366 2.46281 2.7545C1.30256 3.91534 0.583313 5.52009 0.583313 7.29166C0.583313 9.06324 1.30198 10.6686 2.46281 11.8288C3.62365 12.9891 5.2284 13.7083 6.99998 13.7083C8.77155 13.7083 10.3769 12.9897 11.5371 11.8288C12.6974 10.668 13.4166 9.06324 13.4166 7.29166ZM12.25 7.29166C12.25 8.74182 11.6631 10.0532 10.7123 11.004C9.76149 11.9548 8.45015 12.5417 6.99998 12.5417C5.5498 12.5417 4.23848 11.9548 3.28764 11.004C2.3368 10.0532 1.74998 8.74184 1.74998 7.29166C1.74998 5.84149 2.33681 4.53016 3.28764 3.57932C4.23846 2.62849 5.5498 2.04166 6.99998 2.04166C8.45015 2.04166 9.76148 2.6285 10.7123 3.57932C11.6632 4.53015 12.25 5.84149 12.25 7.29166ZM5.85256 5.73532C5.95931 5.43141 6.17865 5.19982 6.44873 5.07032C6.7188 4.94082 7.03614 4.91457 7.34006 5.02191C7.60723 5.11582 7.81781 5.29607 7.95256 5.523C8.05931 5.70209 8.11881 5.91091 8.1194 6.12791C8.1194 6.21832 8.09665 6.30816 8.05115 6.39857C8.00449 6.49191 7.93274 6.58816 7.83649 6.68441C7.4229 7.098 6.7684 7.32141 6.7684 7.32141C6.46274 7.4235 6.29765 7.75366 6.39974 8.05932C6.50183 8.36499 6.83199 8.53007 7.13765 8.42799C7.13765 8.42799 8.03831 8.13282 8.6619 7.50924C8.82465 7.34649 8.97981 7.15107 9.09531 6.92007C9.21198 6.68674 9.28665 6.41957 9.28665 6.12149C9.28431 5.69507 9.16765 5.28324 8.9559 4.92624C8.68581 4.4724 8.26174 4.1084 7.72799 3.92057C7.12015 3.70707 6.48258 3.76016 5.94474 4.01799C5.4069 4.27581 4.9659 4.74015 4.7524 5.34799C4.64506 5.6519 4.8049 5.98499 5.10881 6.09174C5.41272 6.19849 5.74581 6.03865 5.85256 5.73532ZM7.58331 10.2083C7.58331 9.88632 7.32198 9.62499 6.99998 9.62499C6.67798 9.62499 6.41664 9.88632 6.41664 10.2083C6.41664 10.5303 6.67798 10.7917 6.99998 10.7917C7.32198 10.7917 7.58331 10.5303 7.58331 10.2083Z"
+                                        fill="#A3A3A3" />
+                                </svg>
+                                <div class="fukidashi">
+                                    <div class="text">AWS, Docker, GCP, Git, jenkins/CircleCI, Kubernetes, Linux, MySQL, NoSQL,
+                                    OpenGL, Oracle, PostgreSQL, SQL, SQL Server, Unity, Windows Server</div>
+                                </div>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>開発実績</th>
+                    <td>
+                        <div class="md_toggle">
+                            <input type="checkbox" name="" id="check_062">
+                            <label for="check_062">GitHubのアカウント登録がある学生のみ</label>
+                        </div>
+                        <div class="md_toggle">
+                            <input type="checkbox" name="" id="check_063">
+                            <label for="check_063">Web系言語（HTML、JavaScript、PHPなど）</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>インターン経験</th>
+                    <td>
+                        <span class="md_select">
+                            <select name="" id="" class="form--line">
+                                <option value="">選択してください</option>
+                                <option value="0">未経験</option>
+                                <option value="1">1週間未満</option>
+                                <option value="2">1週間以上</option>
+                                <option value="3">1ヶ月以上</option>
+                                <option value="4">3ヶ月以上</option>
+                                <option value="5">半年以上</option>
+                            </select>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>必須項目</th>
+                    <td>
+                        <div class="flexArea width-nallow">
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_064">
+                                <label for="check_064">性格/人柄</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_065">
+                                <label for="check_065">経歴</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_066">
+                                <label for="check_066">学生時代</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_067">
+                                <label for="check_067">将来像</label>
+                            </div>
+                        </div>
+                        <div class="flexSelect">
+                            <span class="md_select">
+                                <select name="" id="" class="form--line">
+                                    <option value="">未選択</option>
+                                    <option value="1">1項目以上</option>
+                                    <option value="2">2項目以上</option>
+                                    <option value="3">3項目以上</option>
+                                    <option value="4">4項目</option>
+                                </select>
+                            </span>
+                            <span>を入力している学生のみ表示</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="last">
+                    <th>添付ファイル</th>
+                    <td>
+                        <div class="md_toggle">
+                            <input type="checkbox" name="" id="check_068">
+                            <label for="check_068">研究発表物やポートフォリオなど添付ファイルがある学生のみ</label>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- /md_table -->
+        
+        <div class="titleArea ankerlink">
+            <h2 id="check" class="formTitle">
+                適性検査＆プロフィール
+            </h2>
+            <div class="btnArea">
+                <ul>
+                    <li><a href="#status" class="js_scrollTrigger">ステータス</a></li>
+                    <li><a href="#info" class="js_scrollTrigger">基本情報</a></li>
+                    <li><a href="#hope" class="js_scrollTrigger">志望</a></li>
+                    <li><a href="#skill" class="js_scrollTrigger">スキル・経験</a></li>
+                    <li><a href="#check" class="js_scrollTrigger">適性検査</a></li>
+                    <li><a href="#data" class="js_scrollTrigger">個別情報</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- md_table -->
+        <table class="md_table">
+            <tbody>
+                <tr class="first">
+                    <th>必須項目</th>
+                    <td>
+                        <div class="flexArea width-wide">
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_069">
+                                <label for="check_069">性格・価値観分析未受検</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_070">
+                                <label for="check_070">性格・価値観分析受検済み</label>
+                            </div>
+                            
+                        </div>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th>各項目</th>
+                    <td>
+                        <div class="help">
+                            性格・価値観分析の結果をもとに検索できます。<br>
+                            偏差値で測定される項目は55以上／45以下、満点100で測定される項目は60以上／40以下で条件を区切るのがおすすめです。
+                        </div>
+                        <div id="termArea10">
+                            <div class="terms">
+                                <div class="flexSelect">
+                                    <span class="md_select">
+                                        <select name="" id="" class="form--line">
+                                            <option value="">選択してください</option>
+                                            <option value="1" data-select="1" >主体性（偏差値）</option>
+                                            <option value="2" data-select="1" >変革性（偏差値）</option>
+                                            <option value="3" data-select="1" >外向性（偏差値）</option>
+                                            <option value="4" data-select="1" >持続性（偏差値）</option>
+                                            <option value="5" data-select="1" >協調性（偏差値）</option>
+                                            <option value="6" data-select="1" >発想性（偏差値）</option>
+                                            <option value="7" data-select="1" >論理性（偏差値）</option>
+                                            <option value="8" data-select="1" >意思伝達力（偏差値）</option>
+                                            <option value="9" data-select="1" >論理的表現力（偏差値）</option>
+                                            <option value="10" data-select="1" >好感表現力（偏差値）</option>
+                                            <option value="11" data-select="1" >対人調和力（偏差値）</option>
+                                            <option value="12" data-select="1" >行動性（偏差値）</option>
+                                            <option value="13" data-select="1" >競争性（偏差値）</option>
+                                            <option value="14" data-select="1" >野心性（偏差値）</option>
+                                            <option value="15" data-select="1" >決断性（偏差値）</option>
+                                            <option value="16" data-select="2" >人付き合いへのストレス耐性（満点100）</option>
+                                            <option value="17" data-select="2" >仕事の負荷量へのストレス耐性（満点100）</option>
+                                            <option value="18" data-select="2" >理想と現実のギャップへのストレス耐性（満点100）</option>
+                                            <option value="19" data-select="2" >評価・評判へのストレス耐性（満点100）</option>
+                                            <option value="20" data-select="2" >経営幹部指向（満点100）</option>
+                                            <option value="21" data-select="2" >アントレプレナー指向（満点100）</option>
+                                            <option value="22" data-select="2" >チャレンジャー指向（満点100）</option>
+                                            <option value="23" data-select="2" >自立指向（満点100）</option>
+                                            <option value="24" data-select="2" >スペシャリスト指向（満点100）</option>
+                                            <option value="25" data-select="2" >安定指向（満点100）</option>
+                                            <option value="26" data-select="2" >私生活重視（満点100）</option>
+                                            <option value="27" data-select="2" >社会奉仕指向（満点100）</option>
+                                            <option value="28" data-select="3" >多くの人と接し、サービスする（最大5）</option>
+                                            <option value="29" data-select="3" >他者と連携・協調していく（最大5）</option>
+                                            <option value="30" data-select="3" >専門性を身につけ、活かす（最大5）</option>
+                                            <option value="31" data-select="3" >正確かつ着実に進める（最大5）</option>
+                                            <option value="32" data-select="3" >新しいアイデアを生み出す（最大5）</option>
+                                            <option value="33" data-select="3" >知識を深め、探究していく（最大5）</option>
+                                            <option value="34" data-select="3" >自分の判断で自律的に進める（最大5）</option>
+                                            <option value="35" data-select="3" >基本に従い定型的に進める（最大5）</option>
+                                            <option value="36" data-select="3" >迅速に判断して進める（最大5）</option>
+                                            <option value="37" data-select="3" >合理的に物事を進める（最大5）</option>
+                                        </select>
+                                    </span>
+                                    <span class="md_select">
+                                        <select name="" id="" class="form--line">
+                                            <option value=""></option>
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                            <option value="24">24</option>
+                                            <option value="25">25</option>
+                                            <option value="26">26</option>
+                                            <option value="27">27</option>
+                                            <option value="28">28</option>
+                                            <option value="29">29</option>
+                                            <option value="30">30</option>
+                                            <option value="31">31</option>
+                                            <option value="32">32</option>
+                                            <option value="33">33</option>
+                                            <option value="34">34</option>
+                                            <option value="35">35</option>
+                                            <option value="36">36</option>
+                                            <option value="37">37</option>
+                                            <option value="38">38</option>
+                                            <option value="39">39</option>
+                                            <option value="40">40</option>
+                                            <option value="41">41</option>
+                                            <option value="42">42</option>
+                                            <option value="43">43</option>
+                                            <option value="44">44</option>
+                                            <option value="45">45</option>
+                                            <option value="46">46</option>
+                                            <option value="47">47</option>
+                                            <option value="48">48</option>
+                                            <option value="49">49</option>
+                                            <option value="50">50</option>
+                                            <option value="51">51</option>
+                                            <option value="52">52</option>
+                                            <option value="53">53</option>
+                                            <option value="54">54</option>
+                                            <option value="55">55</option>
+                                            <option value="56">56</option>
+                                            <option value="57">57</option>
+                                            <option value="58">58</option>
+                                            <option value="59">59</option>
+                                            <option value="60">60</option>
+                                            <option value="61">61</option>
+                                            <option value="62">62</option>
+                                            <option value="63">63</option>
+                                            <option value="64">64</option>
+                                            <option value="65">65</option>
+                                            <option value="66">66</option>
+                                            <option value="67">67</option>
+                                            <option value="68">68</option>
+                                            <option value="69">69</option>
+                                            <option value="70">70</option>
+                                            <option value="71">71</option>
+                                            <option value="72">72</option>
+                                            <option value="73">73</option>
+                                            <option value="74">74</option>
+                                            <option value="75">75</option>
+                                            <option value="76">76</option>
+                                            <option value="77">77</option>
+                                            <option value="78">78</option>
+                                            <option value="79">79</option>
+                                            <option value="80">80</option>
+                                            <option value="81">81</option>
+                                            <option value="82">82</option>
+                                            <option value="83">83</option>
+                                            <option value="84">84</option>
+                                            <option value="85">85</option>
+                                            <option value="86">86</option>
+                                            <option value="87">87</option>
+                                            <option value="88">88</option>
+                                            <option value="89">89</option>
+                                            <option value="90">90</option>
+                                            <option value="91">91</option>
+                                            <option value="92">92</option>
+                                            <option value="93">93</option>
+                                            <option value="94">94</option>
+                                            <option value="95">95</option>
+                                            <option value="96">96</option>
+                                            <option value="97">97</option>
+                                            <option value="98">98</option>
+                                            <option value="99">99</option>
+                                            <option value="100">100</option>
+                                        </select>
+                                    </span>
+                                    <span class="md_select">
+                                        <select name="" id="" class="form--line">
+                                            <option value="">以上</option>
+                                            <option value="">未満</option>
+                                        </select>
+                                    </span>
+                                </div>
+                                <button class="deleteArea">
+                                    <span class="iconImgPart">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+                                            <path class="st0" d="M939.5,1027.5L512,600L84.5,1027.5l-88-88L424,512L-3.5,84.5l88-88L512,424L939.5-3.5l88,88L600,512  l427.5,427.5L939.5,1027.5z" style="fill:#c2c6ce;"></path>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <button class="md_btn md_btn--second md_btn--medium md_btn--icon" id="termAdd10"><span class="iconImgPart">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -2 15 15">
+                                        <path fill="#767676" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"></path>
+                                    </svg>
+                                </span>項目を追加</button>
+                
+                    </td>
+                </tr>
+                <tr>
+                    <th>活躍人材</th>
+                    <td>
+                        <div class="help">
+                            貴社で活躍している人材と学生とのシンクロ度を測定し、検索します。<br>
+                            80％以上で特徴がほぼ一致、90％以上でほぼ同一の結果になります。
+                        </div>
+                        <div class="flexSelect">
+                            <span class="md_select">
+                                <select name="" id="" class="form--line">
+                                    <option value="">選択してください</option>
+                                    <option value="">山本 翔太</option>
+                                    <option value="">中村 結衣</option>
+                                    <option value="">佐藤 大輝</option>
+                                </select>
+                            </span>
+                            <span>シンクロ</span>
+                            <span class="md_select">
+                                <select name="" id="" class="form--line">
+                                    <option value=""></option>
+                                    <option value="70">70</option>
+                                    <option value="75">75</option>
+                                    <option value="80">80</option>
+                                    <option value="85">85</option>
+                                    <option value="90">90</option>
+                                    <option value="95">95</option>
+                                </select>
+                            </span>
+                            <span>％以上</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>キャリア志向検索</th>
+                    <td>
+                        <div class="flexArea width-wide">
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_071">
+                                <label for="check_071">経営幹部×社会奉仕型</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_072">
+                                <label for="check_072">経営幹部×アントレプレナー型</label>
+                            </div>
+                        
+                        </div>
+                        <div class="flexArea width-wide">
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_073">
+                                <label for="check_073">スペシャリスト×安定指向型</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_074">
+                                <label for="check_074">スペシャリスト×自立型</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>プロフィール診断</th>
+                    <td>
+                        <div class="flexArea width-wide">
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_075">
+                                <label for="check_075">プロフィール診断未完了</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_076">
+                                <label for="check_076">プロフィール診断完了済み</label>
+                            </div>
+                
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>志向タイプ</th>
+                    <td>
+                        <div class="help">言語解析によるプロフィールの志向タイプを検索。<button class="question-icon js_balloon">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.4166 7.29166C13.4166 5.52007 12.698 3.91475 11.5371 2.7545C10.3763 1.59425 8.77155 0.875 6.99998 0.875C5.2284 0.875 3.62306 1.59366 2.46281 2.7545C1.30256 3.91534 0.583313 5.52009 0.583313 7.29166C0.583313 9.06324 1.30198 10.6686 2.46281 11.8288C3.62365 12.9891 5.2284 13.7083 6.99998 13.7083C8.77155 13.7083 10.3769 12.9897 11.5371 11.8288C12.6974 10.668 13.4166 9.06324 13.4166 7.29166ZM12.25 7.29166C12.25 8.74182 11.6631 10.0532 10.7123 11.004C9.76149 11.9548 8.45015 12.5417 6.99998 12.5417C5.5498 12.5417 4.23848 11.9548 3.28764 11.004C2.3368 10.0532 1.74998 8.74184 1.74998 7.29166C1.74998 5.84149 2.33681 4.53016 3.28764 3.57932C4.23846 2.62849 5.5498 2.04166 6.99998 2.04166C8.45015 2.04166 9.76148 2.6285 10.7123 3.57932C11.6632 4.53015 12.25 5.84149 12.25 7.29166ZM5.85256 5.73532C5.95931 5.43141 6.17865 5.19982 6.44873 5.07032C6.7188 4.94082 7.03614 4.91457 7.34006 5.02191C7.60723 5.11582 7.81781 5.29607 7.95256 5.523C8.05931 5.70209 8.11881 5.91091 8.1194 6.12791C8.1194 6.21832 8.09665 6.30816 8.05115 6.39857C8.00449 6.49191 7.93274 6.58816 7.83649 6.68441C7.4229 7.098 6.7684 7.32141 6.7684 7.32141C6.46274 7.4235 6.29765 7.75366 6.39974 8.05932C6.50183 8.36499 6.83199 8.53007 7.13765 8.42799C7.13765 8.42799 8.03831 8.13282 8.6619 7.50924C8.82465 7.34649 8.97981 7.15107 9.09531 6.92007C9.21198 6.68674 9.28665 6.41957 9.28665 6.12149C9.28431 5.69507 9.16765 5.28324 8.9559 4.92624C8.68581 4.4724 8.26174 4.1084 7.72799 3.92057C7.12015 3.70707 6.48258 3.76016 5.94474 4.01799C5.4069 4.27581 4.9659 4.74015 4.7524 5.34799C4.64506 5.6519 4.8049 5.98499 5.10881 6.09174C5.41272 6.19849 5.74581 6.03865 5.85256 5.73532ZM7.58331 10.2083C7.58331 9.88632 7.32198 9.62499 6.99998 9.62499C6.67798 9.62499 6.41664 9.88632 6.41664 10.2083C6.41664 10.5303 6.67798 10.7917 6.99998 10.7917C7.32198 10.7917 7.58331 10.5303 7.58331 10.2083Z"
+                                    fill="#A3A3A3" />
+                            </svg>
+                            <div class="fukidashi">
+                                <div class="text">プロフィールに記載されたエピソードから「志向」を簡単に検索できる機能。自然言語処理技術を用いて学生が記載したテキストデータを解析し、志向タイプを自動判定しています。</div>
+                            </div>
+                        </button><br>仕事に対する志向や、大切にしている価値観を表します。検索したいタイプをご選択ください。</div>
+                        <div class="flexArea width-nallow">
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_077">
+                                <label for="check_077">経営幹部</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_078">
+                                <label for="check_078">多様自由</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_079">
+                                <label for="check_079">事業創造</label>
+                            </div>
+                        </div>
+                        <div class="flexArea width-nallow">
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_080">
+                                <label for="check_080">専門特化</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_081">
+                                <label for="check_081">社会貢献</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="last">
+                    <th>人物像タイプ</th>
+                    <td>
+                        <div class="help">言語解析によるプロフィールの人物像タイプを検索<button class="question-icon js_balloon">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.4166 7.29166C13.4166 5.52007 12.698 3.91475 11.5371 2.7545C10.3763 1.59425 8.77155 0.875 6.99998 0.875C5.2284 0.875 3.62306 1.59366 2.46281 2.7545C1.30256 3.91534 0.583313 5.52009 0.583313 7.29166C0.583313 9.06324 1.30198 10.6686 2.46281 11.8288C3.62365 12.9891 5.2284 13.7083 6.99998 13.7083C8.77155 13.7083 10.3769 12.9897 11.5371 11.8288C12.6974 10.668 13.4166 9.06324 13.4166 7.29166ZM12.25 7.29166C12.25 8.74182 11.6631 10.0532 10.7123 11.004C9.76149 11.9548 8.45015 12.5417 6.99998 12.5417C5.5498 12.5417 4.23848 11.9548 3.28764 11.004C2.3368 10.0532 1.74998 8.74184 1.74998 7.29166C1.74998 5.84149 2.33681 4.53016 3.28764 3.57932C4.23846 2.62849 5.5498 2.04166 6.99998 2.04166C8.45015 2.04166 9.76148 2.6285 10.7123 3.57932C11.6632 4.53015 12.25 5.84149 12.25 7.29166ZM5.85256 5.73532C5.95931 5.43141 6.17865 5.19982 6.44873 5.07032C6.7188 4.94082 7.03614 4.91457 7.34006 5.02191C7.60723 5.11582 7.81781 5.29607 7.95256 5.523C8.05931 5.70209 8.11881 5.91091 8.1194 6.12791C8.1194 6.21832 8.09665 6.30816 8.05115 6.39857C8.00449 6.49191 7.93274 6.58816 7.83649 6.68441C7.4229 7.098 6.7684 7.32141 6.7684 7.32141C6.46274 7.4235 6.29765 7.75366 6.39974 8.05932C6.50183 8.36499 6.83199 8.53007 7.13765 8.42799C7.13765 8.42799 8.03831 8.13282 8.6619 7.50924C8.82465 7.34649 8.97981 7.15107 9.09531 6.92007C9.21198 6.68674 9.28665 6.41957 9.28665 6.12149C9.28431 5.69507 9.16765 5.28324 8.9559 4.92624C8.68581 4.4724 8.26174 4.1084 7.72799 3.92057C7.12015 3.70707 6.48258 3.76016 5.94474 4.01799C5.4069 4.27581 4.9659 4.74015 4.7524 5.34799C4.64506 5.6519 4.8049 5.98499 5.10881 6.09174C5.41272 6.19849 5.74581 6.03865 5.85256 5.73532ZM7.58331 10.2083C7.58331 9.88632 7.32198 9.62499 6.99998 9.62499C6.67798 9.62499 6.41664 9.88632 6.41664 10.2083C6.41664 10.5303 6.67798 10.7917 6.99998 10.7917C7.32198 10.7917 7.58331 10.5303 7.58331 10.2083Z"
+                                        fill="#A3A3A3" />
+                                </svg>
+                                <div class="fukidashi">
+                                    <div class="text">プロフィールに記載されたエピソードから「志向」を簡単に検索できる機能。自然言語処理技術を用いて学生が記載したテキストデータを解析し、志向タイプを自動判定しています。</div>
+                                </div>
+                            </button></div>
+                        <div class="flexArea width-2clm">
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_082">
+                                <label for="check_082">現状に満足せず、新たな提案・改善を実行した</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_083">
+                                <label for="check_083">仲間と明るく社交的に接している</label>
+                            </div>
+                        </div>
+                        <div class="flexArea width-2clm">
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_084">
+                                <label for="check_084">縛られず自由な発想で思考・行動した</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_085">
+                                <label for="check_085">論理的に分析し課題に取り組んだ</label>
+                            </div>
+                        </div>
+                        <div class="flexArea width-2clm">
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_086">
+                                <label for="check_086">競争意識を高く持ち、結果にこだわって行動した</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_087">
+                                <label for="check_087">相手を尊重し、周囲に寄り添って行動した</label>
+                            </div>
+                        </div>
+                        <div class="flexArea width-2clm">
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_088">
+                                <label for="check_088">あきらめずに、粘り強く行動しつづけた</label>
+                            </div>
+                            <div class="md_toggle">
+                                <input type="checkbox" name="" id="check_089">
+                                <label for="check_089">自らの意思で判断し、積極的に行動した</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- /md_table -->
+
+        <div class="titleArea ankerlink">
+            <h2 id="data" class="formTitle">
+                個別情報
+            </h2>
+            <div class="btnArea">
+                <ul>
+                    <li><a href="#status" class="js_scrollTrigger">ステータス</a></li>
+                    <li><a href="#info" class="js_scrollTrigger">基本情報</a></li>
+                    <li><a href="#hope" class="js_scrollTrigger">志望</a></li>
+                    <li><a href="#skill" class="js_scrollTrigger">スキル・経験</a></li>
+                    <li><a href="#check" class="js_scrollTrigger">適性検査</a></li>
+                    <li><a href="#data" class="js_scrollTrigger">個別情報</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- md_table -->
+        <table class="md_table">
+            <tbody>
+                <tr class="first">
+                    <th>iroots ID</th>
+                    <td>
+                        <div class="flexSelect">
+                            <span class="md_select">
+                                <select name="" id="" class="form--line">
+                                    <option value="">一致する</option>
+                                    <option value="">一致しない</option>
+                                </select>
+                            </span>
+                            <input type="text" placeholder="" class="form--line form--w40">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>姓名</th>
+                    <td>
+                        <div class="flexArea">
+                            <input type="text" placeholder="姓" class="form--line form--w20">
+                            <input type="text" placeholder="名" class="form--line form--w20">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>姓名（カナ）</th>
+                    <td>
+                        <div class="flexArea">
+                            <input type="text" placeholder="セイ" class="form--line form--w20">
+                            <input type="text" placeholder="メイ" class="form--line form--w20">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Emailアドレス</th>
+                    <td>
+                        <input type="text" placeholder="" class="form--line form--w40">
+                    </td>
+                </tr>
+                <tr class="last">
+                    <th>電話番号</th>
+                    <td>
+                        <input type="text" placeholder="" class="form--line form--w40">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- /md_table -->
+        
+    </div>
+ 
+    <!-- md_fixBar -->
+    <div class="md_fixBar js_fixBarHide">
+        <a href="searchStudent_searchResult.html" class="md_btn">検索</a>
+    </div>
+    <!-- /md_fixBar -->
+
+<!-- Container End --></div><!-- /Container End -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+<script>
+
+    let target = document.getElementById('messageScroll');
+        target.scrollIntoView(false);
+    
+    $(document).on('click', '.templateArea .selectBtn button', function () {
+        $('.templateArea').find('.selectArea').addClass('show');
+        $('.templateArea').find('.selectBtn').removeClass('show');
+    });
+    $(document).on('click', '.templateArea .selectArea .close button', function () {
+        $('.templateArea').find('.selectArea').removeClass('show');
+        $('.templateArea').find('.selectBtn').addClass('show');
+    });
+    $(document).on('click', '.md_modal .insertLink', function () {
+        $(this).parents('.modalSet').hide();
+        $(this).parents('.md_modal').find('.modalSet--reserve').show();
+    });
+    
+    
+
+</script>
+<script>
+    $(document).ready(function () {
+	const suggestions = [
+		'京都大学大学院',
+		'京都大学',
+		'京都工芸繊維大学',
+		'京都外国語大学',
+		'京都産業大学',
+		'京都女子大学',
+		'東京都市大学',
+		'京都造形芸術大学'
+	];
+
+	$('#autocomplete').on('input', function () {
+		const input = $(this).val().toLowerCase();
+		$('#suggestions').empty();
+
+		if (input.length === 0) {
+			return;
+		}
+
+		const filteredSuggestions = suggestions.filter(function (item) {
+			return item.toLowerCase().includes(input);
+		});
+
+		filteredSuggestions.forEach(function (suggestion) {
+			$('#suggestions').append('<li>' + suggestion + '</li>');
+		});
+	});
+
+	$('#suggestions').on('click', 'li', function () {
+		$('#autocomplete').val($(this).text());
+		$('#suggestions').empty();
+	});
+
+	$(document).on('click', function (event) {
+		if (!$(event.target).closest('#autocomplete, #suggestions').length) {
+			$('#suggestions').empty();
+		}
+	});
+
+	$('.heartSet').on('mouseover', function () {
+		$(this).find('.fukidashi').addClass('show');
+	}).on('mouseout', function () {
+		$(this).find('.fukidashi').removeClass('show');
+	});
+});
+</script>
+
+<script>
+    const checkall01 = document.getElementById("checksAll01");
+    const checkall02 = document.getElementById("checksAll02");
+    const checkall03 = document.getElementById("checksAll03");
+    const checks01 = document.querySelectorAll(".checks01");
+    const checks02 = document.querySelectorAll(".checks02");
+    const checks03 = document.querySelectorAll(".checks03");
+
+    // チェックボックスを管理する関数
+    function manageCheckAll(checkall, checks) {
+        // 全て選択のチェックボックスがクリックされた時
+        checkall.addEventListener('click', () => {
+            checks.forEach(val => val.checked = checkall.checked);
+        });
+
+        // 個別のチェックボックスがクリックされた時
+        checks.forEach(element => {
+            element.addEventListener('click', () => {
+                // チェックが1つでも外された時
+                if (!element.checked) {
+                    checkall.checked = false;
+                }
+                // 全てにチェックがされた時
+                else if ([...checks].every(val => val.checked)) {
+                    checkall.checked = true;
+                }
+            });
+        });
+    }
+
+    // checksAll01 と checks01 に対する処理
+    manageCheckAll(checkall01, checks01);
+
+    // checksAll02 と checks02 に対する処理
+    manageCheckAll(checkall02, checks02);
+
+    // checksAll03 と checks03 に対する処理
+    manageCheckAll(checkall03, checks03);
+</script>
+
+<script>
+    // 要素をコピー＆追加する関数
+    function addTerm(termAreaId) {
+        let elements = document.getElementById(termAreaId);
+        
+        // クラス "terms" の最後の要素をクローン
+        let copied = elements.querySelector(".terms").cloneNode(true);
+        
+        // フォームの初期化（クローンした要素の入力値をリセット）
+        let inputs = copied.querySelectorAll('input');
+        inputs.forEach(input => input.value = '');
+        
+        // クローンした要素を追加
+        elements.appendChild(copied);
+
+        // 削除機能の設定
+        setDeleteButton(copied.querySelector('.deleteArea'));
+        
+        // 削除ボタンの表示・非表示を更新
+        updateDeleteButtons(termAreaId);
+    }
+
+    // 削除ボタンの表示・非表示を制御する関数
+    function updateDeleteButtons(termAreaId) {
+        let elements = document.getElementById(termAreaId);
+        let terms = elements.querySelectorAll('.terms');
+        let deleteButtons = elements.querySelectorAll('.deleteArea');
+
+        // termsが1つしかない場合は削除ボタンを非表示、2つ以上ある場合は表示
+        deleteButtons.forEach(button => {
+            button.style.display = terms.length === 1 ? "none" : "inline-block";
+        });
+    }
+
+    // 削除ボタンを設定する関数
+    function setDeleteButton(deleteButton) {
+        deleteButton.addEventListener('click', function() {
+            let termAreaId = this.closest('.terms').parentElement.id;
+            this.closest('.terms').remove(); // 親要素を削除
+            updateDeleteButtons(termAreaId); // 削除後のボタン表示を更新
+        });
+    }
+
+    // 初期設定：ページがロードされた際に削除ボタンの表示を設定し、削除機能を追加
+    window.onload = function() {
+        const termAreas = [
+            'termArea01', 'termArea02', 'termArea03', 'termArea04', 'termArea05',
+            'termArea06', 'termArea07', 'termArea08', 'termArea09', 'termArea10'
+        ];
+
+        // 各termAreaごとに削除ボタンの設定と初期化
+        termAreas.forEach(termAreaId => {
+            document.querySelectorAll(`#${termAreaId} .deleteArea`).forEach(setDeleteButton);
+            updateDeleteButtons(termAreaId);
+
+            // 項目追加ボタンにイベントハンドラをセット
+            document.getElementById(`termAdd${termAreaId.slice(-2)}`)
+                .addEventListener("click", () => addTerm(termAreaId), false);
+        });
+    };
+</script>
+
+
+</body>
+</html>

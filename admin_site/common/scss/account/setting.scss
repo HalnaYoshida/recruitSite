@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+/* --------------------------------------------------
+ Import 
+-------------------------------------------------- */
+
+@import "../_default";
+
+
+/* ------------ Typography ------------ */
+
+/* Font Size */
+$fs_biggest:  32px; 
+$fs_bigger:   24px;  
+$fs_big:      18px; 
+$fs_medium:   16px;  
+$fs_small:    14px;  
+$fs_main:     13px;
+$fs_smaller:  12px;  
+$fs_smallest: 10px;  
+
+
+.md_table {
+    &--setting { 
+        thead {
+            tr { background: #f0f1f3; font-size: $fs_main; 
+                th { width: auto; text-align: center; color: #667085; line-height: 1.25;
+                    &:first-child { text-align: left; }
+                }
+            }
+        }
+        tbody {
+            tr { 
+                td { text-align: center; vertical-align: middle; border-bottom : 1px solid #ddd; 
+                    .md_toggle { margin: 0;
+                        input[type="checkbox"] { 
+                             + label { padding-left: 24px; 
+                            }
+                        }
+                    }
+                }
+                .itemName { text-align: left; font-size: $fs_main; color: #1b1b1b; }
+                &:last-child {
+                    td { border: none; }
+                }
+            }
+        }
+    }
+}

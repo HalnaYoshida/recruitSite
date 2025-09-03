@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>メッセージ編集 - 学生管理</title>
+
+<link rel="stylesheet" href="../common/css/student/list_messageEdit.css"/>
+</head>
+<body>
+
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+    <div class="contentWrap">
+
+        <!-- titleArea -->
+        <div class="titleArea">
+            <h2 class="mainTitle">メッセージ編集</h2>
+        </div>
+        <!-- /titleArea -->
+
+        <!-- md_table -->
+        <form id="" name="" method="" action="">
+            <div class="contents">
+                <table class="md_table md_table--template">
+                    <tbody>
+                        <tr>
+                            <th>テンプレート名</th>
+                            <td>
+                                <span class="md_select form--w60" style="min-width: 110px;">
+                                    <select name="" id="" class="form--line">
+                                        <option value="" class="">テンプレートを選択してください</option>
+                                        <option value="">テンプレート名</option>
+                                        <option value="">テンプレート名</option>
+                                    </select>
+                                </span>
+                                <button class="md_btn md_btn--second md_btn--sub">挿入</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>テンプレート</th>
+                            <td>
+                                <div class="nameArea">
+                                    <div class="txtCell">&lt;name&gt; コードを入力すれば件名や本文に学生の名字を挿入できます。</div>
+                                    <div class="btnCell"><button class="md_btn md_btn--second md_btn--sub">&lt;name&gt;</button></div>
+                                </div>
+                                <div class="tempArea">
+                                    <table class="md_table">
+                                        <tr>
+                                            <td>
+                                                <textarea name="" id="" rows="15" class="form--line form--w100" placeholder="本文を入力してください" data-limit="140">
+2050年3月末卒業見込みの方が対象です。
+必ず本専用ページからirootsにご登録下さい。(それ以外は無効)
+期間中にirootsにご登録及びプロフィール54%以上記入でAmazonギフト券1000円贈呈。
+【性格価値観診断】と【プロフィール診断】受験の2つの条件を満たした方はギフト券を増額し総額3000円分プレゼント！
+複数登録を避けるため、大学メールアドレスで登録ください。(それ以外は無効)
+プロフィールに明らかな不備(例文張り付け、同じ文字の羅列等)がある場合は対象外です。
+10月上旬に発送予定。</textarea>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="tr">
+                            <th class="th">送信予約</th>
+                            <td>
+                                <input type="date" placeholder="日付を選択" value="2024-05-19" class="form--line" style="min-width: 110px;">
+                                <span class="md_select form--w10" style="">
+                                    <select name="" id="" class="form--line" style="min-width: 110px;">
+                                        <option value="" class="">14:00</option>
+                                    </select>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="btnArea">
+                                    <button class="md_btn md_btn--second" type="button" onclick="location.href='messageReserve.html'">キャンセル</button>
+                                    <button class="md_btn" type="button" onclick="location.href='messageReserve.html?snackBar01'">保存</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+        <!-- /md_table -->
+    </div>
+ 
+<!-- Container End --></div><!-- /Container End -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+</body>
+</html>

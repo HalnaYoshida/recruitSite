@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>新規会員登録 | iroots</title>
+<link rel="stylesheet" href="../common/css/signup/form.css"/>
+</head>
+<body>
+
+
+<!-- header -->   	
+<header class="md_header md_header--signup">
+	<div class="logo"> <a href="#"> <img src="../imageFile/logo_white.svg" alt=""> </a> </div>
+</header>
+<!-- /header -->
+
+
+<div class="container container--signup">
+	<div class="navWrap">
+		<div class="navArea">
+			<div class="titleSet">
+				<div class="title">スキル（1/2）</div>
+			</div>
+			<ul class="stepBar">
+				<li class="step active"></li>
+				<li class="step active"></li>
+				<li class="step"></li>
+				<li class="step"></li>
+				<li class="step"></li>
+				<li class="step"></li>
+				<li class="step"></li>
+				<li class="step"></li>
+				<li class="step"></li>
+				<li class="step"></li>
+			</ul>
+		</div>
+	</div>
+	<div class="contentWrap">
+		<div class="formArea">
+			<div class="formSet">
+				<div class="title">インターン</div>
+				<div class="form">
+					<span class="md_select form--w100">
+						<select name="" id="" class="form--line">
+							<option value="">未経験</option>
+							<option value="">1週間未満</option>
+							<option value="">1週間以上</option>
+							<option value="">1ヶ月以上</option>
+							<option value="">3ヶ月以上</option>
+							<option value="">半年以上</option>
+						</select>
+					</span>	
+				</div>
+			</div>
+			<div class="formSet">
+				<div class="title">プログラミング</div>
+				<div class="form">
+					<span class="md_select form--w100">
+						<select name="" id="select_pg" class="form--line">
+							<option value="0">未経験</option>
+							<option value="1">触ったことがある</option>
+							<option value="2">教えられながらなら書ける</option>
+							<option value="3">独力で調べながら書ける</option>
+							<option value="4">1つ以上の言語を使いこなせる</option>
+							<option value="5">複数の言語に精通している</option>
+						</select>
+					</span>	
+				</div>
+			</div>
+			<div class="formSet	formSet--pgLang" style="display: none;">
+				<div class="title">プログラミング言語</div>
+				<div class="sub">言語毎のスキルレベルを教えてください。</div>
+				<div class="form column">
+					<div class="label">Python</div>
+					<span class="md_select form--w70">
+						<select name="" id="" class="form--line">
+							<option value="">スキルレベルを入力</option>
+							<option value="">授業で習った（実装経験なし）</option>
+							<option value="">サポートがあれば実装できる</option>
+							<option value="">自立して実装できる</option>
+							<option value="">十分詳しく実装経験豊富</option>
+						</select>
+					</span>	
+					<button class="delete js_delete"><span class="iconImgPart">
+						<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M0.646447 0.646447C0.841709 0.451184 1.15829 0.451184 1.35355 0.646447L4 3.29289L6.64645 0.646447C6.84171 0.451184 7.15829 0.451184 7.35355 0.646447C7.54882 0.841709 7.54882 1.15829 7.35355 1.35355L4.70711 4L7.35355 6.64645C7.54882 6.84171 7.54882 7.15829 7.35355 7.35355C7.15829 7.54882 6.84171 7.54882 6.64645 7.35355L4 4.70711L1.35355 7.35355C1.15829 7.54882 0.841709 7.54882 0.646447 7.35355C0.451184 7.15829 0.451184 6.84171 0.646447 6.64645L3.29289 4L0.646447 1.35355C0.451184 1.15829 0.451184 0.841709 0.646447 0.646447Z" fill="#747C92"/>
+							</svg>								
+						</span>
+					</button>
+				</div>
+				<div class="form column">
+					<div class="label">C</div>
+					<span class="md_select form--w70">
+						<select name="" id="" class="form--line">
+							<option value="">スキルレベルを入力</option>
+							<option value="">授業で習った（実装経験なし）</option>
+							<option value="">サポートがあれば実装できる</option>
+							<option value="">自立して実装できる</option>
+							<option value="">十分詳しく実装経験豊富</option>
+						</select>
+					</span>	
+					<button class="delete js_delete"><span class="iconImgPart">
+						<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M0.646447 0.646447C0.841709 0.451184 1.15829 0.451184 1.35355 0.646447L4 3.29289L6.64645 0.646447C6.84171 0.451184 7.15829 0.451184 7.35355 0.646447C7.54882 0.841709 7.54882 1.15829 7.35355 1.35355L4.70711 4L7.35355 6.64645C7.54882 6.84171 7.54882 7.15829 7.35355 7.35355C7.15829 7.54882 6.84171 7.54882 6.64645 7.35355L4 4.70711L1.35355 7.35355C1.15829 7.54882 0.841709 7.54882 0.646447 7.35355C0.451184 7.15829 0.451184 6.84171 0.646447 6.64645L3.29289 4L0.646447 1.35355C0.451184 1.15829 0.451184 0.841709 0.646447 0.646447Z" fill="#747C92"/>
+							</svg>								
+						</span>
+					</button>
+				</div>
+				<div class="form column">
+					<div class="label">HTML+CSS</div>
+					<span class="md_select form--w70">
+						<select name="" id="" class="form--line">
+							<option value="">スキルレベルを入力</option>
+							<option value="">授業で習った（実装経験なし）</option>
+							<option value="">サポートがあれば実装できる</option>
+							<option value="">自立して実装できる</option>
+							<option value="">十分詳しく実装経験豊富</option>
+						</select>
+					</span>	
+					<button class="delete js_delete"><span class="iconImgPart">
+						<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M0.646447 0.646447C0.841709 0.451184 1.15829 0.451184 1.35355 0.646447L4 3.29289L6.64645 0.646447C6.84171 0.451184 7.15829 0.451184 7.35355 0.646447C7.54882 0.841709 7.54882 1.15829 7.35355 1.35355L4.70711 4L7.35355 6.64645C7.54882 6.84171 7.54882 7.15829 7.35355 7.35355C7.15829 7.54882 6.84171 7.54882 6.64645 7.35355L4 4.70711L1.35355 7.35355C1.15829 7.54882 0.841709 7.54882 0.646447 7.35355C0.451184 7.15829 0.451184 6.84171 0.646447 6.64645L3.29289 4L0.646447 1.35355C0.451184 1.15829 0.451184 0.841709 0.646447 0.646447Z" fill="#747C92"/>
+							</svg>								
+						</span>
+					</button>
+				</div>
+				<div class="form addBtn">
+					<button class="md_btn md_btn--line js_modalSlideUp" data-modal="modal_pgLang"><span class="iconImgPart"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M11.3431 5.34307H6.65693V0.65693C6.65693 0.306598 6.35032 0 6 0C5.64968 0 5.34307 0.306609 5.34307 0.65693V5.34307H0.65693C0.306598 5.34307 0 5.64968 0 6C0 6.35032 0.306609 6.65693 0.65693 6.65693H5.34307V11.3431C5.34307 11.6934 5.64968 12 6 12C6.35032 12 6.65693 11.6934 6.65693 11.3431V6.65693H11.3431C11.6934 6.65693 12 6.35032 12 6C12 5.64968 11.6934 5.34307 11.3431 5.34307Z" fill="#3E5CE2"/>
+						</svg>
+						</span>追加する</button>
+				</div>
+			</div>
+			<div class="formSet">
+				<div class="title">留学経験</div>
+				<div class="form">
+					<span class="md_select form--w100">
+						<select name="" id="" class="form--line">
+							<option value="">未経験</option>
+							<option value="">1ヶ月未満</option>
+							<option value="">1ヶ月以上</option>
+							<option value="">3ヶ月以上</option>
+							<option value="">6ヶ月以上</option>
+							<option value="">1年以上</option>
+						</select>
+					</span>	
+				</div>
+			</div>
+
+			<div class="formSet formSet--eng">
+				<div class="formWrap">
+					<div class="title">TOEIC</div>
+					<div class="form column">
+						<input type="number" placeholder="点数を入力する" class="form--line form--w100">
+					</div>
+				</div>
+				<div class="formWrap">
+					<div class="title">TOEFL</div>
+					<div class="form column">
+						<input type="number" placeholder="点数を入力する" class="form--line form--w100">
+					</div>
+				</div>
+			</div>	
+			<div class="addBtnSet">
+				<button class="md_btn md_btn--line js_addLangForm"><span class="iconImgPart"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M11.3431 5.34307H6.65693V0.65693C6.65693 0.306598 6.35032 0 6 0C5.64968 0 5.34307 0.306609 5.34307 0.65693V5.34307H0.65693C0.306598 5.34307 0 5.64968 0 6C0 6.35032 0.306609 6.65693 0.65693 6.65693H5.34307V11.3431C5.34307 11.6934 5.64968 12 6 12C6.35032 12 6.65693 11.6934 6.65693 11.3431V6.65693H11.3431C11.6934 6.65693 12 6.35032 12 6C12 5.64968 11.6934 5.34307 11.3431 5.34307Z" fill="#3E5CE2"/>
+						</svg>
+						</span>その他言語を追加する</button>
+			</div>	
+			<div class="otherLangWrap" style="display: none;">
+				<div class="formSet">
+					<div class="title">中国語</div>
+					<div class="form">
+						<span class="md_select form--w100">
+							<select name="" id="" class="form--line">
+								<option value="">選択してください</option>
+								<option value="">ネイティブ</option>
+								<option value="">ビジネス</option>
+								<option value="">日常会話</option>
+							</select>
+						</span>	
+					</div>
+				</div>
+				<div class="formSet">
+					<div class="title">スペイン語</div>
+					<div class="form">
+						<span class="md_select form--w100">
+							<select name="" id="" class="form--line">
+								<option value="">選択してください</option>
+								<option value="">ネイティブ</option>
+								<option value="">ビジネス</option>
+								<option value="">日常会話</option>
+							</select>
+						</span>	
+					</div>
+				</div>
+				<div class="formSet">
+					<div class="title">フランス語</div>
+					<div class="form">
+						<span class="md_select form--w100">
+							<select name="" id="" class="form--line">
+								<option value="">選択してください</option>
+								<option value="">ネイティブ</option>
+								<option value="">ビジネス</option>
+								<option value="">日常会話</option>
+							</select>
+						</span>	
+					</div>
+				</div>
+				<div class="formSet">
+					<div class="title">ドイツ語</div>
+					<div class="form">
+						<span class="md_select form--w100">
+							<select name="" id="" class="form--line">
+								<option value="">選択してください</option>
+								<option value="">ネイティブ</option>
+								<option value="">ビジネス</option>
+								<option value="">日常会話</option>
+							</select>
+						</span>	
+					</div>
+				</div>
+				<div class="formSet">
+					<div class="title">ヒンディー語</div>
+					<div class="form">
+						<span class="md_select form--w100">
+							<select name="" id="" class="form--line">
+								<option value="">選択してください</option>
+								<option value="">ネイティブ</option>
+								<option value="">ビジネス</option>
+								<option value="">日常会話</option>
+							</select>
+						</span>	
+					</div>
+				</div>
+				<div class="formSet">
+					<div class="title">アラビア語</div>
+					<div class="form">
+						<span class="md_select form--w100">
+							<select name="" id="" class="form--line">
+								<option value="">選択してください</option>
+								<option value="">ネイティブ</option>
+								<option value="">ビジネス</option>
+								<option value="">日常会話</option>
+							</select>
+						</span>	
+					</div>
+				</div>
+				<div class="formSet">
+					<div class="title">韓国語</div>
+					<div class="form">
+						<span class="md_select form--w100">
+							<select name="" id="" class="form--line">
+								<option value="">選択してください</option>
+								<option value="">ネイティブ</option>
+								<option value="">ビジネス</option>
+								<option value="">日常会話</option>
+							</select>
+						</span>	
+					</div>
+				</div>
+
+			</div>
+			
+		</div>
+		<div class="btnArea">
+			<div class="btnSet column">
+				<a href="form_skillUpload.html" class="md_btn md_btn--medium md_btn--second">スキップ</a>
+				<a href="form_skillUpload.html" class="md_btn md_btn--submit">次へ進む</a>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+<!-- md_modal--half -->
+<div class="md_modal md_modal--half modal_pgLang">
+	<button class="bgLayer js_modalSlideDown" style="display: none;"></button>
+	<div class="modalSet">
+		<div class="Content">
+			<div class="titleArea">
+				<div class="title">プログラミング経験<span class="closeLink js_modalSlideDown"></span></div>
+				<div class="copy">経験のある言語を選択してください。（複数選択可）</div>
+			</div>
+			<div class="contentArea">
+				<div class="form form--tag">
+					<div class="md_tagSet">
+						<span class="md_tag">AngularJS</span>
+						<span class="md_tag">Arduino</span>
+						<span class="md_tag">ASP.NET</span>
+						<span class="md_tag">Assembly</span>
+						<span class="md_tag">AWS</span>
+						<span class="md_tag active">C</span>
+						<span class="md_tag">C#</span>
+						<span class="md_tag">C++</span>
+						<span class="md_tag">COBOL</span>
+						<span class="md_tag">Dart</span>
+						<span class="md_tag">Django</span>
+						<span class="md_tag">Docker</span>
+						<span class="md_tag">Erlang</span>
+						<span class="md_tag">Flutter</span>
+						<span class="md_tag">GCP</span>
+						<span class="md_tag">Git</span>
+						<span class="md_tag">Go</span>
+						<span class="md_tag">Hadoop</span>
+						<span class="md_tag">Haskell</span>
+						<span class="md_tag active">HTML+CSS</span>
+						<span class="md_tag">Java</span>
+						<span class="md_tag">JavaScript</span>
+						<span class="md_tag">jenkins/CircleCI</span>
+						<span class="md_tag">jQuery</span>
+						<span class="md_tag">Julia</span>
+						<span class="md_tag">Kotlin</span>
+						<span class="md_tag">Kubernetes</span>
+						<span class="md_tag">Laravel</span>
+						<span class="md_tag">Linux</span>
+						<span class="md_tag">Lisp</span>
+						<span class="md_tag">Lua</span>
+						<span class="md_tag">MATLAB </span>
+						<span class="md_tag">MySQL</span>
+						<span class="md_tag">Node.js</span>
+						<span class="md_tag">NoSQL</span>
+						<span class="md_tag">Objective-C</span>
+						<span class="md_tag">OpenGL</span>
+						<span class="md_tag">Oracle</span>
+						<span class="md_tag">Perl</span>
+						<span class="md_tag">PHP</span>
+						<span class="md_tag">PostgreSQL</span>
+						<span class="md_tag">Processing</span>
+						<span class="md_tag active">Python</span>
+						<span class="md_tag">R</span>
+						<span class="md_tag">React</span>
+						<span class="md_tag">Ruby</span>
+						<span class="md_tag">Rust</span>
+						<span class="md_tag">SAS</span>
+						<span class="md_tag">Scala</span>
+						<span class="md_tag">Shell</span>
+						<span class="md_tag">SQL</span>
+						<span class="md_tag">SQL Server</span>
+						<span class="md_tag">Swift</span>
+						<span class="md_tag">TypeScript</span>
+						<span class="md_tag">Unity</span>
+						<span class="md_tag">VisualBasic</span>
+						<span class="md_tag">Vue.js</span>
+						<span class="md_tag">Windows Server</span>
+
+						
+					</div>
+				</div>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--submit js_modalSlideDown js_submit--features">決定</button>
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- /md_modal--half -->
+
+<!-- md_fixBar -->
+<div class="md_fixBar js_fixBarHide">
+	<div class="btnSet column">
+		<a href="form_skillUpload.html" class="md_btn md_btn--medium md_btn--second">スキップ</a>
+		<a href="form_skillUpload.html" class="md_btn md_btn--submit">次へ進む</a>
+	</div>
+</div>
+<!-- /md_fixBar -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script>
+
+//タブ選択時の挙動
+$(".form--tag .md_tag").click(function () {
+	$(this).toggleClass('active');
+});
+
+//プログラミング経験の選択後の挙動
+$('#select_pg').change(function() {
+	var extraction_val = $(this).val();
+	if(extraction_val == '0' ) {
+		$('.formSet--pgLang').css('display', 'none');
+	}else if(extraction_val>= '1' && extraction_val <= '5')  {
+		$('.formSet--pgLang').css('display', 'block');
+	}
+});
+
+//プログラミング言語の削除
+$('.js_delete').click(function() {
+	$(this).parent().hide();
+});
+//その他言語を追加
+$('.js_addLangForm').click(function() {
+	$(this).parent().hide();
+	$('.otherLangWrap').show();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="/favicon.ico" />
+<title>保存済み検索条件 - スカウト</title>
+<link rel="stylesheet" href="../common/css/scout/saveStudent_list.css"/>
+</head>
+<body>
+
+<!-- Modal09 -->
+<div class="md_modal modal09" style="display: none;">
+    <button class="bgLayer js_modalX"></button>
+    <div class="modalSet">
+        <div class="Content">
+            <div class="textArea">
+                <div class="catch">削除確認</div>
+                <p class="copy">
+                    学生リストを削除します。よろしいですか？
+                </p>
+            </div>
+            <div class="actionArea">
+                <button class="md_btn md_btn--medium multiple js_modalX js_snackBar js_listDelete" data-target="Bar01">削除</button>
+                <button class="md_btn md_btn--medium md_btn--second multiple js_modalX">キャンセル</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal09 -->
+
+<!-- Modal -->
+<div class="md_modal md_modal--scout modal01" style="display: none;">
+    <button class="bgLayer js_modalX"></button>
+    <div class="modalSet">
+        <div class="modalHeadedArea">
+            <div class="title">リスト作成</div>
+            <div class="closeBtn">
+                <button class="js_modalX">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.1725 10.186C11.498 10.5114 11.498 11.0391 11.1725 11.3645C10.8471 11.6899 10.3194 11.6899 9.994 11.3645L5.99995 7.3705L2.00601 11.3645C1.68058 11.6899 1.15294 11.69 0.8275 11.3645C0.502061 11.0391 0.502056 10.5114 0.82749 10.186L4.82143 6.192L0.827331 2.19797C0.501891 1.87253 0.501893 1.3449 0.827332 1.01947C1.15277 0.694033 1.68041 0.694031 2.00585 1.01947L5.99993 5.01348L9.99386 1.01948C10.3193 0.694041 10.8469 0.694038 11.1724 1.01947C11.4978 1.34491 11.4978 1.87254 11.1724 2.19798L7.17845 6.19198L11.1725 10.186Z" fill="#858D9D"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="formArea">
+            <div class="md_table">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>タイトル</th>
+                            <td>
+                                <input type="text" placeholder="" id="saveListNameval" class="form--line form--w100">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="actionArea">
+            <button class="md_btn md_btn--second multiple js_modalX">キャンセル</button>
+            <button class="md_btn multiple js_modalX js_trAdd js_snackBar" data-target="Bar02">作成</button>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar01">
+    <div class="base">
+        <div class="text">学生リストを削除しました</div>
+        <button class="close js_snackBarX">✕</button>
+    </div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar02">
+    <div class="base">
+        <div class="text">学生リストを保存しました</div>
+        <button class="close js_snackBarX">✕</button>
+    </div>
+</div>
+<!-- /snackBar -->
+ 
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+<div class="contentWrap">
+
+<!-- titleArea -->
+<div class="titleArea">
+    <h2 class="mainTitle">保存済み学生リスト</h2>
+    <div class="subArea">
+        <div class="btnArea">
+            <button class="md_btn md_btn--medium md_btn--second md_btn--icon md_btn--disabled js_modalOpen" data-modal="modal01">
+                <span class="iconImgPart">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -2 15 15">
+                        <path fill="#fff" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"></path>
+                    </svg>
+                </span>
+                新規リスト作成
+            </button>
+        </div>
+        <div class="subError">
+            保存できる学生リストの上限は30件です。
+        </div>
+    </div>
+</div>
+<!-- /titleArea -->
+
+<!-- md_table -->
+<form id="" name="" method="" action="">
+    <div class="contents">
+        <table class="md_table js_md_table">
+            <thead>
+                <tr>
+                    <th class="item item--min">並び替え</th>
+                    <th class="item">リスト名</th>
+                    <th class="item item--C item--w10">学生数</th>
+                    <th class="item item--C item--w15">最終更新日</th>
+                    <th class="item item--w10"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data">インターン呼びたい学生リスト</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data">本選考スカウト送る予定学生リスト</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">性格・価値観分析良さそうな学生リスト</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト4</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト5</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト6</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト7</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト8</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト9</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト10</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト11</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト12</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト13</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト14</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト15</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト16</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト17</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト18</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト19</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト20</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト21</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト22</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト23</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト24</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト25</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト26</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト27</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト28</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト29</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data data--C">
+                        <div class="grabArea">
+                            <span class="iconImgPart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18">
+                                    <g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)">
+                                        <path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" d="M0 .5h19v19H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="data js_title">学生リスト30</td>
+                    <td class="data data--C">30</td>
+                    <td class="data data--C js_date">2023/10/23</td>
+                    <td class="data data--C">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="./saveStudent_list_result.html" class="md_btn md_btn--medium">閲覧</a>
+                            </div>
+                            <div class="cmdArea">
+                                <button type="button" class="cmdLink js_threeDots">
+                                    <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+                                        <path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                        <path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+                                    </svg>
+                                    <div class="hideAction">
+                                        <a class="menu js_modalOpen" data-modal="modal01">編集</a>
+                                        <a class="menu js_modalOpen js_modalOpenDelete" data-modal="modal09">削除</a>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form>
+<!-- /md_table -->
+
+</div>
+<!-- Container End --></div><!-- /Container End -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="/company_site/common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+<script>
+$(function () {
+    $(document).on('click', '.cmdArea', threeDots);
+    $('.js_modalOpen').on('click', function () {
+        const titledata = $('.md_modal.modal01').find('.modalHeadedArea').find('.title');
+        const inputdata = $('.md_modal.modal01').find('.formArea').find('input[type="text"]');
+        const btnname = $('.md_modal.modal01').find('.actionArea').find('button[data-target="Bar02"]');
+        if ($(this).text().trim().includes('新規リスト作成')) {
+            titledata.text('リスト作成');
+            inputdata.val('');
+            btnname.text('作成');
+        } else {
+            titledata.text('リスト編集');
+            inputdata.val('インターン呼びたい学生リスト');
+            btnname.text('完了');
+        }
+    });
+    $(document).on('click', '.js_modalOpenDelete', modalOpenDelete);
+});
+
+
+function threeDots() {
+    $(this).find('.hideAction').toggleClass('show');
+}
+
+
+function modalOpenDelete() {
+    var deleteTR = $(this).parents('tr');
+    $(document).on('click', '.js_listDelete', function () {
+        deleteTR.addClass('remove');
+        setTimeout(function () {
+            deleteTR.remove();
+        }, 500);
+    });
+}
+
+
+</script>
+
+</body>
+</html>

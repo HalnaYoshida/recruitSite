@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+/* --------------------------------------------------
+ Import 
+-------------------------------------------------- */
+
+@import "../_default";
+
+
+/* ------------ Size ------------ */
+
+/* Width */
+$w_wrap: 1200px; 
+$w_drawer: 300px; 
+$w_sideMenu: 200px; 
+$w_centeringElement: 700px; 
+$w_btn_big: 150px;
+
+
+/* ------------ Typography ------------ */
+
+/* Font Size */
+$fs_biggest:  32px; 
+$fs_bigger:   24px;  
+$fs_big:      18px; 
+$fs_medium:   16px;  
+$fs_small:    14px;  
+$fs_main:     13px;
+$fs_smaller:  12px;  
+$fs_smallest: 10px;  
+
+
+.container {
+    .contentWrap {
+        .contents { background: #fff; border: 1px solid #c2c6ce; border-radius: 8px; 
+            .md_table { box-shadow: none; border: none; border-radius: 8px 8px 0 0; 
+                &--user {
+                    tbody {
+                        .tr {
+                            td { /* border-bottom: 1px solid #ddd; */
+                                .toggleSet { display: flex; }
+                                /* .form--line { font-size: $fs_main; } */
+                                ul { display: flex; align-items: center; 
+                                    /* .md_toggle { margin-top: 0px; } */
+                                }
+                                .uploadArea { display: flex; align-items: center; 
+                                    img { margin-right: 30px; border-radius: 100%; width: 150px; height: 150px; }
+                                }
+                                .errorMessage { margin-top: 8px; line-height: 1.25; color: #f04438; }
+                                .policySet { display: block; margin-top: 10px;
+                                    .policy { margin-top: 4px; font-size: 11px; line-height: 1.25; color: #667085; }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .btnArea { display: flex; justify-content: center; padding: 15px 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>スカウトリクエスト設定 - 企業管理</title>
+
+<link rel="stylesheet" href="../common/css/company/setting.css"/>
+</head>
+<body>
+
+<!-- snackBar01 -->
+<div class="md_snackBar Bar01">
+	<div class="base">
+		<div class="text">企業情報を保存しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar01 -->
+
+<!-- snackBar02 -->
+<div class="md_snackBar Bar02">
+	<div class="base">
+		<div class="text">優位表示企業を追加しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar02 -->
+
+<!-- snackBar03 -->
+<div class="md_snackBar Bar03">
+	<div class="base">
+			<div class="text">優位表示企業を削除しました。</div>
+			<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar03 -->
+
+<!-- Modal01 -->
+<div class="md_modal md_modal--add modal01" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="modalHeadedArea">
+			<div class="title">企業追加</div>
+			<div class="searchForm">
+				<input type="text" placeholder="企業IDまたは企業名で検索する" class="form--line form--w100" style="height: 45px;">
+			</div>
+			<div class="tableHead">
+				<table>
+					<tbody>
+						<tr>
+							<th class="item item--center" style="width: 60px; min-width: 60px;">
+								<div class="md_toggle">
+									<input type="checkbox" name="" value="" id="add_000">
+									<label for="add_000"></label>
+								</div>
+							</th>
+							<th class="item item--center" style="width: 90px; min-width: 90px;">企業ID</th>
+							<th class="item">企業名</th>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="contentArea">
+			<div class="scrollArea">
+				<!-- <div class="searchForm">
+				<input type="text" placeholder="企業IDまたは企業名で検索する" class="form--line form--w100" style="height: 45px;">
+				</div> -->
+				<table class="md_table">
+					<div>
+					<tbody>
+						<tr>
+							<td class="data data--center" style="width: 60px; min-width: 60px;">
+								<div class="md_toggle">
+									<input type="checkbox" name="" value="" id="add_001">
+									<label for="add_001"></label>
+								</div>
+							</td>
+							<td class="data data--center" style="width: 90px; min-width: 90px;">
+								<span class="holder">1958</span>
+							</td>
+							<td class="data">
+								<span>スマートホーム株式会社</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="data data--center" style="width: 60px; min-width: 60px;">
+								<div class="md_toggle">
+									<input type="checkbox" name="" value="" id="add_002">
+									<label for="add_002"></label>
+								</div>
+							</td>
+							<td class="data data--center" style="width: 90px; min-width: 90px;">
+								<span class="holder">1958</span>
+							</td>
+							<td class="data">
+								<span>サンライズ観光株式会社</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="data data--center" style="width: 60px; min-width: 60px;">
+								<div class="md_toggle">
+									<input type="checkbox" name="" value="" id="add_003">
+									<label for="add_003"></label>
+								</div>
+							</td>
+							<td class="data data--center" style="width: 90px; min-width: 90px;">
+								<span class="holder">1958</span>
+							</td>
+							<td class="data">
+								<span>シティ開発株式会社</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="data data--center" style="width: 60px; min-width: 60px;">
+								<div class="md_toggle">
+									<input type="checkbox" name="" value="" id="add_004">
+									<label for="add_004"></label>
+								</div>
+							</td>
+							<td class="data data--center" style="width: 90px; min-width: 90px;">
+								<span class="holder">1958</span>
+							</td>
+							<td class="data">
+								<span>安心保険株式会社</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="data data--center" style="width: 60px; min-width: 60px;">
+								<div class="md_toggle">
+									<input type="checkbox" name="" value="" id="add_005" checked="">
+									<label for="add_005"></label>
+								</div>
+							</td>
+							<td class="data data--center" style="width: 90px; min-width: 90px;">
+								<span class="holder">1958</span>
+							</td>
+							<td class="data">
+								<span>セントラル商事株式会社</span>
+							</td>
+						</tr>
+					</tr>
+					<tr>
+						<td class="data data--center" style="width: 60px; min-width: 60px;">
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="add_006">
+								<label for="add_006"></label>
+							</div>
+						</td>
+						<td class="data data--center" style="width: 90px; min-width: 90px;">
+							<span class="holder">1958</span>
+						</td>
+						<td class="data">
+							<span>スマートホーム株式会社</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="data data--center" style="width: 60px; min-width: 60px;">
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="add_007">
+								<label for="add_007"></label>
+							</div>
+						</td>
+						<td class="data data--center" style="width: 90px; min-width: 90px;">
+							<span class="holder">1958</span>
+						</td>
+						<td class="data">
+							<span>サンライズ観光株式会社</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="data data--center" style="width: 60px; min-width: 60px;">
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="add_008" checked="">
+								<label for="add_008"></label>
+							</div>
+						</td>
+						<td class="data data--center" style="width: 90px; min-width: 90px;">
+							<span class="holder">1958</span>
+						</td>
+						<td class="data">
+							<span>シティ開発株式会社</span>
+						</td>
+					</tr>
+					</tbody>
+				</div>
+				</table>
+			</div>
+		</div>
+		<div class="actionArea actionArea--noFloat">
+			<div class="termSet">
+				<p class="termTitle">表示期間</p>
+				<div class="daySelect">
+					<input type="date" placeholder="日付を選択" class="form--line">
+					<span>～</span>
+					<input type="date" placeholder="日付を選択" class="form--line">
+				</div>
+			</div>
+			<div class="btnSet">
+				<button class="md_btn md_btn--second js_modalX">キャンセル</button>
+				<button class="md_btn js_modalX js_snackBar" data-target="Bar02">追加</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Modal01 -->
+
+<!-- Modal02 -->
+<div class="md_modal md_modal--rich modal02" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="title">
+			編集
+		</div>
+		<div class="contentArea">
+			<table class="md_table">
+				<tbody>
+					<tr class="tr">
+						<th>企業ID</th>
+						<td>1958</td>
+					</tr>
+					<tr class="tr">
+						<th>企業名</th>
+						<td>株式会社iroots</td>
+					</tr>
+					<tr class="tr">
+						<th>優先順位</th>
+						<td>
+							<span class="md_select form--w20">
+								<select name="" id="" class="form--line">
+									<option value="">選択する</option>
+									<option value="">1</option>
+									<option value="">2</option>
+									<option value="">3</option>
+								</select>
+							</span>
+						</td>
+					</tr>
+					<tr class="tr">
+						<th>表示期間</th>
+						<td>
+							<div class="daySelect">
+								<input type="date" placeholder="日付を選択" class="form--line">
+								<span>～</span>
+								<input type="date" placeholder="日付を選択" class="form--line">
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="actionArea actionArea--noFloat">
+			<button class="md_btn md_btn--second js_modalX">キャンセル</button>
+			<button class="md_btn js_snackBar js_modalX" data-target="Bar01">保存</button>
+		</div>
+	</div>
+</div>
+<!-- /Modal02 -->
+
+<!-- Modal03 -->
+<div class="md_modal modal03" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="Content">
+			<div class="textArea">
+				<div class="catch">削除確認</div>
+				<p class="copy">
+					優位表示企業を削除します。よろしいですか？
+				</p>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--medium js_modalX multiple js_snackBar" data-target="Bar03">削除</button><button class="md_btn md_btn--medium md_btn--second js_modalX multiple">キャンセル</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Modal03 -->
+
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+	<div class="contentWrap">
+
+		<!-- titleArea -->
+		<div class="titleArea">
+			<h2 class="mainTitle">スカウトリクエスト優先表示設定</h2>
+			<button class="md_btn md_btn--second md_btn--medium md_btn--icon js_modalOpen" data-modal="modal01"><span class="iconImgPart">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -2 15 15"><path fill="#767676" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"/></svg>
+			</span>優位表示企業を追加</button>
+		</div>
+		<!-- /titleArea -->
+		
+		<!-- md_table -->
+		<table class="md_table">
+			<thead>
+				<tr>
+					<th class="item item--center item--min">並び替え</th>
+					<th class="item item--center item--min">優先順位</th>
+					<th class="item item--center item--min">企業ID</th>
+					<th class="item">企業名</th>
+					<th class="item item--w10">期間</th>
+					<th class="item item--w40"></th>
+				</tr>
+			</thead>
+			<tbody id="draggable-list">
+					<tr data-id="item01" class="draggableItem" draggable="true">
+						<td class="data data--center">
+							<div class="drag_handle">
+								<span class="iconImgPart">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18"><g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)"><path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 .5h19v19H0z"/></clipPath></defs></svg>
+								</span>
+							</div>
+						</td>
+						<td class="data data--center">
+							<span class="holder">1</span>
+						</td>
+						<td class="data data--center">
+							<span class="holder">1958</span>
+						</td>
+						<td class="data">
+							<span>スマートホーム株式会社</span>
+						</td>
+						<td class="data">
+							<span class="holder">2023/10/23 <br>～ 2023/10/24</span>
+						</td>
+						<td class="data data--btn">
+							<div class="btnSet">
+								<button class="md_btn md_btn--medium js_modalOpen" data-modal="modal02">編集</button>
+								<button class="md_btn md_btn--medium md_btn--second js_modalOpen" data-modal="modal03">削除</button>
+							</div>
+						</td>
+					</tr>
+					<tr data-id="item02" class="draggableItem" draggable="true">
+						<td class="data data--center">
+							<div class="drag_handle">
+								<span class="iconImgPart">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18"><g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)"><path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 .5h19v19H0z"/></clipPath></defs></svg>
+								</span>
+							</div>
+						</td>
+						<td class="data data--center">
+							<span class="holder">2</span>
+						</td>
+						<td class="data data--center">
+							<span class="holder">1958</span>
+						</td>
+						<td class="data">
+							<span>サンライズ観光株式会社</span>
+						</td>
+						<td class="data">
+							<span class="holder">2023/9/16 <br>～ 2023/10/1</span>
+						</td>
+						<td class="data data--btn">
+							<div class="btnSet">
+								<button class="md_btn md_btn--medium js_modalOpen" data-modal="modal02">編集</button>
+								<button class="md_btn md_btn--medium md_btn--second js_modalOpen" data-modal="modal03">削除</button>
+							</div>
+						</td>
+					</tr>
+					<tr data-id="item03" class="draggableItem" draggable="true">
+						<td class="data data--center">
+							<div class="drag_handle">
+								<span class="iconImgPart">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 18 18"><g fill="#CCC" stroke="#CCC" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#a)"><path d="M6.333 5.25a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 10a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM6.333 14.75a.792.792 0 1 0 1.584 0 .792.792 0 0 0-1.583 0ZM11.084 5.25a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 10a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0ZM11.084 14.75a.792.792 0 1 0 1.583 0 .792.792 0 0 0-1.583 0Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 .5h19v19H0z"/></clipPath></defs></svg>
+								</span>
+							</div>
+						</td>
+						<td class="data data--center">
+							<span class="holder">3</span>
+						</td>
+						<td class="data data--center">
+							<span class="holder">1958</span>
+						</td>
+						<td class="data">
+							<span>シティ開発株式会社</span>
+						</td>
+						<td class="data">
+							<span class="holder">2023/9/25 <br>～ 2023/10/11</span>
+						</td>
+						<td class="data data--btn">
+							<div class="btnSet">
+								<button class="md_btn md_btn--medium js_modalOpen" data-modal="modal02">編集</button>
+								<button class="md_btn md_btn--medium md_btn--second js_modalOpen" data-modal="modal03">削除</button>
+							</div>
+						</td>
+					</tr>
+			</tbody>
+		</table>
+		<!-- /md_table -->
+	</div>
+<!-- Container Start --></div><!-- /Container Start -->
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.13.0/Sortable.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('.grabArea').hover(
+			function() {
+				$(this).closest('tr').addClass('hoverColor');
+			},
+			function() {
+				$(this).closest('tr').removeClass('hoverColor');
+			}
+		);
+	});
+</script>
+<script>
+var draggableList = document.getElementById('draggable-list');
+
+
+    Sortable.create(draggableList, {
+        animation: 150,
+        handle: '.drag_handle', // ドラッグハンドルとして使われる要素を指定
+            onEnd: function (evt) {
+                var itemEl = evt.item;
+                var taskId = itemEl.dataset.id; // ドラッグされた要素のIDを取得
+                var newOrder = []; // 新しい並び順を保持する配列
+
+
+                // テーブル内の各行をループして、新しい並び順を取得
+                var rows = draggableList.querySelectorAll('tr.draggableItem');
+                rows.forEach(function(row) {
+                    newOrder.push(row.dataset.id); // 各行のIDを新しい並び順配列に追加
+                });
+
+
+                // CSRFトークンを取得
+                var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+
+                // サーバーに新しい並び順を送信する
+                saveTaskOrder(newOrder, csrfToken);
+            },
+    });
+</script>
+</body>
+</html>

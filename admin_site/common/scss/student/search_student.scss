@@ -1,0 +1,143 @@
+@charset "utf-8";
+
+/* --------------------------------------------------
+ Import 
+-------------------------------------------------- */
+
+@import "../_default";
+
+
+/* ------------ Size ------------ */
+
+/* Width */
+$w_wrap: 1200px; 
+$w_drawer: 300px; 
+$w_sideMenu: 200px; 
+$w_centeringElement: 700px; 
+$w_btn_big: 150px;
+
+
+/* ------------ Typography ------------ */
+
+/* Font Size */
+$fs_biggest:  32px; 
+$fs_bigger:   24px;  
+$fs_big:      18px;
+$fs_title:    17px;
+$fs_medium:   16px;  
+$fs_small:    14px;  
+$fs_main:     13px;
+$fs_smaller:  11px;  
+$fs_smallest: 10px; 
+
+
+/* ユーザー情報登録用テーブル */
+.contentWrap {
+    .titleArea { justify-content: space-between;
+        &.ankerlink { margin-bottom: 8px; padding: 0 4px 0 0; font-size: 15px;
+            .formTitle { scroll-padding-top: 70px; margin-bottom: 0; }
+            .btnArea ul { display: flex; 
+                li { margin-left: 25px; 
+                    a { color: #667085; font-size: 12px; text-decoration: underline; 
+                        &:hover { opacity: 0.8; }
+                    }
+                }
+            }
+        }
+    }
+    .md_table { overflow: visible;
+        + .ankerlink { margin-top: 40px;}
+        &--university { 
+            th { background: #f9f9fc;; white-space: nowrap; }
+        }
+        tbody {
+            .first {
+                th { border-radius: 8px 0 0 0;}
+                td { border-radius: 0 8px 0 0;}
+            }
+            .last {
+                th { border-bottom: none; border-radius: 0 0 0 8px;}
+                td { border-bottom: none; border-radius: 0 0 8px 0;}
+            }
+            td {
+                .md_toggle + .md_toggle { margin-top: 10px; }
+                .flexArea { display: flex; align-items: center;
+                    + .flexArea { margin-top: 10px;}
+                    + .flexSelect { margin-top: 15px;}
+                    &.width-2clm{ .md_toggle { flex: 1; } }
+                    &.width-wide{ .md_toggle { flex-basis: 223px; } }
+                    &.width-nallow{ .md_toggle { flex-basis: 135px; } }
+                    .md_toggle { 
+                        + .md_toggle { margin-top: 0; margin-left: 20px; }
+                    }
+                    input + span { margin-left: 10px; }
+                    input + input { margin-left: 10px; }
+                }
+                .question-icon {margin-left: 5px; position: relative;
+                    svg { position: relative; top: 2px; }
+                    .fukidashi {
+                        display: none; position: absolute; bottom: 30px; left: -193px; width: 400px; padding: 15px; background: #fff; z-index: 100; border: 1px solid #ddd; border-radius: 8px; text-align: left;
+                        &.show { display: block; }
+                        // 角丸三角形
+                        &::before { content: ''; position: absolute; width: 0; height: 0; left: calc( 50% - 10px ); display: block; border-style: solid; border-color: transparent #fff #fff transparent; bottom: calc( 10px *-1 ); border-width: 11px; border-radius: 0 0 2px 0; box-shadow: 1px 1px 0 #ddd; transform: scaleX(0.6) rotate(45deg); }
+                    }
+                }
+                .md_select { select { padding-right: 30px; } }
+                .flexSelect {
+                    select { padding-right: 30px; }
+                    span + span { margin-left: 10px; }
+                }
+                // .bgArea { background: #F9F9FC; border-radius: 8px; padding: 15px; display: flex; align-items: center; justify-content: space-between;
+                //     + .bgArea { margin-top: 10px; }
+                //     .close { border-left: 1px solid #ddd; padding: 15px 0 15px 15px; }
+                // }
+                .terms { display: flex; align-items: stretch; justify-content: space-between; height: auto; margin-bottom: 10px; background: #f9f9fc; border-radius: 6px;
+                    .flexSelect , .daySelect, .root-search {  padding: 15px 0 15px 15px; }
+                    .selectSet { display: flex; padding: 15px 0 15px 15px; }
+                    .deleteArea { display: block; position: relative; flex: 0 1 auto; text-align: center; width: 30px; cursor: pointer; background: #f9f9fc; border-radius: 0 6px 6px 0;
+                        .iconImgPart { width: 10px; height: 10px; }
+                        &:before { content: ""; display: inline-block; position: absolute; margin: 10px 0; width: 1px; height: calc(100% - 20px); background-color: #eee; left: 0; top: 0; }
+                        &:hover { filter: brightness(97%); }
+                    }
+                    &:last-child { margin-bottom: 15px; }
+                }
+                .daySelect {
+                    span { margin: 0 10px; }
+                }
+                .root-search { display: flex;
+                    select { padding-right: 30px; }
+                    span { margin-left: 10px; }
+                }
+                .reserve { 
+                    span { margin-left: 10px; }
+                }
+                .uploadArea { display: flex; justify-content: left; align-items: center; 
+                    button { margin-left: 10px; }
+                }
+                .addBtn { margin-top: 10px; }
+                .help { font-size: $fs_main; line-height: 1.35; color: #667085;}
+                div + .help { margin-top: 10px; }
+                .help + div { margin-top: 10px; }
+                
+            }
+        }
+    }
+}
+
+
+.md_snackBar {
+    .base {
+        .check { margin-left: 30px; border-bottom: 1px solid #fff; font-size: $fs_main; color: #fff; cursor: pointer;
+            &:hover { opacity: 0.8; }
+            + .close { margin-left: 10px; }
+        }
+        
+    }
+}
+
+#suggestions { list-style-type: none; margin: 0; padding: 0; position: absolute; z-index: 999; background: #fff; width: calc(20vw + 2px); max-height: 150px; overflow-y: auto; 
+    li { border: 1px solid #ccc; border-bottom: none; padding: 8px; width: calc(100% - 2px); font-size: $fs_main; line-height: 1.35; cursor: pointer; 
+    &:last-child { border: 1px solid #ccc; }
+    &:hover { background-color: #ddd; }
+    }
+}

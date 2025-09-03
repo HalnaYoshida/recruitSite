@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>メッセージ予約 - 学生管理</title>
+
+<link rel="stylesheet" href="../common/css/student/list_messageReserve.css"/>
+</head>
+<body>
+
+<!-- Modal -->
+<div class="md_modal modal01" style="display: none;">
+    <button class="bgLayer js_modalX"></button>
+    <div class="modalSet">
+        <div class="Content">
+            <div class="textArea">
+                <div class="catch">削除確認</div>
+                <p class="copy">
+                    メッセージを削除します。よろしいですか？
+                </p>
+            </div>
+            <div class="actionArea">
+                <button class="md_btn md_btn--medium multiple js_modalX js_snackBar js_delete" data-target="Bar02">削除</button>
+                <button class="md_btn md_btn--medium md_btn--second multiple js_modalX">キャンセル</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar01">
+	<div class="base">
+		<div class="text">メッセージを編集しました。</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar02">
+    <div class="base">
+        <div class="text">メッセージを削除しました。</div>
+        <button class="close js_snackBarX">✕</button>
+    </div>
+</div>
+<!-- /snackBar -->
+
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+	<div class="contentWrap">
+		
+		<!-- titleArea -->
+		<div class="titleArea">
+			<h2 class="mainTitle">メッセージ予約一覧</h2>
+		</div>
+		<!-- /titleArea -->
+
+		<!-- md_table -->
+		<table class="md_table">
+			<thead>
+				<tr>
+					<th class="item">内容</th>
+					<th class="item item--C item--min">種別</th>
+					<th class="item item--C item--w10">送信状況</th>
+                    <th class="item item--C item--min">送信数</th>
+                    <th class="item item--C item--min">開封数</th>
+                    <th class="item item--C item--min">クリック数</th>
+                    <th class="item item--C item--min">送信日時</th>
+					<th class="item" style="width: 10%;"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr id="delete01">
+					<td class="data">
+                        <div class="messageArea">
+						    <div class="messageTitle">DMテスト（URLあり）</div>
+                            <div class="messageText js-textTrim">&lt;name&gt;さん はじめまして、こんにちは！ irootsでインターンをしている23卒就活生（現在大学3年生）の大木です。 前回の村上さんののの</div>
+                        </div>
+					</td>
+					<td class="data data--C">
+						<span class="md_chip md_chip--blue"><span class="chipTxt">メール</span></span>
+					</td>
+					<td class="data data--C"><span class="holder">送信待ち</span><a class="reserveCount" href="searchStudent_searchResult.html">送信予定数4名</a></td>
+                    <td class="data data--C data--min"><span class="holder">123456</span></td>
+                    <td class="data data--C data--min"><span class="holder">123456</span></td>
+                    <td class="data data--C data--min"><span class="holder">123456</span></td>
+                    <td class="data data--C data--min"><span class="holder">2023/10/23<br>16:00</span></td>
+					<td class="data data--C data--btn">
+						<div class="btnSet">
+							<div class="btnCell">
+								<a href="messageReserve_mail_renew.html" class="md_btn md_btn--medium">編集</a>
+							</div>
+							<div class="btnCell">
+								<button class="md_btn md_btn--medium md_btn--second js_modalOpen" data-modal="modal01">削除</button>
+							</div>
+						</div>
+					</td>
+				</tr>
+                <tr>
+                    <td class="data">
+                        <div class="messageArea">
+                            <div class="messageText js-textTrim">&lt;name&gt;さん はじめまして、こんにちは！ irootsでインターンをしている23卒就活生（現在大学3年生）の大木です。 前回の村上さんののの</div>
+                        </div>
+                    </td>
+                    <td class="data data--C">
+                        <span class="md_chip md_chip--green"><span class="chipTxt">メッセージ</span></span>
+                    </td>
+                    <td class="data data--C"><span class="holder">送信待ち</span><a class="reserveCount" href="searchStudent_searchResult.html">送信予定数4名</a></td>
+                    <td class="data data--C data--min"><span class="holder">123456</span></td>
+                    <td class="data data--C data--min"><span class="holder">123456</span></td>
+                    <td class="data data--C data--min"><span class="holder">123456</span></td>
+                    <td class="data data--C data--min"><span class="holder">2023/10/23<br>16:00</span></td>
+                    <td class="data data--C data--btn">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="messageReserve_message_renew.html" class="md_btn md_btn--medium">編集</a>
+                            </div>
+                            <div class="btnCell">
+                                <button class="md_btn md_btn--medium md_btn--second js_modalOpen" data-modal="modal01">削除</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data">
+                        <div class="messageArea">
+                            <div class="messageTitle">DMテスト（URLあり）</div>
+                            <div class="messageText js-textTrim">&lt;name&gt;さん はじめまして、こんにちは！ irootsでインターンをしている23卒就活生（現在大学3年生）の大木です。 前回の村上さんののの</div>
+                        </div>
+                    </td>
+                    <td class="data data--C">
+                        <span class="md_chip md_chip--orange"><span class="chipTxt">お知らせ</span></span>
+                    </td>
+                    <td class="data data--C"><span class="holder">送信待ち</span><a class="reserveCount" href="searchStudent_searchResult.html">送信予定数4名</a></td>
+                    <td class="data data--C data--min"><span class="holder">123456</span></td>
+                    <td class="data data--C data--min"><span class="holder">123456</span></td>
+                    <td class="data data--C data--min"><span class="holder">123456</span></td>
+                    <td class="data data--C data--min"><span class="holder">2023/10/23<br>16:00</span></td>
+                    <td class="data data--C data--btn">
+                        <div class="btnSet">
+                            <div class="btnCell">
+                                <a href="messageReserve_information_renew.html" class="md_btn md_btn--medium">編集</a>
+                            </div>
+                            <div class="btnCell">
+                                <button class="md_btn md_btn--medium md_btn--second js_modalOpen" data-modal="modal01">削除</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data">
+                        <div class="messageArea">
+                            <div class="messageTitle">DMテスト（URLあり）</div>
+                            <div class="messageText js-textTrim">&lt;name&gt;さん はじめまして、こんにちは！ irootsでインターンをしている23卒就活生（現在大学3年生）の大木です。 前回の村上さんののの</div>
+                        </div>
+                    </td>
+                    <td class="data data--C">
+                        <span class="md_chip md_chip--blue"><span class="chipTxt">メール</span></span>
+                    </td>
+                    <td class="data data--C"><span class="holder">送信済み</span></td>
+                    <td class="data data--C data--min"><span class="holder">123456</span></td>
+                    <td class="data data--C data--min"><span class="holder">123456</span></td>
+                    <td class="data data--C data--min"><span class="holder">123456</span></td>
+                    <td class="data data--C data--min"><span class="holder">2023/10/23<br>16:00</span></td>
+                    <td class="data data--C data--btn">
+                        <div class="btnCell">
+                            <a href="messageReserve_mail_desc.html" class="md_btn md_btn--medium">確認</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data">
+                        <div class="messageArea">
+                            <div class="messageText js-textTrim">&lt;name&gt;さん はじめまして、こんにちは！ irootsでインターンをしている23卒就活生（現在大学3年生）の大木です。 前回の村上さんののの</div>
+                        </div>
+                    </td>
+                    <td class="data data--C">
+                        <span class="md_chip md_chip--green"><span class="chipTxt">メッセージ</span></span>
+                    </td>
+                    <td class="data data--C"><span class="holder">送信済み</span></td>
+                    <td class="data data--C data--min"><span class="holder">123456</span></td>
+                    <td class="data data--C data--min"><span class="holder">123456</span></td>
+                    <td class="data data--C data--min"><span class="holder">123456</span></td>
+                    <td class="data data--C data--min"><span class="holder">2023/10/23<br>16:00</span></td>
+                    <td class="data data--C data--btn">
+                        <div class="btnCell">
+                            <a href="messageReserve_message_desc.html" class="md_btn md_btn--medium">確認</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data">
+                        <div class="messageArea">
+                            <div class="messageTitle">DMテスト（URLあり）</div>
+                            <div class="messageText js-textTrim">&lt;name&gt;さん はじめまして、こんにちは！ irootsでインターンをしている23卒就活生（現在大学3年生）の大木です。 前回の村上さんののの</div>
+                        </div>
+                    </td>
+                    <td class="data data--C">
+                        <span class="md_chip md_chip--orange"><span class="chipTxt">お知らせ</span></span>
+                    </td>
+                    <td class="data data--C"><span class="holder">送信済み</span></td>
+                    <td class="data data--C data--min"><span class="holder">123456</span></td>
+                    <td class="data data--C data--min"><span class="holder">123456</span></td>
+                    <td class="data data--C data--min"><span class="holder">123456</span></td>
+                    <td class="data data--C data--min"><span class="holder">2023/10/23<br>16:00</span></td>
+                    <td class="data data--C data--btn">
+                        <div class="btnCell">
+                            <a href="messageReserve_information_desc.html" class="md_btn md_btn--medium">確認</a>
+                        </div>
+                    </td>
+                </tr>
+			</tbody>
+		</table>
+		<!-- /md_table -->
+		 
+	</div>
+<!-- Container End --></div><!-- /Container End -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+<script>
+    $(document).ready(function() {
+  // .js_delete 要素にクリックイベントを追加
+  $('.js_delete').click(function() {
+    $('#delete01').fadeOut('');
+  });
+});
+</Script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>新規会員登録 | iroots</title>
+<link rel="stylesheet" href="../common/css/signup/form.css"/>
+</head>
+<body>
+
+
+<!-- header -->   	
+<header class="md_header md_header--signup">
+	<div class="logo"> <a href="#"> <img src="../imageFile/logo_white.svg" alt=""> </a> </div>
+</header>
+<!-- /header -->
+
+
+<div class="container container--signup">
+	<div class="navWrap">
+		<div class="navArea">
+			<div class="titleSet">
+				<div class="title">人柄・経歴（1/4）</div>
+				<p class="copy">もっとも重要な項目です。ありのままを書いてみましょう。</p>
+			</div>
+			<ul class="stepBar">
+				<li class="step active"></li>
+				<li class="step active"></li>
+				<li class="step active"></li>
+				<li class="step active"></li>
+				<li class="step"></li>
+				<li class="step"></li>
+				<li class="step"></li>
+				<li class="step"></li>
+				<li class="step"></li>
+				<li class="step"></li>
+			</ul>
+		</div>
+	</div>
+	<div class="contentWrap">
+		<div class="formArea">
+			<div class="formSet">
+				<div class="title">経歴タグ</div>
+				<div class="sub">当てはまる経歴タグを選択してください。（複数選択可）</div>
+				<div class="form form--tag">
+					<div class="md_tagSet">
+						<span class="md_tag">一つのことに熱中した経験</span>
+						<span class="md_tag">まわりに流されず自分で決断</span>
+						<span class="md_tag">挫折を乗り越えた経験</span>
+						<span class="md_tag">情報収集・インプット大好き</span>
+						<span class="md_tag">バックパッカー</span>
+						<span class="md_tag">アルバイトをめっちゃやってきた</span>
+						<span class="md_tag">ぶっちゃけ苦労人</span>
+						<span class="md_tag">自他ともに認める遊び人</span>
+						<span class="md_tag">あまのじゃく・ちょっと変わり者</span>
+						<span class="md_tag">いろんなコミュニティに知り合いがいる</span>
+						<span class="md_tag">オタク気質・サブカル好き</span>
+						<span class="md_tag">1位になった経験</span>
+						<span class="md_tag">学内成績優秀者</span>
+						<span class="md_tag">長期インターン経験</span>
+						<span class="md_tag">10名以上のチームでリーダーシップ発揮</span>
+						<span class="md_tag">自分でイベント・コンテンツを企画</span>
+						<span class="md_tag">自分のビジネスで収益化（起業含む）</span>
+						<span class="md_tag">海外で2ヵ月以上のプロジェクト参加</span>
+						<span class="md_tag">組織を新規立ち上げ</span>
+						<span class="md_tag">体育会所属</span>
+						<span class="md_tag">学生団体所属</span>
+						<span class="md_tag">ビジコン参加経験</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="btnArea">
+			<div class="btnSet column">
+				<a href="form_careerDesc.html" class="md_btn md_btn--medium md_btn--second">スキップ</a>
+				<a href="form_careerDesc.html" class="md_btn md_btn--submit">次へ進む</a>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+<!-- md_fixBar -->
+<div class="md_fixBar js_fixBarHide">
+	<div class="btnSet column">
+		<a href="form_careerDesc.html" class="md_btn md_btn--medium md_btn--second">スキップ</a>
+		<a href="form_careerDesc.html" class="md_btn md_btn--submit">次へ進む</a>
+	</div>
+</div>
+<!-- /md_fixBar -->
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script>
+	//タブ選択時の挙動
+	$(".form--tag .md_tag").click(function () {
+		$(this).toggleClass('active');
+	});
+
+
+</script>
+</body>
+</html>

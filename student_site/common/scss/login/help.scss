@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+/* --------------------------------------------------
+ Import 
+-------------------------------------------------- */
+
+@import "../_default";  
+
+
+.copyArea { margin-top: 24px; 
+    .copySet {
+        .catch { font-size: 16px; font-weight: bold; line-height: $lh_small;
+            &--big { font-size: 18px ; text-align: left;}
+        }
+        .causeList {
+            &--anchor {  margin-top: 20px; padding: 16px ; background-color: $col_bg_buleGray; border-radius: 3px;
+                .cause {   padding-left: 1em; text-indent: -1em; font-size: 12px; text-align: left;color: $col_sub; line-height: $lh_medium; 
+                    &:before { content: "●"; position: relative; top: -1px; margin-right: 4px; }
+                    .link { text-decoration: underline;}
+                    + .cause { margin-top: 10px;}
+                }
+            }
+        } 
+    }
+    // For PC
+    @media only screen and (min-width: $w_break_tablet) { margin-top: 48px;   
+    
+        .copySet {
+            .catch { 
+                &--big { font-size: 22px ; text-align: left;}
+            }
+            .causeList {
+                &--anchor {  margin-top: 28px; padding: 20px ; 
+                    .cause { font-size: 14px; 
+                        &:before { margin-right: 6px; }
+                        .link { @include transition;
+                            &:hover { color: $col_txt_hover; }
+                        }
+                        + .cause { margin-top: 12px;}
+                    }
+                }
+            } 
+        }
+    }
+}
+
+
+.causeArea {
+    .cause { padding-top:24px; 
+        .titleSet {
+            .title { font-size: 16px; font-weight: bold; line-height: $lh_medium;}
+        }
+        .copySet { margin-top: 12px;
+            .copy { font-size: 14px; line-height: $lh_medium;
+                .indent {display: inline-block; margin-left: 1em; line-height: inherit; }
+                .md_textLink { font-size: inherit;}
+            }
+        }
+        + .cause { margin-top: 24px; border-top: 1px solid $col_border;}
+    }
+     // For PC
+     @media only screen and (min-width: $w_break_tablet) {   
+        .cause { padding-top: 32px; 
+            .titleSet {
+                .title { font-size: 18px;}
+            }
+            .copySet { margin-top: 16px;
+                .copy { font-size: 16px; 
+                    .indent { display: inline-block; margin-left: 1em; line-height: inherit; }
+                }
+            }
+            + .cause { margin-top: 32px; }
+        }
+    }
+    
+}  
+.linkArea { margin-top: 32px;  
+    .md_textLink { margin: auto;}
+     // For PC
+     @media only screen and (min-width: $w_break_tablet) { margin-top: 56px;}
+} 

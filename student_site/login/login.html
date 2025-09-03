@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>ログイン | iroots</title>
+<link rel="stylesheet" href="../common/css/login/login.css"/>
+</head>
+<body>
+
+
+<!-- header -->   	
+<header class="md_header">
+	<div class="logo"> <a href="#"> <img src="../imageFile/logo_white.svg" alt=""> </a> </div>
+</header>
+<!-- /header -->
+
+<div class="container container--login">
+	<div class="titleBar">
+		<div class="titleArea">
+			<div class="titleSet">
+				<div class="title">ログイン</div>
+			</div>
+		</div>
+	</div>
+	<div class="contentWrap">
+		<div class="formArea">
+
+			<!-- md_errorCopy -->  
+			<div class="md_errorCopy" style="display: none;">
+				<p class="errorCatch"><span class="iconImgPart">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 150 1100 1100"><path d="m993.554 865.69-.267-.267-364.968-609.718c0-.267-.267-.267-.267-.544-23.986-38.818-65.23-61.994-110.515-61.994s-86.524 23.182-110.246 61.727c-.267.267-.544.544-.544 1.078L41.509 865.69s0 .267-.267.267c-11.321 19.409-17.52 42.051-17.52 64.96 0 70.622 57.416 128.574 127.767 129.382h731.833c70.622-.811 128.036-58.76 128.036-129.382 0-22.909-6.199-45.551-17.787-65.23zM882.5 974.05H152.564c-23.453-.267-42.318-19.676-42.318-43.129 0-7.544 1.889-14.821 5.66-21.298l364.968-609.448.267-.267c8.088-12.665 21.564-20.22 36.661-20.22s28.841 7.821 36.929 20.753L919.159 909.35c3.777 6.466 5.66 14.021 5.66 21.564.267 23.453-18.865 42.86-42.318 43.129zM517.53 456.516c-23.72 0-43.129 19.409-43.129 43.129v172.51c0 23.72 19.409 43.129 43.129 43.129s43.129-19.409 43.129-43.129v-172.51c0-23.72-19.409-43.129-43.129-43.129zm0 345.023c-11.321 0-22.375 4.577-30.461 12.665s-12.665 19.142-12.665 30.461 4.577 22.375 12.665 30.461c8.088 8.088 19.142 12.665 30.461 12.665s22.375-4.577 30.461-12.665c8.088-8.088 12.665-19.142 12.665-30.461s-4.577-22.375-12.665-30.461c-8.088-8.088-19.142-12.665-30.461-12.665z" fill="#f04438"></path></svg>
+				</span>メールアドレスまたはパスワードが正しくありません</p>
+			</div>
+			<!-- /md_errorCopy --> 
+
+			<!-- md_informationCopy -->  
+			<div class="md_informationCopy js_resetDone" style="display: none;">
+				<div class="catchSet">
+					<div class="catch">パスワードを再設定しました</div>
+				</div>
+				<div class="copySet">
+					<p class="copy">新しいパスワードでログインをお願いいたします。</p>
+				</div>
+			</div>
+			<!-- /md_informationCopy -->  
+
+			<!-- md_informationCopy -->  
+			<div class="md_informationCopy js_verifyDone" style="display: none;">
+				<div class="catchSet">
+					<div class="catch">メールアドレス認証が完了しました</div>
+				</div>
+				<div class="copySet">
+					<p class="copy">再度ログインをお願いいたします。</p>
+				</div>
+			</div>
+			<!-- /md_informationCopy -->  
+
+			<div class="formSet">
+				<div class="title">Emailアドレス</div>
+				<div class="form">
+					<input type="email" placeholder="Emailアドレスを入力" class="form--line form--w100" id="address">
+					<p class="errorMessage" style="display: none;"><span class="iconImgPart">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 150 1100 1100"><path d="m993.554 865.69-.267-.267-364.968-609.718c0-.267-.267-.267-.267-.544-23.986-38.818-65.23-61.994-110.515-61.994s-86.524 23.182-110.246 61.727c-.267.267-.544.544-.544 1.078L41.509 865.69s0 .267-.267.267c-11.321 19.409-17.52 42.051-17.52 64.96 0 70.622 57.416 128.574 127.767 129.382h731.833c70.622-.811 128.036-58.76 128.036-129.382 0-22.909-6.199-45.551-17.787-65.23zM882.5 974.05H152.564c-23.453-.267-42.318-19.676-42.318-43.129 0-7.544 1.889-14.821 5.66-21.298l364.968-609.448.267-.267c8.088-12.665 21.564-20.22 36.661-20.22s28.841 7.821 36.929 20.753L919.159 909.35c3.777 6.466 5.66 14.021 5.66 21.564.267 23.453-18.865 42.86-42.318 43.129zM517.53 456.516c-23.72 0-43.129 19.409-43.129 43.129v172.51c0 23.72 19.409 43.129 43.129 43.129s43.129-19.409 43.129-43.129v-172.51c0-23.72-19.409-43.129-43.129-43.129zm0 345.023c-11.321 0-22.375 4.577-30.461 12.665s-12.665 19.142-12.665 30.461 4.577 22.375 12.665 30.461c8.088 8.088 19.142 12.665 30.461 12.665s22.375-4.577 30.461-12.665c8.088-8.088 12.665-19.142 12.665-30.461s-4.577-22.375-12.665-30.461c-8.088-8.088-19.142-12.665-30.461-12.665z" fill="#f04438"></path></svg>
+					</span>メールアドレスは正しい形式で入力してください</p>
+				</div>
+			</div>
+			<div class="formSet">
+				<div class="title">パスワード</div>
+				<div class="form">
+					<input type="password" placeholder="パスワードを入力" class="form--line form--w100" id="password">
+					<p class="errorMessage" style="display: none;"><span class="iconImgPart">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 150 1100 1100"><path d="m993.554 865.69-.267-.267-364.968-609.718c0-.267-.267-.267-.267-.544-23.986-38.818-65.23-61.994-110.515-61.994s-86.524 23.182-110.246 61.727c-.267.267-.544.544-.544 1.078L41.509 865.69s0 .267-.267.267c-11.321 19.409-17.52 42.051-17.52 64.96 0 70.622 57.416 128.574 127.767 129.382h731.833c70.622-.811 128.036-58.76 128.036-129.382 0-22.909-6.199-45.551-17.787-65.23zM882.5 974.05H152.564c-23.453-.267-42.318-19.676-42.318-43.129 0-7.544 1.889-14.821 5.66-21.298l364.968-609.448.267-.267c8.088-12.665 21.564-20.22 36.661-20.22s28.841 7.821 36.929 20.753L919.159 909.35c3.777 6.466 5.66 14.021 5.66 21.564.267 23.453-18.865 42.86-42.318 43.129zM517.53 456.516c-23.72 0-43.129 19.409-43.129 43.129v172.51c0 23.72 19.409 43.129 43.129 43.129s43.129-19.409 43.129-43.129v-172.51c0-23.72-19.409-43.129-43.129-43.129zm0 345.023c-11.321 0-22.375 4.577-30.461 12.665s-12.665 19.142-12.665 30.461 4.577 22.375 12.665 30.461c8.088 8.088 19.142 12.665 30.461 12.665s22.375-4.577 30.461-12.665c8.088-8.088 12.665-19.142 12.665-30.461s-4.577-22.375-12.665-30.461c-8.088-8.088-19.142-12.665-30.461-12.665z" fill="#f04438"></path></svg>
+					</span>パスワードは正しい形式で入力してください</p>
+				</div>
+			</div>
+			
+		</div>
+		<div class="btnArea">
+			<div class="btnSet">
+				<a href="../scout/index.html" class="md_btn md_btn--submit md_btn--disable">メールアドレスでログイン</a>
+			</div>
+			<div class="linkSet">
+				<a href="password_renew.html" class="md_textLink">パスワードを忘れた方</a>
+				<a href="help_login.html" class="md_textLink">ログインでお困りの方</a>
+			</div>
+		</div>
+		<p class="orLead"></p>
+		<ul class="snsFormArea">
+			<li>
+				<a href="#" class="facebook loginBtn"><span class="logo"><img src="../imageFile/login/logo_facebook_white.png" alt=""></span><span class="label">Facebookでログイン</span></a>
+			</li>
+			<li>
+				<a href="#" class="apple loginBtn"><span class="logo"><img src="../imageFile/login/logo_apple_white.png" alt=""></span><span class="label">Appleでサインイン</span></a>
+			</li>
+			<li>
+				<a href="#" class="line loginBtn"><span class="logo"><img src="../imageFile/login/logo_line_white.png" alt=""></span><span class="label">LINEでログイン</span></a>
+			</li>
+
+		</ul>
+		<div class="signupArea">
+			<p class="copy">まだ会員登録していない方は<a href="../signup/form_basic.html" class="md_textLink">こちらから登録</a>して下さい</p>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+<script>
+	$(function() {
+	// 変数制御
+	var URL = location.href;
+	var URLSet = URL.split('?');
+	if(URLSet[1] == 'error'){ //バリデーションエラー
+		$('#address').next('.errorMessage').show();
+		$('#address').addClass('md_error');
+		$('#address').attr('value','test@aaaa');
+		$('#password').attr('value','1234abcd');
+		$('.md_btn--submit').removeClass('md_btn--disable');
+	}
+	if(URLSet[1] == 'error_ptn'){ //全体エラー
+		$('.md_errorCopy').show();
+		$('#address').attr('value','test@gmail.com');
+		$('#password').attr('value','1234abcd');
+		$('.md_btn--submit').removeClass('md_btn--disable');
+		$('#address,#password').addClass('md_error');
+	}
+	if(URLSet[1] == 'resetDone'){ //パスワード再設定完了後
+		$('.js_resetDone').show();
+	}
+	if(URLSet[1] == 'verifyDone'){ //アドレス認証完了後
+		$('.js_verifyDone').show();
+	}
+});
+
+
+$(function() {
+	$('#address, #password').on('input', function() {
+		var address = $('#address').val().trim() !== ""; 
+		var password = $('#password').val().trim() !== "";
+
+		if (address && password) { 
+			$(".md_btn--submit").removeClass('md_btn--disable'); 
+		} else {
+			$(".md_btn--submit").addClass('md_btn--disable');
+		}
+	});
+});
+
+ 
+
+</script>
+</body>
+</html>

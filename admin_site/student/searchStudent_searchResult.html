@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>学生検索 - 学生管理</title>
+
+<link rel="stylesheet" href="../common/css/student/search_studentResult.css"/>
+</head>
+<body>
+
+<!-- Modal -->
+<div class="md_modal modal90" style="display: none;">
+    <button class="bgLayer js_modalX"></button>
+    <div class="modalSet">
+        <div class="Content">
+            <div class="textArea">
+                <div class="catch">メッセージ確認</div>
+                <p class="copy">
+                    メッセージを送信します。よろしいですか？
+                </p>
+            </div>
+            <div class="actionArea">
+                <button class="md_btn md_btn--medium md_btn--second md_btn--cancel multiple js_modalX">キャンセル</button>
+                <button class="md_btn md_btn--medium md_btn--second multiple insertLink">予約送信</button>
+                <button class="md_btn md_btn--medium multiple js_modalX" onclick="location.href='?snackBar04'">今すぐ送信</button>
+            </div>
+        </div>
+    </div>
+    <div class="modalSet modalSet--reserve">
+        <div class="Content Content--form">
+            <div class="titleArea">
+                <div class="catch">送信日時指定</div>
+            </div>
+            <div class="formArea">
+                <div class="md_table">
+                    <table>
+                        <tr>
+                            <th>予約日時</th>
+                            <td>
+                                <input type="date" placeholder="日付を選択" value="2024-05-19" class="form--line" style="min-width: 110px;">
+                                <span class="md_select form--w10" style="">
+                                    <select name="" id="" class="form--line" style="min-width: 110px;">
+                                        <option value="" class="">14:00</option>
+                                    </select>
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="actionArea">
+                <button class="md_btn md_btn--second multiple js_modalX">キャンセル</button>
+                <button class="md_btn multiple js_modalX js_snackBar" data-target="Bar03">予約送信</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal -->
+
+<!-- Modal -->
+<div class="md_modal modal91" style="display: none;">
+    <button class="bgLayer js_modalX"></button>
+    <div class="modalSet modalSet--reserve" style="display: block;">
+        <div class="Content Content--form">
+            <div class="titleArea">
+                <div class="catch">会員ステータス変更</div>
+            </div>
+            <div class="formArea">
+                <div class="md_table">
+                    <table>
+                        <tr>
+                            <th>会員ステータス</th>
+                            <td>
+                                <div class="md_toggle">
+                                    <input type="checkbox" name="" id="check_057">
+                                    <label for="check_057">スカウトを受け取る</label>
+                                </div>
+                                <div class="md_toggle">
+                                    <input type="checkbox" name="" id="check_058">
+                                    <label for="check_058">スカウトを受け取らない(iroots)</label>
+                                </div>
+                                <div class="md_toggle">
+                                    <input type="checkbox" name="" id="check_059">
+                                    <label for="check_059">スカウトを受け取らない(その他)</label>
+                                </div>
+                                <div class="md_toggle">
+                                    <input type="checkbox" name="" id="check_060">
+                                    <label for="check_060">退会</label>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="actionArea">
+                <button class="md_btn md_btn--second multiple js_modalX">キャンセル</button>
+                <button class="md_btn multiple js_modalX js_snackBar" data-target="Bar07">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal -->
+
+<!-- Modal -->
+<div class="md_modal modal01" style="display: none;">
+    <button class="bgLayer js_modalX"></button>
+    <div class="modalSet">
+        <div class="Content">
+            <div class="textArea">
+                <div class="catch">パスワードリセット</div>
+                <p class="copy">
+                    パスワードをリセットします。よろしいですか？
+                </p>
+            </div>
+            <div class="actionArea">
+                <button class="md_btn md_btn--medium md_btn--second multiple js_modalX">キャンセル</button>
+                <button class="md_btn md_btn--medium multiple js_modalX js_snackBar" data-target="Bar02">リセット</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal -->
+
+<!-- Modal10 学生詳細 -->
+<div class="md_modal modal-solo-001" style="display: none;"></div>
+<!-- /Modal10 -->
+
+<!-- Modal10 学生詳細 -->
+<div class="md_modal modal-solo-002" style="display: none;"></div>
+<!-- /Modal10 -->
+
+<!-- Modal10 学生詳細 -->
+<div class="md_modal modal-solo-003" style="display: none;"></div>
+<!-- /Modal10 -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar01">
+    <div class="base">
+        <div class="text">設定を更新しました</div>
+        <button class="close js_snackBarX">✕</button>
+    </div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar02">
+    <div class="base">
+        <div class="text">パスワードをリセットしました</div>
+        <button class="close js_snackBarX">✕</button>
+    </div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar03">
+    <div class="base">
+        <div class="text">メッセージの予約投稿をしました</div>
+        <button class="check" onclick="location.href='list_messageReserve.html'">確認画面へ</button>
+        <button class="close js_snackBarX">✕</button>
+    </div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar04">
+    <div class="base">
+        <div class="text">メッセージを送信しました</div>
+        <button class="close js_snackBarX">✕</button>
+    </div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar05">
+    <div class="base">
+        <div class="text">お知らせを送信しました</div>
+        <button class="close js_snackBarX">✕</button>
+    </div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar06">
+    <div class="base">
+        <div class="text">メールを送信しました</div>
+        <button class="close js_snackBarX">✕</button>
+    </div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar07">
+    <div class="base">
+        <div class="text">会員ステータスを変更しました</div>
+        <button class="close js_snackBarX">✕</button>
+    </div>
+</div>
+<!-- /snackBar -->
+
+<!-- drawer -->
+<div class="md_drawer drawer-solo-001"></div>
+<!-- /drawer -->
+
+<!-- drawer -->
+<div class="md_drawer drawer-solo-002"></div>
+<!-- /drawer -->
+
+<!-- drawer -->
+<div class="md_drawer drawer-solo-003"></div>
+<!-- /drawer -->
+
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+    <div class="contentWrap">
+
+        <!-- titleArea -->
+        <div class="titleArea">
+            <h2 class="mainTitle">学生検索</h2>
+            <div class="btnArea">
+                <a href="searchStudent_informationMass_regist.html" class="md_btn md_btn--medium">お知らせを一括送付</a><a href="searchStudent_mailMass_regist.html" class="md_btn md_btn--medium">メールを一括送付</a><button class="md_btn md_btn--medium md_btn--second js_modalOpen" data-modal="modal91">会員ステータスを一括変更</button>
+            </div>
+        </div>
+        <!-- /titleArea -->
+
+        <!-- countArea -->
+        <div class="countArea">
+            <div class="md_toggle allcheck">
+                <input type="checkbox" name="" id="check_all">
+                <label for="check_all">すべて（54549件）</label>
+            </div>
+            <div class="sortBtnArea">
+                <div class="sortBtnCell">
+                    <span class="md_select">
+                        <select name="" id="" class="form--line">
+                            <option value="">並べ替え</option>
+                            <option value="">会員登録日</option>
+                            <option value="">更新日時</option>
+                        </select>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- /titleArea -->
+
+        <div class="md_card md_card--studentInfo">
+            <div class="checkArea">
+                <div class="md_toggle">
+                    <div class="check">
+                        <input type="checkbox" name="" id="check_001" checked="">
+                        <label for="check_001"></label>
+                    </div>
+                </div>
+            </div>
+            <div class=" infoArea js_drawerOpen" data-drawer="drawer-solo-001">
+                <div class="imgCell">
+                    <img class="dummyImg" src="../imageFile/accountImg01.jpeg" alt="">
+                </div>
+                <div class="textCell">
+                    <div class="stuName">
+                        <div class="kanji">山本 翔太</div>
+                        <div class="kana">ヤマモト　ショウタ</div>
+                        <div class="id">/ ID :</div>
+                        <div class="num">401365</div>
+                    </div>
+                    <div class="stuContent">
+                        <div class="item">女性</div>
+                        <div class="item">1999年3月25日生</div>
+                        <div class="item">文系</div>
+                        <div class="item">経済・経営・商学系</div>
+                        <div class="item">慶応義塾大学 経済</div>
+                    </div>
+                    <div class="dataArea">
+                        <span class="title">会員ステータス：</span><span class="data">スカウトを受け取る</span>
+                        <span class="title">登録経路：</span><span class="data">TOP</span>
+                    </div>
+                </div>
+            </div>
+            <div class="btnArea">
+                <button class="md_btn md_btn--medium js_drawerOpen" data-drawer="drawer-solo-001">確認</button>
+                <button class="md_btn md_btn--second md_btn--medium js_drawerOpen" data-drawer="drawer-solo-001">設定</button>
+            </div>
+        </div>
+        <div class="md_card md_card--studentInfo">
+            <div class="checkArea">
+                <div class="md_toggle">
+                    <div class="check">
+                        <input type="checkbox" name="" id="check_002" checked="">
+                        <label for="check_002"></label>
+                    </div>
+                </div>
+            </div>
+            <div class=" infoArea js_drawerOpen" data-drawer="drawer-solo-002">
+                <div class="imgCell">
+                    <img class="dummyImg" src="../imageFile/accountImg01.jpeg" alt="">
+                </div>
+                <div class="textCell">
+                    <div class="stuName">
+                        <div class="kanji">中村 結衣</div>
+                        <div class="kana">ナカムラ　ユイ</div>
+                        <div class="id">/ ID :</div>
+                        <div class="num">401365</div>
+                    </div>
+                    <div class="stuContent">
+                        <div class="item">女性</div>
+                        <div class="item">1999年3月25日生</div>
+                        <div class="item">文系</div>
+                        <div class="item">経済・経営・商学系</div>
+                        <div class="item">慶応義塾大学 経済</div>
+                    </div>
+                    <div class="dataArea">
+                        <span class="title">会員ステータス：</span><span class="data">スカウトを受け取らない(iroots)</span>
+                        <span class="title">登録経路：</span><span class="data">TOP</span>
+                    </div>
+                </div>
+            </div>
+            <div class="btnArea">
+                <button class="md_btn md_btn--medium js_drawerOpen" data-drawer="drawer-solo-002">確認</button>
+                <button class="md_btn md_btn--second md_btn--medium js_drawerOpen" data-drawer="drawer-solo-002">設定</button>
+            </div>
+        </div>
+        <div class="md_card md_card--studentInfo">
+            <div class="checkArea">
+                <div class="md_toggle">
+                    <div class="check">
+                        <input type="checkbox" name="" id="check_003" checked="">
+                        <label for="check_003"></label>
+                    </div>
+                </div>
+            </div>
+            <div class=" infoArea js_drawerOpen" data-drawer="drawer-solo-003">
+                <div class="imgCell">
+                    <img class="dummyImg" src="../imageFile/accountImg01.jpeg" alt="">
+                </div>
+                <div class="textCell">
+                    <div class="stuName">
+                        <div class="kanji">佐藤 大輝</div>
+                        <div class="kana">サトウ　ダイキ</div>
+                        <div class="id">/ ID :</div>
+                        <div class="num">401365</div>
+                    </div>
+                    <div class="stuContent">
+                        <div class="item">女性</div>
+                        <div class="item">1999年3月25日生</div>
+                        <div class="item">文系</div>
+                        <div class="item">経済・経営・商学系</div>
+                        <div class="item">慶応義塾大学 経済</div>
+                    </div>
+                    <div class="dataArea">
+                        <span class="title">会員ステータス：</span><span class="data">スカウトを受け取らない(その他)</span>
+                        <span class="title">登録経路：</span><span class="data">TOP</span>
+                    </div>
+                </div>
+            </div>
+            <div class="btnArea">
+                <button class="md_btn md_btn--medium js_drawerOpen" data-drawer="drawer-solo-003">確認</button>
+                <button class="md_btn md_btn--second md_btn--medium js_drawerOpen" data-drawer="drawer-solo-003">設定</button>
+            </div>
+        </div>
+        <div class="md_card md_card--studentInfo">
+            <div class="checkArea">
+                <div class="md_toggle">
+                    <div class="check">
+                        <input type="checkbox" name="" id="check_004" checked="">
+                        <label for="check_004"></label>
+                    </div>
+                </div>
+            </div>
+            <div class=" infoArea js_drawerOpen" data-drawer="drawer-solo-001">
+                <div class="imgCell">
+                    <img class="dummyImg" src="../imageFile/accountImg01.jpeg" alt="">
+                </div>
+                <div class="textCell">
+                    <div class="stuName">
+                        <div class="kanji">田中 真美</div>
+                        <div class="kana">タナカ　マミ</div>
+                        <div class="id">/ ID :</div>
+                        <div class="num">401365</div>
+                    </div>
+                    <div class="stuContent">
+                        <div class="item">女性</div>
+                        <div class="item">1999年3月25日生</div>
+                        <div class="item">文系</div>
+                        <div class="item">経済・経営・商学系</div>
+                        <div class="item">慶応義塾大学 経済</div>
+                    </div>
+                    <div class="dataArea">
+                        <span class="title">会員ステータス：</span><span class="data">スカウトを受け取る</span>
+                        <span class="title">登録経路：</span><span class="data">TOP</span>
+                    </div>
+                </div>
+            </div>
+            <div class="btnArea">
+                <button class="md_btn md_btn--medium js_drawerOpen" data-drawer="drawer-solo-001">確認</button>
+                <button class="md_btn md_btn--second md_btn--medium js_drawerOpen" data-drawer="drawer-solo-001">設定</button>
+            </div>
+        </div>
+    </div>
+ 
+<!-- Container End --></div><!-- /Container End -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+<script type="text/javascript" src="../common/js/chart.umd.js"></script>
+<script>
+
+    // let target = document.getElementById('messageScroll');
+    //     target.scrollIntoView(false);
+    
+    $(document).on('click', '.templateArea .selectBtn button', function () {
+        $('.templateArea').find('.selectArea').addClass('show');
+        $('.templateArea').find('.selectBtn').removeClass('show');
+    });
+    $(document).on('click', '.templateArea .selectArea .close button', function () {
+        $('.templateArea').find('.selectArea').removeClass('show');
+        $('.templateArea').find('.selectBtn').addClass('show');
+    });
+    $(document).on('click', '.md_modal .insertLink', function () {
+        $(this).parents('.modalSet').hide();
+        $(this).parents('.md_modal').find('.modalSet--reserve').show();
+    });
+    
+
+</script>
+</body>
+</html>

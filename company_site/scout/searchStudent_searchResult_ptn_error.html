@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="/favicon.ico" />
+<title>学生検索 - スカウト</title>
+<link rel="stylesheet" href="../common/css/scout/form_searchStudent.css"/>
+</head>
+<body>
+
+<!-- Modal01 リストに保存 -->
+<div class="md_modal md_modal--add modal01" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="modalHeadedArea">
+			<div class="title">リストに保存</div>
+			<div class="closeBtn">
+				<button class="js_modalX">
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M11.1725 10.186C11.498 10.5114 11.498 11.0391 11.1725 11.3645C10.8471 11.6899 10.3194 11.6899 9.994 11.3645L5.99995 7.3705L2.00601 11.3645C1.68058 11.6899 1.15294 11.69 0.8275 11.3645C0.502061 11.0391 0.502056 10.5114 0.82749 10.186L4.82143 6.192L0.827331 2.19797C0.501891 1.87253 0.501893 1.3449 0.827332 1.01947C1.15277 0.694033 1.68041 0.694031 2.00585 1.01947L5.99993 5.01348L9.99386 1.01948C10.3193 0.694041 10.8469 0.694038 11.1724 1.01947C11.4978 1.34491 11.4978 1.87254 11.1724 2.19798L7.17845 6.19198L11.1725 10.186Z" fill="#858D9D" />
+					</svg>
+				</button>
+			</div>
+		</div>
+		<div class="tableHead">
+			<table>
+				<tbody>
+					<tr>
+						<th class="item item--center" style="width: 60px; min-width: 60px;">
+							<div class="md_toggle">
+								<input type="checkbox" name="" value="" id="add_006">
+								<label for="add_006"></label>
+							</div>
+						</th>
+						<th class="item item--left">リスト名</th>
+						<th class="item" style="width: 180px; min-width: 180px;">学生数</th>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="contentArea">
+			<div class="scrollArea">
+				<!-- <div class="searchForm">
+				<input type="text" placeholder="企業IDまたは企業名で検索する" class="form--line form--w100" style="height: 45px;">
+				</div> -->
+				<table class="md_table">
+					<div>
+						<tbody>
+							<tr>
+								<td class="data data--center" style="width: 60px; min-width: 60px;">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="add_007">
+										<label for="add_007"></label>
+									</div>
+								</td>
+								<td class="data">
+									<span class="holder">保存リスト1</span>
+								</td>
+								<td class="data" style="width: 180px; min-width: 180px;">
+									<span>1</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="data data--center">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="add_008">
+										<label for="add_008"></label>
+									</div>
+								</td>
+								<td class="data">
+									<span class="holder">保存リスト1</span>
+								</td>
+								<td class="data">
+									<span>3</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="data data--center">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="add_009">
+										<label for="add_009"></label>
+									</div>
+								</td>
+								<td class="data">
+									<span class="holder">保存リスト1</span>
+								</td>
+								<td class="data">
+									<span>2</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="data data--center">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="add_010">
+										<label for="add_010"></label>
+									</div>
+								</td>
+								<td class="data">
+									<span class="holder">保存リスト1</span>
+								</td>
+								<td class="data">
+									<span>0</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="data data--center">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="add_011" checked="">
+										<label for="add_011"></label>
+									</div>
+								</td>
+								<td class="data">
+									<span class="holder">保存リスト1</span>
+								</td>
+								<td class="data">
+									<span>0</span>
+								</td>
+							</tr>
+							</tr>
+							<tr>
+								<td class="data data--center">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="add_012">
+										<label for="add_012"></label>
+									</div>
+								</td>
+								<td class="data">
+									<span class="holder">保存リスト1</span>
+								</td>
+								<td class="data">
+									<span>0</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="data data--center">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="add_013">
+										<label for="add_013"></label>
+									</div>
+								</td>
+								<td class="data">
+									<span class="holder">保存リスト1</span>
+								</td>
+								<td class="data">
+									<span>0</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="data data--center">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="add_014" checked="">
+										<label for="add_014"></label>
+									</div>
+								</td>
+								<td class="data">
+									<span class="holder">保存リスト1</span>
+								</td>
+								<td class="data">
+									<span>0</span>
+								</td>
+							</tr>
+						</tbody>
+					</div>
+				</table>
+			</div>
+		</div>
+		<div class="actionArea actionArea--noFloat">
+			<div class="btnSet">
+				<button class="md_btn md_btn--second js_modalX">キャンセル</button>
+				<button class="md_btn js_modalX js_snackBar" data-target="Bar01">追加</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Modal01 -->
+
+<!-- Modal02 スカウト発注依頼 -->
+<div class="md_modal md_modal--add modal02" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="modalHeadedArea">
+			<div class="title">スカウト発注依頼</div>
+			<div class="closeBtn">
+				<button class="js_modalX">
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M11.1725 10.186C11.498 10.5114 11.498 11.0391 11.1725 11.3645C10.8471 11.6899 10.3194 11.6899 9.994 11.3645L5.99995 7.3705L2.00601 11.3645C1.68058 11.6899 1.15294 11.69 0.8275 11.3645C0.502061 11.0391 0.502056 10.5114 0.82749 10.186L4.82143 6.192L0.827331 2.19797C0.501891 1.87253 0.501893 1.3449 0.827332 1.01947C1.15277 0.694033 1.68041 0.694031 2.00585 1.01947L5.99993 5.01348L9.99386 1.01948C10.3193 0.694041 10.8469 0.694038 11.1724 1.01947C11.4978 1.34491 11.4978 1.87254 11.1724 2.19798L7.17845 6.19198L11.1725 10.186Z" fill="#858D9D" />
+					</svg>
+				</button>
+			</div>
+		</div>
+		<div class="textArea">
+			<textarea name="" id="" rows="10" class="form--line form--w100" placeholder="スカウト発注依頼の内容を入力してください" data-limit="140"></textarea>
+		</div>
+		<div class="actionArea">
+			<button class="md_btn md_btn--second multiple js_modalX">キャンセル</button>
+			<button class="md_btn multiple js_modalX js_snackBar" data-target="Bar02">送信</button>
+		</div>
+	</div>
+</div>
+<!-- /Modal02 -->
+
+<!-- Modal03 送信日時指定 -->
+<div class="md_modal md_modal--scout modal03" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="modalHeadedArea">
+			<div class="title">送信日時指定</div>
+			<div class="closeBtn">
+				<button class="js_modalX">
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M11.1725 10.186C11.498 10.5114 11.498 11.0391 11.1725 11.3645C10.8471 11.6899 10.3194 11.6899 9.994 11.3645L5.99995 7.3705L2.00601 11.3645C1.68058 11.6899 1.15294 11.69 0.8275 11.3645C0.502061 11.0391 0.502056 10.5114 0.82749 10.186L4.82143 6.192L0.827331 2.19797C0.501891 1.87253 0.501893 1.3449 0.827332 1.01947C1.15277 0.694033 1.68041 0.694031 2.00585 1.01947L5.99993 5.01348L9.99386 1.01948C10.3193 0.694041 10.8469 0.694038 11.1724 1.01947C11.4978 1.34491 11.4978 1.87254 11.1724 2.19798L7.17845 6.19198L11.1725 10.186Z" fill="#858D9D" />
+					</svg>
+				</button>
+			</div>
+		</div>
+		<div class="formArea">
+			<table class="md_table">
+				<tbody>
+					<tr>
+						<th>予約日時</th>
+						<td>
+							<input type="date" placeholder="日付を選択" value="2024-05-19" class="form--line" style="min-width: 110px;">
+							<span class="md_select form--w10" style="">
+								<select name="" id="" class="form--line" style="min-width: 110px;">
+									<option value="" class="">時間を選択</option>
+									<option value="" class="">07:00</option>
+									<option value="" class="">07:15</option>
+									<option value="" class="">07:30</option>
+									<option value="" class="">07:45</option>
+									<option value="" class="">08:00</option>
+									<option value="" class="">08:15</option>
+									<option value="" class="">08:30</option>
+									<option value="" class="">08:45</option>
+								</select>
+							</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="actionArea">
+			<button class="md_btn md_btn--second multiple js_modalX">キャンセル</button>
+			<button class="md_btn multiple js_modalX js_drawerAllX js_snackBar" data-target="Bar04">予約送信</button>
+		</div>
+	</div>
+</div>
+<!-- /Modal03 -->
+
+<!-- Modal04 テンプレート -->
+<div class="md_modal md_modal--scout modal04" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="modalHeadedArea">
+			<div class="title">テンプレート選択</div>
+			<div class="closeBtn">
+				<button class="js_modalX">
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M11.1725 10.186C11.498 10.5114 11.498 11.0391 11.1725 11.3645C10.8471 11.6899 10.3194 11.6899 9.994 11.3645L5.99995 7.3705L2.00601 11.3645C1.68058 11.6899 1.15294 11.69 0.8275 11.3645C0.502061 11.0391 0.502056 10.5114 0.82749 10.186L4.82143 6.192L0.827331 2.19797C0.501891 1.87253 0.501893 1.3449 0.827332 1.01947C1.15277 0.694033 1.68041 0.694031 2.00585 1.01947L5.99993 5.01348L9.99386 1.01948C10.3193 0.694041 10.8469 0.694038 11.1724 1.01947C11.4978 1.34491 11.4978 1.87254 11.1724 2.19798L7.17845 6.19198L11.1725 10.186Z" fill="#858D9D" />
+					</svg>
+				</button>
+			</div>
+		</div>
+		<div class="formArea">
+			<table class="md_table">
+				<tbody>
+					<tr>
+						<th>テンプレート</th>
+						<td>
+							<span class="md_select">
+								<select name="" id="" class="form--line">
+									<option value="">メッセージテンプレート01</option>
+									<option value="">メッセージテンプレート02</option>
+									<option value="">メッセージテンプレート03</option>
+									<option value="">メッセージテンプレート04</option>
+								</select>
+							</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="actionArea">
+			<button class="md_btn md_btn--second multiple js_modalX">キャンセル</button>
+			<button class="md_btn multiple js_modalX">選択</button>
+		</div>
+	</div>
+</div>
+<!-- /Modal04 -->
+
+<!-- Modal10 学生詳細 -->
+<div class="md_modal modal-solo-001" style="display: none;"></div>
+<!-- /Modal10 -->
+
+<!-- Modal10 学生詳細 -->
+<div class="md_modal modal-solo-002" style="display: none;"></div>
+<!-- /Modal10 -->
+
+<!-- Modal10 学生詳細 -->
+<div class="md_modal modal-solo-003" style="display: none;"></div>
+<!-- /Modal10 -->
+
+<!-- Modal10 学生詳細 -->
+<div class="md_modal modal-solo-004" style="display: none;"></div>
+<!-- /Modal10 -->
+
+<!-- Modal20 募集情報 -->
+<div class="md_modal md_modal--scout modal20" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="modalHeadedArea">
+			<div class="title">募集選択</div>
+			<div class="closeBtn">
+				<button class="js_modalX">
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M11.1725 10.186C11.498 10.5114 11.498 11.0391 11.1725 11.3645C10.8471 11.6899 10.3194 11.6899 9.994 11.3645L5.99995 7.3705L2.00601 11.3645C1.68058 11.6899 1.15294 11.69 0.8275 11.3645C0.502061 11.0391 0.502056 10.5114 0.82749 10.186L4.82143 6.192L0.827331 2.19797C0.501891 1.87253 0.501893 1.3449 0.827332 1.01947C1.15277 0.694033 1.68041 0.694031 2.00585 1.01947L5.99993 5.01348L9.99386 1.01948C10.3193 0.694041 10.8469 0.694038 11.1724 1.01947C11.4978 1.34491 11.4978 1.87254 11.1724 2.19798L7.17845 6.19198L11.1725 10.186Z" fill="#858D9D" />
+					</svg>
+				</button>
+			</div>
+		</div>
+		<div class="tableHead">
+			<table>
+				<tbody>
+					<tr>
+						<th class="item item--center" style="width: 60px; min-width: 60px;"></th>
+						<th class="item item--left">募集名</th>
+						<th class="item" style="width: 180px; min-width: 180px;">募集区分</th>
+						<th class="item item--center" style="width: 120px; min-width: 120px;">応募数</th>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="contentArea">
+			<div class="scrollArea">
+				<table class="md_table">
+					<div>
+						<tbody>
+							<tr>
+								<td class="data data--center" style="width: 60px; min-width: 60px;">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="add_015">
+										<label for="add_015"></label>
+									</div>
+								</td>
+								<td class="data">
+									<span class="holder">★2025新卒向け★サマーインターンシップ</span>
+								</td>
+								<td class="data" style="width: 180px; min-width: 180px;">
+									<span>インターンシップ</span>
+								</td>
+								<td class="data data--center" style="width: 120px; min-width: 120px;">
+									<span>1</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="data data--center" style="width: 60px; min-width: 60px;">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="add_000">
+										<label for="add_000"></label>
+									</div>
+								</td>
+								<td class="data">
+									<span class="holder">面談スカウト（iroots小笠原）</span>
+								</td>
+								<td class="data" style="width: 180px; min-width: 180px;">
+									<span>会社説明会</span>
+								</td>
+								<td class="data data--center" style="width: 120px; min-width: 120px;">
+									<span>1</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="data data--center" style="width: 60px; min-width: 60px;">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="add_001">
+										<label for="add_001"></label>
+									</div>
+								</td>
+								<td class="data">
+									<span class="holder">ランチ会お誘い（返信）</span>
+								</td>
+								<td class="data" style="width: 180px; min-width: 180px;">
+									<span>本選考</span>
+								</td>
+								<td class="data data--center" style="width: 120px; min-width: 120px;">
+									<span>1</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="data data--center" style="width: 60px; min-width: 60px;">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="add_002">
+										<label for="add_002"></label>
+									</div>
+								</td>
+								<td class="data">
+									<span class="holder">本選考（エンジニアコース）</span>
+								</td>
+								<td class="data" style="width: 180px; min-width: 180px;">
+									<span>本選考</span>
+								</td>
+								<td class="data data--center" style="width: 120px; min-width: 120px;">
+									<span>1</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="data data--center" style="width: 60px; min-width: 60px;">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="add_003">
+										<label for="add_003"></label>
+									</div>
+								</td>
+								<td class="data">
+									<span class="holder">本選考（総合職コース）</span>
+								</td>
+								<td class="data" style="width: 180px; min-width: 180px;">
+									<span>本選考</span>
+								</td>
+								<td class="data data--center" style="width: 120px; min-width: 120px;">
+									<span>1</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="data data--center" style="width: 60px; min-width: 60px;">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="add_004">
+										<label for="add_004"></label>
+									</div>
+								</td>
+								<td class="data">
+									<span class="holder">本選考（コンサルタントコース）</span>
+								</td>
+								<td class="data" style="width: 180px; min-width: 180px;">
+									<span>本選考</span>
+								</td>
+								<td class="data data--center" style="width: 120px; min-width: 120px;">
+									<span>1</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="data data--center" style="width: 60px; min-width: 60px;">
+									<div class="md_toggle">
+										<input type="checkbox" name="" value="" id="add_005">
+										<label for="add_005"></label>
+									</div>
+								</td>
+								<td class="data">
+									<span class="holder">本選考（デザイナーコース）</span>
+								</td>
+								<td class="data" style="width: 180px; min-width: 180px;">
+									<span>本選考</span>
+								</td>
+								<td class="data data--center" style="width: 120px; min-width: 120px;">
+									<span>1</span>
+								</td>
+							</tr>
+							
+						</tbody>
+					</div>
+				</table>
+			</div>
+		</div>
+		<div class="actionArea actionArea--noFloat">
+			<div class="btnSet">
+				<button class="md_btn md_btn--second js_modalX">キャンセル</button>
+				<button class="md_btn js_modalX js_attachmentOpen" data-attach="attachment001">追加</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Modal20 -->
+
+<!-- Modal30 日程調整 -->
+<div class="md_modal md_modal--scout modal30" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="modalHeadedArea">
+			<div class="title">日程選択</div>
+			<div class="closeBtn">
+				<button class="js_modalX">
+					<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M11.1725 10.186C11.498 10.5114 11.498 11.0391 11.1725 11.3645C10.8471 11.6899 10.3194 11.6899 9.994 11.3645L5.99995 7.3705L2.00601 11.3645C1.68058 11.6899 1.15294 11.69 0.8275 11.3645C0.502061 11.0391 0.502056 10.5114 0.82749 10.186L4.82143 6.192L0.827331 2.19797C0.501891 1.87253 0.501893 1.3449 0.827332 1.01947C1.15277 0.694033 1.68041 0.694031 2.00585 1.01947L5.99993 5.01348L9.99386 1.01948C10.3193 0.694041 10.8469 0.694038 11.1724 1.01947C11.4978 1.34491 11.4978 1.87254 11.1724 2.19798L7.17845 6.19198L11.1725 10.186Z" fill="#858D9D" />
+					</svg>
+				</button>
+			</div>
+		</div>
+		<div class="contentArea contentArea--separate">
+			<div class="scrollArea">
+				<table class="md_table">
+					<tbody>
+						<tr class="dateGroup">
+							<td class="data" colspan="5">
+								<div class="md_toggle">
+									<input type="checkbox" name="" value="" id="add_100">
+									<label for="add_100">インターン用日程グループインターン用日程グループインターン用日程グループインターン用日程グループインターン用日程グループインターン用日程グループインターン用日程グループインターン用日程グループ</label>
+								</div>
+							</td>
+						</tr>
+						<tr class="dateGroup--date">
+							<td class="data" style="width: 50px;">&nbsp;
+							</td>
+							<td class="data data--check">
+								<div class="md_toggle">
+									<input type="checkbox" name="" value="" id="add_101">
+									<label for="add_101"></label>
+								</div>
+							</td>
+							<td class="data data--date">日付：2024年07月17日（水）</td>
+							<td class="data data--date">時間：09:00～10:00</td>
+							<td class="data">定員：0/5名</td>
+						</tr>
+						<tr class="dateGroup--date">
+							<td class="data" style="width: 50px;">&nbsp;
+							</td>
+							<td class="data data--check">
+								<div class="md_toggle">
+									<input type="checkbox" name="" value="" id="add_102">
+									<label for="add_102"></label>
+								</div>
+							</td>
+							<td class="data data--date">日付：2024年07月17日（水）</td>
+							<td class="data data--date">時間：09:00～10:00</td>
+							<td class="data">定員：0/5名</td>
+						</tr>
+						<tr class="dateGroup--date">
+							<td class="data" style="width: 50px;">&nbsp;
+							</td>
+							<td class="data data--check">
+								<div class="md_toggle">
+									<input type="checkbox" name="" value="" id="add_103">
+									<label for="add_103"></label>
+								</div>
+							</td>
+							<td class="data data--date">日付：2024年07月17日（水）</td>
+							<td class="data data--date">時間：09:00～10:00</td>
+							<td class="data">定員：0/5名</td>
+						</tr>
+						<tr class="dateGroup">
+							<td class="data" colspan="5">
+								<div class="md_toggle">
+									<input type="checkbox" name="" value="" id="add_104">
+									<label for="add_104">本選考用日程グループ</label>
+								</div>
+							</td>
+						</tr>
+						<tr class="dateGroup--date">
+							<td class="data" style="width: 50px;">&nbsp;
+							</td>
+							<td class="data data--check">
+								<div class="md_toggle">
+									<input type="checkbox" name="" value="" id="add_105">
+									<label for="add_105"></label>
+								</div>
+							</td>
+							<td class="data data--date">日付：2024年07月17日（水）</td>
+							<td class="data data--date">時間：09:00～10:00</td>
+							<td class="data">定員：0/5名</td>
+						</tr>
+						<tr class="dateGroup--date">
+							<td class="data" style="width: 50px;">&nbsp;
+							</td>
+							<td class="data data--check">
+								<div class="md_toggle">
+									<input type="checkbox" name="" value="" id="add_106">
+									<label for="add_106"></label>
+								</div>
+							</td>
+							<td class="data data--date">日付：2024年07月17日（水）</td>
+							<td class="data data--date">時間：09:00～10:00</td>
+							<td class="data">定員：0/5名</td>
+						</tr>
+						<tr class="dateGroup--date">
+							<td class="data" style="width: 50px;">&nbsp;
+							</td>
+							<td class="data data--check">
+								<div class="md_toggle">
+									<input type="checkbox" name="" value="" id="add_107">
+									<label for="add_107"></label>
+								</div>
+							</td>
+							<td class="data data--date">日付：2024年07月17日（水）</td>
+							<td class="data data--date">時間：09:00～10:00</td>
+							<td class="data">定員：0/5名</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="actionArea actionArea--noFloat">
+			<div class="btnSet">
+				<button class="md_btn md_btn--second js_modalX">キャンセル</button>
+				<button class="md_btn js_modalX js_attachmentOpen" data-attach="attachment002">選択</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Modal30 -->
+
+<!-- snackBar 通数発注依頼 -->
+<div class="md_snackBar Bar01">
+	<div class="base">
+		<div class="text">リストに追加しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar 通数発注依頼 -->
+<div class="md_snackBar Bar02">
+	<div class="base">
+		<div class="text">スカウト通数の発注依頼が完了しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar スカウト送信完了 -->
+<div class="md_snackBar Bar03">
+	<div class="base">
+		<div class="text">スカウトの送信が完了しました。</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar スカウト送信完了 -->
+<div class="md_snackBar Bar04">
+	<div class="base">
+		<div class="text">スカウトの送信を予約しました。</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- drawer -->
+<div class="md_drawer drawer-solo-001"></div>
+<!-- /drawer -->
+
+<!-- drawer -->
+<div class="md_drawer drawer-solo-002"></div>
+<!-- /drawer -->
+
+<!-- drawer -->
+<div class="md_drawer drawer-solo-003"></div>
+<!-- /drawer -->
+
+<!-- drawer02 一括スカウト -->
+<div class="md_drawer drawer-batch-001"></div>
+<!-- /drawer -->
+ 
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+	<div class="contentWrap">
+
+		<!-- titleArea -->
+		<div class="titleArea">
+			<div class="titleArea--inner">
+				<h2 class="mainTitle">検索結果</h2>
+				<div class="btnArea">
+					<button class="md_btn md_btn--sub md_btn--second md_btn--disabled js_modalOpen" data-modal="modal05">検索条件を保存</button>
+					<div class="subError">
+						保存できる検索条件の上限は100件です。
+					</div>
+				</div>
+			</div>
+			<div class="actionArea">
+				<div class="searchArea">
+					<div class="btnCell">
+						<button><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M6.56966 13.0759C3.04266 13.0759 0.118164 10.1514 0.118164 6.62435C0.118164 3.09735 3.04266 0.172852 6.56966 0.172852C10.0967 0.172852 13.0212 3.09735 13.0212 6.62435C13.0212 10.1514 10.0967 13.0759 6.56966 13.0759ZM6.56966 1.46285C3.73116 1.46285 1.40816 3.78535 1.40816 6.62435C1.40816 9.46335 3.73066 11.7859 6.56966 11.7859C9.40866 11.7859 11.7312 9.46335 11.7312 6.62435C11.7312 3.78535 9.40866 1.46285 6.56966 1.46285ZM15.1717 15.8284C14.9997 15.8284 14.8277 15.7424 14.7417 15.6564L10.4407 11.3554C10.1827 11.0974 10.1827 10.6674 10.4407 10.4094C10.6987 10.1514 11.1287 10.1514 11.3867 10.4094L15.6877 14.7104C15.9457 14.9684 15.9457 15.3984 15.6877 15.6564C15.5157 15.8284 15.3437 15.8284 15.1717 15.8284Z" fill="white" />
+						</svg></button>
+					</div>
+					<div class="formCell">
+						<div class="input"><input type="text" placeholder="企業メモ、irootsIDで検索（複数検索可）" class="form--line form--w100"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /titleArea -->
+
+		<!-- countArea -->
+		<div class="countArea">
+			<div class="md_toggle allcheck">
+				<input type="checkbox" name="" id="check_all">
+				<label for="check_all">221 名の学生を一括選択</label>
+			</div>
+			<div class="sortBtnArea">
+				<div class="sortBtnCell">
+					<span class="md_select">
+						<select name="" id="" class="form--line">
+							<option value="">並べ替え</option>
+							<option value="">会員登録日</option>
+							<option value="">更新日時</option>
+							<option value="">スカウトリクエストを押した日時</option>
+						</select>
+					</span>
+				</div>
+				<div class="sortBtnCell">
+					<span class="md_select">
+						<select name="pulldownlink" id="" class="form--line">
+							<option value="">表示切り替え</option>
+							<option value="searchStudent_searchResult.html">簡略表示</option>
+							<option value="searchStudent_searchResult_ptn_max.html">詳細表示</option>
+						</select>
+					</span>
+				</div>
+			</div>
+		</div>
+		<!-- countArea -->
+		
+		<!-- cardArea -->
+		<div class="md_card md_card--studentInfo">
+			<div class="md_toggle">
+				<input type="checkbox" name="" id="check_001">
+				<label for="check_001"></label>
+			</div>
+			<div class="contentArea">
+				<div class="content">
+					<div class="infoArea">
+						<div class="imgCell">
+							<img class="dummyImg" src="../imageFile/accountImg01.jpeg" alt="">
+						</div>
+						<div class="textCell">
+							<div class="iconArea">
+								<span class="icon icon-new">NEW</span>
+								<span class="icon icon-listin">リスト済</span>
+							</div>
+							<div class="univArea">
+								<span class="univ">上智大学</span>
+								<span class="dep">文学部</span>
+								<span class="grad">2027年3月卒業見込み</span>
+							</div>
+							<div class="dataArea">
+								<span class="title">ID：</span><span class="data">74210</span>
+								<span class="title">最終ログイン日：</span><span class="data">2024年6月21日</span>
+								<span class="title">スカウトされた企業数：</span><span class="data">2社</span>
+							</div>
+							<div class="tagArea">
+								<span class="tag">決断力</span>
+								<span class="tag">意思伝達力</span>
+								<span class="tag">外向性</span>
+							</div>
+						</div>
+					</div>
+					<div class="commentArea js-textTrim">
+						<div class="comment">
+						性格/人柄<br>
+						高校時代の吹奏楽部での経験です。<br>
+						最初のオーディションで選抜50名に選ばれましたが、50名の中では最下位レベル。求められるレベルの高さに自信を失いました。音程、音色、表現すべてにダメ出しをされており、特に音程については1Hzもずれないことが当たり前だったため最初のオーディションで選抜50名に選ばれましたが、50名の中では最下位レベル。求められるレベルの高さに自信を失いました。音程、音色、表現すべてにダメ出しをされており、特に音程については1Hzもずれないことが当たり前だったため
+						</div>
+					</div>
+					<div class="memoArea">
+						<div class="input"><input type="text" placeholder="メモを入力（他企業には公開されません）" class="form--line form--w100"></div>
+					</div>
+				</div>
+			</div>
+			<div class="btnArea">
+				<div class="btn">
+				<button class="md_btn md_btn--medium js_drawerOpen" data-drawer="drawer-solo-001">スカウト</button>
+				<button class="md_btn md_btn--second md_btn--medium js_modalOpen" data-modal="modal01">リストに保存</button>
+				</div>
+				<div class="hidden">
+					<button><?xml version="1.0" encoding="UTF-8"?><svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 16">
+					<path d="M14.82,14.83L1.04.19C.79-.06.43-.06.18.19-.06.45-.06.84.18,1.1l2.8,2.98C1.77,5.05.73,6.35.12,7.71c-.06.19-.06.39,0,.58,1.28,2.72,4.15,5.18,7.38,5.18,1.28,0,2.38-.39,3.41-.91l3.05,3.24c.12.13.3.19.43.19s.3-.06.43-.19c.24-.32.24-.71,0-.97ZM5.98,7.26l2.26,2.4c-.18.13-.43.13-.67.13-.91,0-1.71-.78-1.71-1.81-.06-.26,0-.52.12-.71ZM7.5,12.18c-2.62,0-4.88-1.88-6.22-4.21.67-1.17,1.52-2.2,2.56-2.98l1.22,1.3c-.3.45-.49,1.04-.49,1.62,0,1.68,1.28,3.04,2.87,3.04.55,0,1.1-.19,1.52-.52l.98,1.04c-.67.52-1.52.71-2.44.71ZM7.5,3.76c2.68,0,4.88,1.88,6.22,4.21-.37.65-.85,1.3-1.34,1.81-.24.26-.18.65,0,.84.24.26.61.26.85,0,.73-.78,1.34-1.68,1.71-2.4.06-.19.06-.39,0-.58-1.28-2.72-4.15-5.18-7.38-5.18-.49,0-.91.06-1.34.13-.55.13-.73.78-.37,1.1.12.13.37.19.55.19.3-.06.73-.13,1.1-.13Z" style="fill:#888; stroke-width:0px;" />
+					</svg>非表示
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- /cardArea -->
+		
+		<!-- cardArea -->
+		<div class="md_card md_card--studentInfo">
+			<div class="md_toggle">
+				<input type="checkbox" name="" id="check_002">
+				<label for="check_002"></label>
+			</div>
+			<div class="contentArea">
+				<div class="content">
+					<div class="infoArea">
+						<div class="imgCell">
+							<img class="dummyImg" src="../imageFile/accountImg02.png" alt="">
+							<div class="heartSet">
+								<div class="heart"></div>
+								<div class="date">2023.10.06</div>
+								<div class="fukidashi">貴方の担当者情報を見てスカウトリクエストを送信した学生です</div>
+							</div>
+						</div>
+						<div class="textCell">
+							<div class="iconArea">
+								<span class="icon icon-new">NEW</span>
+								<span class="icon icon-scout">スカウト済</span>
+							</div>
+							<div class="univArea">
+								<span class="univ">立教大学</span>
+								<span class="dep">社会学部</span>
+								<span class="grad">2027年3月卒業見込み</span>
+							</div>
+							<div class="dataArea">
+								<span class="title">ID：</span><span class="data">329377</span>
+								<span class="title">最終ログイン日：</span><span class="data">2026年6月21日</span>
+								<span class="title">スカウトされた企業数：</span><span class="data">2社</span>
+							</div>
+							<div class="tagArea">
+								<span class="tag">持続性</span>
+								<span class="tag">意思伝達力</span>
+								<span class="tag">論理的表現力</span>
+							</div>
+						</div>
+					</div>
+					<div class="commentArea js-textTrim">
+						<div class="comment">
+							性格/人柄<br>
+							演劇部で副部長を務めました。部員一人ひとりが持つ個性や才能を活かすために、練習メニューの企画や演出にも関わり、部全体の士気を高める工夫をしました。大会前は遅くまで自主練習を行い、結果として地区大会で最優秀賞を受賞することができました。この経験から、チームワークの大切さやリーダーシップを学びました。
+						</div>
+					</div>
+					<div class="memoArea">
+						<div class="input"><input type="text" placeholder="メモを入力（他企業には公開されません）" class="form--line form--w100"></div>
+					</div>
+				</div>
+			</div>
+			<div class="btnArea">
+				<div class="btn">
+					<button class="md_btn md_btn--medium js_drawerOpen" data-drawer="drawer-solo-002">スカウト</button>
+					<button class="md_btn md_btn--second md_btn--medium js_modalOpen" data-modal="modal01">リストから外す</button>
+				</div>
+				<div class="hidden">
+					<button>
+						<?xml version="1.0" encoding="UTF-8"?><svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 16">
+							<path d="M14.82,14.83L1.04.19C.79-.06.43-.06.18.19-.06.45-.06.84.18,1.1l2.8,2.98C1.77,5.05.73,6.35.12,7.71c-.06.19-.06.39,0,.58,1.28,2.72,4.15,5.18,7.38,5.18,1.28,0,2.38-.39,3.41-.91l3.05,3.24c.12.13.3.19.43.19s.3-.06.43-.19c.24-.32.24-.71,0-.97ZM5.98,7.26l2.26,2.4c-.18.13-.43.13-.67.13-.91,0-1.71-.78-1.71-1.81-.06-.26,0-.52.12-.71ZM7.5,12.18c-2.62,0-4.88-1.88-6.22-4.21.67-1.17,1.52-2.2,2.56-2.98l1.22,1.3c-.3.45-.49,1.04-.49,1.62,0,1.68,1.28,3.04,2.87,3.04.55,0,1.1-.19,1.52-.52l.98,1.04c-.67.52-1.52.71-2.44.71ZM7.5,3.76c2.68,0,4.88,1.88,6.22,4.21-.37.65-.85,1.3-1.34,1.81-.24.26-.18.65,0,.84.24.26.61.26.85,0,.73-.78,1.34-1.68,1.71-2.4.06-.19.06-.39,0-.58-1.28-2.72-4.15-5.18-7.38-5.18-.49,0-.91.06-1.34.13-.55.13-.73.78-.37,1.1.12.13.37.19.55.19.3-.06.73-.13,1.1-.13Z" style="fill:#888; stroke-width:0px;" />
+						</svg>非表示
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- /cardArea -->
+
+		<!-- cardArea -->
+		<div class="md_card md_card--studentInfo">
+			<div class="md_toggle">
+				<input type="checkbox" name="" id="check_003">
+				<label for="check_003"></label>
+			</div>
+			<div class="contentArea">
+				<div class="content">
+					<div class="infoArea">
+						<div class="imgCell">
+							<img class="dummyImg" src="../imageFile/accountImg01.jpeg" alt="">
+							<div class="heartSet heartSet--disabled">
+								<div class="heart"></div>
+								<div class="date">2023.10.06</div>
+								<div class="fukidashi">別の担当者の担当者情報を見てスカウトリクエストを送信した学生です</div>
+							</div>
+						</div>
+						<div class="textCell">
+							<div class="iconArea">
+								<span class="icon icon-hidden">非表示済</span>
+							</div>
+							<div class="univArea">
+								<span class="univ">慶応義塾大学</span>
+								<span class="dep">経済学部</span>
+								<span class="grad">2027年3月卒業見込み</span>
+							</div>
+							<div class="dataArea">
+								<span class="title">ID：</span><span class="data">135849</span>
+								<span class="title">最終ログイン日：</span><span class="data">2026年6月21日</span>
+								<span class="title">スカウトされた企業数：</span><span class="data">2社</span>
+							</div>
+							<div class="tagArea">
+								<span class="tag">持続性</span>
+								<span class="tag">発想性</span>
+								<span class="tag">対人調和力</span>
+							</div>
+						</div>
+					</div>
+					<div class="commentArea js-textTrim">
+						<div class="comment">
+							性格/人柄<br>
+							部活動では陸上部に所属し、長距離走に取り組みました。体力と精神力を高めるために、毎日早朝練習を続け、自己記録の更新を目指しました。また、後輩の指導も担当し、彼らの成長を支えることで責任感を培いました。努力を重ねた結果、最後の大会で自己ベストを達成し、大きな達成感を得ました。この経験から、継続する力の大切さを学びました。
+						</div>
+					</div>
+					<div class="memoArea">
+						<div class="input"><input type="text" placeholder="メモを入力（他企業には公開されません）" class="form--line form--w100"></div>
+					</div>
+				</div>
+			</div>
+			<div class="btnArea">
+				<div class="btn">
+					<button class="md_btn md_btn--medium js_drawerOpen" data-drawer="drawer-solo-003">スカウト</button>
+					<button class="md_btn md_btn--second md_btn--medium js_modalOpen" data-modal="modal01">リストに保存</button>
+				</div>
+				<div class="hidden">
+					<button>
+						<?xml version="1.0" encoding="UTF-8"?><svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1035.2 776.3">
+							<path d="M1030.55,368.74c-1.89-3.78-46.9-92.99-131-182.75C785.26,64.42,653.18,0,517.6,0S249.94,64.42,135.65,186.26C51.55,276.02,6.54,365.24,4.65,369.01c-6.2,12.13-6.2,26.42,0,38.54,1.89,3.78,46.9,92.99,131,182.75,114.29,121.57,246.37,185.99,381.95,185.99s267.66-64.42,381.95-186.26c84.1-89.76,129.11-178.98,131-182.75,6.2-11.86,6.2-26.42,0-38.54h0ZM835.13,532.9c-98.65,104.32-205.4,157.15-317.53,157.15s-218.87-52.83-317.53-157.15c-53.91-57.14-90.84-115.37-107.82-144.75,16.98-29.11,53.64-87.33,107.82-144.75,98.65-104.32,205.4-157.15,317.53-157.15s218.87,52.83,317.53,157.15c53.91,57.42,90.84,115.37,107.82,144.75-17.25,29.11-53.91,87.33-107.82,144.75h0ZM517.6,215.64c-95.15,0-172.51,77.36-172.51,172.51s77.36,172.51,172.51,172.51,172.51-77.36,172.51-172.51-77.36-172.51-172.51-172.51ZM517.6,474.4c-47.44,0-86.26-38.82-86.26-86.26s38.82-86.26,86.26-86.26,86.26,38.82,86.26,86.26-38.82,86.26-86.26,86.26Z" style="fill:#888;" />
+						</svg>非表示解除
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- /cardArea -->
+
+	</div>
+
+	<!-- md_fixBar -->
+	<div class="md_fixBar js_fixBarHide">
+		<div class="scoutArea">
+			<div class="dataCell">
+				<div class="yearUnit">
+					<div class="title">24卒</div>
+					<div class="text">個別：6,300/6329<br>一括：29/6329<br>自動：6329/11000</div>
+				</div>
+				<div class="yearUnit">
+					<div class="title">25卒</div>
+					<div class="text">個別：6,300/6329<br>一括：29/6329<br>自動：6329/11000</div>
+				</div>
+			</div>
+			<div class="btnCell">
+				<button class="md_btn md_btn--sub md_btn--second js_modalOpen" data-modal="modal02">スカウト追加依頼</button>
+			</div>
+		</div>
+		<div class="searchArea searchArea--error">
+			<div class="countSet">
+				<div class="title">選択した学生</div>
+				<div class="count"><span class="num">1</span>/221名</div>
+			</div>
+			<div class="errorCell">
+				<div class="btnSet">
+					<button class="md_btn md_btn--disabled js_drawerOpen" data-drawer="drawer-batch-001">一括スカウト</button>
+					<button class="md_btn md_btn--second">リストに保存</button>
+				</div>
+				<div class="errorTxt">
+					<span class="iconImgPart">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 150 1100 1100" class="errorIcon"><path d="m993.554 865.69-.267-.267-364.968-609.718c0-.267-.267-.267-.267-.544-23.986-38.818-65.23-61.994-110.515-61.994s-86.524 23.182-110.246 61.727c-.267.267-.544.544-.544 1.078L41.509 865.69s0 .267-.267.267c-11.321 19.409-17.52 42.051-17.52 64.96 0 70.622 57.416 128.574 127.767 129.382h731.833c70.622-.811 128.036-58.76 128.036-129.382 0-22.909-6.199-45.551-17.787-65.23zM882.5 974.05H152.564c-23.453-.267-42.318-19.676-42.318-43.129 0-7.544 1.889-14.821 5.66-21.298l364.968-609.448.267-.267c8.088-12.665 21.564-20.22 36.661-20.22s28.841 7.821 36.929 20.753L919.159 909.35c3.777 6.466 5.66 14.021 5.66 21.564.267 23.453-18.865 42.86-42.318 43.129zM517.53 456.516c-23.72 0-43.129 19.409-43.129 43.129v172.51c0 23.72 19.409 43.129 43.129 43.129s43.129-19.409 43.129-43.129v-172.51c0-23.72-19.409-43.129-43.129-43.129zm0 345.023c-11.321 0-22.375 4.577-30.461 12.665s-12.665 19.142-12.665 30.461 4.577 22.375 12.665 30.461c8.088 8.088 19.142 12.665 30.461 12.665s22.375-4.577 30.461-12.665c8.088-8.088 12.665-19.142 12.665-30.461s-4.577-22.375-12.665-30.461c-8.088-8.088-19.142-12.665-30.461-12.665z" fill="#f04438"></path></svg>
+						</span>
+					スカウト上限数を超えています
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /md_fixBar -->
+
+<!-- Container End --></div><!-- /Container End -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/chart.umd.js"></script>
+<script>
+$(document).on('click', '.js_attachmentX', function () {
+    const attachmentNum = $(this).closest('.attachment').attr('class').split(/\s+/).find(className => className.startsWith('attachment00'));
+    const tgtBtn = $('.btnSet.' + attachmentNum + '');
+    const attachmentFile = $(this).closest('.attachmentFile'); // 親要素のセレクタを指定
+
+    var childCount = attachmentFile.children().length;
+    // クリックした要素の親リストアイテムを削除
+    $(this).closest('.li').remove();
+
+    // 削除後に再度子要素の数を取得
+    childCount = attachmentFile.children().length;
+
+    // 子要素の数が0の場合、親要素を削除
+    if (childCount === 0) {
+        $('.' + attachmentNum).removeClass('show');
+        tgtBtn.removeClass('show');
+        $('.attachment000').addClass('show');
+    }
+});
+
+$(document).on('click', '.js_attachmentOpen', function () {
+    const attachmentNum = $(this).attr('data-attach');
+    const tgtAttach = $('.attachment.' + attachmentNum + '');
+    const tgtBtn = $('.btnSet.' + attachmentNum + '');
+    tgtAttach.addClass('show');
+    tgtBtn.addClass('show');
+    $('.attachment000').removeClass('show');
+});
+
+$(document).on('click', 'button[class*="js_scout_to"]', function () {
+    var classList = $(this).attr('class').split(/\s+/);
+
+    // `js_scout_to` で始まるクラス名を見つける
+    var linkto = classList.filter(className => className.startsWith('js_scout_to'));
+
+    // 特定のクラス名が含まれているかチェック
+    if (linkto.includes('js_scout_toForm')) {
+        var root = linkto.map(className => {
+            return className === 'js_scout_toForm' ? 'Form' : '';
+        }).filter(className => className); // 空文字を除外
+
+        var form = $(this).closest('.textArea');
+        form.removeClass('show');
+        form.siblings('.scoutForm-default').addClass('show');
+    } else {
+        var root = linkto.map(className => {
+            return className.replace('js_scout_to', '');
+        }).filter(className => className); // 空文字を除外
+
+        var form = $(this).closest('.textArea');
+        form.removeClass('show');
+        root.forEach(className => {
+            form.siblings('.scoutConfirm--' + className).addClass('show');
+        });
+    }
+});
+
+</script>
+
+</body>
+</html>

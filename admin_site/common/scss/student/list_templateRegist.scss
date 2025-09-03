@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+/* --------------------------------------------------
+ Import 
+-------------------------------------------------- */
+
+@import "../_default";
+
+
+/* ------------ Size ------------ */
+
+/* Width */
+$w_wrap: 1200px; 
+$w_drawer: 300px; 
+$w_sideMenu: 200px; 
+$w_centeringElement: 700px; 
+$w_btn_big: 150px;
+
+
+/* ------------ Typography ------------ */
+
+/* Font Size */
+$fs_biggest:  32px; 
+$fs_bigger:   24px;  
+$fs_big:      18px;
+$fs_title:    17px;
+$fs_medium:   16px;  
+$fs_small:    14px;  
+$fs_main:     13px;
+$fs_smaller:  11px;  
+$fs_smallest: 10px; 
+
+/* ユーザー情報登録用テーブル */
+.contentWrap {
+    .titleArea { justify-content: space-between;
+        .md_btn { width: auto; padding-left: 20px; padding-right: 20px;}
+    }
+    .contents {
+        .md_table {
+            &--template {
+                tbody {
+                    td {
+                        .nameArea { margin-bottom: 5px; padding: 10px 15px; display: flex; align-items: center; background: #f9f9fc; border-radius: 6px;
+                            .txtCell { font-size: $fs_smaller; }
+                            .btnCell { margin-left: 15px; }
+                        }
+                        .tempArea {
+                            .md_table {
+                                border: none;
+                                th { padding: 5px; width: 1%; line-height: 3em; white-space: nowrap; border: none; background: transparent; }
+                                td { padding: 5px; border: none; background: transparent;
+                                    textarea { line-height: 1.6;}
+                                } 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .btnArea { display: flex; align-items: center; justify-content: center; }
+    }
+    
+}
+

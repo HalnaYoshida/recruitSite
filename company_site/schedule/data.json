@@ -1,0 +1,26 @@
+{
+    "エンジニアコースインターンシップ用説明会": {
+        "name": "エンジニアコースインターンシップ用説明会",
+        "duration": 60,
+        "note": "服装自由、交通費支給",
+        "memo": "廣田一次試験管理用",
+        "date": "2024-07-17",
+        "time": "14:00",
+        "scout": 200,
+        "apply": 300,
+        "place": "新宿アイランドタワー35F",
+        "url": "https://maps.app.goo.gl/FpEpBYusMbgWmNgF6"
+    },
+    "企画職コース本選考一次面接": {
+        "name": "企画職コース本選考一次面接",
+        "duration": 60,
+        "note": "服装自由、交通費支給",
+        "memo": "廣田一次試験管理用",
+        "date": "2024-05-19",
+        "time": "14:00",
+        "scout": 200,
+        "apply": 300,
+        "place": "新宿アイランドタワー35F",
+        "url": "https://maps.app.goo.gl/FpEpBYusMbgWmNgF6"
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "scripts": {
+    "devsass_admin": "cross-env NODE_ENV=dev sass ./admin_site/common/scss/:./admin_site/common/css/ --no-source-map --style=compressed",
+    "devsass_company": "cross-env NODE_ENV=dev sass ./company_site/common/scss/:./company_site/common/css/ --no-source-map --style=compressed",
+    "devsass_student": "cross-env NODE_ENV=dev sass ./student_site/common/scss/:./student_site/common/css/ --no-source-map --style=compressed",
+    "devsass": "npm run devsass_admin && npm run devsass_company && npm run devsass_student"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "sass": "^1.77.8"
+  }
+}

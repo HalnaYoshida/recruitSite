@@ -1,0 +1,258 @@
+@charset "utf-8";
+
+/* --------------------------------------------------
+ Import 
+-------------------------------------------------- */
+
+@import "../_default";  
+
+body { background-color: $col_bg_buleGray;}
+.container { padding-bottom: 40px;}
+
+//タブ
+.statusArea { background-color: #fff;
+    .tabWrap { background-color: #fff;
+        .md_numBadge {position: relative; }
+    }
+    #scroll_Tab { position: fixed; top: -100%; width: 100%; z-index: 1000; transition: all 0.6s;
+        &.fixed { top: 0;}
+    }
+    // For PC
+    @media only screen and (min-width: $w_break_tablet) {
+        .tabWrap {
+            .md_tabSet {width: $w_wrap; margin: auto;
+                
+            }
+        } 
+        #scroll_Tab {      
+        }
+    }
+}
+
+.contentArea { padding: 0 16px; margin-top: 16px;
+    .filterBar { display: flex; justify-content: space-between;
+        .leftSide {
+            .count { font-size: 10px;
+                .num { margin: 0 2px; font-size: 15px; font-weight: bold;}
+            }
+        }
+        .rightSide {
+            .selectSet { display: flex; gap: 16px;
+                .selectBtn {  position: relative;
+                    .btn { display: flex; align-items: center; gap: 4px;
+                        .iconImgPart { top: 1px;}
+                        .label { font-size: 11px; color: $col_main; }
+                    }
+                    .md_list--sort { 
+                        &.be_hide {display: none;}
+                    } 
+                }
+            }
+            //上スクロール用
+            #scroll_filter.selectSet  { position: fixed; top: 50px; right: 10px; z-index: 1000; gap: 8px;
+                .btn { padding: 6px 12px; background-color: #fff; border-radius: 20px; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+                }
+            }
+        }
+        + .scoutList{ margin-top: 8px; }
+    }
+    // For PC
+    @media only screen and (min-width: $w_break_tablet) {  padding: 0; 
+        .filterBar { 
+            .leftSide {
+                .count { font-size: 13px;
+                    .num { margin: 0 2px; font-size: 20px;}
+                }
+            }
+            .rightSide {
+                .selectSet { display: flex; gap: 16px;
+                    .selectBtn { 
+                        .btn { gap: 4px;
+                            .iconImgPart { top: 1px;}
+                            .label { font-size: 13px; }
+                        }
+                    }
+                }
+                //上スクロール用
+                #scroll_filter.selectSet  { top: 60px; right: 80px; z-index: 1000; gap: 8px;
+                    .btn { padding: 6px 12px; background-color: #fff; border-radius: 20px; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+                    }
+                }
+            }
+            + .scoutList{ margin-top: 8px; }
+        }
+    }
+}
+
+
+
+// スカウトコマ
+.scoutCard { border-radius: 3px;box-shadow: 0px 0px 18px 0px rgba(34, 84, 158, 0.10); 
+    .scoutContent { box-shadow: none; 
+        .topArea { display: flex; justify-content: space-between;
+            .leftSide { display: flex; align-items: center; gap: 12px; width: calc(100% - 50px); 
+                .logoCell { position: relative; width: 42px; height: 42px;
+                    .logo { display: grid;  place-content: center; width: 100%; height: 100%; padding: 5px; background-color: #fff; border: 2px solid $col_bg_blue; border-radius: 50%;overflow: hidden; }
+                }
+                .companyCell { margin-top: 4px; width: calc(100% - 42px - 12px);
+                    .name { font-size: 14px; font-weight: bold; line-height: $lh_small;
+                        + .industry { margin-top: 6px;}
+                    }
+                    .industry { font-size: 10px; color: $col_txt_blueGray;}
+                }
+            }
+            .rightSide { position: relative; display: flex; flex-direction: column; align-items: flex-end; width: 50px;
+                .date { font-size: 10px; color: $col_txt_blueGray;}
+                .keepBtn { position: absolute; right: -12px; top: 10px; display: inline-block; width: 40px; height: 40px; 
+                    input[type="checkbox"] {display: none; 
+                       + label { display: grid; place-content: center; height: 100%; cursor: pointer;
+                        .on { display: none;}
+                        .off { display: block;}
+                        }
+                    }
+                    input:checked + label {
+                        .on { display: block;}
+                        .off { display: none;}
+                    }
+                }
+            }
+            + .bottomArea { margin-top: 12px;}
+        }
+        .bottomArea {
+            .detailSet { 
+                .catch { font-size: 12px; font-weight: bold; line-height: $lh_medium;@include lineClamp(3); }
+                .md_benefitsLabel { margin-top: 8px;}
+                + .deadlineSet { margin-top: 8px;}
+            }
+            .deadlineSet {
+                .deadline { font-size: 10px; color: $col_txt_blueGray;
+                    .num { margin: 0 2px; font-size: 14px; font-weight: bold; color: $col_red; }
+                }
+            }
+        }
+    }
+    //未読
+    &--unread {
+        .scoutContent { 
+            .topArea {
+                .leftSide {
+                    .logoCell {
+                        &::before { content: ""; position: absolute; top: 6%; right: 6%; width: 8px; height: 8px; background-color: $col_red; border-radius: 8px;}
+                     }
+                }
+            }
+        }
+    }
+    //承諾済み
+    &--approved {
+        .scoutContent {border-radius: 3px 3px 0 0 ;}
+        .messageContent { display: flex; align-items: center; gap: 8px; padding: 12px; background-color: $col_bg_gray; border-radius: 0 0 3px 3px;
+            .messageArea { width: calc(100% - 8px - 64px); font-size: 10px; color: $col_txt;
+                .label { font-weight: bold;
+                    + .message { margin-top: 4px;}
+                }
+                .message { line-height: $lh_medium;  @include lineClamp(2); }
+             }  
+            .linkArea { width: 64px; 
+                .md_textLink { font-size: 10px; 
+                    .iconImgPart { width: 6px; height: 8px; top: 0; margin-left: 1px; }
+                }
+            }
+            &--nonMessage { 
+                .linkArea { margin-left: auto; width: auto;}
+            }
+        }
+
+    }
+    //期限切れ・停止済み
+    &--end {
+        .scoutContent {  background-color: $col_bg_disabled;  }
+    }
+    + .scoutCard  { margin-top: 16px;}
+
+    // For PC
+	@media only screen and (min-width: $w_break_tablet) { 
+        .scoutContent { 
+            .topArea { 
+                .leftSide { gap: 12px; width: calc(100% - 76px); 
+                    .logoCell {  width: 64px; height: 64px;
+                        .logo { padding: 5px; border: 2px solid $col_bg_blue;}
+                    }
+                    .companyCell { margin-top: 4px;  width: calc(100% - 64px - 14px);
+                        .name { font-size: 18px;
+                            + .industry { margin-top: 6px;}
+                        }
+                        .industry { font-size: 12px;}
+                    }
+                }
+                .rightSide { width: 56px;
+                    .date { font-size: 12px;}
+                    .keepBtn { right: -8px; top: 16px;}
+                }
+                + .bottomArea { margin-top: 12px;}
+            }
+            .bottomArea {
+                .detailSet { 
+                    .catch { font-size: 14px; }
+                    .md_benefitsLabel { margin-top: 10px;}
+                    + .deadlineSet { margin-top: 12px;}
+                }
+                .deadlineSet {
+                    .deadline { font-size: 12px;
+                        .num { margin: 0 2px; font-size: 16px;}
+                    }
+                }
+            }
+        }
+        //未読
+        &--unread {
+            .scoutContent {  
+                .topArea {
+                    .leftSide {
+                        .logoCell {
+                            &::before { top: 6%; right: 6%; width: 10px; height: 10px; border-radius: 8px;}
+                        }
+                    }
+                }
+            }
+        }
+            //承諾済み
+        &--approved {
+            .messageContent { gap: 8px; padding: 16px;
+                .messageArea { width: calc(100% - 8px - 64px); font-size: 12px;
+                    .label {
+                        + .message { margin-top: 4px;}
+                    }
+                }  
+                .linkArea { width: 80px;
+                    .md_textLink { font-size: 12px; 
+                        .iconImgPart { width: 8px; height: 10px; top: 0; margin-left: 4px; }
+                    }
+                }
+                &--nonMessage { 
+                    .linkArea { margin-left: auto; width: auto;}
+                }
+            }
+        }
+	}
+}
+
+//バナー
+.bannerUnit { background-color: #fff; margin: auto; padding: 40px 16px; padding-bottom: 100px;
+    .bannerList {  display: flex; flex-wrap: wrap; gap: 16px; 
+        .banner { width: 100%;
+            .link  { display: block;
+                img  { width: 100%;
+                }
+            }
+        }
+    }
+    @media only screen and (min-width: $w_break_tablet) { padding: 40px 0;
+        .bannerList { width: 700px; margin: auto;
+            .banner { width: calc(50% - 8px); 
+                .link  {
+                }
+            }
+        }
+    }
+}

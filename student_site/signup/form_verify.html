@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>新規会員登録 | iroots</title>
+<link rel="stylesheet" href="../common/css/signup/form.css"/>
+</head>
+<body>
+
+
+<!-- header -->   	
+<header class="md_header md_header--signup">
+	<div class="logo"> <a href="#"> <img src="../imageFile/logo_white.svg" alt=""> </a> </div>
+</header>
+<!-- /header -->
+
+
+<div class="container container--signup">
+	<div class="contentWrap">
+		<div class="copyArea">
+			<div class="copySet">
+				<div class="catch">4桁の認証コードを入力してください</div>
+				<p class="copy">入力いただいたメールアドレスに認証コードをお送りしたので、ご入力ください。<br class="pcShow">
+					認証コードの有効期限は30分です。</p>
+			</div>
+			<div class="addressSet">
+				<span class="label">ご登録のメールアドレス</span>
+				<div class="address">tarou.yamada@gmail.com</div>
+			</div>
+		</div>
+		<div class="formArea">
+			<div class="formSet formSet--code">
+				<div class="form column">
+					<input type="number" maxlength="1" class="form--line" oninput="sliceMaxLength(this, 1)">
+					<input type="number" maxlength="1" class="form--line" oninput="sliceMaxLength(this, 1)">
+					<input type="number" maxlength="1" class="form--line" oninput="sliceMaxLength(this, 1)">
+					<input type="number" maxlength="1" class="form--line" oninput="sliceMaxLength(this, 1)">
+				</div>
+				<p class="errorMessage" style="display: none;"><span class="iconImgPart">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 150 1100 1100"><path d="m993.554 865.69-.267-.267-364.968-609.718c0-.267-.267-.267-.267-.544-23.986-38.818-65.23-61.994-110.515-61.994s-86.524 23.182-110.246 61.727c-.267.267-.544.544-.544 1.078L41.509 865.69s0 .267-.267.267c-11.321 19.409-17.52 42.051-17.52 64.96 0 70.622 57.416 128.574 127.767 129.382h731.833c70.622-.811 128.036-58.76 128.036-129.382 0-22.909-6.199-45.551-17.787-65.23zM882.5 974.05H152.564c-23.453-.267-42.318-19.676-42.318-43.129 0-7.544 1.889-14.821 5.66-21.298l364.968-609.448.267-.267c8.088-12.665 21.564-20.22 36.661-20.22s28.841 7.821 36.929 20.753L919.159 909.35c3.777 6.466 5.66 14.021 5.66 21.564.267 23.453-18.865 42.86-42.318 43.129zM517.53 456.516c-23.72 0-43.129 19.409-43.129 43.129v172.51c0 23.72 19.409 43.129 43.129 43.129s43.129-19.409 43.129-43.129v-172.51c0-23.72-19.409-43.129-43.129-43.129zm0 345.023c-11.321 0-22.375 4.577-30.461 12.665s-12.665 19.142-12.665 30.461 4.577 22.375 12.665 30.461c8.088 8.088 19.142 12.665 30.461 12.665s22.375-4.577 30.461-12.665c8.088-8.088 12.665-19.142 12.665-30.461s-4.577-22.375-12.665-30.461c-8.088-8.088-19.142-12.665-30.461-12.665z" fill="#f04438"></path></svg>
+				</span>認証コードが間違っています。有効期限が過ぎている場合は<br>
+				新しい認証コードを送信のうえ、お試しください。</p>
+			</div>
+		</div>
+		<div class="btnArea">
+			<div class="btnSet">
+				<a href="done_signup.html" class="md_btn md_btn--submit md_btn--disable js_submitTrigger">認証する</a>
+			</div>
+			<div class="linkSet">
+				<button class="md_textLink js_modalOpen" data-modal="modal_sent">認証コードを再送する</button>
+				<a href="form_verifyAgain.html" class="md_textLink">メールが届かない場合はこちら</a>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+
+<!-- md_modal -->
+<div class="md_modal modal_features modal_sent" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="Content">
+			<div class="titleArea">
+				<div class="title">送信しました</div>
+				<div class="copy">認証メールを送信しました。メールを確認してください。</div>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--sub js_modalX">閉じる</button>
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- /md_modal -->
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script>
+	function sliceMaxLength(elem, maxLength) {
+	elem.value = elem.value.slice(0, maxLength);
+}
+$(function() {
+	// 変数制御
+	var URL = location.href;
+	var URLSet = URL.split('?');
+	if(URLSet[1] == 'error'){ 
+		$('.errorMessage').show();
+			$('.errorMessage').prev('input').addClass('md_error');
+			$('.errorMessage').prev().children('input').addClass('md_error');
+		}
+	if(URLSet[1] == 'login'){ 
+		$('.js_submitTrigger').attr('href','../login/login.html?verifyDone');
+
+		}
+});
+
+$(function() {//ボタンの制御
+	$('input').on('input', function() {
+		if (this) { 
+			$(".md_btn--submit").removeClass('md_btn--disable'); 
+		} else {
+			$(".md_btn--submit").addClass('md_btn--disable');
+		}
+	});
+});
+
+</script>
+</body>
+</html>

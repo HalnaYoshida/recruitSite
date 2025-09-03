@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>募集情報審査一覧 - 募集情報審査</title>
+
+<link rel="stylesheet" href="../common/css/recruit/list_recruitManage.css"/>
+</head>
+<body>
+
+<!-- Modal -->
+<div class="md_modal modal01" style="display: none;">
+    <button class="bgLayer js_modalX"></button>
+    <div class="modalSet">
+        <div class="Content">
+            <div class="textArea">
+                <div class="catch">削除確認</div>
+                <p class="copy">
+                    メッセージを削除します。よろしいですか？
+                </p>
+            </div>
+            <div class="actionArea">
+                <button class="md_btn md_btn--medium multiple js_modalX js_snackBar js_delete" data-target="Bar02">削除</button>
+                <button class="md_btn md_btn--medium md_btn--second multiple js_modalX">キャンセル</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar01">
+	<div class="base">
+		<div class="text">掲載NGを企業にお送りしました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar02">
+	<div class="base">
+		<div class="text">審査内容を一時保存しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar03">
+	<div class="base">
+		<div class="text">審査を保留しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar04">
+	<div class="base">
+		<div class="text">掲載OKを企業にお送りしました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+	<div class="contentWrap">
+		
+		<!-- titleArea -->
+		<div class="titleArea">
+			<h2 class="mainTitle">募集情報審査</h2>
+		</div>
+		<!-- /titleArea -->
+
+        <!-- sortArea -->
+        <ul class="sortArea">
+			<li class="li">
+				<span class="sortTitle">募集形態：</span>
+				<div class="sortBtnCell">
+					<span class="md_select">
+						<select name="" id="" class="form--line">
+							<option value="">すべて</option>
+							<option value="">本選考</option>
+							<option value="">インターンなど</option>
+							<option value="">説明会・セミナーなど</option>
+						</select>
+					</span>
+				</div>
+			</li>
+            <li class="li">
+				<span class="sortTitle">ステータス：</span>
+				<span class="md_select">
+					<select name="" id="" class="form--line">
+						<option value="">すべて</option>
+						<option value="">未審査</option>
+						<option value="">再審査</option>
+						<option value="">一時保存</option>
+					</select>
+				</span>
+			</li>
+            <li class="li">
+                <span class="sortTitle">企業名：</span>
+                <div class="searchArea">
+					<div class="formCell">
+						<div class="input"><input type="text" placeholder="企業名を入力してください" class="form--line"></div>
+					</div>
+					<button class="md_btn md_btn--second md_btn--small">検索</button>
+				</div>
+            </li>
+		</ul>
+        <!-- /sortArea -->
+        
+		<!-- md_table -->
+		<div class="emptyState">
+			<span class="emptyText">審査が必要な募集情報はありません</span>
+		</div>
+		<!-- /md_table -->
+		 
+	</div>
+<!-- Container End --></div><!-- /Container End -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+<script>
+    $(document).ready(function() {
+  // .js_delete 要素にクリックイベントを追加
+  $('.js_delete').click(function() {
+    $('#delete01').fadeOut('');
+  });
+});
+</Script>
+
+</body>
+</html>

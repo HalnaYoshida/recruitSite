@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>日程調整</title>
+<link rel="stylesheet" href="../common/css/schedule/list_schedule.css"/>
+</head>
+<body>
+
+<!-- Modal -->
+<div class="md_modal modal01" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="Content">
+			<div class="textArea">
+				<div class="catch">削除確認</div>
+				<p class="copy">
+					グループを削除します。よろしいですか？
+				</p>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--medium multiple js_modalX js_snackBar" data-target="Bar01">削除</button>
+				<button class="md_btn md_btn--medium md_btn--second multiple js_modalX">キャンセル</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Modal -->
+
+<!-- Modal -->
+<div class="md_modal modal02" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="Content">
+			<div class="textArea">
+				<div class="catch">削除エラー</div>
+				<p class="copy">
+					この日程グループは応募が入っている、<br>もしくは募集情報に添付されているため削除できません。
+				</p>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--medium md_btn--second js_modalX">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Modal -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar01">
+	<div class="base">
+		<div class="text">グループを削除しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar02">
+	<div class="base">
+		<div class="text">新規グループを作成しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar03">
+	<div class="base">
+		<div class="text">追加/編集が完了しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+	<div class="contentWrap">
+
+		<!-- titleArea -->
+		<div class="titleArea count">
+			<h2 class="mainTitle">日程調整</h2>
+			<div class="btnArea">
+				<a href="scheduleList_regist.html" class="md_btn md_btn--medium md_btn--second md_btn--icon"><span class="iconImgPart">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -2 15 15">
+							<path fill="#767676" d="M11.343 5.343H6.657V.657A.674.674 0 0 0 6 0a.674.674 0 0 0-.657.657v4.686H.657A.674.674 0 0 0 0 6c0 .35.307.657.657.657h4.686v4.686c0 .35.307.657.657.657.35 0 .657-.307.657-.657V6.657h4.686c.35 0 .657-.307.657-.657a.674.674 0 0 0-.657-.657Z"></path>
+						</svg>
+					</span>新規グループ作成</a>
+			</div>
+		</div>
+		<!-- /titleArea -->
+
+		<!-- tabArea -->
+		<div class="tabArea">
+			<ul>
+				<li><a href="" class="is-active">スケジュール</a></li>
+				<li><a href="" class="">カレンダー</a></li>
+			</ul>
+		</div>
+		<!-- tabArea -->
+
+		<!-- countArea -->
+		<div class="countArea">
+			<div class="sortBtnArea">
+				<div class="sortBtnCell">グループ：</div>
+				<div class="sortBtnCell">
+					<span class="md_select col-gr">
+						<select name="" id="" class="form--line">
+							<option value="">すべて</option>
+							<option value="">エンジニアコースインターンシップ用説明会</option>
+							<option value="">企画職コース本選考一次面接</option>
+						</select>
+					</span>
+				</div>
+			</div>
+		</div>
+		<!-- countArea -->
+
+		<!-- titleArea -->
+		<div class="titleArea titleArea--count">
+			<h2 class="mainTitle">11-20<span class="titleSmall">件</span></h2>
+			<span class="subText">（全221グループ）</span>
+		</div>
+		<!-- /titleArea -->
+
+		<!-- tableArea -->
+		<table class="md_table md_table--schedule">
+			<thead>
+				<tr>
+					<th colspan="6" class="item">
+						<div class="flexArea">
+							<div class="scheduleData">
+								<div class="title">エンジニアコースインターンシップ用説明会</div>
+								<ul class="minidata">
+									<li>所要時間 : 60分</li>
+									<li>備考：服装自由、交通費支給</li>
+									<li>メモ：廣田一次試験管理用</li>
+									<li>募集情報：<a href="../recruit/recruitManage.html">エンジニアコースインターンシップ</a></li>
+									<li>募集期間：2024年07月17日～2024年07月28日</li>
+								</ul>
+							</div>
+							<div class="btnSet">
+								<div class="btnCell">
+									<a href="scheduleList_renew.html" class="md_btn md_btn--medium">追加 / 編集</a>
+								</div>
+								<div class="btnCell">
+									<div class="cmdArea">
+										<button class="cmdLink js_cmdLink"><svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+												<path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+												<path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+												<path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+											</svg>
+										</button>
+										<div class="cmdActArea hide">
+											<button class="menu js_modalOpen" data-modal="modal02">削除</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</th>
+				</tr>
+				<tr class="head">
+					<th class="item">日付</th>
+					<th class="item">時間</th>
+					<th class="item">場所</th>
+					<th class="item">定員</th>
+					<th class="item item--w10"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="data">2024年07月17日（水）</td>
+					<td class="data"><span class="holder">09:00～10:00</span></td>
+					<td class="data"><span class="holder">新宿アイランドタワー35F</span></td>
+					<td class="data">
+						<div class="capacity"><span class="holder">50/200</span></div>
+					</td>
+					<td class="data data--C"><a href="../manage/manageApply.html" class="md_btn md_btn--medium">応募確認</a></td>
+				</tr>
+				<tr>
+					<td class="data">2024年07月17日（水）</td>
+					<td class="data"><span class="holder">09:00～10:00</span></td>
+					<td class="data"><span class="holder">新宿アイランドタワー35F</span></td>
+					<td class="data">
+						<div class="capacity"><span class="holder">50/200</span></div>
+					</td>
+					<td class="data data--C"><a href="../manage/manageApply.html" class="md_btn md_btn--medium">応募確認</a></td>
+				</tr>
+				<tr>
+					<td class="data">2024年07月17日（水）</td>
+					<td class="data"><span class="holder">09:00～10:00</span></td>
+					<td class="data"><span class="holder">新宿アイランドタワー35F</span></td>
+					<td class="data">
+						<div class="capacity"><span class="holder">50/200</span></div>
+					</td>
+					<td class="data data--C"><a href="../manage/manageApply.html" class="md_btn md_btn--medium">応募確認</a></td>
+				</tr>
+			</tbody>
+			<tbody class="scheduleInner">
+				<tr class="">
+					<td class="data">2024年07月17日（水）</td>
+					<td class="data"><span class="holder">09:00～10:00</span></td>
+					<td class="data"><span class="holder">新宿アイランドタワー35F</span></td>
+					<td class="data">
+						<div class="capacity"><span class="holder">50/200</span></div>
+					</td>
+					<td class="data data--C"><a href="../manage/manageApply.html" class="md_btn md_btn--medium">応募確認</a></td>
+				</tr>
+				<tr class="">
+					<td class="data">2024年07月17日（水）</td>
+					<td class="data"><span class="holder">09:00～10:00</span></td>
+					<td class="data"><span class="holder">新宿アイランドタワー35F</span></td>
+					<td class="data">
+						<div class="capacity"><span class="holder">50/200</span></div>
+					</td>
+					<td class="data data--C"><a href="../manage/manageApply.html" class="md_btn md_btn--medium">応募確認</a></td>
+				</tr>
+				<tr class="">
+					<td class="data">2024年07月17日（水）</td>
+					<td class="data"><span class="holder">09:00～10:00</span></td>
+					<td class="data"><span class="holder">新宿アイランドタワー35F</span></td>
+					<td class="data">
+						<div class="capacity"><span class="holder">50/200</span></div>
+					</td>
+					<td class="data data--C"><a href="../manage/manageApply.html" class="md_btn md_btn--medium">応募確認</a></td>
+				</tr>
+				<tr class="">
+					<td class="data">2024年07月17日（水）</td>
+					<td class="data"><span class="holder">09:00～10:00</span></td>
+					<td class="data"><span class="holder">新宿アイランドタワー35F</span></td>
+					<td class="data">
+						<div class="capacity"><span class="holder">50/200</span></div>
+					</td>
+					<td class="data data--C"><a href="../manage/manageApply.html" class="md_btn md_btn--medium">応募確認</a></td>
+				</tr>
+				<tr class="">
+					<td class="data">2024年07月17日（水）</td>
+					<td class="data"><span class="holder">09:00～10:00</span></td>
+					<td class="data"><span class="holder">新宿アイランドタワー35F</span></td>
+					<td class="data">
+						<div class="capacity"><span class="holder">50/200</span></div>
+					</td>
+					<td class="data data--C"><a href="../manage/manageApply.html" class="md_btn md_btn--medium">応募確認</a></td>
+				</tr>
+				<tr class="">
+					<td class="data">2024年07月17日（水）</td>
+					<td class="data"><span class="holder">09:00～10:00</span></td>
+					<td class="data"><span class="holder">新宿アイランドタワー35F</span></td>
+					<td class="data">
+						<div class="capacity"><span class="holder">50/200</span></div>
+					</td>
+					<td class="data data--C"><a href="../manage/manageApply.html" class="md_btn md_btn--medium">応募確認</a></td>
+				</tr>
+				<tr class="">
+					<td class="data">2024年07月17日（水）</td>
+					<td class="data"><span class="holder">09:00～10:00</span></td>
+					<td class="data"><span class="holder">新宿アイランドタワー35F</span></td>
+					<td class="data">
+						<div class="capacity"><span class="holder">50/200</span></div>
+					</td>
+					<td class="data data--C"><a href="../manage/manageApply.html" class="md_btn md_btn--medium">応募確認</a></td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<td colspan="6" class="openArea js_scheduleOpen">
+						<span class="addText">
+							すべての日程を表示
+						</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- /tableArea -->
+
+		<!-- tableArea -->
+		<table class="md_table md_table--schedule">
+			<thead>
+				<tr>
+					<th colspan="6" class="item">
+						<div class="flexArea">
+							<div class="scheduleData">
+								<div class="title">企画職コース本選考一次面接</div>
+								<ul class="minidata">
+									<li>所要時間 : 60分</li>
+									<li>備考：服装自由、交通費支給</li>
+									<li>メモ：廣田一次試験管理用</li>
+									<li>募集情報：---</li>
+									<li>募集期間：---</li>
+								</ul>
+							</div>
+							<div class="btnSet">
+								<div class="btnCell">
+									<a href="scheduleList_renew.html" class="md_btn md_btn--medium">追加 / 編集</a>
+								</div>
+								<div class="btnCell">
+									<div class="cmdArea">
+										<button class="cmdLink js_cmdLink"><svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.67 22.67">
+												<path d="M5.67,2.83c0,1.56-1.27,2.83-2.83,2.83S0,4.4,0,2.83,1.27,0,2.83,0s2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+												<path d="M5.67,11.33c0,1.56-1.27,2.83-2.83,2.83s-2.83-1.27-2.83-2.83,1.27-2.83,2.83-2.83,2.83,1.27,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+												<path d="M2.83,22.67c1.56,0,2.83-1.27,2.83-2.83s-1.27-2.83-2.83-2.83-2.83,1.27-2.83,2.83,1.27,2.83,2.83,2.83Z" style="fill:#667085; stroke-width:0px;"></path>
+											</svg>
+										</button>
+										<div class="cmdActArea hide">
+											<button class="menu js_modalOpen" data-modal="modal01">削除</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</th>
+				</tr>
+				<tr class="head">
+					<th class="item">日付</th>
+					<th class="item">時間</th>
+					<th class="item">場所</th>
+					<th class="item">定員</th>
+					<th class="item item--w10"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="data">2024年07月17日（水）</td>
+					<td class="data"><span class="holder">09:00～10:00</span></td>
+					<td class="data"><span class="holder">新宿アイランドタワー35F</span></td>
+					<td class="data">
+						<div class="capacity"><span class="holder">50/200</span></div>
+					</td>
+					<td class="data data--C"><a href="../manage/manageApply.html" class="md_btn md_btn--medium">応募確認</a></td>
+				</tr>
+				<tr>
+					<td class="data">2024年07月17日（水）</td>
+					<td class="data"><span class="holder">09:00～10:00</span></td>
+					<td class="data"><span class="holder">新宿アイランドタワー35F</span></td>
+					<td class="data">
+						<div class="capacity"><span class="holder">50/200</span></div>
+					</td>
+					<td class="data data--C"><a href="../manage/manageApply.html" class="md_btn md_btn--medium">応募確認</a></td>
+				</tr>
+				<tr>
+					<td class="data">2024年07月17日（水）</td>
+					<td class="data"><span class="holder">09:00～10:00</span></td>
+					<td class="data"><span class="holder">新宿アイランドタワー35F</span></td>
+					<td class="data">
+						<div class="capacity"><span class="holder">50/200</span></div>
+					</td>
+					<td class="data data--C"><a href="../manage/manageApply.html" class="md_btn md_btn--medium">応募確認</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- /tableArea -->
+		
+		<!-- md_pagination -->
+		<ul class="md_pagination">
+			<li>
+				<a class=" md_btn md_btn--small">
+					<span class="iconImgPart">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="-3 -1 17 17" fill="none"><path fill="#fff" stroke="#fff" d="M8.207 15c.288 0 .288 0 .577-.293.288 0 .288-.587 0-.88L3.018 7.963 8.784 2.1c.288-.293.288-.586 0-.88-.289-.292-.577-.292-.865 0L1 7.964l6.919 6.744c0 .293.288.293.288.293Z"/></svg>
+					</span>
+				</a>
+			</li>
+			<li><div class="page">1</div></li>
+			<li><a class="page page--active">2</a></li>
+			<li><a class="page">3</a></li>
+			<li><a class="page">4</a></li>
+			<li><a class="page">5</a></li>
+			<li><div class="page page--threeDots">…</div></li>
+			<li><a class="page">20</a></li>
+			<li>
+				<a class=" md_btn md_btn--small">
+					<span class="iconImgPart">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -1 17 17" fill="none"><path fill="#fff" stroke="#fff" d="M1.793 15c-.288 0-.288 0-.577-.293-.288 0-.288-.587 0-.88l5.766-5.864L1.216 2.1c-.288-.293-.288-.586 0-.88.288-.292.577-.292.865 0L9 7.964l-6.919 6.744c0 .293-.288.293-.288.293Z"/></svg>
+					</span>
+				</a>
+			</li>
+		</ul>
+		<!-- md_pagination -->
+
+	</div>
+
+<!-- Container End --></div><!-- /Container End -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+<script>
+$(document).ready(function () {
+	// リストの：クリックでメニュー出現
+	$(document).on('click', '.js_groupRemove', groupRemove);
+});
+// カードを消す
+var groupRemove = function () {
+	const $group = $(this).parents('.studentInfo');
+	$group.addClass('remove');
+	setTimeout(function () {
+		$group.remove();
+	}, 500);
+}
+</script>
+
+<script>
+    // .js_scheduleOpen をクリックしたら .scheduleInner をトグル
+    $('.js_scheduleOpen').on('click', function () {
+        // .scheduleInner をトグル
+        $('.scheduleInner').slideToggle();
+        
+        // .js_scheduleOpen に .clicked クラスをトグル
+        $(this).toggleClass('clicked');
+
+        // .addText のテキストを切り替え
+        var $text = $(this).find('.addText');
+        if ($(this).hasClass('clicked')) {
+            $text.text('日程を閉じる');
+        } else {
+            $text.text('すべての日程を表示');
+        }
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

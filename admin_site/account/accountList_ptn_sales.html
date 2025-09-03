@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>アカウント一覧 - アカウント管理</title>
+
+<link rel="stylesheet" href="../common/css/account/list.css"/>
+</head>
+<body>
+
+<!-- snackBar -->
+<div class="md_snackBar Bar01">
+	<div class="base">
+		<div class="text">アカウント情報を登録しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar02">
+	<div class="base">
+		<div class="text">アカウント情報を更新しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar03">
+	<div class="base">
+			<div class="text">担当者を削除しました。</div>
+			<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- Modal01 -->
+<div class="md_modal modal01" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="Content">
+			<div class="textArea">
+				<div class="catch">削除エラー</div>
+				<p class="copy">
+					企業の担当者になっているため削除できません。
+					<br>
+					企業の担当者を変更してから削除してください。
+				</p>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--medium md_btn--second js_modalX">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Moda101 -->
+
+<!-- Modal02 -->
+<div class="md_modal modal02" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="Content">
+			<div class="textArea">
+				<div class="catch">削除確認</div>
+				<p class="copy">
+					担当者を削除します。よろしいですか？
+				</p>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--medium js_modalX multiple js_snackBar" data-target="Bar03">削除</button><button class="md_btn md_btn--medium md_btn--second js_modalX multiple">キャンセル</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Modal02 -->
+
+<!--modal03-->  
+<div class="md_modal modal03" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="Content">
+			<div class="textArea">
+				<div class="catch">登録完了</div>
+				<p class="copy">
+					アカウントの登録が完了しました。
+				</p>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--medium md_btn--second js_modalX">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/modal03-->
+
+<!--modal04-->  
+<div class="md_modal modal04" style="display: none;">
+	<button class="bgLayer js_modalX"></button>
+	<div class="modalSet">
+		<div class="Content">
+			<div class="textArea">
+				<div class="catch">更新完了</div>
+				<p class="copy">
+					アカウント情報の更新が完了しました。
+				</p>
+			</div>
+			<div class="actionArea">
+				<button class="md_btn md_btn--medium md_btn--second js_modalX">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/modal04-->
+
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+	<div class="contentWrap">
+		<!-- titleArea -->
+		<div class="titleArea">
+			<h2 class="mainTitle">アカウント一覧</h2>
+		</div>
+		<!-- /titleArea -->
+
+		<!-- md_table -->
+		<table class="md_table">
+			<thead>
+				<tr>
+					<th class="item item--w20">担当者</th>
+					<th class="item item--w10">権限</th>
+					<th class="item">メールアドレス</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="data">
+						<div class="accountSet">
+							<div class="imgCell"><img src="../imageFile/accountImg02.png"></div>
+							<div class="main">大島 由美</div>
+						</div>
+					</td>
+					<td class="data">
+						<span class="md_chip md_chip--blue"><span class="chipTxt">管理者</span></span>
+					</td>
+					<td class="data"><span class="holder">yumi_ohishima@en-japan.com</span></td>
+				</tr>
+				<tr>
+					<td class="data">
+						<div class="accountSet">
+							<div class="imgCell"><img src="../imageFile/accountImg01.jpeg"></div>
+							<div class="main">谷口 由希子</div>
+						</div>
+					</td>
+					<td class="data">
+						<span class="md_chip md_chip--blue"><span class="chipTxt">管理者</span></span>
+					</td>
+					<td class="data"><span class="holder">yumi_ohishima@en-japan.com</span></td>
+				</tr>
+				<tr>
+					<td class="data">
+						<div class="accountSet">
+							<div class="imgCell"><img src="../imageFile/accountImg03.png"></div>
+							<div class="main">一二三 四五六七郎</div>
+						</div>
+					</td>
+					<td class="data">
+						<span class="md_chip md_chip--orange"><span class="chipTxt">営業担当</span></span>
+					</td>
+					<td class="data"><span class="holder">yumi_ohishima@en-japan.com</span></td>
+				<tr>
+					<td class="data">
+						<div class="accountSet">
+							<div class="imgCell"><img src="../imageFile/accountImg04.png"></div>
+							<div class="main">佐藤 花子</div>
+						</div>
+					</td>
+					<td class="data">
+						<span class="md_chip md_chip--blue"><span class="chipTxt">管理者</span></span>
+					</td>
+					<td class="data"><span class="holder">yumi_ohishima@en-japan.com</span></td>
+				</tr>
+				<tr>
+					<td class="data">
+						<div class="accountSet">
+							<div class="imgCell"><img src="../imageFile/accountImg05.png"></div>
+							<div class="main">鈴木 健一</div>
+						</div>
+					</td>
+					<td class="data">
+						<span class="md_chip md_chip--orange"><span class="chipTxt">営業担当</span></span>
+					</td>
+					<td class="data"><span class="holder">yumi_ohishima@en-japan.com</span></td>
+				</tr>
+				<tr>
+					<td class="data">
+						<div class="accountSet">
+							<div class="imgCell"><img src="../imageFile/accountImg06.png"></div>
+							<div class="main">高橋 美咲</div>
+						</div>
+					</td>
+					<td class="data">
+						<span class="md_chip md_chip--orange"><span class="chipTxt">営業担当</span></span>
+					</td>
+					<td class="data"><span class="holder">yumi_ohishima@en-japan.com</span></td>
+				</tr>
+				<tr>
+					<td class="data">
+						<div class="accountSet">
+							<div class="imgCell"><img src="../imageFile/accountImg07.png"></div>
+							<div class="main">田中 翔太</div>
+						</div>
+					</td>
+					<td class="data">
+						<span class="md_chip md_chip--orange"><span class="chipTxt">営業担当</span></span>
+					</td>
+					<td class="data"><span class="holder">yumi_ohishima@en-japan.com</span></td>
+				</tr>
+				<tr>
+					<td class="data">
+						<div class="accountSet">
+							<div class="imgCell"><img src="../imageFile/accountImg08.png"></div>
+							<div class="main">伊藤 真由美</div>
+						</div>
+					</td>
+					<td class="data">
+						<span class="md_chip md_chip--orange"><span class="chipTxt">営業担当</span></span>
+					</td>
+					<td class="data"><span class="holder">yumi_ohishima@en-japan.com</span></td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- /md_table -->
+	</div>
+<!-- Container End --></div><!-- /Container End -->
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+<script>
+	$(document).ready(function() {
+			var URL = location.href;
+			var URLSet = URL.split('?');
+
+			if (URLSet.length > 1 && URLSet[1] === 'modal03') {
+					$('.md_modal.modal03').show();
+			} else if (URLSet.length > 1 && URLSet[1] === 'modal04') {
+					$('.md_modal.modal04').show();
+			}
+	});
+</script>
+<script>
+	$(document).ready(function () {
+    // 全ての非同期リクエストが完了するのを待つ
+    $.when(
+        $.get('/admin_site/navi_ptn_sales.html'),
+        $.get('/admin_site/student/drawer-solo-001.html'),
+        $.get('/admin_site/student/drawer-solo-002.html'),
+        $.get('/admin_site/student/drawer-solo-003.html'),
+        $.get('/admin_site/student/modal-solo-001.html'),
+        $.get('/admin_site/student/modal-solo-002.html'),
+        $.get('/admin_site/student/modal-solo-003.html')
+    ).done(function (
+        naviResponse,
+        drawerSolo001Response, 
+        drawerSolo002Response, 
+        drawerSolo003Response,
+        modalSolo001Response, 
+        modalSolo002Response, 
+        modalSolo003Response
+    ) {
+        var naviHtml = naviResponse[0];
+        var drawerSolo001Html = drawerSolo001Response[0];
+        var drawerSolo002Html = drawerSolo002Response[0];
+        var drawerSolo003Html = drawerSolo003Response[0];
+        var modalSolo001Html = modalSolo001Response[0];
+        var modalSolo002Html = modalSolo002Response[0];
+        var modalSolo003Html = modalSolo003Response[0];
+
+        $('#navi').html(naviHtml);
+        $('.drawer-solo-001').html(drawerSolo001Html);
+        $('.drawer-solo-002').html(drawerSolo002Html);
+        $('.drawer-solo-003').html(drawerSolo003Html);
+        //$('.drawer-batch-001').html(drawerBatch001Html);
+        $('.modal-solo-001').html(modalSolo001Html);
+        $('.modal-solo-002').html(modalSolo002Html);
+        $('.modal-solo-003').html(modalSolo003Html);
+        
+        sidemenu();
+        mainfunction();
+        graphorder();
+    });
+});
+</script>
+
+</body>
+</html>

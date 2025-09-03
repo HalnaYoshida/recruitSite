@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="../../../../favicon.ico" />
+<title>募集情報審査一覧 - 募集情報審査</title>
+
+<link rel="stylesheet" href="../common/css/recruit/list_recruitManage.css"/>
+</head>
+<body>
+
+<!-- Modal -->
+<div class="md_modal modal01" style="display: none;">
+    <button class="bgLayer js_modalX"></button>
+    <div class="modalSet">
+        <div class="Content">
+            <div class="textArea">
+                <div class="catch">削除確認</div>
+                <p class="copy">
+                    メッセージを削除します。よろしいですか？
+                </p>
+            </div>
+            <div class="actionArea">
+                <button class="md_btn md_btn--medium multiple js_modalX js_snackBar js_delete" data-target="Bar02">削除</button>
+                <button class="md_btn md_btn--medium md_btn--second multiple js_modalX">キャンセル</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar01">
+	<div class="base">
+		<div class="text">掲載NGを企業にお送りしました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar02">
+	<div class="base">
+		<div class="text">審査内容を一時保存しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar03">
+	<div class="base">
+		<div class="text">審査を保留しました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- snackBar -->
+<div class="md_snackBar Bar04">
+	<div class="base">
+		<div class="text">掲載OKを企業にお送りしました</div>
+		<button class="close js_snackBarX">✕</button>
+	</div>
+</div>
+<!-- /snackBar -->
+
+<!-- sideMenu -->
+<div id="navi"></div>
+<!-- /sideMenu -->
+
+<!-- Container Start --><div class="container"><!-- /Container Start -->
+	<div class="contentWrap">
+		
+		<!-- titleArea -->
+		<div class="titleArea">
+			<h2 class="mainTitle">募集情報審査</h2>
+		</div>
+		<!-- /titleArea -->
+
+        <!-- sortArea -->
+        <ul class="sortArea">
+			<li class="li">
+				<span class="sortTitle">募集形態：</span>
+				<div class="sortBtnCell">
+					<span class="md_select">
+						<select name="" id="" class="form--line">
+							<option value="">すべて</option>
+							<option value="">本選考</option>
+							<option value="">インターンなど</option>
+							<option value="">説明会・セミナーなど</option>
+						</select>
+					</span>
+				</div>
+			</li>
+            <li class="li">
+				<span class="sortTitle">ステータス：</span>
+				<div class="sortBtnCell">
+					<span class="md_select">
+						<select name="" id="" class="form--line">
+							<option value="">すべて</option>
+							<option value="">未審査</option>
+							<option value="">再審査</option>
+							<option value="">一時保存</option>
+						</select>
+					</span>
+				</div>
+			</li>
+            <li class="li">
+                <span class="sortTitle">企業名：</span>
+                <div class="searchArea">
+					<div class="formCell">
+						<div class="input"><input type="text" placeholder="企業名を入力してください" class="form--line"></div>
+					</div>
+					<button class="md_btn md_btn--second md_btn--small">検索</button>
+				</div>
+            </li>
+		</ul>
+        <!-- /sortArea -->
+        
+		<!-- titleArea -->
+		<div class="titleArea titleArea--count">
+			<h2 class="mainTitle">51-100<span class="titleSmall">件</span></h2>
+			<span class="subText">（全221件）</span>
+		</div>
+		<!-- /titleArea -->
+
+		<!-- md_table -->
+		<table class="md_table">
+			<thead>
+				<tr>
+					<th class="item item--C item--min">企業ID</th>
+					<th class="item item--mid">企業名</th>
+                    <th class="item item--C item--min">募集ID</th>
+                    <th class="item">募集情報</th>
+                    <th class="item item--cat">募集形態</th>
+                    <th class="item item--C item--min">申請日</th>
+                    <th class="item item--C item--min">ステータス</th>
+					<th class="item item--btn"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr id="delete01">
+					<td class="data data--C data--min">
+                        <span class="holder">1958</span>
+					</td>
+					<td class="data data--mid">
+						<span class="textTrim">株式会社Fine Port</span>
+					</td>
+					<td class="data data--C data--min"><span class="holder">1958</span></td>
+                    <td class="data"><div class="textTrim">★エンジニアコース★実践インターンシップ！！！業務内容を理解して、マッチングがわかる！</div></td>
+                    <td class="data data--cat"><span class="holder">インターンなど</span></td>
+                    <td class="data data--C data--min"><span class="holder">2023/10/23</span></td>
+                    <td class="data data--C data--min">
+                        <span class="md_chip md_chip--orange"><span class="chipTxt">未審査</span></span>
+                    </td>
+					<td class="data data--btn">
+							<div class="btnCell">
+								<a href="../recruit/recruitManage_screening_ptn_new_01.html" class="md_btn md_btn--medium">審査</a>
+							</div>
+					</td>
+				</tr>
+                <tr>
+					<td class="data data--C data--min">
+                        <span class="holder">1958</span>
+					</td>
+					<td class="data data--mid">
+						<span class="textTrim">株式会社Grow tech</span>
+					</td>
+					<td class="data data--C data--min"><span class="holder">1958</span></td>
+                    <td class="data"><div class="textTrim">★2025新卒向け★企画職コース本選考</div></td>
+                    <td class="data data--cat"><span class="holder">本選考</span></td>
+                    <td class="data data--C data--min"><span class="holder">2023/10/23</span></td>
+                    <td class="data data--C data--min">
+                        <span class="md_chip md_chip--orange"><span class="chipTxt">未審査</span></span>
+                    </td>
+					<td class="data data--btn">
+							<div class="btnCell">
+								<a href="../recruit/recruitManage_screening_ptn_new_02.html" class="md_btn md_btn--medium">審査</a>
+							</div>
+					</td>
+				</tr>
+                <tr>
+					<td class="data data--C data--min">
+                        <span class="holder">1958</span>
+					</td>
+					<td class="data data--mid">
+						<span class="textTrim">株式会社Advanced Technologies Fine Tech Bros</span>
+					</td>
+					<td class="data data--C data--min"><span class="holder">1958</span></td>
+                    <td class="data"><div class="textTrim">フロントエンドエンジニア本選考スタート！技術を活かし、次世代のプロジェクトに挑戦する仲間を募集します！大型案件多数！！スキルアップの機会も多くあります！</div></td>
+                    <td class="data data--cat"><span class="holder">本選考</span></td>
+                    <td class="data data--C data--min"><span class="holder">2023/10/23</span></td>
+                    <td class="data data--C data--min">
+                        <div class="chipSet">
+                            <span class="md_chip md_chip--green"><span class="chipTxt">一時保存</span></span>
+                            <span class="PIC">谷口由希子</span>
+                        </div>
+                    </td>
+					<td class="data data--btn">
+							<div class="btnCell">
+								<a href="../recruit/recruitManage_screening_ptn_temporary.html" class="md_btn md_btn--medium">審査</a>
+							</div>
+					</td>
+				</tr>
+                <tr>
+					<td class="data data--C data--min">
+                        <span class="holder">1958</span>
+					</td>
+					<td class="data data--mid">
+						<span class="textTrim">株式会社Cultural Supply Windmill&Natural protective Bros</span>
+					</td>
+					<td class="data data--C data--min"><span class="holder">1958</span></td>
+                    <td class="data"><div class="textTrim">「2026新卒向け！大手食品メーカーで企画職を募集。商品開発やマーケティング戦略を担当し、消費者に愛される商品を生み出すやりがいある仕事です。あなたのアイデアを活かして一緒に未来を創りましょう！</div></td>
+                    <td class="data data--cat"><span class="holder">本選考</span></td>
+                    <td class="data data--C data--min"><span class="holder">2023/10/23</span></td>
+                    <td class="data data--C data--min">
+                        <span class="md_chip md_chip--blue"><span class="chipTxt">再審査</span></span>
+                    </td>
+					<td class="data data--btn">
+							<div class="btnCell">
+								<a href="../recruit/recruitManage_screening_ptn_review.html" class="md_btn md_btn--medium">審査</a>
+							</div>
+					</td>
+				</tr>
+				<tr id="delete01">
+					<td class="data data--C data--min">
+						<span class="holder">1958</span>
+					</td>
+					<td class="data data--mid">
+						<span class="textTrim">株式会社Fine Port</span>
+					</td>
+					<td class="data data--C data--min"><span class="holder">1958</span></td>
+					<td class="data">
+						<div class="textTrim">★エンジニアコース★実践インターンシップ！！！業務内容を理解して、マッチングがわかる！</div>
+					</td>
+					<td class="data data--cat"><span class="holder">インターンなど</span></td>
+					<td class="data data--C data--min"><span class="holder">2023/10/23</span></td>
+					<td class="data data--C data--min">
+						<span class="md_chip md_chip--orange"><span class="chipTxt">未審査</span></span>
+					</td>
+					<td class="data data--btn">
+						<div class="btnCell">
+							<a href="../recruit/recruitManage_screening_ptn_new_03.html" class="md_btn md_btn--medium">審査</a>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- /md_table -->
+
+		<!-- md_pagination -->
+		<ul class="md_pagination">
+			<li>
+				<a class=" md_btn md_btn--small">
+					<span class="iconImgPart">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="-3 -1 17 17" fill="none">
+							<path fill="#fff" stroke="#fff" d="M8.207 15c.288 0 .288 0 .577-.293.288 0 .288-.587 0-.88L3.018 7.963 8.784 2.1c.288-.293.288-.586 0-.88-.289-.292-.577-.292-.865 0L1 7.964l6.919 6.744c0 .293.288.293.288.293Z"></path>
+						</svg>
+					</span>
+				</a>
+			</li>
+			<li>
+				<div class="page">1</div>
+			</li>
+			<li><a class="page page--active">2</a></li>
+			<li><a class="page">3</a></li>
+			<li><a class="page">4</a></li>
+			<li><a class="page">5</a></li>
+			<li>
+				<div class="page page--threeDots">…</div>
+			</li>
+			<li><a class="page">20</a></li>
+			<li>
+				<a class=" md_btn md_btn--small">
+					<span class="iconImgPart">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -1 17 17" fill="none">
+							<path fill="#fff" stroke="#fff" d="M1.793 15c-.288 0-.288 0-.577-.293-.288 0-.288-.587 0-.88l5.766-5.864L1.216 2.1c-.288-.293-.288-.586 0-.88.288-.292.577-.292.865 0L9 7.964l-6.919 6.744c0 .293-.288.293-.288.293Z"></path>
+						</svg>
+					</span>
+				</a>
+			</li>
+		</ul>
+		<!-- md_pagination -->
+		 
+	</div>
+<!-- Container End --></div><!-- /Container End -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="../common/js/library_jquery.js')</script>
+<script type="text/javascript" src="../common/js/import.js"></script>
+<script type="text/javascript" src="../common/js/global.js"></script>
+<script type="text/javascript" src="../common/js/_designStyle.js"></script>
+<script type="text/javascript" src="../common/js/library_slick.js"></script>
+<script>
+    $(document).ready(function() {
+  // .js_delete 要素にクリックイベントを追加
+  $('.js_delete').click(function() {
+    $('#delete01').fadeOut('');
+  });
+});
+</Script>
+
+</body>
+</html>
